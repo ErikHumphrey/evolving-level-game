@@ -154,6 +154,33 @@
   <ItemGroup>
     <None Include="Resources\battlebg.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imgIronAxe.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\geitemimage_1349.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imgIronAxe.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\img50Cal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\2015-12-28_23-36-01.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\sfxHit.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imgFlurryGraphic.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imgFlurryGraphic1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\flurryicon.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

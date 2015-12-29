@@ -58,8 +58,8 @@ namespace HumphreyErik2424RST
         private void btnStart_Click(object sender, EventArgs e)
         {
             // Open the level progression form
-            frmProgression Progression = new frmProgression();
-            Progression.Show();
+            // frmProgression Progression = new frmProgression();
+            // Progression.Show();
 
             LevelGenerator.LevelGen.NewLevel(); // Open a random level - Call the "level generator" method from its class
         }

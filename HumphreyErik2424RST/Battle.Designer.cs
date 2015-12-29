@@ -28,85 +28,102 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnFight = new System.Windows.Forms.Button();
-            this.btnFlee = new System.Windows.Forms.Button();
-            this.btnItems = new System.Windows.Forms.Button();
-            this.btnSwitch = new System.Windows.Forms.Button();
+            this.components = new System.ComponentModel.Container();
+            this.btnTL = new System.Windows.Forms.Button();
+            this.btnBR = new System.Windows.Forms.Button();
+            this.btnTR = new System.Windows.Forms.Button();
+            this.btnBL = new System.Windows.Forms.Button();
             this.pnlActions = new System.Windows.Forms.Panel();
-            this.pnlEnemy = new System.Windows.Forms.Panel();
-            this.lblNameEnemy = new System.Windows.Forms.Label();
-            this.prgHealthEnemy = new System.Windows.Forms.ProgressBar();
+            this.pnlStuff = new System.Windows.Forms.Panel();
+            this.pnlYellow = new System.Windows.Forms.Panel();
+            this.pnlWhite = new System.Windows.Forms.Panel();
+            this.pnlTurquoise = new System.Windows.Forms.Panel();
+            this.lblObjective = new System.Windows.Forms.Label();
+            this.lblStatus = new System.Windows.Forms.Label();
+            this.pnlBlack = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.tmrFistFlurry = new System.Windows.Forms.Timer(this.components);
+            this.pnlTop = new System.Windows.Forms.Panel();
+            this.picPunch = new System.Windows.Forms.PictureBox();
+            this.lblDescription = new System.Windows.Forms.Label();
+            this.lblStatusBar = new System.Windows.Forms.Label();
+            this.pnlGreenPlayer = new System.Windows.Forms.Panel();
             this.pnlPlayer = new System.Windows.Forms.Panel();
             this.lblHealthPlayer = new System.Windows.Forms.Label();
             this.prgHealthPlayer = new System.Windows.Forms.ProgressBar();
             this.lblNamePlayer = new System.Windows.Forms.Label();
-            this.pnlYellow = new System.Windows.Forms.Panel();
-            this.lblStatus = new System.Windows.Forms.Label();
-            this.picPortraitPlayer = new System.Windows.Forms.PictureBox();
             this.picPortraitEnemy = new System.Windows.Forms.PictureBox();
-            this.pnlTop = new System.Windows.Forms.Panel();
-            this.pnlWhite = new System.Windows.Forms.Panel();
-            this.pnlTurquoise = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.pnlBlack = new System.Windows.Forms.Panel();
-            this.pnlStuff = new System.Windows.Forms.Panel();
             this.pnlGreenEnemy = new System.Windows.Forms.Panel();
-            this.pnlGreenPlayer = new System.Windows.Forms.Panel();
+            this.pnlEnemy = new System.Windows.Forms.Panel();
+            this.prgHealthEnemy = new System.Windows.Forms.ProgressBar();
+            this.lblNameEnemy = new System.Windows.Forms.Label();
+            this.picPortraitPlayer = new System.Windows.Forms.PictureBox();
+            this.tmrGameTicker = new System.Windows.Forms.Timer(this.components);
             this.pnlActions.SuspendLayout();
-            this.pnlEnemy.SuspendLayout();
-            this.pnlPlayer.SuspendLayout();
+            this.pnlStuff.SuspendLayout();
             this.pnlYellow.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picPortraitPlayer)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picPortraitEnemy)).BeginInit();
-            this.pnlTop.SuspendLayout();
             this.pnlWhite.SuspendLayout();
             this.pnlTurquoise.SuspendLayout();
             this.pnlBlack.SuspendLayout();
-            this.pnlStuff.SuspendLayout();
-            this.pnlGreenEnemy.SuspendLayout();
+            this.pnlTop.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picPunch)).BeginInit();
             this.pnlGreenPlayer.SuspendLayout();
+            this.pnlPlayer.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picPortraitEnemy)).BeginInit();
+            this.pnlGreenEnemy.SuspendLayout();
+            this.pnlEnemy.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picPortraitPlayer)).BeginInit();
             this.SuspendLayout();
             // 
-            // btnFight
+            // btnTL
             // 
-            this.btnFight.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFight.Location = new System.Drawing.Point(2, 2);
-            this.btnFight.Name = "btnFight";
-            this.btnFight.Size = new System.Drawing.Size(178, 40);
-            this.btnFight.TabIndex = 0;
-            this.btnFight.Text = "FIGHT";
-            this.btnFight.UseVisualStyleBackColor = true;
+            this.btnTL.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTL.Location = new System.Drawing.Point(2, 2);
+            this.btnTL.Name = "btnTL";
+            this.btnTL.Size = new System.Drawing.Size(178, 40);
+            this.btnTL.TabIndex = 0;
+            this.btnTL.Text = "FIGHT";
+            this.btnTL.UseVisualStyleBackColor = true;
+            this.btnTL.Click += new System.EventHandler(this.btnTL_Click);
+            this.btnTL.MouseLeave += new System.EventHandler(this.MouseLeavesButton);
             // 
-            // btnFlee
+            // btnBR
             // 
-            this.btnFlee.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFlee.Location = new System.Drawing.Point(180, 42);
-            this.btnFlee.Name = "btnFlee";
-            this.btnFlee.Size = new System.Drawing.Size(178, 40);
-            this.btnFlee.TabIndex = 1;
-            this.btnFlee.Text = "FLEE";
-            this.btnFlee.UseVisualStyleBackColor = true;
-            this.btnFlee.Click += new System.EventHandler(this.Flee);
+            this.btnBR.Enabled = false;
+            this.btnBR.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBR.Location = new System.Drawing.Point(180, 42);
+            this.btnBR.Name = "btnBR";
+            this.btnBR.Size = new System.Drawing.Size(178, 40);
+            this.btnBR.TabIndex = 1;
+            this.btnBR.UseVisualStyleBackColor = true;
+            this.btnBR.Click += new System.EventHandler(this.btnBR_Click);
+            this.btnBR.MouseLeave += new System.EventHandler(this.MouseLeavesButton);
             // 
-            // btnItems
+            // btnTR
             // 
-            this.btnItems.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnItems.Location = new System.Drawing.Point(180, 2);
-            this.btnItems.Name = "btnItems";
-            this.btnItems.Size = new System.Drawing.Size(178, 40);
-            this.btnItems.TabIndex = 2;
-            this.btnItems.Text = "ITEMS";
-            this.btnItems.UseVisualStyleBackColor = true;
+            this.btnTR.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTR.Location = new System.Drawing.Point(180, 2);
+            this.btnTR.Name = "btnTR";
+            this.btnTR.Size = new System.Drawing.Size(178, 40);
+            this.btnTR.TabIndex = 2;
+            this.btnTR.Text = "FLEE";
+            this.btnTR.UseVisualStyleBackColor = true;
+            this.btnTR.Click += new System.EventHandler(this.btnTR_Click);
+            this.btnTR.MouseLeave += new System.EventHandler(this.MouseLeavesButton);
             // 
-            // btnSwitch
+            // btnBL
             // 
-            this.btnSwitch.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSwitch.Location = new System.Drawing.Point(2, 42);
-            this.btnSwitch.Name = "btnSwitch";
-            this.btnSwitch.Size = new System.Drawing.Size(178, 40);
-            this.btnSwitch.TabIndex = 3;
-            this.btnSwitch.Text = "SWITCH";
-            this.btnSwitch.UseVisualStyleBackColor = true;
+            this.btnBL.Enabled = false;
+            this.btnBL.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBL.Location = new System.Drawing.Point(2, 42);
+            this.btnBL.Name = "btnBL";
+            this.btnBL.Size = new System.Drawing.Size(178, 40);
+            this.btnBL.TabIndex = 3;
+            this.btnBL.UseVisualStyleBackColor = true;
+            this.btnBL.Click += new System.EventHandler(this.btnBL_Click);
+            this.btnBL.MouseLeave += new System.EventHandler(this.MouseLeavesButton);
             // 
             // pnlActions
             // 
@@ -120,34 +137,177 @@
             this.pnlActions.Size = new System.Drawing.Size(370, 95);
             this.pnlActions.TabIndex = 4;
             // 
-            // pnlEnemy
+            // pnlStuff
             // 
-            this.pnlEnemy.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(221)))));
-            this.pnlEnemy.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pnlEnemy.Controls.Add(this.prgHealthEnemy);
-            this.pnlEnemy.Controls.Add(this.lblNameEnemy);
-            this.pnlEnemy.Location = new System.Drawing.Point(3, 3);
-            this.pnlEnemy.Name = "pnlEnemy";
-            this.pnlEnemy.Size = new System.Drawing.Size(182, 46);
-            this.pnlEnemy.TabIndex = 5;
+            this.pnlStuff.BackColor = System.Drawing.Color.White;
+            this.pnlStuff.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlStuff.Controls.Add(this.btnBL);
+            this.pnlStuff.Controls.Add(this.btnTL);
+            this.pnlStuff.Controls.Add(this.btnBR);
+            this.pnlStuff.Controls.Add(this.btnTR);
+            this.pnlStuff.Location = new System.Drawing.Point(3, 3);
+            this.pnlStuff.Name = "pnlStuff";
+            this.pnlStuff.Size = new System.Drawing.Size(362, 87);
+            this.pnlStuff.TabIndex = 5;
             // 
-            // lblNameEnemy
+            // pnlYellow
             // 
-            this.lblNameEnemy.AutoSize = true;
-            this.lblNameEnemy.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Bold);
-            this.lblNameEnemy.Location = new System.Drawing.Point(3, 4);
-            this.lblNameEnemy.Name = "lblNameEnemy";
-            this.lblNameEnemy.Size = new System.Drawing.Size(65, 22);
-            this.lblNameEnemy.TabIndex = 0;
-            this.lblNameEnemy.Text = "ENEMY";
+            this.pnlYellow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(226)))), ((int)(((byte)(128)))));
+            this.pnlYellow.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlYellow.Controls.Add(this.pnlWhite);
+            this.pnlYellow.Location = new System.Drawing.Point(3, 3);
+            this.pnlYellow.Name = "pnlYellow";
+            this.pnlYellow.Size = new System.Drawing.Size(354, 95);
+            this.pnlYellow.TabIndex = 8;
             // 
-            // prgHealthEnemy
+            // pnlWhite
             // 
-            this.prgHealthEnemy.Location = new System.Drawing.Point(7, 27);
-            this.prgHealthEnemy.Name = "prgHealthEnemy";
-            this.prgHealthEnemy.Size = new System.Drawing.Size(168, 10);
-            this.prgHealthEnemy.TabIndex = 1;
-            this.prgHealthEnemy.Value = 90;
+            this.pnlWhite.BackColor = System.Drawing.Color.White;
+            this.pnlWhite.Controls.Add(this.pnlTurquoise);
+            this.pnlWhite.Controls.Add(this.lblStatus);
+            this.pnlWhite.Location = new System.Drawing.Point(3, 3);
+            this.pnlWhite.Name = "pnlWhite";
+            this.pnlWhite.Size = new System.Drawing.Size(346, 87);
+            this.pnlWhite.TabIndex = 1;
+            // 
+            // pnlTurquoise
+            // 
+            this.pnlTurquoise.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(60)))), ((int)(((byte)(84)))));
+            this.pnlTurquoise.Controls.Add(this.label3);
+            this.pnlTurquoise.Controls.Add(this.label2);
+            this.pnlTurquoise.Controls.Add(this.label1);
+            this.pnlTurquoise.Controls.Add(this.lblObjective);
+            this.pnlTurquoise.Location = new System.Drawing.Point(3, 3);
+            this.pnlTurquoise.Name = "pnlTurquoise";
+            this.pnlTurquoise.Size = new System.Drawing.Size(340, 81);
+            this.pnlTurquoise.TabIndex = 2;
+            // 
+            // lblObjective
+            // 
+            this.lblObjective.AutoSize = true;
+            this.lblObjective.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Bold);
+            this.lblObjective.ForeColor = System.Drawing.Color.White;
+            this.lblObjective.Location = new System.Drawing.Point(66, 8);
+            this.lblObjective.Name = "lblObjective";
+            this.lblObjective.Size = new System.Drawing.Size(208, 22);
+            this.lblObjective.TabIndex = 0;
+            this.lblObjective.Text = "Defeat your ENEMY.";
+            // 
+            // lblStatus
+            // 
+            this.lblStatus.AutoSize = true;
+            this.lblStatus.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Bold);
+            this.lblStatus.ForeColor = System.Drawing.Color.White;
+            this.lblStatus.Location = new System.Drawing.Point(54, 31);
+            this.lblStatus.Name = "lblStatus";
+            this.lblStatus.Size = new System.Drawing.Size(230, 22);
+            this.lblStatus.TabIndex = 0;
+            this.lblStatus.Text = "What will PLAYER do?";
+            // 
+            // pnlBlack
+            // 
+            this.pnlBlack.BackColor = System.Drawing.Color.Black;
+            this.pnlBlack.Controls.Add(this.pnlActions);
+            this.pnlBlack.Controls.Add(this.pnlYellow);
+            this.pnlBlack.Location = new System.Drawing.Point(0, 340);
+            this.pnlBlack.Name = "pnlBlack";
+            this.pnlBlack.Size = new System.Drawing.Size(732, 101);
+            this.pnlBlack.TabIndex = 10;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Courier New", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(121, 59);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(98, 14);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Difficulty: 1";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Bold);
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(69, 35);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(109, 22);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "ENEMY HP:";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.SystemColors.Control;
+            this.label3.Location = new System.Drawing.Point(174, 34);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(98, 21);
+            this.label3.TabIndex = 3;
+            this.label3.Text = "80 / 100";
+            // 
+            // tmrFistFlurry
+            // 
+            this.tmrFistFlurry.Interval = 140;
+            this.tmrFistFlurry.Tick += new System.EventHandler(this.tmrFistFlurry_Tick);
+            // 
+            // pnlTop
+            // 
+            this.pnlTop.BackgroundImage = global::HumphreyErik2424RST.Properties.Resources.battlebg;
+            this.pnlTop.Controls.Add(this.picPunch);
+            this.pnlTop.Controls.Add(this.lblDescription);
+            this.pnlTop.Controls.Add(this.lblStatusBar);
+            this.pnlTop.Controls.Add(this.pnlGreenPlayer);
+            this.pnlTop.Controls.Add(this.picPortraitEnemy);
+            this.pnlTop.Controls.Add(this.pnlGreenEnemy);
+            this.pnlTop.Controls.Add(this.picPortraitPlayer);
+            this.pnlTop.Location = new System.Drawing.Point(0, 0);
+            this.pnlTop.Name = "pnlTop";
+            this.pnlTop.Size = new System.Drawing.Size(732, 344);
+            this.pnlTop.TabIndex = 9;
+            // 
+            // picPunch
+            // 
+            this.picPunch.BackColor = System.Drawing.Color.Transparent;
+            this.picPunch.Image = global::HumphreyErik2424RST.Properties.Resources.imgFlurryGraphic;
+            this.picPunch.Location = new System.Drawing.Point(437, 30);
+            this.picPunch.Name = "picPunch";
+            this.picPunch.Size = new System.Drawing.Size(50, 50);
+            this.picPunch.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.picPunch.TabIndex = 11;
+            this.picPunch.TabStop = false;
+            this.picPunch.Visible = false;
+            // 
+            // lblDescription
+            // 
+            this.lblDescription.AutoSize = true;
+            this.lblDescription.Location = new System.Drawing.Point(462, 325);
+            this.lblDescription.Name = "lblDescription";
+            this.lblDescription.Size = new System.Drawing.Size(268, 13);
+            this.lblDescription.TabIndex = 10;
+            this.lblDescription.Text = "This label serves as a description of a button\'s function.";
+            this.lblDescription.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblDescription.Visible = false;
+            // 
+            // lblStatusBar
+            // 
+            this.lblStatusBar.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lblStatusBar.Location = new System.Drawing.Point(0, 0);
+            this.lblStatusBar.Name = "lblStatusBar";
+            this.lblStatusBar.Size = new System.Drawing.Size(732, 25);
+            this.lblStatusBar.TabIndex = 9;
+            this.lblStatusBar.Text = "Waiting for player to make their move...";
+            this.lblStatusBar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // pnlGreenPlayer
+            // 
+            this.pnlGreenPlayer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(80)))), ((int)(((byte)(60)))));
+            this.pnlGreenPlayer.Controls.Add(this.pnlPlayer);
+            this.pnlGreenPlayer.Location = new System.Drawing.Point(277, 247);
+            this.pnlGreenPlayer.Name = "pnlGreenPlayer";
+            this.pnlGreenPlayer.Size = new System.Drawing.Size(253, 66);
+            this.pnlGreenPlayer.TabIndex = 8;
             // 
             // pnlPlayer
             // 
@@ -189,37 +349,6 @@
             this.lblNamePlayer.TabIndex = 0;
             this.lblNamePlayer.Text = "PLAYER";
             // 
-            // pnlYellow
-            // 
-            this.pnlYellow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(226)))), ((int)(((byte)(128)))));
-            this.pnlYellow.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pnlYellow.Controls.Add(this.pnlWhite);
-            this.pnlYellow.Location = new System.Drawing.Point(3, 3);
-            this.pnlYellow.Name = "pnlYellow";
-            this.pnlYellow.Size = new System.Drawing.Size(354, 95);
-            this.pnlYellow.TabIndex = 8;
-            // 
-            // lblStatus
-            // 
-            this.lblStatus.AutoSize = true;
-            this.lblStatus.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Bold);
-            this.lblStatus.ForeColor = System.Drawing.Color.White;
-            this.lblStatus.Location = new System.Drawing.Point(54, 31);
-            this.lblStatus.Name = "lblStatus";
-            this.lblStatus.Size = new System.Drawing.Size(230, 22);
-            this.lblStatus.TabIndex = 0;
-            this.lblStatus.Text = "What will PLAYER do?";
-            // 
-            // picPortraitPlayer
-            // 
-            this.picPortraitPlayer.BackColor = System.Drawing.Color.Transparent;
-            this.picPortraitPlayer.Image = global::HumphreyErik2424RST.Properties.Resources.sdgsg;
-            this.picPortraitPlayer.Location = new System.Drawing.Point(109, 170);
-            this.picPortraitPlayer.Name = "picPortraitPlayer";
-            this.picPortraitPlayer.Size = new System.Drawing.Size(113, 171);
-            this.picPortraitPlayer.TabIndex = 7;
-            this.picPortraitPlayer.TabStop = false;
-            // 
             // picPortraitEnemy
             // 
             this.picPortraitEnemy.BackColor = System.Drawing.Color.Transparent;
@@ -231,71 +360,6 @@
             this.picPortraitEnemy.TabIndex = 6;
             this.picPortraitEnemy.TabStop = false;
             // 
-            // pnlTop
-            // 
-            this.pnlTop.BackgroundImage = global::HumphreyErik2424RST.Properties.Resources.battlebg;
-            this.pnlTop.Controls.Add(this.pnlGreenPlayer);
-            this.pnlTop.Controls.Add(this.picPortraitEnemy);
-            this.pnlTop.Controls.Add(this.pnlGreenEnemy);
-            this.pnlTop.Controls.Add(this.picPortraitPlayer);
-            this.pnlTop.Location = new System.Drawing.Point(0, 0);
-            this.pnlTop.Name = "pnlTop";
-            this.pnlTop.Size = new System.Drawing.Size(732, 341);
-            this.pnlTop.TabIndex = 9;
-            // 
-            // pnlWhite
-            // 
-            this.pnlWhite.BackColor = System.Drawing.Color.White;
-            this.pnlWhite.Controls.Add(this.pnlTurquoise);
-            this.pnlWhite.Controls.Add(this.lblStatus);
-            this.pnlWhite.Location = new System.Drawing.Point(3, 3);
-            this.pnlWhite.Name = "pnlWhite";
-            this.pnlWhite.Size = new System.Drawing.Size(346, 87);
-            this.pnlWhite.TabIndex = 1;
-            // 
-            // pnlTurquoise
-            // 
-            this.pnlTurquoise.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(60)))), ((int)(((byte)(84)))));
-            this.pnlTurquoise.Controls.Add(this.label1);
-            this.pnlTurquoise.Location = new System.Drawing.Point(3, 3);
-            this.pnlTurquoise.Name = "pnlTurquoise";
-            this.pnlTurquoise.Size = new System.Drawing.Size(340, 81);
-            this.pnlTurquoise.TabIndex = 2;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Bold);
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(54, 31);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(230, 22);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "What will PLAYER do?";
-            // 
-            // pnlBlack
-            // 
-            this.pnlBlack.BackColor = System.Drawing.Color.Black;
-            this.pnlBlack.Controls.Add(this.pnlActions);
-            this.pnlBlack.Controls.Add(this.pnlYellow);
-            this.pnlBlack.Location = new System.Drawing.Point(0, 340);
-            this.pnlBlack.Name = "pnlBlack";
-            this.pnlBlack.Size = new System.Drawing.Size(732, 101);
-            this.pnlBlack.TabIndex = 10;
-            // 
-            // pnlStuff
-            // 
-            this.pnlStuff.BackColor = System.Drawing.Color.White;
-            this.pnlStuff.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pnlStuff.Controls.Add(this.btnSwitch);
-            this.pnlStuff.Controls.Add(this.btnFight);
-            this.pnlStuff.Controls.Add(this.btnFlee);
-            this.pnlStuff.Controls.Add(this.btnItems);
-            this.pnlStuff.Location = new System.Drawing.Point(3, 3);
-            this.pnlStuff.Name = "pnlStuff";
-            this.pnlStuff.Size = new System.Drawing.Size(362, 87);
-            this.pnlStuff.TabIndex = 5;
-            // 
             // pnlGreenEnemy
             // 
             this.pnlGreenEnemy.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(80)))), ((int)(((byte)(60)))));
@@ -305,14 +369,49 @@
             this.pnlGreenEnemy.Size = new System.Drawing.Size(188, 52);
             this.pnlGreenEnemy.TabIndex = 0;
             // 
-            // pnlGreenPlayer
+            // pnlEnemy
             // 
-            this.pnlGreenPlayer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(80)))), ((int)(((byte)(60)))));
-            this.pnlGreenPlayer.Controls.Add(this.pnlPlayer);
-            this.pnlGreenPlayer.Location = new System.Drawing.Point(277, 247);
-            this.pnlGreenPlayer.Name = "pnlGreenPlayer";
-            this.pnlGreenPlayer.Size = new System.Drawing.Size(253, 66);
-            this.pnlGreenPlayer.TabIndex = 8;
+            this.pnlEnemy.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(221)))));
+            this.pnlEnemy.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlEnemy.Controls.Add(this.prgHealthEnemy);
+            this.pnlEnemy.Controls.Add(this.lblNameEnemy);
+            this.pnlEnemy.Location = new System.Drawing.Point(3, 3);
+            this.pnlEnemy.Name = "pnlEnemy";
+            this.pnlEnemy.Size = new System.Drawing.Size(182, 46);
+            this.pnlEnemy.TabIndex = 5;
+            // 
+            // prgHealthEnemy
+            // 
+            this.prgHealthEnemy.Location = new System.Drawing.Point(7, 27);
+            this.prgHealthEnemy.Name = "prgHealthEnemy";
+            this.prgHealthEnemy.Size = new System.Drawing.Size(168, 10);
+            this.prgHealthEnemy.TabIndex = 1;
+            this.prgHealthEnemy.Value = 90;
+            // 
+            // lblNameEnemy
+            // 
+            this.lblNameEnemy.AutoSize = true;
+            this.lblNameEnemy.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Bold);
+            this.lblNameEnemy.Location = new System.Drawing.Point(3, 4);
+            this.lblNameEnemy.Name = "lblNameEnemy";
+            this.lblNameEnemy.Size = new System.Drawing.Size(65, 22);
+            this.lblNameEnemy.TabIndex = 0;
+            this.lblNameEnemy.Text = "ENEMY";
+            // 
+            // picPortraitPlayer
+            // 
+            this.picPortraitPlayer.BackColor = System.Drawing.Color.Transparent;
+            this.picPortraitPlayer.Image = global::HumphreyErik2424RST.Properties.Resources.sdgsg;
+            this.picPortraitPlayer.Location = new System.Drawing.Point(109, 170);
+            this.picPortraitPlayer.Name = "picPortraitPlayer";
+            this.picPortraitPlayer.Size = new System.Drawing.Size(113, 171);
+            this.picPortraitPlayer.TabIndex = 7;
+            this.picPortraitPlayer.TabStop = false;
+            // 
+            // tmrGameTicker
+            // 
+            this.tmrGameTicker.Interval = 1000;
+            this.tmrGameTicker.Tick += new System.EventHandler(this.tmrGameTicker_Tick);
             // 
             // frmBattle
             // 
@@ -328,34 +427,36 @@
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.Text = "Battle";
+            this.Load += new System.EventHandler(this.frmBattle_Load);
             this.pnlActions.ResumeLayout(false);
-            this.pnlEnemy.ResumeLayout(false);
-            this.pnlEnemy.PerformLayout();
-            this.pnlPlayer.ResumeLayout(false);
-            this.pnlPlayer.PerformLayout();
+            this.pnlStuff.ResumeLayout(false);
             this.pnlYellow.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.picPortraitPlayer)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picPortraitEnemy)).EndInit();
-            this.pnlTop.ResumeLayout(false);
-            this.pnlTop.PerformLayout();
             this.pnlWhite.ResumeLayout(false);
             this.pnlWhite.PerformLayout();
             this.pnlTurquoise.ResumeLayout(false);
             this.pnlTurquoise.PerformLayout();
             this.pnlBlack.ResumeLayout(false);
-            this.pnlStuff.ResumeLayout(false);
-            this.pnlGreenEnemy.ResumeLayout(false);
+            this.pnlTop.ResumeLayout(false);
+            this.pnlTop.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picPunch)).EndInit();
             this.pnlGreenPlayer.ResumeLayout(false);
+            this.pnlPlayer.ResumeLayout(false);
+            this.pnlPlayer.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picPortraitEnemy)).EndInit();
+            this.pnlGreenEnemy.ResumeLayout(false);
+            this.pnlEnemy.ResumeLayout(false);
+            this.pnlEnemy.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picPortraitPlayer)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Button btnFight;
-        private System.Windows.Forms.Button btnFlee;
-        private System.Windows.Forms.Button btnItems;
-        private System.Windows.Forms.Button btnSwitch;
+        private System.Windows.Forms.Button btnTL;
+        private System.Windows.Forms.Button btnBR;
+        private System.Windows.Forms.Button btnTR;
+        private System.Windows.Forms.Button btnBL;
         private System.Windows.Forms.Panel pnlActions;
         private System.Windows.Forms.Panel pnlEnemy;
         private System.Windows.Forms.PictureBox picPortraitEnemy;
@@ -371,10 +472,18 @@
         private System.Windows.Forms.Panel pnlTop;
         private System.Windows.Forms.Panel pnlWhite;
         private System.Windows.Forms.Panel pnlTurquoise;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblObjective;
         private System.Windows.Forms.Panel pnlStuff;
         private System.Windows.Forms.Panel pnlBlack;
         private System.Windows.Forms.Panel pnlGreenPlayer;
         private System.Windows.Forms.Panel pnlGreenEnemy;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblStatusBar;
+        private System.Windows.Forms.Timer tmrFistFlurry;
+        private System.Windows.Forms.Label lblDescription;
+        private System.Windows.Forms.PictureBox picPunch;
+        private System.Windows.Forms.Timer tmrGameTicker;
     }
 }

@@ -11,9 +11,9 @@ using HumphreyErik2424RST;
 
 namespace HumphreyErik2424RST
 {
-    public partial class LevelComplete : Form
+    public partial class frmLevelComplete : Form
     {
-        public LevelComplete()
+        public frmLevelComplete()
         {
             InitializeComponent();
         }
@@ -32,6 +32,11 @@ namespace HumphreyErik2424RST
                 frmSplashScreen menu = new frmSplashScreen();
                 menu.Show();
             }
+        }
+
+        private void btnBuyHatchet_MouseEnter(object sender, EventArgs e)
+        {
+            lblShopDescription.Text = "Chop trees faster. (Survival)";
         }
     }
 }
