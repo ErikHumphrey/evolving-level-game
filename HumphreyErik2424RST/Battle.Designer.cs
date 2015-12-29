@@ -45,6 +45,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.tmrFistFlurry = new System.Windows.Forms.Timer(this.components);
+            this.tmrGameTicker = new System.Windows.Forms.Timer(this.components);
             this.pnlTop = new System.Windows.Forms.Panel();
             this.picPunch = new System.Windows.Forms.PictureBox();
             this.lblDescription = new System.Windows.Forms.Label();
@@ -60,7 +61,6 @@
             this.prgHealthEnemy = new System.Windows.Forms.ProgressBar();
             this.lblNameEnemy = new System.Windows.Forms.Label();
             this.picPortraitPlayer = new System.Windows.Forms.PictureBox();
-            this.tmrGameTicker = new System.Windows.Forms.Timer(this.components);
             this.pnlActions.SuspendLayout();
             this.pnlStuff.SuspendLayout();
             this.pnlYellow.SuspendLayout();
@@ -83,7 +83,7 @@
             this.btnTL.Location = new System.Drawing.Point(2, 2);
             this.btnTL.Name = "btnTL";
             this.btnTL.Size = new System.Drawing.Size(178, 40);
-            this.btnTL.TabIndex = 0;
+            this.btnTL.TabIndex = 9;
             this.btnTL.Text = "FIGHT";
             this.btnTL.UseVisualStyleBackColor = true;
             this.btnTL.Click += new System.EventHandler(this.btnTL_Click);
@@ -96,7 +96,7 @@
             this.btnBR.Location = new System.Drawing.Point(180, 42);
             this.btnBR.Name = "btnBR";
             this.btnBR.Size = new System.Drawing.Size(178, 40);
-            this.btnBR.TabIndex = 1;
+            this.btnBR.TabIndex = 678;
             this.btnBR.UseVisualStyleBackColor = true;
             this.btnBR.Click += new System.EventHandler(this.btnBR_Click);
             this.btnBR.MouseLeave += new System.EventHandler(this.MouseLeavesButton);
@@ -107,7 +107,7 @@
             this.btnTR.Location = new System.Drawing.Point(180, 2);
             this.btnTR.Name = "btnTR";
             this.btnTR.Size = new System.Drawing.Size(178, 40);
-            this.btnTR.TabIndex = 2;
+            this.btnTR.TabIndex = 78;
             this.btnTR.Text = "FLEE";
             this.btnTR.UseVisualStyleBackColor = true;
             this.btnTR.Click += new System.EventHandler(this.btnTR_Click);
@@ -120,7 +120,7 @@
             this.btnBL.Location = new System.Drawing.Point(2, 42);
             this.btnBL.Name = "btnBL";
             this.btnBL.Size = new System.Drawing.Size(178, 40);
-            this.btnBL.TabIndex = 3;
+            this.btnBL.TabIndex = 456;
             this.btnBL.UseVisualStyleBackColor = true;
             this.btnBL.Click += new System.EventHandler(this.btnBL_Click);
             this.btnBL.MouseLeave += new System.EventHandler(this.MouseLeavesButton);
@@ -180,7 +180,7 @@
             this.pnlTurquoise.Location = new System.Drawing.Point(3, 3);
             this.pnlTurquoise.Name = "pnlTurquoise";
             this.pnlTurquoise.Size = new System.Drawing.Size(340, 81);
-            this.pnlTurquoise.TabIndex = 2;
+            this.pnlTurquoise.TabIndex = 0;
             // 
             // lblObjective
             // 
@@ -251,6 +251,11 @@
             // 
             this.tmrFistFlurry.Interval = 140;
             this.tmrFistFlurry.Tick += new System.EventHandler(this.tmrFistFlurry_Tick);
+            // 
+            // tmrGameTicker
+            // 
+            this.tmrGameTicker.Interval = 2000;
+            this.tmrGameTicker.Tick += new System.EventHandler(this.tmrGameTicker_Tick);
             // 
             // pnlTop
             // 
@@ -407,11 +412,6 @@
             this.picPortraitPlayer.Size = new System.Drawing.Size(113, 171);
             this.picPortraitPlayer.TabIndex = 7;
             this.picPortraitPlayer.TabStop = false;
-            // 
-            // tmrGameTicker
-            // 
-            this.tmrGameTicker.Interval = 1000;
-            this.tmrGameTicker.Tick += new System.EventHandler(this.tmrGameTicker_Tick);
             // 
             // frmBattle
             // 

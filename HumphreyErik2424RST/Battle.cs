@@ -23,7 +23,8 @@ namespace HumphreyErik2424RST
         string playerHitsEnemyFor = "PLAYER" + " hits " + "ENEMY" + " for ";
 
         // All sound effects used on this level
-        SoundPlayer hitSuccess = new SoundPlayer(HumphreyErik2424RST.Properties.Resources.sfxHit);
+        SoundPlayer hitSuccess = new SoundPlayer(HumphreyErik2424RST.Properties.Resources.sfxHitImproved);
+        SoundPlayer levelComplete = new SoundPlayer(HumphreyErik2424RST.Properties.Resources.sfxWeedVictory);
 
         public frmBattle()
         {
@@ -127,7 +128,6 @@ namespace HumphreyErik2424RST
 
             if (flurryHits < 3)
             {
-                hitSuccess.Play();
                 flurryHits++;
                 // Set enemy health to 0 if the blow would be overkill to prevent crash
                 if (prgHealthEnemy.Value - 20 < 0)
@@ -136,6 +136,7 @@ namespace HumphreyErik2424RST
                     prgHealthEnemy.Value -= 20;
                 if (flurryHits == 1)
                 {
+                    hitSuccess.Play();
                     picPunch.Location = new Point(449, 145);
                     lblStatusBar.Text = playerHitsEnemyFor + "20 x " + flurryHits + " damage!";
                 }
@@ -173,6 +174,7 @@ namespace HumphreyErik2424RST
             }
             if (enemyDead == true)
             {
+                levelComplete.Play();
                 HumphreyErik2424RST.frmLevelComplete LevelComplete = new HumphreyErik2424RST.frmLevelComplete();
                 LevelComplete.Show();
                 this.Hide();

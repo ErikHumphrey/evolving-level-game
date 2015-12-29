@@ -139,7 +139,7 @@
             this.grpShop.Location = new System.Drawing.Point(30, 256);
             this.grpShop.Name = "grpShop";
             this.grpShop.Size = new System.Drawing.Size(392, 237);
-            this.grpShop.TabIndex = 2;
+            this.grpShop.TabIndex = 0;
             this.grpShop.TabStop = false;
             this.grpShop.Text = "Shop";
             // 
@@ -184,7 +184,7 @@
             this.btnBuyHatchet.Location = new System.Drawing.Point(67, 49);
             this.btnBuyHatchet.Name = "btnBuyHatchet";
             this.btnBuyHatchet.Size = new System.Drawing.Size(75, 23);
-            this.btnBuyHatchet.TabIndex = 1;
+            this.btnBuyHatchet.TabIndex = 9;
             this.btnBuyHatchet.Text = "Buy";
             this.btnBuyHatchet.UseVisualStyleBackColor = true;
             this.btnBuyHatchet.MouseEnter += new System.EventHandler(this.btnBuyHatchet_MouseEnter);
