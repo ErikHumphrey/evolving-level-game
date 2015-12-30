@@ -22,6 +22,7 @@ namespace HumphreyErik2424RST
         int enemyHealthToDecay;
         int playerMaxHP = 100;
         int enemyMaxHP = 100;
+        string enemyName;
         bool selectingAttack = false;
         bool enemyDead = false;
         string playerHitsEnemyFor = "PLAYER" + " hits " + "ENEMY" + " for ";
@@ -56,6 +57,7 @@ namespace HumphreyErik2424RST
                 case 1:
                     prgHealthEnemy.Maximum = enemyMaxHP;
                     prgHealthEnemy.Value = 80;
+                    lblNameEnemy.Text = "HOODED FIGURE";
                     break;
                 case 2:
                     prgHealthEnemy.Value = prgHealthEnemy.Maximum = 100;
@@ -126,7 +128,7 @@ namespace HumphreyErik2424RST
                 swipeFrame = 0;
                 picSwipe.Visible = true;
                 tmrAnimationTicker.Start();
-                prgHealthEnemy.Value -= 10;
+                enemyHealthToDecay = 10;
                 tmrEnemyHealthDecay.Start();
             }
             else if (btnTL.Text == "TORNADO KICK")
@@ -249,6 +251,10 @@ namespace HumphreyErik2424RST
         void enemyDamaged()
         {
             lblHealthEnemy.Text = prgHealthEnemy.Value + " / " + enemyMaxHP; // Change the health counter to reflect the new value
+            if (prgHealthEnemy.Value < prgHealthEnemy.Maximum / 2 && prgHealthEnemy.Value > prgHealthEnemy.Maximum / 5)
+                ModifyProgressBarColor.SetState(prgHealthEnemy, 3);
+            else if (prgHealthEnemy.Value < prgHealthEnemy.Maximum / 5)
+                ModifyProgressBarColor.SetState(prgHealthEnemy, 2);
         }
 
         private void tmrEnemyHealthDecay_Tick(object sender, EventArgs e)

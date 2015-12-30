@@ -361,9 +361,9 @@
             this.lblNamePlayer.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Bold);
             this.lblNamePlayer.Location = new System.Drawing.Point(3, 4);
             this.lblNamePlayer.Name = "lblNamePlayer";
-            this.lblNamePlayer.Size = new System.Drawing.Size(76, 22);
+            this.lblNamePlayer.Size = new System.Drawing.Size(54, 22);
             this.lblNamePlayer.TabIndex = 0;
-            this.lblNamePlayer.Text = "PLAYER";
+            this.lblNamePlayer.Text = "ERIK";
             // 
             // picPortraitEnemy
             // 
@@ -412,9 +412,9 @@
             this.lblNameEnemy.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Bold);
             this.lblNameEnemy.Location = new System.Drawing.Point(3, 4);
             this.lblNameEnemy.Name = "lblNameEnemy";
-            this.lblNameEnemy.Size = new System.Drawing.Size(65, 22);
+            this.lblNameEnemy.Size = new System.Drawing.Size(153, 22);
             this.lblNameEnemy.TabIndex = 0;
-            this.lblNameEnemy.Text = "ENEMY";
+            this.lblNameEnemy.Text = "HOODED FIGURE";
             // 
             // picPortraitPlayer
             // 
