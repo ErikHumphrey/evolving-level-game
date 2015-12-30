@@ -118,11 +118,71 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="imgSwipe3" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\imgSwipe3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="sfxHitImproved" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\sfxHitImproved.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="heroSmile" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\heroSmile.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="battlebg" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\battlebg.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="enemyplace" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\enemyplace.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="sdgsg" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\sdgsg.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="imgSwipe4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\imgSwipe4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="sfxSwoosh" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\sfxSwoosh.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="cultistimproved" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cultistimproved.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="geitemimage_1349" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\geitemimage_1349.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="imgSwipe5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\imgSwipe5.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="sfxWeedVictory" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\sfxWeedVictory.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="imgIronAxe" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\imgIronAxe.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="imgSwipe1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\imgSwipe1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="imgFlurryGraphic" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\imgFlurryGraphic.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="flurryicon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\flurryicon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="imgCultist" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\imgCultist.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="stumpforproject" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\stumpforproject.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="imgSwipe3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\imgSwipe3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="imgSwipe6" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\imgSwipe6.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="stumpfix1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\stumpfix1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="imgSwipe2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\imgSwipe2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="testhorizon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\testhorizon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="imgIronAxe1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\imgIronAxe.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -130,76 +190,19 @@
   <data name="tree" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\tree.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="flurryicon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\flurryicon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="testhorizon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\testhorizon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="battlebg" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\battlebg.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="imgSwipe4" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\imgSwipe4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="imgSwipe6" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\imgSwipe6.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="sdgsg" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\sdgsg.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="img50Cal" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\img50Cal.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="sfxWeedVictory" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\sfxWeedVictory.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="imgSwipe5" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\imgSwipe5.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="sfxHit" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\sfxHit.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="changer" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\2015-12-28_23-36-01.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="imgSwipe1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\imgSwipe1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="imgIronAxe" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\imgIronAxe.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="geitemimage_1349" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\geitemimage_1349.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="cultistimproved" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\cultistimproved.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="img50Cal" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\img50Cal.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="imgFlurryGraphic1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\imgFlurryGraphic1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="imgCultist" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\imgCultist.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="imgSwipe2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\imgSwipe2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="enemyplace" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\enemyplace.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="stumpfix1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\stumpfix1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="sfxHit" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\sfxHit.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="sfxHitImproved" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\sfxHitImproved.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="imgFlurryGraphic" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\imgFlurryGraphic.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="heroSmile" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\heroSmile.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="sfxSwoosh" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\sfxSwoosh.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="whirlwindkick" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\whirlwindkick.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
