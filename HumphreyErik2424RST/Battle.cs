@@ -36,7 +36,7 @@ namespace HumphreyErik2424RST
             picSwipe.Parent = picPortraitEnemy;
             picPunch.Parent = picPortraitEnemy;
             picPunch.BringToFront();
-            picSwipe.Location = new Point(0, 0);
+            picSwipe.Location = new Point(27, 40);
 
         }
 
