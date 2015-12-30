@@ -17,6 +17,7 @@ namespace HumphreyErik2424RST
     public partial class frmBattle : Form
     {
         int swipeFrame, flurryHits = 0;
+        int enemyMaxHP = 100;
         bool selectingAttack = false;
         bool enemyDead = false;
         string playerHitsEnemyFor = "PLAYER" + " hits " + "ENEMY" + " for ";
@@ -48,20 +49,24 @@ namespace HumphreyErik2424RST
             switch (LevelGen.difficulty)
             {
                 case 1:
-                    prgHealthEnemy.Maximum = 100;
+                    prgHealthEnemy.Maximum = enemyMaxHP;
                     prgHealthEnemy.Value = 80;
                     break;
                 case 2:
                     prgHealthEnemy.Value = prgHealthEnemy.Maximum = 100;
+                    enemyDamaged();
                     break;
                 case 3:
                     prgHealthEnemy.Value = prgHealthEnemy.Maximum = 120;
+                    enemyDamaged();
                     break;
                 case 4:
                     prgHealthEnemy.Value = prgHealthEnemy.Maximum = 150;
+                    enemyDamaged();
                     break;
                 case 5:
                     prgHealthEnemy.Value = prgHealthEnemy.Maximum = 200;
+                    enemyDamaged();
                     break;
             }
         }
@@ -80,6 +85,7 @@ namespace HumphreyErik2424RST
             else if (btnTL.Text == "PUNCH")
             {
                 prgHealthEnemy.Value -= 30;
+                enemyDamaged();
                 lblStatusBar.Text = playerHitsEnemyFor + "30 damage!";
             }
             else if (btnTL.Text == "FIST FLURRY")
@@ -89,6 +95,7 @@ namespace HumphreyErik2424RST
             else if (btnTL.Text == "ONE PUNCH MAN")
             {
                 prgHealthEnemy.Value -= 9999;
+                enemyDamaged();
                 lblStatusBar.Text = playerHitsEnemyFor + "9999 damage!";
             }
         }
@@ -113,10 +120,12 @@ namespace HumphreyErik2424RST
                 picSwipe.Visible = true;
                 tmrAnimationTicker.Start();
                 prgHealthEnemy.Value -= 10;
+                enemyDamaged();
             }
             else if (btnTL.Text == "TORNADO KICK")
             {
                 prgHealthEnemy.Value -= 10;
+                enemyDamaged();
             }
         }
 
@@ -157,6 +166,8 @@ namespace HumphreyErik2424RST
                     picPunch.Location = new Point(10, 20);
                     lblStatusBar.Text = playerHitsEnemyFor + "20 x " + flurryHits + " damage!";
                 }
+
+                enemyDamaged();
             }
             else
             {
@@ -225,6 +236,11 @@ namespace HumphreyErik2424RST
         private void button1_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        void enemyDamaged()
+        {
+            lblEnemyHP.Text = prgHealthEnemy.Value + " / " + enemyMaxHP; // Change the health counter to reflect the new value
         }
     }
 }
