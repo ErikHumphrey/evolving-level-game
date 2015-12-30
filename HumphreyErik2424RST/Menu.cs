@@ -1,4 +1,7 @@
-﻿using System;
+﻿// Main Menu
+// This is the form that loads when you start the program!
+
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -66,6 +69,7 @@ namespace HumphreyErik2424RST
 
         private void btnBattle_Click(object sender, EventArgs e)
         {
+            LevelGen.difficulty = 1;
             frmBattle Battle = new frmBattle();
             Battle.Show();
             this.Hide();

@@ -64,6 +64,7 @@
             this.picPortraitPlayer = new System.Windows.Forms.PictureBox();
             this.tmrEnemyHealthDecay = new System.Windows.Forms.Timer(this.components);
             this.lblHealthEnemy = new System.Windows.Forms.Label();
+            this.tmrPlayerHealthDecay = new System.Windows.Forms.Timer(this.components);
             this.pnlActions.SuspendLayout();
             this.pnlStuff.SuspendLayout();
             this.pnlYellow.SuspendLayout();
@@ -101,6 +102,7 @@
             this.btnBR.Name = "btnBR";
             this.btnBR.Size = new System.Drawing.Size(178, 40);
             this.btnBR.TabIndex = 678;
+            this.btnBR.Text = "FLEE";
             this.btnBR.UseVisualStyleBackColor = true;
             this.btnBR.Click += new System.EventHandler(this.btnBR_Click);
             this.btnBR.MouseLeave += new System.EventHandler(this.MouseLeavesButton);
@@ -112,7 +114,7 @@
             this.btnTR.Name = "btnTR";
             this.btnTR.Size = new System.Drawing.Size(178, 40);
             this.btnTR.TabIndex = 78;
-            this.btnTR.Text = "FLEE";
+            this.btnTR.Text = "REST";
             this.btnTR.UseVisualStyleBackColor = true;
             this.btnTR.Click += new System.EventHandler(this.btnTR_Click);
             this.btnTR.MouseLeave += new System.EventHandler(this.MouseLeavesButton);
@@ -125,6 +127,7 @@
             this.btnBL.Name = "btnBL";
             this.btnBL.Size = new System.Drawing.Size(178, 40);
             this.btnBL.TabIndex = 456;
+            this.btnBL.Text = "ITEMS";
             this.btnBL.UseVisualStyleBackColor = true;
             this.btnBL.Click += new System.EventHandler(this.btnBL_Click);
             this.btnBL.MouseLeave += new System.EventHandler(this.MouseLeavesButton);
@@ -160,8 +163,9 @@
             this.pnlYellow.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnlYellow.Controls.Add(this.pnlWhite);
             this.pnlYellow.Location = new System.Drawing.Point(3, 3);
+            this.pnlYellow.MaximumSize = new System.Drawing.Size(1000, 95);
             this.pnlYellow.Name = "pnlYellow";
-            this.pnlYellow.Size = new System.Drawing.Size(354, 95);
+            this.pnlYellow.Size = new System.Drawing.Size(725, 95);
             this.pnlYellow.TabIndex = 8;
             // 
             // pnlWhite
@@ -171,7 +175,7 @@
             this.pnlWhite.Controls.Add(this.lblStatus);
             this.pnlWhite.Location = new System.Drawing.Point(3, 3);
             this.pnlWhite.Name = "pnlWhite";
-            this.pnlWhite.Size = new System.Drawing.Size(346, 87);
+            this.pnlWhite.Size = new System.Drawing.Size(719, 87);
             this.pnlWhite.TabIndex = 1;
             // 
             // pnlTurquoise
@@ -181,7 +185,7 @@
             this.pnlTurquoise.Controls.Add(this.lblObjective);
             this.pnlTurquoise.Location = new System.Drawing.Point(3, 3);
             this.pnlTurquoise.Name = "pnlTurquoise";
-            this.pnlTurquoise.Size = new System.Drawing.Size(340, 81);
+            this.pnlTurquoise.Size = new System.Drawing.Size(713, 81);
             this.pnlTurquoise.TabIndex = 0;
             // 
             // lblDifficultyCount
@@ -348,7 +352,7 @@
             // prgHealthPlayer
             // 
             this.prgHealthPlayer.Location = new System.Drawing.Point(7, 27);
-            this.prgHealthPlayer.MarqueeAnimationSpeed = 400;
+            this.prgHealthPlayer.MarqueeAnimationSpeed = 0;
             this.prgHealthPlayer.Name = "prgHealthPlayer";
             this.prgHealthPlayer.Size = new System.Drawing.Size(230, 10);
             this.prgHealthPlayer.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
@@ -400,6 +404,7 @@
             // prgHealthEnemy
             // 
             this.prgHealthEnemy.Location = new System.Drawing.Point(7, 27);
+            this.prgHealthEnemy.MarqueeAnimationSpeed = 0;
             this.prgHealthEnemy.Name = "prgHealthEnemy";
             this.prgHealthEnemy.Size = new System.Drawing.Size(168, 10);
             this.prgHealthEnemy.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
@@ -440,6 +445,11 @@
             this.lblHealthEnemy.Size = new System.Drawing.Size(72, 16);
             this.lblHealthEnemy.TabIndex = 3;
             this.lblHealthEnemy.Text = "80 / 100";
+            // 
+            // tmrPlayerHealthDecay
+            // 
+            this.tmrPlayerHealthDecay.Interval = 30;
+            this.tmrPlayerHealthDecay.Tick += new System.EventHandler(this.tmrPlayerHealthDecay_Tick);
             // 
             // frmBattle
             // 
@@ -516,5 +526,6 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Timer tmrEnemyHealthDecay;
         private System.Windows.Forms.Label lblHealthEnemy;
+        private System.Windows.Forms.Timer tmrPlayerHealthDecay;
     }
 }

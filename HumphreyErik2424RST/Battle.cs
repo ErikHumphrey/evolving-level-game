@@ -19,12 +19,12 @@ namespace HumphreyErik2424RST
     public partial class frmBattle : Form
     {
         int swipeFrame, flurryHits = 0;
-        int enemyHealthToDecay;
+        int enemyHealthToDecay, playerHealthToDecay;
         int playerMaxHP = 100;
         int enemyMaxHP = 100;
         string enemyName;
         bool selectingAttack = false;
-        bool enemyDead = false;
+        bool isEnemyTurn, enemyDead = false;
         string playerHitsEnemyFor = "PLAYER" + " hits " + "ENEMY" + " for ";
 
         // All sound effects used on this level
@@ -49,6 +49,7 @@ namespace HumphreyErik2424RST
 
         private void frmBattle_Load(object sender, EventArgs e)
         {
+            ModifyProgressBarColor.SetState(prgHealthEnemy, 1);
             tmrGameTicker.Start();
             prgHealthPlayer.Maximum = prgHealthPlayer.Value = 100;
 
@@ -82,6 +83,11 @@ namespace HumphreyErik2424RST
 
         private void btnTL_Click(object sender, EventArgs e)
         {
+            if (btnTL.Text != "FIGHT")
+            {
+                pnlActions.Visible = false;
+            }
+
             if (btnTL.Text == "FIGHT")
             {
                 selectingAttack = true;
@@ -110,17 +116,15 @@ namespace HumphreyErik2424RST
 
         private void btnTR_Click(object sender, EventArgs e)
         {
-            if (btnTR.Text == "FLEE")
+            if (btnTR.Text != "REST")
             {
-                // Confirm flee
-                DialogResult wantsToFlee = MessageBox.Show("Are you sure you want to flee from this fight?\r\n\r\nYou won't earn any points for this level.",
-                "Confirm flee",
-                MessageBoxButtons.YesNo);
+                pnlActions.Visible = false;
+            }
 
-                if (wantsToFlee == DialogResult.Yes)
-                {
-                    this.Close(); // Exit the level
-                }
+            if (btnTR.Text == "REST")
+            {
+                playerHealthToDecay = -20;
+                tmrPlayerHealthDecay.Start();
             }
             else if (btnTR.Text == "FRONT KICK")
             {
@@ -145,6 +149,23 @@ namespace HumphreyErik2424RST
 
         private void btnBR_Click(object sender, EventArgs e)
         {
+            if (btnBR.Text != "FLEE")
+            {
+                pnlActions.Visible = false;
+            }
+
+            if (btnBR.Text == "FLEE")
+            {
+                // Confirm flee
+                DialogResult wantsToFlee = MessageBox.Show("Are you sure you want to flee from this fight?\r\n\r\nYou won't earn any points for this level.",
+                "Confirm flee",
+                MessageBoxButtons.YesNo);
+
+                if (wantsToFlee == DialogResult.Yes)
+                {
+                    this.Close(); // Exit the level
+                }
+            }
         }
 
         private void tmrFistFlurry_Tick(object sender, EventArgs e)
@@ -248,6 +269,27 @@ namespace HumphreyErik2424RST
             Application.Exit();
         }
 
+        // Method that triggers when the player takes damage or is healed (e.g. by resting)
+
+        void playerDamaged()
+        {
+            lblHealthPlayer.Text = prgHealthPlayer.Value + " / " + playerMaxHP; // Change the health counter to reflect the new value
+
+            // The code below uses my custom ColourProgressBar class. You can find the source for the code I borrowed in ColourProgressBar.cs.
+
+            // If the player has less than half their health remaining but more than 1/5, set the ProgressBar to a yellow state
+            if (prgHealthPlayer.Value < prgHealthPlayer.Maximum / 2 && prgHealthPlayer.Value > prgHealthPlayer.Maximum / 5)
+                ModifyProgressBarColor.SetState(prgHealthPlayer, 3);
+            // If the player has less than 1/5 of their health remaining, set the ProgressBar to a red state
+            else if (prgHealthPlayer.Value < prgHealthPlayer.Maximum / 5)
+                ModifyProgressBarColor.SetState(prgHealthPlayer, 2);
+            // Otherwise, make sure it's green
+            else
+                ModifyProgressBarColor.SetState(prgHealthPlayer, 1);
+        }
+
+        // Same thing but for the enemy. Enemy currently cannot gain health / heal, so that part is left out
+
         void enemyDamaged()
         {
             lblHealthEnemy.Text = prgHealthEnemy.Value + " / " + enemyMaxHP; // Change the health counter to reflect the new value
@@ -285,7 +327,52 @@ namespace HumphreyErik2424RST
 
         void enemyTurn()
         {
+            isEnemyTurn = true;
 
+            switch (LevelGen.difficulty)
+            {
+                case 1:
+                    playerHealthToDecay = 30; // The damage the punch deals.
+                    tmrPlayerHealthDecay.Start(); // Start the health loss chain of events
+                    lblStatusBar.Text = playerHitsEnemyFor + "30 damage!";  // Update the status bar. This is done seperately because Fist Flurry hits multiple times.
+                    break;
+            }
+        }
+
+        void playerTurn()
+        {
+            pnlActions.Visible = true;
+        }
+
+        private void tmrPlayerHealthDecay_Tick(object sender, EventArgs e)
+        {
+            // Progressively decrease the health of the enemy so it appears as if the progress bar is animating
+            // This gives a smooth transition instead of the health being lost instantly
+            if (playerHealthToDecay > 0)
+            {
+                // Deplete progress bar to 0 if it might go under 0 to prevent a crash
+                if (prgHealthPlayer.Value - 1 < 0)
+                {
+                    prgHealthPlayer.Value = 0;
+                    playerDamaged();
+                }
+                else
+                {
+                    playerHealthToDecay--;
+                    prgHealthPlayer.Value--;
+                    playerDamaged();
+                }
+            }
+            else
+            {
+                // Initiate the player's turn if the health decay was a result of an enemy action
+                if (isEnemyTurn)
+                    playerTurn();
+                // Initiate the enemy's turn if the player just healed themself
+                else
+                    enemyTurn();
+                tmrPlayerHealthDecay.Stop();
+            }
         }
     }
 }

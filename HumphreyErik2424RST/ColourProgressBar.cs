@@ -7,6 +7,11 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using HumphreyErik2424RST;
 
+/* Borrowed code used in the Battle level to change the progress bar style while still using VisualStyles, otherwise the program would look like Windows XP.
+ * Originally answered by user1032613 on StackOverflow
+ * Permalink: http://stackoverflow.com/a/9753302/3011319
+ */
+
 namespace ColourProgressBar
 {
     public static class ModifyProgressBarColor
