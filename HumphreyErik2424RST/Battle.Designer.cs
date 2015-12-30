@@ -38,8 +38,6 @@
             this.pnlYellow = new System.Windows.Forms.Panel();
             this.pnlWhite = new System.Windows.Forms.Panel();
             this.pnlTurquoise = new System.Windows.Forms.Panel();
-            this.lblEnemyHP = new System.Windows.Forms.Label();
-            this.lblEnemyHPTitle = new System.Windows.Forms.Label();
             this.lblDifficultyCount = new System.Windows.Forms.Label();
             this.lblObjective = new System.Windows.Forms.Label();
             this.lblStatus = new System.Windows.Forms.Label();
@@ -65,6 +63,7 @@
             this.lblNameEnemy = new System.Windows.Forms.Label();
             this.picPortraitPlayer = new System.Windows.Forms.PictureBox();
             this.tmrEnemyHealthDecay = new System.Windows.Forms.Timer(this.components);
+            this.lblHealthEnemy = new System.Windows.Forms.Label();
             this.pnlActions.SuspendLayout();
             this.pnlStuff.SuspendLayout();
             this.pnlYellow.SuspendLayout();
@@ -178,8 +177,6 @@
             // pnlTurquoise
             // 
             this.pnlTurquoise.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(60)))), ((int)(((byte)(84)))));
-            this.pnlTurquoise.Controls.Add(this.lblEnemyHP);
-            this.pnlTurquoise.Controls.Add(this.lblEnemyHPTitle);
             this.pnlTurquoise.Controls.Add(this.lblDifficultyCount);
             this.pnlTurquoise.Controls.Add(this.lblObjective);
             this.pnlTurquoise.Location = new System.Drawing.Point(3, 3);
@@ -187,34 +184,12 @@
             this.pnlTurquoise.Size = new System.Drawing.Size(340, 81);
             this.pnlTurquoise.TabIndex = 0;
             // 
-            // lblEnemyHP
-            // 
-            this.lblEnemyHP.AutoSize = true;
-            this.lblEnemyHP.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEnemyHP.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblEnemyHP.Location = new System.Drawing.Point(174, 34);
-            this.lblEnemyHP.Name = "lblEnemyHP";
-            this.lblEnemyHP.Size = new System.Drawing.Size(98, 21);
-            this.lblEnemyHP.TabIndex = 3;
-            this.lblEnemyHP.Text = "80 / 100";
-            // 
-            // lblEnemyHPTitle
-            // 
-            this.lblEnemyHPTitle.AutoSize = true;
-            this.lblEnemyHPTitle.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Bold);
-            this.lblEnemyHPTitle.ForeColor = System.Drawing.Color.White;
-            this.lblEnemyHPTitle.Location = new System.Drawing.Point(69, 35);
-            this.lblEnemyHPTitle.Name = "lblEnemyHPTitle";
-            this.lblEnemyHPTitle.Size = new System.Drawing.Size(109, 22);
-            this.lblEnemyHPTitle.TabIndex = 2;
-            this.lblEnemyHPTitle.Text = "ENEMY HP:";
-            // 
             // lblDifficultyCount
             // 
             this.lblDifficultyCount.AutoSize = true;
             this.lblDifficultyCount.Font = new System.Drawing.Font("Courier New", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDifficultyCount.ForeColor = System.Drawing.Color.White;
-            this.lblDifficultyCount.Location = new System.Drawing.Point(121, 59);
+            this.lblDifficultyCount.Location = new System.Drawing.Point(114, 54);
             this.lblDifficultyCount.Name = "lblDifficultyCount";
             this.lblDifficultyCount.Size = new System.Drawing.Size(98, 14);
             this.lblDifficultyCount.TabIndex = 1;
@@ -225,11 +200,11 @@
             this.lblObjective.AutoSize = true;
             this.lblObjective.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Bold);
             this.lblObjective.ForeColor = System.Drawing.Color.White;
-            this.lblObjective.Location = new System.Drawing.Point(66, 8);
+            this.lblObjective.Location = new System.Drawing.Point(95, 28);
             this.lblObjective.Name = "lblObjective";
-            this.lblObjective.Size = new System.Drawing.Size(208, 22);
+            this.lblObjective.Size = new System.Drawing.Size(153, 22);
             this.lblObjective.TabIndex = 0;
-            this.lblObjective.Text = "Defeat your ENEMY.";
+            this.lblObjective.Text = "Defeat ENEMY.";
             // 
             // lblStatus
             // 
@@ -373,8 +348,10 @@
             // prgHealthPlayer
             // 
             this.prgHealthPlayer.Location = new System.Drawing.Point(7, 27);
+            this.prgHealthPlayer.MarqueeAnimationSpeed = 400;
             this.prgHealthPlayer.Name = "prgHealthPlayer";
             this.prgHealthPlayer.Size = new System.Drawing.Size(230, 10);
+            this.prgHealthPlayer.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
             this.prgHealthPlayer.TabIndex = 1;
             this.prgHealthPlayer.Value = 100;
             // 
@@ -403,20 +380,21 @@
             // 
             this.pnlGreenEnemy.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(80)))), ((int)(((byte)(60)))));
             this.pnlGreenEnemy.Controls.Add(this.pnlEnemy);
-            this.pnlGreenEnemy.Location = new System.Drawing.Point(228, 61);
+            this.pnlGreenEnemy.Location = new System.Drawing.Point(228, 52);
             this.pnlGreenEnemy.Name = "pnlGreenEnemy";
-            this.pnlGreenEnemy.Size = new System.Drawing.Size(188, 52);
+            this.pnlGreenEnemy.Size = new System.Drawing.Size(188, 66);
             this.pnlGreenEnemy.TabIndex = 0;
             // 
             // pnlEnemy
             // 
             this.pnlEnemy.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(221)))));
             this.pnlEnemy.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlEnemy.Controls.Add(this.lblHealthEnemy);
             this.pnlEnemy.Controls.Add(this.prgHealthEnemy);
             this.pnlEnemy.Controls.Add(this.lblNameEnemy);
             this.pnlEnemy.Location = new System.Drawing.Point(3, 3);
             this.pnlEnemy.Name = "pnlEnemy";
-            this.pnlEnemy.Size = new System.Drawing.Size(182, 46);
+            this.pnlEnemy.Size = new System.Drawing.Size(182, 60);
             this.pnlEnemy.TabIndex = 5;
             // 
             // prgHealthEnemy
@@ -424,6 +402,7 @@
             this.prgHealthEnemy.Location = new System.Drawing.Point(7, 27);
             this.prgHealthEnemy.Name = "prgHealthEnemy";
             this.prgHealthEnemy.Size = new System.Drawing.Size(168, 10);
+            this.prgHealthEnemy.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
             this.prgHealthEnemy.TabIndex = 1;
             this.prgHealthEnemy.Value = 80;
             // 
@@ -449,7 +428,18 @@
             // 
             // tmrEnemyHealthDecay
             // 
+            this.tmrEnemyHealthDecay.Interval = 30;
             this.tmrEnemyHealthDecay.Tick += new System.EventHandler(this.tmrEnemyHealthDecay_Tick);
+            // 
+            // lblHealthEnemy
+            // 
+            this.lblHealthEnemy.AutoSize = true;
+            this.lblHealthEnemy.Font = new System.Drawing.Font("Courier New", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHealthEnemy.Location = new System.Drawing.Point(109, 40);
+            this.lblHealthEnemy.Name = "lblHealthEnemy";
+            this.lblHealthEnemy.Size = new System.Drawing.Size(72, 16);
+            this.lblHealthEnemy.TabIndex = 3;
+            this.lblHealthEnemy.Text = "80 / 100";
             // 
             // frmBattle
             // 
@@ -516,8 +506,6 @@
         private System.Windows.Forms.Panel pnlGreenPlayer;
         private System.Windows.Forms.Panel pnlGreenEnemy;
         private System.Windows.Forms.Label lblDifficultyCount;
-        private System.Windows.Forms.Label lblEnemyHP;
-        private System.Windows.Forms.Label lblEnemyHPTitle;
         private System.Windows.Forms.Label lblStatusBar;
         private System.Windows.Forms.Timer tmrFistFlurry;
         private System.Windows.Forms.Label lblDescription;
@@ -527,5 +515,6 @@
         private System.Windows.Forms.Timer tmrAnimationTicker;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Timer tmrEnemyHealthDecay;
+        private System.Windows.Forms.Label lblHealthEnemy;
     }
 }

@@ -248,7 +248,7 @@ namespace HumphreyErik2424RST
 
         void enemyDamaged()
         {
-            lblEnemyHP.Text = prgHealthEnemy.Value + " / " + enemyMaxHP; // Change the health counter to reflect the new value
+            lblHealthEnemy.Text = prgHealthEnemy.Value + " / " + enemyMaxHP; // Change the health counter to reflect the new value
         }
 
         private void tmrEnemyHealthDecay_Tick(object sender, EventArgs e)
@@ -258,20 +258,28 @@ namespace HumphreyErik2424RST
             if (enemyHealthToDecay > 0)
             {
                 // Deplete progress bar to 0 if it might go under 0 to prevent a crash
-                if (prgHealthEnemy.Value - 3 < 0)
+                if (prgHealthEnemy.Value - 1 < 0)
                 {
                     prgHealthEnemy.Value = 0;
                     enemyDamaged();
                 }
                 else
                 {
-                    enemyHealthToDecay -= 3;
-                    prgHealthEnemy.Value -= 3;
+                    enemyHealthToDecay--;
+                    prgHealthEnemy.Value--;
                     enemyDamaged();
                 }
             }
             else
+            {
+                enemyTurn();
                 tmrEnemyHealthDecay.Stop();
+            }
+        }
+
+        void enemyTurn()
+        {
+
         }
     }
 }
