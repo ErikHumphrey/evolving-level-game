@@ -50,6 +50,7 @@
     <Compile Include="Battle.Designer.cs">
       <DependentUpon>Battle.cs</DependentUpon>
     </Compile>
+    <Compile Include="ColourProgressBar.cs" />
     <Compile Include="Debugger.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -204,6 +205,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\heroSmile.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sfxSwoosh.wav" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

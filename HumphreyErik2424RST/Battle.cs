@@ -10,13 +10,16 @@ using System.Media;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Runtime.InteropServices;
 using LevelGenerator;
+using ColourProgressBar;
 
 namespace HumphreyErik2424RST
 {
     public partial class frmBattle : Form
     {
         int swipeFrame, flurryHits = 0;
+        int playerMaxHP = 100;
         int enemyMaxHP = 100;
         bool selectingAttack = false;
         bool enemyDead = false;
@@ -25,6 +28,7 @@ namespace HumphreyErik2424RST
         // All sound effects used on this level
         SoundPlayer hitSuccess = new SoundPlayer(HumphreyErik2424RST.Properties.Resources.sfxHitImproved);
         SoundPlayer levelComplete = new SoundPlayer(HumphreyErik2424RST.Properties.Resources.sfxWeedVictory);
+        SoundPlayer hitSwoosh = new SoundPlayer(HumphreyErik2424RST.Properties.Resources.sfxSwoosh);
 
         public frmBattle()
         {
@@ -116,6 +120,7 @@ namespace HumphreyErik2424RST
             }
             else if (btnTR.Text == "FRONT KICK")
             {
+                hitSwoosh.Play();
                 swipeFrame = 0;
                 picSwipe.Visible = true;
                 tmrAnimationTicker.Start();

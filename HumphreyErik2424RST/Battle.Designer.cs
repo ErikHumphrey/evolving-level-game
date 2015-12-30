@@ -285,7 +285,7 @@
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(40, 64);
+            this.button1.Location = new System.Drawing.Point(37, 49);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(137, 64);
             this.button1.TabIndex = 13;
@@ -365,9 +365,9 @@
             this.lblHealthPlayer.Font = new System.Drawing.Font("Courier New", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblHealthPlayer.Location = new System.Drawing.Point(165, 40);
             this.lblHealthPlayer.Name = "lblHealthPlayer";
-            this.lblHealthPlayer.Size = new System.Drawing.Size(72, 16);
+            this.lblHealthPlayer.Size = new System.Drawing.Size(80, 16);
             this.lblHealthPlayer.TabIndex = 2;
-            this.lblHealthPlayer.Text = "26 / 100";
+            this.lblHealthPlayer.Text = "100 / 100";
             // 
             // prgHealthPlayer
             // 
@@ -375,7 +375,7 @@
             this.prgHealthPlayer.Name = "prgHealthPlayer";
             this.prgHealthPlayer.Size = new System.Drawing.Size(230, 10);
             this.prgHealthPlayer.TabIndex = 1;
-            this.prgHealthPlayer.Value = 26;
+            this.prgHealthPlayer.Value = 100;
             // 
             // lblNamePlayer
             // 
@@ -424,7 +424,7 @@
             this.prgHealthEnemy.Name = "prgHealthEnemy";
             this.prgHealthEnemy.Size = new System.Drawing.Size(168, 10);
             this.prgHealthEnemy.TabIndex = 1;
-            this.prgHealthEnemy.Value = 90;
+            this.prgHealthEnemy.Value = 80;
             // 
             // lblNameEnemy
             // 

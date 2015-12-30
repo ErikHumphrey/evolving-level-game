@@ -281,6 +281,15 @@ namespace HumphreyErik2424RST.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
         /// </summary>
+        internal static System.IO.UnmanagedMemoryStream sfxSwoosh {
+            get {
+                return ResourceManager.GetStream("sfxSwoosh", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
         internal static System.IO.UnmanagedMemoryStream sfxWeedVictory {
             get {
                 return ResourceManager.GetStream("sfxWeedVictory", resourceCulture);
