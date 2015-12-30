@@ -19,6 +19,7 @@ namespace HumphreyErik2424RST
     public partial class frmBattle : Form
     {
         int swipeFrame, flurryHits = 0;
+        int enemyHealthToDecay;
         int playerMaxHP = 100;
         int enemyMaxHP = 100;
         bool selectingAttack = false;
@@ -88,18 +89,19 @@ namespace HumphreyErik2424RST
             }
             else if (btnTL.Text == "PUNCH")
             {
-                prgHealthEnemy.Value -= 30;
-                enemyDamaged();
-                lblStatusBar.Text = playerHitsEnemyFor + "30 damage!";
+                enemyHealthToDecay = 30; // The damage the punch deals.
+                tmrEnemyHealthDecay.Start(); // Start the health loss chain of events
+                lblStatusBar.Text = playerHitsEnemyFor + "30 damage!";  // Update the status bar. This is done seperately because Fist Flurry hits multiple times.
             }
             else if (btnTL.Text == "FIST FLURRY")
             {
+                enemyHealthToDecay = 60;
                 tmrFistFlurry.Start();
             }
             else if (btnTL.Text == "ONE PUNCH MAN")
             {
-                prgHealthEnemy.Value -= 9999;
-                enemyDamaged();
+                enemyHealthToDecay = 9999;
+                tmrEnemyHealthDecay.Start();
                 lblStatusBar.Text = playerHitsEnemyFor + "9999 damage!";
             }
         }
@@ -125,7 +127,7 @@ namespace HumphreyErik2424RST
                 picSwipe.Visible = true;
                 tmrAnimationTicker.Start();
                 prgHealthEnemy.Value -= 10;
-                enemyDamaged();
+                tmrEnemyHealthDecay.Start();
             }
             else if (btnTL.Text == "TORNADO KICK")
             {
@@ -151,10 +153,11 @@ namespace HumphreyErik2424RST
             {
                 flurryHits++;
                 // Set enemy health to 0 if the blow would be overkill to prevent crash
+                /*
                 if (prgHealthEnemy.Value - 20 < 0)
                     prgHealthEnemy.Value = 0;
                 else
-                    prgHealthEnemy.Value -= 20;
+                    prgHealthEnemy.Value -= 20; */
                 if (flurryHits == 1)
                 {
                     hitSuccess.Play();
@@ -172,7 +175,7 @@ namespace HumphreyErik2424RST
                     lblStatusBar.Text = playerHitsEnemyFor + "20 x " + flurryHits + " damage!";
                 }
 
-                enemyDamaged();
+                tmrEnemyHealthDecay.Start();
             }
             else
             {
@@ -246,6 +249,29 @@ namespace HumphreyErik2424RST
         void enemyDamaged()
         {
             lblEnemyHP.Text = prgHealthEnemy.Value + " / " + enemyMaxHP; // Change the health counter to reflect the new value
+        }
+
+        private void tmrEnemyHealthDecay_Tick(object sender, EventArgs e)
+        {
+            // Progressively decrease the health of the enemy so it appears as if the progress bar is animating
+            // This gives a smooth transition instead of the health being lost instantly
+            if (enemyHealthToDecay > 0)
+            {
+                // Deplete progress bar to 0 if it might go under 0 to prevent a crash
+                if (prgHealthEnemy.Value - 3 < 0)
+                {
+                    prgHealthEnemy.Value = 0;
+                    enemyDamaged();
+                }
+                else
+                {
+                    enemyHealthToDecay -= 3;
+                    prgHealthEnemy.Value -= 3;
+                    enemyDamaged();
+                }
+            }
+            else
+                tmrEnemyHealthDecay.Stop();
         }
     }
 }

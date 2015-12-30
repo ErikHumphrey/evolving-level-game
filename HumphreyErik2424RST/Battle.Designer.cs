@@ -64,6 +64,7 @@
             this.prgHealthEnemy = new System.Windows.Forms.ProgressBar();
             this.lblNameEnemy = new System.Windows.Forms.Label();
             this.picPortraitPlayer = new System.Windows.Forms.PictureBox();
+            this.tmrEnemyHealthDecay = new System.Windows.Forms.Timer(this.components);
             this.pnlActions.SuspendLayout();
             this.pnlStuff.SuspendLayout();
             this.pnlYellow.SuspendLayout();
@@ -446,6 +447,10 @@
             this.picPortraitPlayer.TabIndex = 7;
             this.picPortraitPlayer.TabStop = false;
             // 
+            // tmrEnemyHealthDecay
+            // 
+            this.tmrEnemyHealthDecay.Tick += new System.EventHandler(this.tmrEnemyHealthDecay_Tick);
+            // 
             // frmBattle
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -521,5 +526,6 @@
         private System.Windows.Forms.PictureBox picSwipe;
         private System.Windows.Forms.Timer tmrAnimationTicker;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Timer tmrEnemyHealthDecay;
     }
 }
