@@ -33,6 +33,8 @@
             this.listBox2 = new System.Windows.Forms.ListBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.lblAlphanumericProgress = new System.Windows.Forms.Label();
+            this.prgLevelProgress = new System.Windows.Forms.ProgressBar();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -92,15 +94,35 @@
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
+            // lblAlphanumericProgress
+            // 
+            this.lblAlphanumericProgress.AutoSize = true;
+            this.lblAlphanumericProgress.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAlphanumericProgress.Location = new System.Drawing.Point(615, 389);
+            this.lblAlphanumericProgress.Name = "lblAlphanumericProgress";
+            this.lblAlphanumericProgress.Size = new System.Drawing.Size(121, 18);
+            this.lblAlphanumericProgress.TabIndex = 9;
+            this.lblAlphanumericProgress.Text = "0 / 4 fires created";
+            // 
+            // prgLevelProgress
+            // 
+            this.prgLevelProgress.Location = new System.Drawing.Point(597, 350);
+            this.prgLevelProgress.Name = "prgLevelProgress";
+            this.prgLevelProgress.Size = new System.Drawing.Size(160, 21);
+            this.prgLevelProgress.TabIndex = 7;
+            this.prgLevelProgress.Value = 60;
+            // 
             // frmSurvival
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(778, 450);
+            this.Controls.Add(this.lblAlphanumericProgress);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.listBox2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.listBox1);
+            this.Controls.Add(this.prgLevelProgress);
             this.Name = "frmSurvival";
             this.Text = "Survival";
             this.Load += new System.EventHandler(this.frmSurvival_Load);
@@ -118,5 +140,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ListBox listBox2;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label lblAlphanumericProgress;
+        private System.Windows.Forms.ProgressBar prgLevelProgress;
     }
 }

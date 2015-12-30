@@ -34,18 +34,20 @@
             this.btnStart = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnBattle = new System.Windows.Forms.Button();
             this.grpMainMenu.SuspendLayout();
             this.SuspendLayout();
             // 
             // grpMainMenu
             // 
+            this.grpMainMenu.Controls.Add(this.btnBattle);
             this.grpMainMenu.Controls.Add(this.btnCheats);
             this.grpMainMenu.Controls.Add(this.btnResetGame);
             this.grpMainMenu.Controls.Add(this.btnStart);
             this.grpMainMenu.Controls.Add(this.btnExit);
             this.grpMainMenu.Location = new System.Drawing.Point(23, 51);
             this.grpMainMenu.Name = "grpMainMenu";
-            this.grpMainMenu.Size = new System.Drawing.Size(229, 195);
+            this.grpMainMenu.Size = new System.Drawing.Size(344, 243);
             this.grpMainMenu.TabIndex = 10;
             this.grpMainMenu.TabStop = false;
             this.grpMainMenu.Text = "Main Menu";
@@ -108,11 +110,21 @@
             this.label1.TabIndex = 11;
             this.label1.Text = "RST Title";
             // 
+            // btnBattle
+            // 
+            this.btnBattle.Location = new System.Drawing.Point(206, 38);
+            this.btnBattle.Name = "btnBattle";
+            this.btnBattle.Size = new System.Drawing.Size(78, 69);
+            this.btnBattle.TabIndex = 6;
+            this.btnBattle.Text = "Battle";
+            this.btnBattle.UseVisualStyleBackColor = true;
+            this.btnBattle.Click += new System.EventHandler(this.btnBattle_Click);
+            // 
             // frmSplashScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(274, 264);
+            this.ClientSize = new System.Drawing.Size(403, 307);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.grpMainMenu);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -132,6 +144,7 @@
         private System.Windows.Forms.Button btnStart;
         private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnBattle;
 
     }
 }

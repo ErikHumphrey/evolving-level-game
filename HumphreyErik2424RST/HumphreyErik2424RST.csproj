@@ -81,12 +81,6 @@
     <Compile Include="Survival.Designer.cs">
       <DependentUpon>Survival.cs</DependentUpon>
     </Compile>
-    <Compile Include="Progression.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Progression.Designer.cs">
-      <DependentUpon>Progression.cs</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Battle.resx">
@@ -106,9 +100,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Survival.resx">
       <DependentUpon>Survival.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Progression.resx">
-      <DependentUpon>Progression.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -186,6 +177,24 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\sfxWeedVictory.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imgSwipe1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imgSwipe2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imgSwipe3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imgSwipe4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imgSwipe5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imgSwipe6.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

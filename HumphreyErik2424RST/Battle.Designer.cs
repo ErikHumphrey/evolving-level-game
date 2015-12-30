@@ -38,15 +38,16 @@
             this.pnlYellow = new System.Windows.Forms.Panel();
             this.pnlWhite = new System.Windows.Forms.Panel();
             this.pnlTurquoise = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.lblObjective = new System.Windows.Forms.Label();
             this.lblStatus = new System.Windows.Forms.Label();
             this.pnlBlack = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.tmrFistFlurry = new System.Windows.Forms.Timer(this.components);
             this.tmrGameTicker = new System.Windows.Forms.Timer(this.components);
             this.pnlTop = new System.Windows.Forms.Panel();
+            this.picSwipe = new System.Windows.Forms.PictureBox();
             this.picPunch = new System.Windows.Forms.PictureBox();
             this.lblDescription = new System.Windows.Forms.Label();
             this.lblStatusBar = new System.Windows.Forms.Label();
@@ -61,6 +62,8 @@
             this.prgHealthEnemy = new System.Windows.Forms.ProgressBar();
             this.lblNameEnemy = new System.Windows.Forms.Label();
             this.picPortraitPlayer = new System.Windows.Forms.PictureBox();
+            this.tmrAnimationTicker = new System.Windows.Forms.Timer(this.components);
+            this.button1 = new System.Windows.Forms.Button();
             this.pnlActions.SuspendLayout();
             this.pnlStuff.SuspendLayout();
             this.pnlYellow.SuspendLayout();
@@ -68,6 +71,7 @@
             this.pnlTurquoise.SuspendLayout();
             this.pnlBlack.SuspendLayout();
             this.pnlTop.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picSwipe)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picPunch)).BeginInit();
             this.pnlGreenPlayer.SuspendLayout();
             this.pnlPlayer.SuspendLayout();
@@ -182,6 +186,39 @@
             this.pnlTurquoise.Size = new System.Drawing.Size(340, 81);
             this.pnlTurquoise.TabIndex = 0;
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.SystemColors.Control;
+            this.label3.Location = new System.Drawing.Point(174, 34);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(98, 21);
+            this.label3.TabIndex = 3;
+            this.label3.Text = "80 / 100";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Bold);
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(69, 35);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(109, 22);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "ENEMY HP:";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Courier New", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(121, 59);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(98, 14);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Difficulty: 1";
+            // 
             // lblObjective
             // 
             this.lblObjective.AutoSize = true;
@@ -214,39 +251,6 @@
             this.pnlBlack.Size = new System.Drawing.Size(732, 101);
             this.pnlBlack.TabIndex = 10;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Courier New", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(121, 59);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(98, 14);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Difficulty: 1";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Bold);
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(69, 35);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(109, 22);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "ENEMY HP:";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.SystemColors.Control;
-            this.label3.Location = new System.Drawing.Point(174, 34);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(98, 21);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "80 / 100";
-            // 
             // tmrFistFlurry
             // 
             this.tmrFistFlurry.Interval = 140;
@@ -260,6 +264,8 @@
             // pnlTop
             // 
             this.pnlTop.BackgroundImage = global::HumphreyErik2424RST.Properties.Resources.battlebg;
+            this.pnlTop.Controls.Add(this.button1);
+            this.pnlTop.Controls.Add(this.picSwipe);
             this.pnlTop.Controls.Add(this.picPunch);
             this.pnlTop.Controls.Add(this.lblDescription);
             this.pnlTop.Controls.Add(this.lblStatusBar);
@@ -272,11 +278,23 @@
             this.pnlTop.Size = new System.Drawing.Size(732, 344);
             this.pnlTop.TabIndex = 9;
             // 
+            // picSwipe
+            // 
+            this.picSwipe.BackColor = System.Drawing.Color.Transparent;
+            this.picSwipe.Image = global::HumphreyErik2424RST.Properties.Resources.imgSwipe1;
+            this.picSwipe.Location = new System.Drawing.Point(621, 92);
+            this.picSwipe.Name = "picSwipe";
+            this.picSwipe.Size = new System.Drawing.Size(84, 111);
+            this.picSwipe.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picSwipe.TabIndex = 12;
+            this.picSwipe.TabStop = false;
+            this.picSwipe.Visible = false;
+            // 
             // picPunch
             // 
             this.picPunch.BackColor = System.Drawing.Color.Transparent;
             this.picPunch.Image = global::HumphreyErik2424RST.Properties.Resources.imgFlurryGraphic;
-            this.picPunch.Location = new System.Drawing.Point(437, 30);
+            this.picPunch.Location = new System.Drawing.Point(644, 36);
             this.picPunch.Name = "picPunch";
             this.picPunch.Size = new System.Drawing.Size(50, 50);
             this.picPunch.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -358,10 +376,10 @@
             // 
             this.picPortraitEnemy.BackColor = System.Drawing.Color.Transparent;
             this.picPortraitEnemy.Image = global::HumphreyErik2424RST.Properties.Resources.enemyplace;
-            this.picPortraitEnemy.Location = new System.Drawing.Point(480, 61);
+            this.picPortraitEnemy.Location = new System.Drawing.Point(437, 30);
             this.picPortraitEnemy.Name = "picPortraitEnemy";
-            this.picPortraitEnemy.Size = new System.Drawing.Size(84, 111);
-            this.picPortraitEnemy.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.picPortraitEnemy.Size = new System.Drawing.Size(163, 181);
+            this.picPortraitEnemy.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.picPortraitEnemy.TabIndex = 6;
             this.picPortraitEnemy.TabStop = false;
             // 
@@ -413,6 +431,21 @@
             this.picPortraitPlayer.TabIndex = 7;
             this.picPortraitPlayer.TabStop = false;
             // 
+            // tmrAnimationTicker
+            // 
+            this.tmrAnimationTicker.Tick += new System.EventHandler(this.tmrAnimationTicker_Tick);
+            // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(40, 64);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(137, 64);
+            this.button1.TabIndex = 13;
+            this.button1.Text = "CLOSE";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // frmBattle
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -425,7 +458,6 @@
             this.MinimizeBox = false;
             this.Name = "frmBattle";
             this.ShowIcon = false;
-            this.ShowInTaskbar = false;
             this.Text = "Battle";
             this.Load += new System.EventHandler(this.frmBattle_Load);
             this.pnlActions.ResumeLayout(false);
@@ -438,6 +470,7 @@
             this.pnlBlack.ResumeLayout(false);
             this.pnlTop.ResumeLayout(false);
             this.pnlTop.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picSwipe)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picPunch)).EndInit();
             this.pnlGreenPlayer.ResumeLayout(false);
             this.pnlPlayer.ResumeLayout(false);
@@ -485,5 +518,8 @@
         private System.Windows.Forms.Label lblDescription;
         private System.Windows.Forms.PictureBox picPunch;
         private System.Windows.Forms.Timer tmrGameTicker;
+        private System.Windows.Forms.PictureBox picSwipe;
+        private System.Windows.Forms.Timer tmrAnimationTicker;
+        private System.Windows.Forms.Button button1;
     }
 }

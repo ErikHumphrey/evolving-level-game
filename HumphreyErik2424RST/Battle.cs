@@ -16,8 +16,7 @@ namespace HumphreyErik2424RST
 {
     public partial class frmBattle : Form
     {
-        int playerHP, enemyHP;
-        int flurryHits = 0;
+        int swipeFrame, flurryHits = 0;
         bool selectingAttack = false;
         bool enemyDead = false;
         string playerHitsEnemyFor = "PLAYER" + " hits " + "ENEMY" + " for ";
@@ -29,35 +28,40 @@ namespace HumphreyErik2424RST
         public frmBattle()
         {
             InitializeComponent();
-            // Add pictureboxes as parents of the panel so they show panel BackgroundImage behind them when transparent
+            /* Add pictureboxes as parents of the panel so they show panel BackgroundImage behind them when transparent
             pnlTop.Controls.Add(picPortraitEnemy);
             pnlTop.Controls.Add(picPortraitPlayer);
+            pnlTop.Controls.Add(picSwipe); */
 
-            /// picPortraitEnemy.Controls.Add(picPunch);
+            picSwipe.Parent = picPortraitEnemy;
+            picPunch.Parent = picPortraitEnemy;
+            picPunch.BringToFront();
+            picSwipe.Location = new Point(0, 0);
+
         }
 
         private void frmBattle_Load(object sender, EventArgs e)
         {
             tmrGameTicker.Start();
-            prgHealthPlayer.Maximum = prgHealthPlayer.Value = playerHP = 100;
+            prgHealthPlayer.Maximum = prgHealthPlayer.Value = 100;
 
             switch (LevelGen.difficulty)
             {
                 case 1:
                     prgHealthEnemy.Maximum = 100;
-                    prgHealthEnemy.Value = enemyHP = 80;
+                    prgHealthEnemy.Value = 80;
                     break;
                 case 2:
-                    prgHealthEnemy.Value = prgHealthEnemy.Maximum = enemyHP = 100;
+                    prgHealthEnemy.Value = prgHealthEnemy.Maximum = 100;
                     break;
                 case 3:
-                    prgHealthEnemy.Value = prgHealthEnemy.Maximum = enemyHP = 120;
+                    prgHealthEnemy.Value = prgHealthEnemy.Maximum = 120;
                     break;
                 case 4:
-                    prgHealthEnemy.Value = prgHealthEnemy.Maximum = enemyHP = 150;
+                    prgHealthEnemy.Value = prgHealthEnemy.Maximum = 150;
                     break;
                 case 5:
-                    prgHealthEnemy.Value = prgHealthEnemy.Maximum = enemyHP = 200;
+                    prgHealthEnemy.Value = prgHealthEnemy.Maximum = 200;
                     break;
             }
         }
@@ -91,7 +95,7 @@ namespace HumphreyErik2424RST
 
         private void btnTR_Click(object sender, EventArgs e)
         {
-            if (btnBR.Text == "FLEE")
+            if (btnTR.Text == "FLEE")
             {
                 // Confirm flee
                 DialogResult wantsToFlee = MessageBox.Show("Are you sure you want to flee from this fight?\r\n\r\nYou won't earn any points for this level.",
@@ -103,8 +107,11 @@ namespace HumphreyErik2424RST
                     this.Close(); // Exit the level
                 }
             }
-            else if (btnTL.Text == "FRONT KICK")
+            else if (btnTR.Text == "FRONT KICK")
             {
+                swipeFrame = 0;
+                picSwipe.Visible = true;
+                tmrAnimationTicker.Start();
                 prgHealthEnemy.Value -= 10;
             }
             else if (btnTL.Text == "TORNADO KICK")
@@ -137,17 +144,17 @@ namespace HumphreyErik2424RST
                 if (flurryHits == 1)
                 {
                     hitSuccess.Play();
-                    picPunch.Location = new Point(449, 145);
+                    picPunch.Location = new Point(10, 95);
                     lblStatusBar.Text = playerHitsEnemyFor + "20 x " + flurryHits + " damage!";
                 }
                 if (flurryHits == 2)
                 {
-                    picPunch.Location = new Point(554, 102);
+                    picPunch.Location = new Point(87, 60);
                     lblStatusBar.Text = playerHitsEnemyFor + "20 x " + flurryHits + " damage!";
                 }
                 if (flurryHits == 3)
                 {
-                    picPunch.Location = new Point(437, 30);
+                    picPunch.Location = new Point(10, 20);
                     lblStatusBar.Text = playerHitsEnemyFor + "20 x " + flurryHits + " damage!";
                 }
             }
@@ -180,6 +187,44 @@ namespace HumphreyErik2424RST
                 this.Hide();
                 tmrGameTicker.Stop();
             }
+        }
+
+        private void tmrAnimationTicker_Tick(object sender, EventArgs e)
+        {
+            swipeFrame++;
+
+            switch (swipeFrame)
+            {
+                case 1:
+                    picSwipe.Image = Properties.Resources.imgSwipe1;
+                    break;
+                case 2:
+                    picSwipe.Image = Properties.Resources.imgSwipe2;
+                    break;
+                case 3:
+                    picSwipe.Image = Properties.Resources.imgSwipe3;
+                    break;
+                case 4:
+                    picSwipe.Image = Properties.Resources.imgSwipe4;
+                    break;
+                case 5:
+                    picSwipe.Image = Properties.Resources.imgSwipe5;
+                    break;
+                case 6:
+                    picSwipe.Image = Properties.Resources.imgSwipe6;
+                    break;
+            }
+
+            if (swipeFrame > 6)
+            {
+                tmrAnimationTicker.Stop();
+                picSwipe.Visible = false;
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }
