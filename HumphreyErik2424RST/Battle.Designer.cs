@@ -284,12 +284,13 @@
             // 
             this.picHealingBeam.BackColor = System.Drawing.Color.Transparent;
             this.picHealingBeam.Image = global::HumphreyErik2424RST.Properties.Resources.imgHeal01;
-            this.picHealingBeam.Location = new System.Drawing.Point(12, 142);
+            this.picHealingBeam.Location = new System.Drawing.Point(639, 216);
             this.picHealingBeam.Name = "picHealingBeam";
-            this.picHealingBeam.Size = new System.Drawing.Size(65, 104);
+            this.picHealingBeam.Size = new System.Drawing.Size(66, 97);
             this.picHealingBeam.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picHealingBeam.TabIndex = 14;
             this.picHealingBeam.TabStop = false;
+            this.picHealingBeam.Visible = false;
             // 
             // picPunch
             // 
@@ -464,9 +465,10 @@
             // 
             this.picPortraitPlayer.BackColor = System.Drawing.Color.Transparent;
             this.picPortraitPlayer.Image = global::HumphreyErik2424RST.Properties.Resources.heroSmile;
-            this.picPortraitPlayer.Location = new System.Drawing.Point(109, 170);
+            this.picPortraitPlayer.Location = new System.Drawing.Point(50, 147);
             this.picPortraitPlayer.Name = "picPortraitPlayer";
-            this.picPortraitPlayer.Size = new System.Drawing.Size(113, 171);
+            this.picPortraitPlayer.Size = new System.Drawing.Size(210, 217);
+            this.picPortraitPlayer.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.picPortraitPlayer.TabIndex = 7;
             this.picPortraitPlayer.TabStop = false;
             // 

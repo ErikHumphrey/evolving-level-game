@@ -29,7 +29,7 @@ namespace HumphreyErik2424RST
         bool isEnemyTurn, enemyDead = false;
         string playerHitsEnemyFor = "PLAYER" + " hits " + "ENEMY" + " for ";
         Image[] picHealingBeams = new Image[34];
-        int beamFrame = 0;
+        int beamFrame;
 
         // All sound effects used on this level
         SoundPlayer hitSuccess = new SoundPlayer(HumphreyErik2424RST.Properties.Resources.sfxHitImproved);
@@ -47,7 +47,8 @@ namespace HumphreyErik2424RST
             picSwipe.Parent = picPortraitEnemy;
             picPunch.Parent = picPortraitEnemy;
             picHealingBeam.Parent = picPortraitPlayer;
-            picHealingBeam.Location = new Point(0, 0);
+            /// picHealingBeam.Location = new Point(0, 0);
+            picHealingBeam.Location = new Point(-20, 0);
             picSwipe.Location = new Point(27, 40);
 
         }
@@ -60,7 +61,8 @@ namespace HumphreyErik2424RST
                 picHealingBeams[i] = (Image)Properties.Resources.ResourceManager.GetObject("imgHeal" + i.ToString("D2"));
             }
 
-            picHealingBeam.Size = new Size(113, 171);
+            // picHealingBeam.Size = new Size(113, 171);
+            picHealingBeam.Size = new Size(255, 218);
             ModifyProgressBarColor.SetState(prgHealthEnemy, 1);
             tmrGameTicker.Start();
             prgHealthPlayer.Maximum = prgHealthPlayer.Value = 100;
@@ -135,10 +137,12 @@ namespace HumphreyErik2424RST
 
             if (btnTR.Text == "REST")
             {
+                beamFrame = 0;
                 playerHealthToDecay = -20;
                 picHealingBeam.Visible = true;
                 picHealingBeam.BringToFront();
                 tmrHealAnimation.Start();
+                animationInProgress = true;
                 tmrPlayerHealthDecay.Start();
             }
             else if (btnTR.Text == "FRONT KICK")
@@ -412,7 +416,14 @@ namespace HumphreyErik2424RST
 
         private void tmrHealAnimation_Tick(object sender, EventArgs e)
         {
-            picHealingBeam.Image = picHealingBeams[beamFrame++];
+            if (beamFrame < 33)
+                picHealingBeam.Image = picHealingBeams[beamFrame++];
+            else
+            {
+                tmrHealAnimation.Stop();
+                animationInProgress = false;
+                picHealingBeam.Visible = false;
+            }
         }
     }
 }
