@@ -212,6 +212,108 @@
   <ItemGroup>
     <None Include="Resources\whirlwindkick.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imgHeal01.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imgHeal02.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imgHeal03.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imgHeal04.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imgHeal05.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imgHeal06.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imgHeal07.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imgHeal08.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imgHeal09.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imgHeal10.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imgHeal11.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imgHeal12.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imgHeal13.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imgHeal14.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imgHeal15.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imgHeal16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imgHeal17.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imgHeal18.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imgHeal19.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imgHeal20.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imgHeal21.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imgHeal22.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imgHeal23.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imgHeal24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imgHeal25.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imgHeal26.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imgHeal27.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imgHeal28.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imgHeal29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imgHeal30.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imgHeal31.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imgHeal32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imgHeal33.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imgHeal34.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

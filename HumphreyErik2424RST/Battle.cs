@@ -7,6 +7,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Media;
+using System.Resources;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -22,10 +23,13 @@ namespace HumphreyErik2424RST
         int enemyHealthToDecay, playerHealthToDecay;
         int playerMaxHP = 100;
         int enemyMaxHP = 100;
+        bool animationInProgress = false;
         string enemyName;
         bool selectingAttack = false;
         bool isEnemyTurn, enemyDead = false;
         string playerHitsEnemyFor = "PLAYER" + " hits " + "ENEMY" + " for ";
+        Image[] picHealingBeams = new Image[34];
+        int beamFrame = 0;
 
         // All sound effects used on this level
         SoundPlayer hitSuccess = new SoundPlayer(HumphreyErik2424RST.Properties.Resources.sfxHitImproved);
@@ -42,13 +46,21 @@ namespace HumphreyErik2424RST
 
             picSwipe.Parent = picPortraitEnemy;
             picPunch.Parent = picPortraitEnemy;
-            picPunch.BringToFront();
+            picHealingBeam.Parent = picPortraitPlayer;
+            picHealingBeam.Location = new Point(0, 0);
             picSwipe.Location = new Point(27, 40);
 
         }
 
         private void frmBattle_Load(object sender, EventArgs e)
         {
+            // Using a ResourceManager simplifies having to declare each image for each array value manually 
+            for (int i = 0; i < picHealingBeams.Length; i++)
+            {
+                picHealingBeams[i] = (Image)Properties.Resources.ResourceManager.GetObject("imgHeal" + i.ToString("D2"));
+            }
+
+            picHealingBeam.Size = new Size(113, 171);
             ModifyProgressBarColor.SetState(prgHealthEnemy, 1);
             tmrGameTicker.Start();
             prgHealthPlayer.Maximum = prgHealthPlayer.Value = 100;
@@ -124,6 +136,9 @@ namespace HumphreyErik2424RST
             if (btnTR.Text == "REST")
             {
                 playerHealthToDecay = -20;
+                picHealingBeam.Visible = true;
+                picHealingBeam.BringToFront();
+                tmrHealAnimation.Start();
                 tmrPlayerHealthDecay.Start();
             }
             else if (btnTR.Text == "FRONT KICK")
@@ -132,6 +147,7 @@ namespace HumphreyErik2424RST
                 swipeFrame = 0;
                 picSwipe.Visible = true;
                 tmrAnimationTicker.Start();
+                animationInProgress = true;
                 enemyHealthToDecay = 10;
                 tmrEnemyHealthDecay.Start();
             }
@@ -233,6 +249,7 @@ namespace HumphreyErik2424RST
 
         private void tmrAnimationTicker_Tick(object sender, EventArgs e)
         {
+ 
             swipeFrame++;
 
             switch (swipeFrame)
@@ -259,9 +276,14 @@ namespace HumphreyErik2424RST
 
             if (swipeFrame > 6)
             {
-                tmrAnimationTicker.Stop();
                 picSwipe.Visible = false;
             }
+
+            if (swipeFrame > 8)
+            {
+                tmrAnimationTicker.Stop();
+                animationInProgress = false;
+            } 
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -320,8 +342,11 @@ namespace HumphreyErik2424RST
             }
             else
             {
-                enemyTurn();
-                tmrEnemyHealthDecay.Stop();
+                if (!animationInProgress)
+                {
+                    enemyTurn();
+                    tmrEnemyHealthDecay.Stop();
+                }
             }
         }
 
@@ -341,7 +366,13 @@ namespace HumphreyErik2424RST
 
         void playerTurn()
         {
+            isEnemyTurn = false;
+
             pnlActions.Visible = true;
+            btnTL.Text = "FIGHT";
+            btnTR.Text = "REST";
+            btnBL.Text = "ITEMS";
+            btnBR.Text = "FLEE";
         }
 
         private void tmrPlayerHealthDecay_Tick(object sender, EventArgs e)
@@ -369,10 +400,19 @@ namespace HumphreyErik2424RST
                 if (isEnemyTurn)
                     playerTurn();
                 // Initiate the enemy's turn if the player just healed themself
-                else
-                    enemyTurn();
+                /* else if (!animationInProgress)
+                {
+                    
+                    tmrPlayerHealthDecay.Stop();
+                } */
+                enemyTurn();
                 tmrPlayerHealthDecay.Stop();
             }
+        }
+
+        private void tmrHealAnimation_Tick(object sender, EventArgs e)
+        {
+            picHealingBeam.Image = picHealingBeams[beamFrame++];
         }
     }
 }

@@ -45,10 +45,14 @@
             this.tmrFistFlurry = new System.Windows.Forms.Timer(this.components);
             this.tmrGameTicker = new System.Windows.Forms.Timer(this.components);
             this.tmrAnimationTicker = new System.Windows.Forms.Timer(this.components);
+            this.tmrEnemyHealthDecay = new System.Windows.Forms.Timer(this.components);
+            this.tmrPlayerHealthDecay = new System.Windows.Forms.Timer(this.components);
+            this.tmrHealAnimation = new System.Windows.Forms.Timer(this.components);
             this.pnlTop = new System.Windows.Forms.Panel();
+            this.picHealingBeam = new System.Windows.Forms.PictureBox();
+            this.picPunch = new System.Windows.Forms.PictureBox();
             this.button1 = new System.Windows.Forms.Button();
             this.picSwipe = new System.Windows.Forms.PictureBox();
-            this.picPunch = new System.Windows.Forms.PictureBox();
             this.lblDescription = new System.Windows.Forms.Label();
             this.lblStatusBar = new System.Windows.Forms.Label();
             this.pnlGreenPlayer = new System.Windows.Forms.Panel();
@@ -59,12 +63,10 @@
             this.picPortraitEnemy = new System.Windows.Forms.PictureBox();
             this.pnlGreenEnemy = new System.Windows.Forms.Panel();
             this.pnlEnemy = new System.Windows.Forms.Panel();
+            this.lblHealthEnemy = new System.Windows.Forms.Label();
             this.prgHealthEnemy = new System.Windows.Forms.ProgressBar();
             this.lblNameEnemy = new System.Windows.Forms.Label();
             this.picPortraitPlayer = new System.Windows.Forms.PictureBox();
-            this.tmrEnemyHealthDecay = new System.Windows.Forms.Timer(this.components);
-            this.lblHealthEnemy = new System.Windows.Forms.Label();
-            this.tmrPlayerHealthDecay = new System.Windows.Forms.Timer(this.components);
             this.pnlActions.SuspendLayout();
             this.pnlStuff.SuspendLayout();
             this.pnlYellow.SuspendLayout();
@@ -72,8 +74,9 @@
             this.pnlTurquoise.SuspendLayout();
             this.pnlBlack.SuspendLayout();
             this.pnlTop.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picSwipe)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picHealingBeam)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picPunch)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picSwipe)).BeginInit();
             this.pnlGreenPlayer.SuspendLayout();
             this.pnlPlayer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picPortraitEnemy)).BeginInit();
@@ -245,12 +248,27 @@
             // 
             this.tmrAnimationTicker.Tick += new System.EventHandler(this.tmrAnimationTicker_Tick);
             // 
+            // tmrEnemyHealthDecay
+            // 
+            this.tmrEnemyHealthDecay.Interval = 30;
+            this.tmrEnemyHealthDecay.Tick += new System.EventHandler(this.tmrEnemyHealthDecay_Tick);
+            // 
+            // tmrPlayerHealthDecay
+            // 
+            this.tmrPlayerHealthDecay.Interval = 30;
+            this.tmrPlayerHealthDecay.Tick += new System.EventHandler(this.tmrPlayerHealthDecay_Tick);
+            // 
+            // tmrHealAnimation
+            // 
+            this.tmrHealAnimation.Tick += new System.EventHandler(this.tmrHealAnimation_Tick);
+            // 
             // pnlTop
             // 
             this.pnlTop.BackgroundImage = global::HumphreyErik2424RST.Properties.Resources.battlebg;
+            this.pnlTop.Controls.Add(this.picHealingBeam);
+            this.pnlTop.Controls.Add(this.picPunch);
             this.pnlTop.Controls.Add(this.button1);
             this.pnlTop.Controls.Add(this.picSwipe);
-            this.pnlTop.Controls.Add(this.picPunch);
             this.pnlTop.Controls.Add(this.lblDescription);
             this.pnlTop.Controls.Add(this.lblStatusBar);
             this.pnlTop.Controls.Add(this.pnlGreenPlayer);
@@ -261,6 +279,29 @@
             this.pnlTop.Name = "pnlTop";
             this.pnlTop.Size = new System.Drawing.Size(732, 344);
             this.pnlTop.TabIndex = 9;
+            // 
+            // picHealingBeam
+            // 
+            this.picHealingBeam.BackColor = System.Drawing.Color.Transparent;
+            this.picHealingBeam.Image = global::HumphreyErik2424RST.Properties.Resources.imgHeal01;
+            this.picHealingBeam.Location = new System.Drawing.Point(12, 142);
+            this.picHealingBeam.Name = "picHealingBeam";
+            this.picHealingBeam.Size = new System.Drawing.Size(65, 104);
+            this.picHealingBeam.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picHealingBeam.TabIndex = 14;
+            this.picHealingBeam.TabStop = false;
+            // 
+            // picPunch
+            // 
+            this.picPunch.BackColor = System.Drawing.Color.Transparent;
+            this.picPunch.Image = global::HumphreyErik2424RST.Properties.Resources.imgFlurryGraphic;
+            this.picPunch.Location = new System.Drawing.Point(644, 36);
+            this.picPunch.Name = "picPunch";
+            this.picPunch.Size = new System.Drawing.Size(50, 50);
+            this.picPunch.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.picPunch.TabIndex = 11;
+            this.picPunch.TabStop = false;
+            this.picPunch.Visible = false;
             // 
             // button1
             // 
@@ -284,18 +325,6 @@
             this.picSwipe.TabIndex = 12;
             this.picSwipe.TabStop = false;
             this.picSwipe.Visible = false;
-            // 
-            // picPunch
-            // 
-            this.picPunch.BackColor = System.Drawing.Color.Transparent;
-            this.picPunch.Image = global::HumphreyErik2424RST.Properties.Resources.imgFlurryGraphic;
-            this.picPunch.Location = new System.Drawing.Point(644, 36);
-            this.picPunch.Name = "picPunch";
-            this.picPunch.Size = new System.Drawing.Size(50, 50);
-            this.picPunch.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.picPunch.TabIndex = 11;
-            this.picPunch.TabStop = false;
-            this.picPunch.Visible = false;
             // 
             // lblDescription
             // 
@@ -401,6 +430,16 @@
             this.pnlEnemy.Size = new System.Drawing.Size(182, 60);
             this.pnlEnemy.TabIndex = 5;
             // 
+            // lblHealthEnemy
+            // 
+            this.lblHealthEnemy.AutoSize = true;
+            this.lblHealthEnemy.Font = new System.Drawing.Font("Courier New", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHealthEnemy.Location = new System.Drawing.Point(109, 40);
+            this.lblHealthEnemy.Name = "lblHealthEnemy";
+            this.lblHealthEnemy.Size = new System.Drawing.Size(72, 16);
+            this.lblHealthEnemy.TabIndex = 3;
+            this.lblHealthEnemy.Text = "80 / 100";
+            // 
             // prgHealthEnemy
             // 
             this.prgHealthEnemy.Location = new System.Drawing.Point(7, 27);
@@ -431,26 +470,6 @@
             this.picPortraitPlayer.TabIndex = 7;
             this.picPortraitPlayer.TabStop = false;
             // 
-            // tmrEnemyHealthDecay
-            // 
-            this.tmrEnemyHealthDecay.Interval = 30;
-            this.tmrEnemyHealthDecay.Tick += new System.EventHandler(this.tmrEnemyHealthDecay_Tick);
-            // 
-            // lblHealthEnemy
-            // 
-            this.lblHealthEnemy.AutoSize = true;
-            this.lblHealthEnemy.Font = new System.Drawing.Font("Courier New", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblHealthEnemy.Location = new System.Drawing.Point(109, 40);
-            this.lblHealthEnemy.Name = "lblHealthEnemy";
-            this.lblHealthEnemy.Size = new System.Drawing.Size(72, 16);
-            this.lblHealthEnemy.TabIndex = 3;
-            this.lblHealthEnemy.Text = "80 / 100";
-            // 
-            // tmrPlayerHealthDecay
-            // 
-            this.tmrPlayerHealthDecay.Interval = 30;
-            this.tmrPlayerHealthDecay.Tick += new System.EventHandler(this.tmrPlayerHealthDecay_Tick);
-            // 
             // frmBattle
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -475,8 +494,9 @@
             this.pnlBlack.ResumeLayout(false);
             this.pnlTop.ResumeLayout(false);
             this.pnlTop.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picSwipe)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picHealingBeam)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picPunch)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picSwipe)).EndInit();
             this.pnlGreenPlayer.ResumeLayout(false);
             this.pnlPlayer.ResumeLayout(false);
             this.pnlPlayer.PerformLayout();
@@ -527,5 +547,7 @@
         private System.Windows.Forms.Timer tmrEnemyHealthDecay;
         private System.Windows.Forms.Label lblHealthEnemy;
         private System.Windows.Forms.Timer tmrPlayerHealthDecay;
+        private System.Windows.Forms.PictureBox picHealingBeam;
+        private System.Windows.Forms.Timer tmrHealAnimation;
     }
 }
