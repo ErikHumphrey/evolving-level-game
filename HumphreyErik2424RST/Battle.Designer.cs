@@ -38,8 +38,7 @@
             this.pnlYellow = new System.Windows.Forms.Panel();
             this.pnlWhite = new System.Windows.Forms.Panel();
             this.pnlTurquoise = new System.Windows.Forms.Panel();
-            this.lblDifficultyCount = new System.Windows.Forms.Label();
-            this.lblObjective = new System.Windows.Forms.Label();
+            this.lblHelper = new System.Windows.Forms.Label();
             this.lblStatus = new System.Windows.Forms.Label();
             this.pnlBlack = new System.Windows.Forms.Panel();
             this.tmrFistFlurry = new System.Windows.Forms.Timer(this.components);
@@ -54,7 +53,6 @@
             this.button1 = new System.Windows.Forms.Button();
             this.picSwipe = new System.Windows.Forms.PictureBox();
             this.lblDescription = new System.Windows.Forms.Label();
-            this.lblStatusBar = new System.Windows.Forms.Label();
             this.pnlGreenPlayer = new System.Windows.Forms.Panel();
             this.pnlPlayer = new System.Windows.Forms.Panel();
             this.lblHealthPlayer = new System.Windows.Forms.Label();
@@ -67,6 +65,7 @@
             this.prgHealthEnemy = new System.Windows.Forms.ProgressBar();
             this.lblNameEnemy = new System.Windows.Forms.Label();
             this.picPortraitPlayer = new System.Windows.Forms.PictureBox();
+            this.tmrActionDelay = new System.Windows.Forms.Timer(this.components);
             this.pnlActions.SuspendLayout();
             this.pnlStuff.SuspendLayout();
             this.pnlYellow.SuspendLayout();
@@ -95,6 +94,7 @@
             this.btnTL.Text = "FIGHT";
             this.btnTL.UseVisualStyleBackColor = true;
             this.btnTL.Click += new System.EventHandler(this.btnTL_Click);
+            this.btnTL.MouseEnter += new System.EventHandler(this.btnTL_MouseEnter);
             this.btnTL.MouseLeave += new System.EventHandler(this.MouseLeavesButton);
             // 
             // btnBR
@@ -108,6 +108,7 @@
             this.btnBR.Text = "FLEE";
             this.btnBR.UseVisualStyleBackColor = true;
             this.btnBR.Click += new System.EventHandler(this.btnBR_Click);
+            this.btnBR.MouseEnter += new System.EventHandler(this.btnBR_MouseEnter);
             this.btnBR.MouseLeave += new System.EventHandler(this.MouseLeavesButton);
             // 
             // btnTR
@@ -120,6 +121,7 @@
             this.btnTR.Text = "REST";
             this.btnTR.UseVisualStyleBackColor = true;
             this.btnTR.Click += new System.EventHandler(this.btnTR_Click);
+            this.btnTR.MouseEnter += new System.EventHandler(this.btnTR_MouseEnter);
             this.btnTR.MouseLeave += new System.EventHandler(this.MouseLeavesButton);
             // 
             // btnBL
@@ -133,6 +135,7 @@
             this.btnBL.Text = "ITEMS";
             this.btnBL.UseVisualStyleBackColor = true;
             this.btnBL.Click += new System.EventHandler(this.btnBL_Click);
+            this.btnBL.MouseEnter += new System.EventHandler(this.btnBL_MouseEnter);
             this.btnBL.MouseLeave += new System.EventHandler(this.MouseLeavesButton);
             // 
             // pnlActions
@@ -184,34 +187,22 @@
             // pnlTurquoise
             // 
             this.pnlTurquoise.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(60)))), ((int)(((byte)(84)))));
-            this.pnlTurquoise.Controls.Add(this.lblDifficultyCount);
-            this.pnlTurquoise.Controls.Add(this.lblObjective);
+            this.pnlTurquoise.Controls.Add(this.lblHelper);
             this.pnlTurquoise.Location = new System.Drawing.Point(3, 3);
             this.pnlTurquoise.Name = "pnlTurquoise";
             this.pnlTurquoise.Size = new System.Drawing.Size(713, 81);
             this.pnlTurquoise.TabIndex = 0;
             // 
-            // lblDifficultyCount
+            // lblHelper
             // 
-            this.lblDifficultyCount.AutoSize = true;
-            this.lblDifficultyCount.Font = new System.Drawing.Font("Courier New", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDifficultyCount.ForeColor = System.Drawing.Color.White;
-            this.lblDifficultyCount.Location = new System.Drawing.Point(114, 54);
-            this.lblDifficultyCount.Name = "lblDifficultyCount";
-            this.lblDifficultyCount.Size = new System.Drawing.Size(98, 14);
-            this.lblDifficultyCount.TabIndex = 1;
-            this.lblDifficultyCount.Text = "Difficulty: 1";
-            // 
-            // lblObjective
-            // 
-            this.lblObjective.AutoSize = true;
-            this.lblObjective.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Bold);
-            this.lblObjective.ForeColor = System.Drawing.Color.White;
-            this.lblObjective.Location = new System.Drawing.Point(95, 28);
-            this.lblObjective.Name = "lblObjective";
-            this.lblObjective.Size = new System.Drawing.Size(153, 22);
-            this.lblObjective.TabIndex = 0;
-            this.lblObjective.Text = "Defeat ENEMY.";
+            this.lblHelper.AutoSize = true;
+            this.lblHelper.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Bold);
+            this.lblHelper.ForeColor = System.Drawing.Color.White;
+            this.lblHelper.Location = new System.Drawing.Point(80, 28);
+            this.lblHelper.Name = "lblHelper";
+            this.lblHelper.Size = new System.Drawing.Size(197, 22);
+            this.lblHelper.TabIndex = 0;
+            this.lblHelper.Text = "Choose an ACTION.";
             // 
             // lblStatus
             // 
@@ -260,6 +251,7 @@
             // 
             // tmrHealAnimation
             // 
+            this.tmrHealAnimation.Interval = 80;
             this.tmrHealAnimation.Tick += new System.EventHandler(this.tmrHealAnimation_Tick);
             // 
             // pnlTop
@@ -270,7 +262,6 @@
             this.pnlTop.Controls.Add(this.button1);
             this.pnlTop.Controls.Add(this.picSwipe);
             this.pnlTop.Controls.Add(this.lblDescription);
-            this.pnlTop.Controls.Add(this.lblStatusBar);
             this.pnlTop.Controls.Add(this.pnlGreenPlayer);
             this.pnlTop.Controls.Add(this.picPortraitEnemy);
             this.pnlTop.Controls.Add(this.pnlGreenEnemy);
@@ -329,24 +320,13 @@
             // 
             // lblDescription
             // 
-            this.lblDescription.AutoSize = true;
-            this.lblDescription.Location = new System.Drawing.Point(462, 325);
+            this.lblDescription.Location = new System.Drawing.Point(363, 325);
             this.lblDescription.Name = "lblDescription";
-            this.lblDescription.Size = new System.Drawing.Size(268, 13);
+            this.lblDescription.Size = new System.Drawing.Size(367, 15);
             this.lblDescription.TabIndex = 10;
-            this.lblDescription.Text = "This label serves as a description of a button\'s function.";
+            this.lblDescription.Text = "Button descriptions appear here when moused over.";
             this.lblDescription.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.lblDescription.Visible = false;
-            // 
-            // lblStatusBar
-            // 
-            this.lblStatusBar.Dock = System.Windows.Forms.DockStyle.Top;
-            this.lblStatusBar.Location = new System.Drawing.Point(0, 0);
-            this.lblStatusBar.Name = "lblStatusBar";
-            this.lblStatusBar.Size = new System.Drawing.Size(732, 25);
-            this.lblStatusBar.TabIndex = 9;
-            this.lblStatusBar.Text = "Waiting for player to make their move...";
-            this.lblStatusBar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // pnlGreenPlayer
             // 
@@ -472,6 +452,11 @@
             this.picPortraitPlayer.TabIndex = 7;
             this.picPortraitPlayer.TabStop = false;
             // 
+            // tmrActionDelay
+            // 
+            this.tmrActionDelay.Interval = 1000;
+            this.tmrActionDelay.Tick += new System.EventHandler(this.tmrActionDelay_Tick);
+            // 
             // frmBattle
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -532,13 +517,11 @@
         private System.Windows.Forms.Panel pnlTop;
         private System.Windows.Forms.Panel pnlWhite;
         private System.Windows.Forms.Panel pnlTurquoise;
-        private System.Windows.Forms.Label lblObjective;
+        private System.Windows.Forms.Label lblHelper;
         private System.Windows.Forms.Panel pnlStuff;
         private System.Windows.Forms.Panel pnlBlack;
         private System.Windows.Forms.Panel pnlGreenPlayer;
         private System.Windows.Forms.Panel pnlGreenEnemy;
-        private System.Windows.Forms.Label lblDifficultyCount;
-        private System.Windows.Forms.Label lblStatusBar;
         private System.Windows.Forms.Timer tmrFistFlurry;
         private System.Windows.Forms.Label lblDescription;
         private System.Windows.Forms.PictureBox picPunch;
@@ -551,5 +534,6 @@
         private System.Windows.Forms.Timer tmrPlayerHealthDecay;
         private System.Windows.Forms.PictureBox picHealingBeam;
         private System.Windows.Forms.Timer tmrHealAnimation;
+        private System.Windows.Forms.Timer tmrActionDelay;
     }
 }

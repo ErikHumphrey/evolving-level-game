@@ -19,6 +19,7 @@ namespace HumphreyErik2424RST
 {
     public partial class frmBattle : Form
     {
+        int secondsWaited = 0;
         int swipeFrame, flurryHits = 0;
         int enemyHealthToDecay, playerHealthToDecay;
         int playerMaxHP = 100;
@@ -30,11 +31,25 @@ namespace HumphreyErik2424RST
         string playerHitsEnemyFor = "PLAYER" + " hits " + "ENEMY" + " for ";
         Image[] picHealingBeams = new Image[12];
         int beamFrame;
+        string restAsString;
+
+        // Ability damage values (per hit; negative = heal)
+  
+        const int DV_REST = -40;
+
+        const int DV_PUNCH = 30;
+        const int DV_FIST_FLURRY = 20;
+        const int DV_ONE_PUNCH_MAN = 9999;
+
+        const int DV_FRONT_KICK = 10;
+        const int DV_TORNADO_KICK = 20;
+        const int DV_WHIRLWHIND_KICK = 50;
 
         // All sound effects used on this level
         SoundPlayer hitSuccess = new SoundPlayer(HumphreyErik2424RST.Properties.Resources.sfxHitImproved);
         SoundPlayer levelComplete = new SoundPlayer(HumphreyErik2424RST.Properties.Resources.sfxWeedVictory);
         SoundPlayer hitSwoosh = new SoundPlayer(HumphreyErik2424RST.Properties.Resources.sfxSwoosh);
+        SoundPlayer healSuccess = new SoundPlayer(HumphreyErik2424RST.Properties.Resources.sfxHealingShorter);
 
         public frmBattle()
         {
@@ -55,6 +70,8 @@ namespace HumphreyErik2424RST
 
         private void frmBattle_Load(object sender, EventArgs e)
         {
+            // restAsString = DV_REST.ToString().Substring;
+
             // Using a ResourceManager simplifies having to declare each image for each array value manually 
             for (int i = 0; i < picHealingBeams.Length; i++)
             {
@@ -111,9 +128,9 @@ namespace HumphreyErik2424RST
             }
             else if (btnTL.Text == "PUNCH")
             {
-                enemyHealthToDecay = 30; // The damage the punch deals.
+                enemyHealthToDecay = DV_PUNCH; // The damage the punch deals.
                 tmrEnemyHealthDecay.Start(); // Start the health loss chain of events
-                lblStatusBar.Text = playerHitsEnemyFor + "30 damage!"; // Update the status bar. This is done seperately because Fist Flurry hits multiple times.
+                // lblStatusBar.Text = playerHitsEnemyFor + "30 damage!"; // Update the status bar. This is done seperately because Fist Flurry hits multiple times.
             }
             else if (btnTL.Text == "FIST FLURRY")
             {
@@ -124,23 +141,20 @@ namespace HumphreyErik2424RST
             {
                 enemyHealthToDecay = 9999;
                 tmrEnemyHealthDecay.Start();
-                lblStatusBar.Text = playerHitsEnemyFor + "9999 damage!";
+                // lblStatusBar.Text = playerHitsEnemyFor + "9999 damage!";
             }
         }
 
         private void btnTR_Click(object sender, EventArgs e)
         {
-            if (btnTR.Text != "REST")
-            {
-                pnlActions.Visible = false;
-            }
+            pnlActions.Visible = false;
 
             if (btnTR.Text == "REST")
             {
                 beamFrame = 0;
-                playerHealthToDecay = -20;
+                playerHealthToDecay = DV_REST;
                 picHealingBeam.Visible = true;
-                picHealingBeam.BringToFront();
+                healSuccess.Play(); // Play healing sound
                 tmrHealAnimation.Start();
                 animationInProgress = true;
                 tmrPlayerHealthDecay.Start();
@@ -205,17 +219,17 @@ namespace HumphreyErik2424RST
                 {
                     hitSuccess.Play();
                     picPunch.Location = new Point(10, 95);
-                    lblStatusBar.Text = playerHitsEnemyFor + "20 x " + flurryHits + " damage!";
+                    // lblStatusBar.Text = playerHitsEnemyFor + "20 x " + flurryHits + " damage!";
                 }
                 if (flurryHits == 2)
                 {
                     picPunch.Location = new Point(87, 60);
-                    lblStatusBar.Text = playerHitsEnemyFor + "20 x " + flurryHits + " damage!";
+                    // lblStatusBar.Text = playerHitsEnemyFor + "20 x " + flurryHits + " damage!";
                 }
                 if (flurryHits == 3)
                 {
                     picPunch.Location = new Point(10, 20);
-                    lblStatusBar.Text = playerHitsEnemyFor + "20 x " + flurryHits + " damage!";
+                    // lblStatusBar.Text = playerHitsEnemyFor + "20 x " + flurryHits + " damage!";
                 }
 
                 tmrEnemyHealthDecay.Start();
@@ -238,7 +252,7 @@ namespace HumphreyErik2424RST
         {
             if (prgHealthEnemy.Value == 0)
             {
-                lblStatusBar.Text = "ENEMY" + " has been defeated!";
+                // lblStatusBar.Text = "ENEMY" + " has been defeated!";
                 enemyDead = true;
             }
             if (enemyDead == true)
@@ -306,12 +320,13 @@ namespace HumphreyErik2424RST
             // If the player has less than half their health remaining but more than 1/5, set the ProgressBar to a yellow state
             if (prgHealthPlayer.Value < prgHealthPlayer.Maximum / 2 && prgHealthPlayer.Value > prgHealthPlayer.Maximum / 5)
                 ModifyProgressBarColor.SetState(prgHealthPlayer, 3);
-            // If the player has less than 1/5 of their health remaining, set the ProgressBar to a red state
-            else if (prgHealthPlayer.Value < prgHealthPlayer.Maximum / 5)
+            // If the player has less than or equal to 1/5 of their health remaining, set the ProgressBar to a red state
+            else if (prgHealthPlayer.Value <= prgHealthPlayer.Maximum / 5)
                 ModifyProgressBarColor.SetState(prgHealthPlayer, 2);
-            // Otherwise, make sure it's green
-            else
-                ModifyProgressBarColor.SetState(prgHealthPlayer, 1);
+            // Make sure it's green while >= half maximum health
+            // Note: Leave this as an else if statement, as the math is imperfect and it will appear as green when healing while health is low.
+            else if (prgHealthPlayer.Value >= prgHealthPlayer.Maximum / 2)
+            ModifyProgressBarColor.SetState(prgHealthPlayer, 1);
         }
 
         // Same thing but for the enemy. Enemy currently cannot gain health / heal, so that part is left out
@@ -363,7 +378,7 @@ namespace HumphreyErik2424RST
                 case 1:
                     playerHealthToDecay = 30; // The damage the punch deals.
                     tmrPlayerHealthDecay.Start(); // Start the health loss chain of events
-                    lblStatusBar.Text = playerHitsEnemyFor + "30 damage!"; // Update the status bar. This is done seperately because Fist Flurry hits multiple times.
+                    // lblStatusBar.Text = playerHitsEnemyFor + "30 damage!"; // Update the status bar. This is done seperately because Fist Flurry hits multiple times.
                     break;
             }
         }
@@ -371,7 +386,6 @@ namespace HumphreyErik2424RST
         void playerTurn()
         {
             isEnemyTurn = false;
-
             pnlActions.Visible = true;
             btnTL.Text = "FIGHT";
             btnTR.Text = "REST";
@@ -382,36 +396,39 @@ namespace HumphreyErik2424RST
         private void tmrPlayerHealthDecay_Tick(object sender, EventArgs e)
         {
             // Progressively decrease the health of the enemy so it appears as if the progress bar is animating
-            // This gives a smooth transition instead of the health being lost instantly
+            // This gives a smooth transition instead of the health being lost instantly.
+            // If the progress bar appears to move in more than one step or is delayed, this is the merely result of lag and the program is trying to catch up.
+
+            // Taking damage
             if (playerHealthToDecay > 0)
             {
                 // Deplete progress bar to 0 if it might go under 0 to prevent a crash
                 if (prgHealthPlayer.Value - 1 < 0)
-                {
                     prgHealthPlayer.Value = 0;
-                    playerDamaged();
-                }
                 else
                 {
                     playerHealthToDecay--;
                     prgHealthPlayer.Value--;
-                    playerDamaged();
                 }
+            }
+            // Receiving healing (like from clicking REST)
+            else if (playerHealthToDecay < 0)
+            {
+                if (prgHealthPlayer.Value + 1 > 100)
+                    prgHealthPlayer.Value = 100;
+                else
+                {
+                    playerHealthToDecay++;
+                    prgHealthPlayer.Value++;
+                } 
             }
             else
             {
-                // Initiate the player's turn if the health decay was a result of an enemy action
-                if (isEnemyTurn)
-                    playerTurn();
-                // Initiate the enemy's turn if the player just healed themself
-                /* else if (!animationInProgress)
-                {
-        
-                    tmrPlayerHealthDecay.Stop();
-                } */
-                enemyTurn();
                 tmrPlayerHealthDecay.Stop();
+                tmrActionDelay.Start();
             }
+
+            playerDamaged();
         }
 
         private void tmrHealAnimation_Tick(object sender, EventArgs e)
@@ -425,6 +442,86 @@ namespace HumphreyErik2424RST
                 animationInProgress = false;
                 picHealingBeam.Visible = false;
                 picHealingBeam.Image = Properties.Resources.imgBeam01;
+                tmrActionDelay.Start();
+            }
+        }
+
+        private void tmrActionDelay_Tick(object sender, EventArgs e)
+        {
+            if (secondsWaited > 0)
+            {
+                tmrActionDelay.Stop();
+                secondsWaited = 0;
+                if (isEnemyTurn)
+                    playerTurn();
+                else
+                    enemyTurn();
+            }
+            else
+                secondsWaited++;
+        }
+
+        private void btnTL_MouseEnter(object sender, EventArgs e)
+        {
+            lblDescription.Visible = true;
+
+            if (btnTL.Text == "FIGHT")
+            {
+                lblDescription.Text = "Use a selection of martial arts to attack your enemy.";
+            }
+            else if (btnTL.Text == "PUNCH")
+            {
+                lblDescription.Text = "Strike your foe with a closed fist, dealing " + DV_PUNCH + " damage.";
+            }
+            else if (btnTL.Text == "FIST FLURRY")
+            {
+                lblDescription.Text = "Strike your foe three times, dealing " + DV_FIST_FLURRY * 3 + " damage total.";
+            }
+            else if (btnTL.Text == "ONE PUNCH MAN")
+            {
+                lblDescription.Text = "Obliterate your enemy with a swift blow to the vitals.";
+            }
+        }
+
+        private void btnTR_MouseEnter(object sender, EventArgs e)
+        {
+            lblDescription.Visible = true;
+
+            if (btnTR.Text == "REST")
+            {
+                lblDescription.Text = "Meditate, instantly restoring " + DV_REST.ToString().Substring(1, 2) + " health.";
+            }
+            else if (btnTR.Text == "FRONT KICK")
+            {
+                lblDescription.Text = "Quickly deliver a blow with the ball of your foot, dealing " + DV_FRONT_KICK + " damage.";
+            }
+            else if (btnTR.Text == "TORNADO KICK")
+            {
+                lblDescription.Text = "Spin 540° and deliver two flying kicks dealing a total of " + DV_TORNADO_KICK * 2 + " damage.";
+            }
+            else if (btnTR.Text == "WHIRLWIND KICK")
+            {
+                lblDescription.Text = "Deal " + DV_WHIRLWHIND_KICK + " damage to your enemy and stun them for a turn.";
+            }
+        }
+
+        private void btnBL_MouseEnter(object sender, EventArgs e)
+        {
+            lblDescription.Visible = true;
+
+            if (btnBL.Text == "Items")
+            {
+                lblDescription.Text = "Browse your inventory to use items.";
+            }
+        }
+
+        private void btnBR_MouseEnter(object sender, EventArgs e)
+        {
+            lblDescription.Visible = true;
+
+            if (btnBR.Text == "FLEE")
+            {
+                lblDescription.Text = "Flee from battle.";
             }
         }
     }

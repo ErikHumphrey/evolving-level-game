@@ -177,7 +177,7 @@
     <EmbeddedResource Include="Resources\sfxHitImproved.wav" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\sfxWeedVictory.wav" />
+    <EmbeddedResource Include="Resources\sfxWeedVictory.wav" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\imgSwipe1.png" />
@@ -207,7 +207,7 @@
     <None Include="Resources\heroSmile.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\sfxSwoosh.wav" />
+    <EmbeddedResource Include="Resources\sfxSwoosh.wav" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\whirlwindkick.png" />
@@ -319,6 +319,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\imgHeal221.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\sfxHealing.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\sfxHealingShorter.wav" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
