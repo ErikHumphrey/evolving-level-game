@@ -283,7 +283,7 @@
             // picHealingBeam
             // 
             this.picHealingBeam.BackColor = System.Drawing.Color.Transparent;
-            this.picHealingBeam.Image = global::HumphreyErik2424RST.Properties.Resources.imgHeal01;
+            this.picHealingBeam.Image = global::HumphreyErik2424RST.Properties.Resources.imgBeam01;
             this.picHealingBeam.Location = new System.Drawing.Point(639, 216);
             this.picHealingBeam.Name = "picHealingBeam";
             this.picHealingBeam.Size = new System.Drawing.Size(66, 97);

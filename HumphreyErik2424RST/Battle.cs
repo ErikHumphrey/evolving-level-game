@@ -28,7 +28,7 @@ namespace HumphreyErik2424RST
         bool selectingAttack = false;
         bool isEnemyTurn, enemyDead = false;
         string playerHitsEnemyFor = "PLAYER" + " hits " + "ENEMY" + " for ";
-        Image[] picHealingBeams = new Image[34];
+        Image[] picHealingBeams = new Image[12];
         int beamFrame;
 
         // All sound effects used on this level
@@ -58,7 +58,7 @@ namespace HumphreyErik2424RST
             // Using a ResourceManager simplifies having to declare each image for each array value manually 
             for (int i = 0; i < picHealingBeams.Length; i++)
             {
-                picHealingBeams[i] = (Image)Properties.Resources.ResourceManager.GetObject("imgHeal" + i.ToString("D2"));
+                picHealingBeams[i] = (Image)Properties.Resources.ResourceManager.GetObject("imgBeam" + i.ToString("D2"));
             }
 
             // picHealingBeam.Size = new Size(113, 171);
@@ -416,13 +416,15 @@ namespace HumphreyErik2424RST
 
         private void tmrHealAnimation_Tick(object sender, EventArgs e)
         {
-            if (beamFrame < 33)
+            // Only 11 images in the array, but a range of 12 allows image 11 to be shown. Otherwise, the instant the image 11 appears, the PictureBox would be hidden.
+            if (beamFrame < 12)
                 picHealingBeam.Image = picHealingBeams[beamFrame++];
             else
             {
                 tmrHealAnimation.Stop();
                 animationInProgress = false;
                 picHealingBeam.Visible = false;
+                picHealingBeam.Image = Properties.Resources.imgBeam01;
             }
         }
     }
