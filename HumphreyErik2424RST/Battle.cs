@@ -113,7 +113,7 @@ namespace HumphreyErik2424RST
             {
                 enemyHealthToDecay = 30; // The damage the punch deals.
                 tmrEnemyHealthDecay.Start(); // Start the health loss chain of events
-                lblStatusBar.Text = playerHitsEnemyFor + "30 damage!";  // Update the status bar. This is done seperately because Fist Flurry hits multiple times.
+                lblStatusBar.Text = playerHitsEnemyFor + "30 damage!"; // Update the status bar. This is done seperately because Fist Flurry hits multiple times.
             }
             else if (btnTL.Text == "FIST FLURRY")
             {
@@ -178,8 +178,8 @@ namespace HumphreyErik2424RST
             {
                 // Confirm flee
                 DialogResult wantsToFlee = MessageBox.Show("Are you sure you want to flee from this fight?\r\n\r\nYou won't earn any points for this level.",
-                "Confirm flee",
-                MessageBoxButtons.YesNo);
+                 "Confirm flee",
+                 MessageBoxButtons.YesNo);
 
                 if (wantsToFlee == DialogResult.Yes)
                 {
@@ -253,7 +253,7 @@ namespace HumphreyErik2424RST
 
         private void tmrAnimationTicker_Tick(object sender, EventArgs e)
         {
- 
+
             swipeFrame++;
 
             switch (swipeFrame)
@@ -287,7 +287,7 @@ namespace HumphreyErik2424RST
             {
                 tmrAnimationTicker.Stop();
                 animationInProgress = false;
-            } 
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -363,7 +363,7 @@ namespace HumphreyErik2424RST
                 case 1:
                     playerHealthToDecay = 30; // The damage the punch deals.
                     tmrPlayerHealthDecay.Start(); // Start the health loss chain of events
-                    lblStatusBar.Text = playerHitsEnemyFor + "30 damage!";  // Update the status bar. This is done seperately because Fist Flurry hits multiple times.
+                    lblStatusBar.Text = playerHitsEnemyFor + "30 damage!"; // Update the status bar. This is done seperately because Fist Flurry hits multiple times.
                     break;
             }
         }
@@ -406,7 +406,7 @@ namespace HumphreyErik2424RST
                 // Initiate the enemy's turn if the player just healed themself
                 /* else if (!animationInProgress)
                 {
-                    
+        
                     tmrPlayerHealthDecay.Stop();
                 } */
                 enemyTurn();
