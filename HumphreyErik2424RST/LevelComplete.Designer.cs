@@ -35,26 +35,26 @@
             this.label6 = new System.Windows.Forms.Label();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.grpShop = new System.Windows.Forms.GroupBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.button4 = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.button3 = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.lblShopDescription = new System.Windows.Forms.Label();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.button2 = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.button1 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
+            this.picIronHatchet = new System.Windows.Forms.PictureBox();
             this.btnBuyHatchet = new System.Windows.Forms.Button();
             this.lblIronHatchet = new System.Windows.Forms.Label();
             this.lblYourCredits = new System.Windows.Forms.Label();
             this.btnNextLevel = new System.Windows.Forms.Button();
             this.btnReturnToMenu = new System.Windows.Forms.Button();
             this.lblCreditCount = new System.Windows.Forms.Label();
-            this.button4 = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.picIronHatchet = new System.Windows.Forms.PictureBox();
             this.grpRewards.SuspendLayout();
             this.grpShop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -91,7 +91,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Courier New", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(32, 47);
+            this.label8.Location = new System.Drawing.Point(32, 45);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(329, 14);
             this.label8.TabIndex = 3;
@@ -101,7 +101,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Courier New", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(32, 60);
+            this.label7.Location = new System.Drawing.Point(32, 58);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(329, 14);
             this.label7.TabIndex = 2;
@@ -111,7 +111,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Courier New", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(32, 73);
+            this.label6.Location = new System.Drawing.Point(32, 71);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(329, 14);
             this.label6.TabIndex = 1;
@@ -150,6 +150,44 @@
             this.grpShop.TabStop = false;
             this.grpShop.Text = "Shop";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::HumphreyErik2424RST.Properties.Resources.whirlwindkick;
+            this.pictureBox1.Location = new System.Drawing.Point(159, 85);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(46, 46);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 19;
+            this.pictureBox1.TabStop = false;
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(211, 104);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(75, 23);
+            this.button4.TabIndex = 18;
+            this.button4.Text = "Buy";
+            this.button4.UseVisualStyleBackColor = true;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(211, 88);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(71, 13);
+            this.label3.TabIndex = 17;
+            this.label3.Text = "Tornado Kick";
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Image = global::HumphreyErik2424RST.Properties.Resources.flurryicon;
+            this.pictureBox4.Location = new System.Drawing.Point(159, 30);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(46, 46);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox4.TabIndex = 16;
+            this.pictureBox4.TabStop = false;
+            // 
             // button3
             // 
             this.button3.Location = new System.Drawing.Point(211, 49);
@@ -178,6 +216,16 @@
             this.lblShopDescription.TabIndex = 13;
             this.lblShopDescription.Text = "Mouse over \"Buy\" to view item description.";
             // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = global::HumphreyErik2424RST.Properties.Resources.changer;
+            this.pictureBox3.Location = new System.Drawing.Point(15, 143);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(46, 46);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox3.TabIndex = 12;
+            this.pictureBox3.TabStop = false;
+            // 
             // button2
             // 
             this.button2.Location = new System.Drawing.Point(67, 163);
@@ -196,6 +244,16 @@
             this.label4.TabIndex = 10;
             this.label4.Text = "Burst fire mode";
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::HumphreyErik2424RST.Properties.Resources.img50Cal;
+            this.pictureBox2.Location = new System.Drawing.Point(15, 92);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(46, 46);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 9;
+            this.pictureBox2.TabStop = false;
+            // 
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(67, 108);
@@ -213,6 +271,16 @@
             this.label2.Size = new System.Drawing.Size(91, 13);
             this.label2.TabIndex = 7;
             this.label2.Text = ".50 caliber rounds";
+            // 
+            // picIronHatchet
+            // 
+            this.picIronHatchet.Image = global::HumphreyErik2424RST.Properties.Resources.imgIronAxe1;
+            this.picIronHatchet.Location = new System.Drawing.Point(15, 30);
+            this.picIronHatchet.Name = "picIronHatchet";
+            this.picIronHatchet.Size = new System.Drawing.Size(46, 46);
+            this.picIronHatchet.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picIronHatchet.TabIndex = 6;
+            this.picIronHatchet.TabStop = false;
             // 
             // btnBuyHatchet
             // 
@@ -271,74 +339,6 @@
             this.lblCreditCount.TabIndex = 5;
             this.lblCreditCount.Text = "        000";
             this.lblCreditCount.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(211, 104);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
-            this.button4.TabIndex = 18;
-            this.button4.Text = "Buy";
-            this.button4.UseVisualStyleBackColor = true;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(211, 88);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(71, 13);
-            this.label3.TabIndex = 17;
-            this.label3.Text = "Tornado Kick";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::HumphreyErik2424RST.Properties.Resources.whirlwindkick;
-            this.pictureBox1.Location = new System.Drawing.Point(159, 85);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(46, 46);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 19;
-            this.pictureBox1.TabStop = false;
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.Image = global::HumphreyErik2424RST.Properties.Resources.flurryicon;
-            this.pictureBox4.Location = new System.Drawing.Point(159, 30);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(46, 46);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox4.TabIndex = 16;
-            this.pictureBox4.TabStop = false;
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Image = global::HumphreyErik2424RST.Properties.Resources.changer;
-            this.pictureBox3.Location = new System.Drawing.Point(15, 143);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(46, 46);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox3.TabIndex = 12;
-            this.pictureBox3.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::HumphreyErik2424RST.Properties.Resources.img50Cal;
-            this.pictureBox2.Location = new System.Drawing.Point(15, 92);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(46, 46);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 9;
-            this.pictureBox2.TabStop = false;
-            // 
-            // picIronHatchet
-            // 
-            this.picIronHatchet.Image = global::HumphreyErik2424RST.Properties.Resources.imgIronAxe1;
-            this.picIronHatchet.Location = new System.Drawing.Point(15, 30);
-            this.picIronHatchet.Name = "picIronHatchet";
-            this.picIronHatchet.Size = new System.Drawing.Size(46, 46);
-            this.picIronHatchet.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picIronHatchet.TabIndex = 6;
-            this.picIronHatchet.TabStop = false;
             // 
             // frmLevelComplete
             // 
