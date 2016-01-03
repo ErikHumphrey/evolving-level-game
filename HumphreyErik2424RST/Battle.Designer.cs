@@ -275,7 +275,7 @@
             // 
             this.picHealingBeam.BackColor = System.Drawing.Color.Transparent;
             this.picHealingBeam.Image = global::HumphreyErik2424RST.Properties.Resources.imgBeam01;
-            this.picHealingBeam.Location = new System.Drawing.Point(639, 216);
+            this.picHealingBeam.Location = new System.Drawing.Point(628, 213);
             this.picHealingBeam.Name = "picHealingBeam";
             this.picHealingBeam.Size = new System.Drawing.Size(66, 97);
             this.picHealingBeam.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -298,7 +298,7 @@
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(37, 49);
+            this.button1.Location = new System.Drawing.Point(50, 30);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(137, 64);
             this.button1.TabIndex = 13;
