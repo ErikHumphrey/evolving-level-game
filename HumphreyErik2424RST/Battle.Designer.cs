@@ -99,7 +99,6 @@
             // 
             // btnBR
             // 
-            this.btnBR.Enabled = false;
             this.btnBR.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBR.Location = new System.Drawing.Point(180, 42);
             this.btnBR.Name = "btnBR";
@@ -126,7 +125,6 @@
             // 
             // btnBL
             // 
-            this.btnBL.Enabled = false;
             this.btnBL.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBL.Location = new System.Drawing.Point(2, 42);
             this.btnBL.Name = "btnBL";

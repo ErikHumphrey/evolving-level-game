@@ -26,7 +26,6 @@ namespace HumphreyErik2424RST
         int enemyMaxHP = 100;
         bool animationInProgress = false;
         string enemyName;
-        bool selectingAttack = false;
         bool isEnemyTurn, enemyDead = false;
         string playerHitsEnemyFor = "PLAYER" + " hits " + "ENEMY" + " for ";
         Image[] picHealingBeams = new Image[12];
@@ -121,10 +120,9 @@ namespace HumphreyErik2424RST
 
             if (btnTL.Text == "FIGHT")
             {
-                selectingAttack = true;
-                // Change the text of button's to the player's combat abilities
                 btnTL.Text = "FIST FLURRY";
                 btnTR.Text = "FRONT KICK";
+                btnBR.Text = "< BACK";
             }
             else if (btnTL.Text == "PUNCH")
             {
@@ -134,7 +132,7 @@ namespace HumphreyErik2424RST
             }
             else if (btnTL.Text == "FIST FLURRY")
             {
-                enemyHealthToDecay = 60;
+                enemyHealthToDecay = DV_FIST_FLURRY;
                 tmrFistFlurry.Start();
             }
             else if (btnTL.Text == "ONE PUNCH MAN")
@@ -178,7 +176,12 @@ namespace HumphreyErik2424RST
 
         private void btnBL_Click(object sender, EventArgs e)
         {
-
+            if (btnBL.Text == "ITEMS")
+            {
+                frmItems Items = new frmItems();
+                Items.Show();
+                this.Hide();
+            }
         }
 
         private void btnBR_Click(object sender, EventArgs e)
@@ -262,7 +265,6 @@ namespace HumphreyErik2424RST
 
         private void tmrAnimationTicker_Tick(object sender, EventArgs e)
         {
-
             swipeFrame++;
 
             switch (swipeFrame)
