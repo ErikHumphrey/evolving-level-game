@@ -259,7 +259,6 @@
             // 
             // pnlTop
             // 
-            this.pnlTop.BackgroundImage = global::HumphreyErik2424RST.Properties.Resources.battlebg;
             this.pnlTop.Controls.Add(this.picHealingBeam);
             this.pnlTop.Controls.Add(this.picPunch);
             this.pnlTop.Controls.Add(this.button1);
@@ -277,7 +276,6 @@
             // picHealingBeam
             // 
             this.picHealingBeam.BackColor = System.Drawing.Color.Transparent;
-            this.picHealingBeam.Image = global::HumphreyErik2424RST.Properties.Resources.imgBeam01;
             this.picHealingBeam.Location = new System.Drawing.Point(628, 213);
             this.picHealingBeam.Name = "picHealingBeam";
             this.picHealingBeam.Size = new System.Drawing.Size(66, 97);
@@ -289,7 +287,6 @@
             // picPunch
             // 
             this.picPunch.BackColor = System.Drawing.Color.Transparent;
-            this.picPunch.Image = global::HumphreyErik2424RST.Properties.Resources.imgFlurryGraphic;
             this.picPunch.Location = new System.Drawing.Point(644, 36);
             this.picPunch.Name = "picPunch";
             this.picPunch.Size = new System.Drawing.Size(50, 50);
@@ -312,7 +309,6 @@
             // picSwipe
             // 
             this.picSwipe.BackColor = System.Drawing.Color.Transparent;
-            this.picSwipe.Image = global::HumphreyErik2424RST.Properties.Resources.imgSwipe1;
             this.picSwipe.Location = new System.Drawing.Point(621, 92);
             this.picSwipe.Name = "picSwipe";
             this.picSwipe.Size = new System.Drawing.Size(84, 111);
@@ -381,11 +377,11 @@
             this.lblNamePlayer.Size = new System.Drawing.Size(54, 22);
             this.lblNamePlayer.TabIndex = 0;
             this.lblNamePlayer.Text = "ERIK";
+            this.lblNamePlayer.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // picPortraitEnemy
             // 
             this.picPortraitEnemy.BackColor = System.Drawing.Color.Transparent;
-            this.picPortraitEnemy.Image = global::HumphreyErik2424RST.Properties.Resources.cultistimproved;
             this.picPortraitEnemy.Location = new System.Drawing.Point(437, 30);
             this.picPortraitEnemy.Name = "picPortraitEnemy";
             this.picPortraitEnemy.Size = new System.Drawing.Size(163, 181);
@@ -447,7 +443,6 @@
             // picPortraitPlayer
             // 
             this.picPortraitPlayer.BackColor = System.Drawing.Color.Transparent;
-            this.picPortraitPlayer.Image = global::HumphreyErik2424RST.Properties.Resources.heroSmile;
             this.picPortraitPlayer.Location = new System.Drawing.Point(50, 147);
             this.picPortraitPlayer.Name = "picPortraitPlayer";
             this.picPortraitPlayer.Size = new System.Drawing.Size(210, 217);

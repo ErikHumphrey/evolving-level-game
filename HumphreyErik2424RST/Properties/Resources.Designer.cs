@@ -333,9 +333,19 @@ namespace HumphreyErik2424RST.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap imgCultist {
+        internal static System.Drawing.Bitmap imgCultistAlt {
             get {
-                object obj = ResourceManager.GetObject("imgCultist", resourceCulture);
+                object obj = ResourceManager.GetObject("imgCultistAlt", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap imgCultistDead {
+            get {
+                object obj = ResourceManager.GetObject("imgCultistDead", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -346,6 +356,16 @@ namespace HumphreyErik2424RST.Properties {
         internal static System.Drawing.Bitmap imgFlurryGraphic {
             get {
                 object obj = ResourceManager.GetObject("imgFlurryGraphic", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap imgHero {
+            get {
+                object obj = ResourceManager.GetObject("imgHero", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
