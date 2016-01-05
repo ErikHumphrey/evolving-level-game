@@ -353,6 +353,16 @@ namespace HumphreyErik2424RST.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap imgEnemyHider {
+            get {
+                object obj = ResourceManager.GetObject("imgEnemyHider", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap imgFlurryGraphic {
             get {
                 object obj = ResourceManager.GetObject("imgFlurryGraphic", resourceCulture);

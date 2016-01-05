@@ -69,6 +69,8 @@ namespace HumphreyErik2424RST
 
         private void frmBattle_Load(object sender, EventArgs e)
         {
+            picPortraitEnemy.Location = new Point(437, 30);
+
             // restAsString = DV_REST.ToString().Substring;
 
             // Using a ResourceManager simplifies having to declare each image for each array value manually 
@@ -253,12 +255,11 @@ namespace HumphreyErik2424RST
                 // lblStatusBar.Text = "ENEMY" + " has been defeated!";
                 enemyDead = true;
             }
+            // Separate so that it plays later
             if (enemyDead == true)
             {
-                levelComplete.Play();
-                HumphreyErik2424RST.frmLevelComplete LevelComplete = new HumphreyErik2424RST.frmLevelComplete();
-                LevelComplete.Show();
-                this.Hide();
+                picPortraitEnemy.Image = Properties.Resources.imgCultistDead;
+                tmrDeathAnimation.Start();
                 tmrGameTicker.Stop();
             }
         }
@@ -520,6 +521,28 @@ namespace HumphreyErik2424RST
             {
                 lblDescription.Text = "Flee from battle.";
             }
+        }
+
+        private void tmrDeathAnimation_Tick(object sender, EventArgs e)
+        {
+            if (picPortraitEnemy.Location.Y < 144)
+                picPortraitEnemy.Top += 22;
+            else
+            {
+                tmrDeathAnimation.Stop();
+                levelComplete.Play();
+                HumphreyErik2424RST.frmLevelComplete LevelComplete = new HumphreyErik2424RST.frmLevelComplete();
+                LevelComplete.Show();
+                this.Hide();
+                tmrGameTicker.Stop();
+            }
+        }
+
+        private void btnBuddha_Click(object sender, EventArgs e)
+        {
+            prgHealthEnemy.Value = 10;
+            lblHealthEnemy.Text = "10 / " + enemyMaxHP;
+            ModifyProgressBarColor.SetState(prgHealthEnemy, 2);
         }
     }
 }
