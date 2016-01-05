@@ -136,6 +136,8 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Resources\menuFont.ttf" />
+    <EmbeddedResource Include="Resources\menuFontAlt.ttf" />
     <None Include="Resources\stumpforproject.png" />
   </ItemGroup>
   <ItemGroup>

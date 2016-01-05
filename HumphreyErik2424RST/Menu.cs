@@ -6,7 +6,9 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Text; 
 using System.Linq;
+using System.Media;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -19,9 +21,30 @@ namespace HumphreyErik2424RST
         Random rnd = new Random();
         int levelIndex;
 
+        // Same custom font code featured in past projects
+        [System.Runtime.InteropServices.DllImport("gdi32.dll")]
+        private static extern IntPtr AddFontMemResourceEx(IntPtr pbFont, uint cbFont,
+            IntPtr pdv, [System.Runtime.InteropServices.In] ref uint pcFonts);
+        private PrivateFontCollection fonts = new PrivateFontCollection();
+
+        // New font
+        Font labelText;
+
         public frmSplashScreen()
         {
             InitializeComponent();
+
+            // Use font bundled in program resources
+            byte[] fontData = Properties.Resources.menuFont;
+            IntPtr fontPtr = System.Runtime.InteropServices.Marshal.AllocCoTaskMem(fontData.Length);
+            System.Runtime.InteropServices.Marshal.Copy(fontData, 0, fontPtr, fontData.Length);
+            uint dummy = 0;
+            fonts.AddMemoryFont(fontPtr, Properties.Resources.menuFont.Length);
+            AddFontMemResourceEx(fontPtr, (uint)Properties.Resources.menuFont.Length, IntPtr.Zero, ref dummy);
+            System.Runtime.InteropServices.Marshal.FreeCoTaskMem(fontPtr);
+
+            // Declare typeface properties
+            labelText = new Font(fonts.Families[0], 11F);
         }
 
         // Display a description of a button's function when moused over
@@ -73,6 +96,12 @@ namespace HumphreyErik2424RST
             frmBattle Battle = new frmBattle();
             Battle.Show();
             this.Hide();
+        }
+
+        private void frmSplashScreen_Load(object sender, EventArgs e)
+        {
+            lblNameTitle.Font = txtNameEntry.Font = lblLoginHeader.Font = labelText;
+            this.ActiveControl = txtNameEntry;
         }
     }
 }
