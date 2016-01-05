@@ -14,7 +14,7 @@ namespace HumphreyErik2424RST
 {
     public partial class frmLevelComplete : Form
     {
-        int credits = 0;
+        int credits = 9999999;
 
         public frmLevelComplete()
         {
@@ -47,43 +47,71 @@ namespace HumphreyErik2424RST
             lblCreditCount.Text = credits.ToString();
         }
 
+        // Upgrade punch ability
+
         private void btnUpgPunch_Click(object sender, EventArgs e)
         {
             switch (Upgrades.punchAbilityLevel)
             {
                 case 1:
                     lblPunchName.Text = "Fist Flurry";
-                    picPunchIcon.Image = Properties.Resources.flurryicon;
+                    picPunchIcon.Image = Properties.Resources.iconFistFlurry;
+                    Upgrades.punchAbilityLevel++;
                     break;
                 case 2:
                     lblPunchName.Text = "One Punch Man";
-                    picPunchIcon.Image = Properties.Resources.onepunchmanicon;
+                    picPunchIcon.Image = Properties.Resources.iconOnePunchMan;
+                    Upgrades.punchAbilityLevel++;
                     btnUpgPunch.Text = "MAX";
                     btnUpgPunch.Enabled = false;
                     break;
             }
 
             creditsChanged();
-            Upgrades.punchAbilityLevel++;
         }
+
+        // Upgrade kick ability
+
+        private void btnUpgKick_Click(object sender, EventArgs e)
+        {
+            switch (Upgrades.kickAbilityLevel)
+            {
+                case 1:
+                    lblKickName.Text = "Tornado Kick";
+                    picKickIcon.Image = Properties.Resources.iconTornadoKick;
+                    Upgrades.kickAbilityLevel++;
+                    break;
+                case 2:
+                    lblKickName.Text = "Whirlwind Kick";
+                    picKickIcon.Image = Properties.Resources.iconWhirlwindKick;
+                    Upgrades.kickAbilityLevel++;
+                    btnUpgKick.Text = "MAX";
+                    btnUpgKick.Enabled = false;
+                    break;
+            }
+
+            creditsChanged();
+        }
+
+        // Upgrade blind ability
 
         private void btnUpgBlind_Click(object sender, EventArgs e)
         {
-          switch (Upgrades.SmokeAbilityLevel)
+          switch (Upgrades.blindAbilityLevel)
             {
-                case 1:
+                case 0:
                     lblBlindName.Text = "Blinding Powder";
-                    picSmokeIcon.Image = Properties.Resources.picsmokebomb;
+                    picBlindIcon.Image = Properties.Resources.iconBlindingPowder;
+                    break;
+                case 1:
+                    lblBlindName.Text = "Smoke Screen";
+                    picBlindIcon.Image = Properties.Resources.iconSmokeScreenAlt;
                     break;
                 case 2:
-                    lblBlindName.Text = "Smoke Screen";
-                    picSmokeIcon.Image = Properties.Resources.picsmokescreen;
-                    break;
-                case 3:
                     lblBlindName.Text = "Pocket Sand";
-                    picBlindIcon.Image = Properties.Resources.picpocketsand;
-                    btnUpgSmoke.Text = "MAX";
-                    btnUpgSmoke.Enabled = false;
+                    picBlindIcon.Image = Properties.Resources.iconPocketSand;
+                    btnUpgBlind.Text = "MAX";
+                    btnUpgBlind.Enabled = false;
                     break;
 
             }
@@ -92,9 +120,32 @@ namespace HumphreyErik2424RST
             Upgrades.blindAbilityLevel++;
         }
 
-        private void grpShop_Enter(object sender, EventArgs e)
-        {
+        // Upgrade heal
 
+        private void btnUpgHeal_Click(object sender, EventArgs e)
+        {
+            switch (Upgrades.healAbilityLevel)
+            {
+                case 0:
+                    lblHealName.Text = "Rest";
+                    picHealIcon.Image = Properties.Resources.iconRest;
+                    Upgrades.healAbilityLevel++;
+                    break;
+                case 1:
+                    lblHealName.Text = "Meditate";
+                    picHealIcon.Image = Properties.Resources.iconMeditate;
+                    Upgrades.healAbilityLevel++;
+                    break;
+                case 2:
+                    lblHealName.Text = "Self-Repair";
+                    picHealIcon.Image = Properties.Resources.iconSelfRepair;
+                    Upgrades.healAbilityLevel++;
+                    btnUpgHeal.Text = "MAX";
+                    btnUpgHeal.Enabled = false;
+                    break;
+            }
+
+            creditsChanged();
         }
     }
 }

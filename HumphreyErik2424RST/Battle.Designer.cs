@@ -47,6 +47,7 @@
             this.tmrEnemyHealthDecay = new System.Windows.Forms.Timer(this.components);
             this.tmrPlayerHealthDecay = new System.Windows.Forms.Timer(this.components);
             this.tmrHealAnimation = new System.Windows.Forms.Timer(this.components);
+            this.tmrActionDelay = new System.Windows.Forms.Timer(this.components);
             this.pnlTop = new System.Windows.Forms.Panel();
             this.picHealingBeam = new System.Windows.Forms.PictureBox();
             this.picPunch = new System.Windows.Forms.PictureBox();
@@ -65,7 +66,6 @@
             this.prgHealthEnemy = new System.Windows.Forms.ProgressBar();
             this.lblNameEnemy = new System.Windows.Forms.Label();
             this.picPortraitPlayer = new System.Windows.Forms.PictureBox();
-            this.tmrActionDelay = new System.Windows.Forms.Timer(this.components);
             this.pnlActions.SuspendLayout();
             this.pnlStuff.SuspendLayout();
             this.pnlYellow.SuspendLayout();
@@ -251,6 +251,11 @@
             // 
             this.tmrHealAnimation.Interval = 80;
             this.tmrHealAnimation.Tick += new System.EventHandler(this.tmrHealAnimation_Tick);
+            // 
+            // tmrActionDelay
+            // 
+            this.tmrActionDelay.Interval = 1000;
+            this.tmrActionDelay.Tick += new System.EventHandler(this.tmrActionDelay_Tick);
             // 
             // pnlTop
             // 
@@ -449,11 +454,6 @@
             this.picPortraitPlayer.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.picPortraitPlayer.TabIndex = 7;
             this.picPortraitPlayer.TabStop = false;
-            // 
-            // tmrActionDelay
-            // 
-            this.tmrActionDelay.Interval = 1000;
-            this.tmrActionDelay.Tick += new System.EventHandler(this.tmrActionDelay_Tick);
             // 
             // frmBattle
             // 

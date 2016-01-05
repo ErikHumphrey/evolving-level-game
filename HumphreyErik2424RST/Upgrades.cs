@@ -17,7 +17,7 @@ namespace Upgrader
     {
         // Battle (Punches are always top left ability, kicks are top right)
         static public int punchAbilityLevel = 1;
-        static public int kickAbilityLevel = 0;
+        static public int kickAbilityLevel = 1;
         static public int blindAbilityLevel = 0;
         static public int healAbilityLevel = 1;
     }
