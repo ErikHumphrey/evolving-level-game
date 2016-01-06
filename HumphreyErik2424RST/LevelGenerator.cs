@@ -16,6 +16,7 @@ namespace LevelGenerator
     public static class LevelGen
     {
         static Random rnd = new Random();
+        static public string name = "Player";
         static public int difficulty = 0;
         static int levelIndex = 0;
         static HumphreyErik2424RST.frmSplashScreen myMenu = new HumphreyErik2424RST.frmSplashScreen();

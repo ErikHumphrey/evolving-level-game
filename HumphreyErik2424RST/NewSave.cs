@@ -42,6 +42,16 @@ namespace HumphreyErik2424RST
         private void frmNewSave_Load(object sender, EventArgs e)
         {
             lblLoginHeader.Font = lblNameTitle.Font = txtNameEntry.Font = labelText;
+            this.ActiveControl = txtNameEntry;
+        }
+
+        private void txtNameEntry_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((int)e.KeyChar == 13) // Enter
+            {
+                LevelGenerator.LevelGen.name = txtNameEntry.Text;
+                this.Close();
+            }
         }
 
     }

@@ -65,6 +65,7 @@
             this.txtNameEntry.Name = "txtNameEntry";
             this.txtNameEntry.Size = new System.Drawing.Size(137, 17);
             this.txtNameEntry.TabIndex = 15;
+            this.txtNameEntry.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNameEntry_KeyPress);
             // 
             // frmNewSave
             // 
@@ -75,6 +76,7 @@
             this.Controls.Add(this.txtNameEntry);
             this.Controls.Add(this.lblLoginHeader);
             this.Controls.Add(this.lblNameTitle);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmNewSave";
             this.Text = "NewSave";
             this.Load += new System.EventHandler(this.frmNewSave_Load);

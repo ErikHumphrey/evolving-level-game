@@ -83,7 +83,9 @@ namespace HumphreyErik2424RST
 
         private void btnStart_Click(object sender, EventArgs e)
         {
-            LevelGenerator.LevelGen.NewLevel(); // Open a random level - Call the "level generator" method from its class
+            // LevelGenerator.LevelGen.NewLevel(); // Open a random level - Call the "level generator" method from its class
+            frmNewSave NewSave = new frmNewSave();
+            NewSave.Show();
         }
 
         private void btnBattle_Click(object sender, EventArgs e)
