@@ -57,6 +57,12 @@
     <Compile Include="Debugger.Designer.cs">
       <DependentUpon>Debugger.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmCheatMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCheatMenu.Designer.cs">
+      <DependentUpon>frmCheatMenu.cs</DependentUpon>
+    </Compile>
     <Compile Include="Items.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -75,6 +81,12 @@
     </Compile>
     <Compile Include="Menu.Designer.cs">
       <DependentUpon>Menu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NewSave.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewSave.Designer.cs">
+      <DependentUpon>NewSave.cs</DependentUpon>
     </Compile>
     <Compile Include="RoleplayingGame.cs">
       <SubType>Form</SubType>
@@ -97,6 +109,9 @@
     <EmbeddedResource Include="Debugger.resx">
       <DependentUpon>Debugger.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmCheatMenu.resx">
+      <DependentUpon>frmCheatMenu.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Items.resx">
       <DependentUpon>Items.cs</DependentUpon>
     </EmbeddedResource>
@@ -105,6 +120,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Menu.resx">
       <DependentUpon>Menu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewSave.resx">
+      <DependentUpon>NewSave.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="RoleplayingGame.resx">
       <DependentUpon>RoleplayingGame.cs</DependentUpon>
@@ -391,6 +409,24 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\imgEnemyHider.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\texGranite.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imgBanner.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imgBannerImproved.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imgBannerELG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\texGraniteLarge.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\texGraniteMed.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

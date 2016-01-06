@@ -233,6 +233,36 @@ namespace HumphreyErik2424RST.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap imgBanner {
+            get {
+                object obj = ResourceManager.GetObject("imgBanner", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap imgBannerELG {
+            get {
+                object obj = ResourceManager.GetObject("imgBannerELG", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap imgBannerImproved {
+            get {
+                object obj = ResourceManager.GetObject("imgBannerImproved", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap imgBeam01 {
             get {
                 object obj = ResourceManager.GetObject("imgBeam01", resourceCulture);
@@ -540,6 +570,36 @@ namespace HumphreyErik2424RST.Properties {
         internal static System.Drawing.Bitmap testhorizon {
             get {
                 object obj = ResourceManager.GetObject("testhorizon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap texGranite {
+            get {
+                object obj = ResourceManager.GetObject("texGranite", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap texGraniteLarge {
+            get {
+                object obj = ResourceManager.GetObject("texGraniteLarge", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap texGraniteMed {
+            get {
+                object obj = ResourceManager.GetObject("texGraniteMed", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -51,29 +51,29 @@ namespace HumphreyErik2424RST
 
         private void btnStart_MouseEnter(object sender, EventArgs e)
         {
-            grpMainMenu.Text = "Play the game";
+            lblButtonDescription.Text = "Play the game";
         }
 
         private void btnResetGame_MouseEnter(object sender, EventArgs e)
         {
-            grpMainMenu.Text = "Clear local save data";
+            lblButtonDescription.Text = "Clear local save data";
         }
 
         private void btnCheats_MouseEnter(object sender, EventArgs e)
         {
-            grpMainMenu.Text = "Configure the game and enable cheats";
+            lblButtonDescription.Text = "Configure the game and enable cheats";
         }
 
         private void btnExit_MouseEnter(object sender, EventArgs e)
         {
-            grpMainMenu.Text = "Close the program";
+            lblButtonDescription.Text = "Close the program";
         }
 
         // Reset groupBox title when not mousing over a button
 
         private void MenuButtons_MouseLeave(object sender, EventArgs e)
         {
-            grpMainMenu.Text = "Main Menu";
+            lblButtonDescription.Text = "Main Menu";
         }
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -83,10 +83,6 @@ namespace HumphreyErik2424RST
 
         private void btnStart_Click(object sender, EventArgs e)
         {
-            // Open the level progression form
-            // frmProgression Progression = new frmProgression();
-            // Progression.Show();
-
             LevelGenerator.LevelGen.NewLevel(); // Open a random level - Call the "level generator" method from its class
         }
 
@@ -100,8 +96,8 @@ namespace HumphreyErik2424RST
 
         private void frmSplashScreen_Load(object sender, EventArgs e)
         {
-            lblNameTitle.Font = txtNameEntry.Font = lblLoginHeader.Font = labelText;
-            this.ActiveControl = txtNameEntry;
+            btnExit.Font = btnStart.Font = btnCheats.Font = btnResetGame.Font = labelText;
+            // this.ActiveControl = txtNameEntry;
         }
     }
 }
