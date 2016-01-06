@@ -37,6 +37,9 @@
             this.btnBattle = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblButtonDescription = new System.Windows.Forms.Label();
+            this.lblSaveStatus = new System.Windows.Forms.Label();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -87,7 +90,7 @@
             this.btnStart.Name = "btnStart";
             this.btnStart.Size = new System.Drawing.Size(108, 23);
             this.btnStart.TabIndex = 1;
-            this.btnStart.Text = "Start";
+            this.btnStart.Text = "New game";
             this.btnStart.UseVisualStyleBackColor = true;
             this.btnStart.Click += new System.EventHandler(this.btnStart_Click);
             this.btnStart.MouseEnter += new System.EventHandler(this.btnStart_MouseEnter);
@@ -159,12 +162,46 @@
             this.lblButtonDescription.TabIndex = 16;
             this.lblButtonDescription.Text = "label1";
             // 
+            // lblSaveStatus
+            // 
+            this.lblSaveStatus.AutoSize = true;
+            this.lblSaveStatus.BackColor = System.Drawing.Color.Transparent;
+            this.lblSaveStatus.ForeColor = System.Drawing.Color.Yellow;
+            this.lblSaveStatus.Location = new System.Drawing.Point(188, 343);
+            this.lblSaveStatus.Name = "lblSaveStatus";
+            this.lblSaveStatus.Size = new System.Drawing.Size(72, 13);
+            this.lblSaveStatus.TabIndex = 17;
+            this.lblSaveStatus.Text = "Loaded save:";
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(51, 298);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(80, 17);
+            this.checkBox1.TabIndex = 18;
+            this.checkBox1.Text = "checkBox1";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(36, 127);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 19;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // frmSplashScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::HumphreyErik2424RST.Properties.Resources.texGraniteMed;
             this.ClientSize = new System.Drawing.Size(345, 365);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.checkBox1);
+            this.Controls.Add(this.lblSaveStatus);
             this.Controls.Add(this.lblButtonDescription);
             this.Controls.Add(this.btnBattle);
             this.Controls.Add(this.pictureBox1);
@@ -190,6 +227,9 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label lblButtonDescription;
+        private System.Windows.Forms.Label lblSaveStatus;
+        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.Button button1;
 
     }
 }

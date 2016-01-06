@@ -13,6 +13,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using LevelGenerator;
+using SaveGames;
 
 namespace HumphreyErik2424RST
 {
@@ -83,9 +84,7 @@ namespace HumphreyErik2424RST
 
         private void btnStart_Click(object sender, EventArgs e)
         {
-            // LevelGenerator.LevelGen.NewLevel(); // Open a random level - Call the "level generator" method from its class
-            frmNewSave NewSave = new frmNewSave();
-            NewSave.Show();
+            SaveSystem.saveLoader();
         }
 
         private void btnBattle_Click(object sender, EventArgs e)
@@ -98,8 +97,15 @@ namespace HumphreyErik2424RST
 
         private void frmSplashScreen_Load(object sender, EventArgs e)
         {
-            btnExit.Font = btnStart.Font = btnCheats.Font = btnResetGame.Font = labelText;
+            SaveSystem.saveLoader();
+            LevelGen.saveGameExists = Convert.ToBoolean(LevelGen.loadGame.ReadLine());
+            btnExit.Font = btnStart.Font = btnCheats.Font = btnResetGame.Font = lblSaveStatus.Font = labelText;
             // this.ActiveControl = txtNameEntry;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            lblSaveStatus.Text = SaveSystem.name;
         }
     }
 }

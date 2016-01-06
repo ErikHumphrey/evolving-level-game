@@ -94,6 +94,7 @@
     <Compile Include="RoleplayingGame.Designer.cs">
       <DependentUpon>RoleplayingGame.cs</DependentUpon>
     </Compile>
+    <Compile Include="SaveSystem.cs" />
     <Compile Include="Survival.cs">
       <SubType>Form</SubType>
     </Compile>

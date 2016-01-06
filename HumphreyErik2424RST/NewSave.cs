@@ -8,6 +8,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using LevelGenerator;
+using SaveGames;
 
 namespace HumphreyErik2424RST
 {
@@ -49,7 +51,11 @@ namespace HumphreyErik2424RST
         {
             if ((int)e.KeyChar == 13) // Enter
             {
-                LevelGenerator.LevelGen.name = txtNameEntry.Text;
+                SaveSystem.name = txtNameEntry.Text;
+                SaveSystem.saveGame.WriteLine(LevelGen.name);
+                SaveSystem.saveGameExists = true;
+                SaveSystem.saveGame.WriteLine(LevelGen.saveGameExists);
+                
                 this.Close();
             }
         }
