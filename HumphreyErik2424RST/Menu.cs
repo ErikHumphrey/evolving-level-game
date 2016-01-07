@@ -53,6 +53,8 @@ namespace HumphreyErik2424RST
 
         private void frmSplashScreen_Load(object sender, EventArgs e)
         {
+
+
             // LevelGen.saveGameExists = Convert.ToBoolean(LevelGen.loadGame.ReadLine());
             btnExit.Font = btnStart.Font = btnCheats.Font = btnResetGame.Font = lblSaveStatus.Font = lblButtonDescription.Font = labelText;
             // this.ActiveControl = txtNameEntry;
@@ -118,12 +120,27 @@ namespace HumphreyErik2424RST
            // SaveSystem.name = loadGame.ReadLine();
             if (SaveSystem.name != "Player")
                 lblSaveStatus.Text = "Loaded save: " + SaveSystem.name;
+                tmrSaveLoader.Stop();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            SaveSystem.SaveLoader();
-            tmrSaveLoader.Start();
+            if (SaveSystem.saveGameExists)
+            {
+                TextReader loadGame = new StreamReader("SaveGame.txt");
+                SaveSystem.name = loadGame.ReadLine();
+                loadGame.Close();
+            }
+            else
+            {
+                TextReader loadGame = new StreamReader("SaveGame.txt");
+                SaveSystem.saveGameExists = Convert.ToBoolean(loadGame.ReadLine());
+                loadGame.Close();
+                SaveSystem.SaveLoader();
+                tmrSaveLoader.Start();
+            }
+
+            lblSaveStatus.Text = "Loaded save: " + SaveSystem.name;
         }
 
         private void button3_Click(object sender, EventArgs e)

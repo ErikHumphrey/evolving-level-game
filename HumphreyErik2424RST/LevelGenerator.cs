@@ -16,7 +16,7 @@ namespace LevelGenerator
 {
     public static class LevelGen
     {
-        static public bool saveGameExists =false;
+        static public bool saveGameExists = false;
         static Random rnd = new Random();
         static public string name = "Player";
         static public int difficulty = 0;
