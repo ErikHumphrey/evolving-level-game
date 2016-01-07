@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmSplashScreen));
             this.btnCheats = new System.Windows.Forms.Button();
             this.btnResetGame = new System.Windows.Forms.Button();
@@ -40,6 +41,7 @@
             this.lblSaveStatus = new System.Windows.Forms.Label();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.button1 = new System.Windows.Forms.Button();
+            this.tmrSaveLoader = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -154,11 +156,11 @@
             // 
             this.lblButtonDescription.AutoSize = true;
             this.lblButtonDescription.BackColor = System.Drawing.Color.Transparent;
-            this.lblButtonDescription.Font = new System.Drawing.Font("Myriad Web Pro", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblButtonDescription.Font = new System.Drawing.Font("Myriad Web Pro Condensed", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblButtonDescription.ForeColor = System.Drawing.Color.Yellow;
-            this.lblButtonDescription.Location = new System.Drawing.Point(149, 102);
+            this.lblButtonDescription.Location = new System.Drawing.Point(109, 98);
             this.lblButtonDescription.Name = "lblButtonDescription";
-            this.lblButtonDescription.Size = new System.Drawing.Size(63, 22);
+            this.lblButtonDescription.Size = new System.Drawing.Size(41, 16);
             this.lblButtonDescription.TabIndex = 16;
             this.lblButtonDescription.Text = "label1";
             // 
@@ -192,6 +194,10 @@
             this.button1.Text = "button1";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // tmrSaveLoader
+            // 
+            this.tmrSaveLoader.Tick += new System.EventHandler(this.tmrSaveLoader_Tick);
             // 
             // frmSplashScreen
             // 
@@ -230,6 +236,7 @@
         private System.Windows.Forms.Label lblSaveStatus;
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Timer tmrSaveLoader;
 
     }
 }

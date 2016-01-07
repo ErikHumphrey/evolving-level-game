@@ -1,9 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.IO;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using HumphreyErik2424RST;
 
 namespace SaveGames
@@ -15,18 +19,18 @@ namespace SaveGames
         static public TextWriter saveGame = new StreamWriter("SaveGame.txt");
         static public TextReader loadGame = new StreamReader("SaveGame.txt");
 
-        public static void saveLoader()
+        public static void SaveLoader()
         {
-            if (saveGameExists)
-            {
-                name = loadGame.ReadLine();
-            }
+            //if (saveGameExists)
+            //{
+            //    name = loadGame.ReadLine();
+            //}
             //   }
-            else
-            {
-                frmNewSave NewSave = new frmNewSave();
-                NewSave.Show();
-            }
+            //else
+            //{
+            //    frmNewSave NewSave = new frmNewSave();
+            //    NewSave.Show();
+            //}
         }
     }
 }

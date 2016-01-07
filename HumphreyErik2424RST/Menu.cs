@@ -48,6 +48,13 @@ namespace HumphreyErik2424RST
             labelText = new Font(fonts.Families[0], 11F);
         }
 
+        private void frmSplashScreen_Load(object sender, EventArgs e)
+        {
+            //             LevelGen.saveGameExists = Convert.ToBoolean(LevelGen.loadGame.ReadLine());
+            btnExit.Font = btnStart.Font = btnCheats.Font = btnResetGame.Font = lblSaveStatus.Font = lblButtonDescription.Font = labelText;
+            // this.ActiveControl = txtNameEntry;
+        }
+
         // Display a description of a button's function when moused over
 
         private void btnStart_MouseEnter(object sender, EventArgs e)
@@ -84,7 +91,7 @@ namespace HumphreyErik2424RST
 
         private void btnStart_Click(object sender, EventArgs e)
         {
-            SaveSystem.saveLoader();
+           
         }
 
         private void btnBattle_Click(object sender, EventArgs e)
@@ -95,17 +102,16 @@ namespace HumphreyErik2424RST
             this.Hide();
         }
 
-        private void frmSplashScreen_Load(object sender, EventArgs e)
-        {
-            SaveSystem.saveLoader();
-            LevelGen.saveGameExists = Convert.ToBoolean(LevelGen.loadGame.ReadLine());
-            btnExit.Font = btnStart.Font = btnCheats.Font = btnResetGame.Font = lblSaveStatus.Font = labelText;
-            // this.ActiveControl = txtNameEntry;
-        }
-
         private void button1_Click(object sender, EventArgs e)
         {
             lblSaveStatus.Text = SaveSystem.name;
+        }
+
+        // It's not really easy to make the SaveSystem class load the name here, so we use a timer to check if the global variable has been changed.
+
+        private void tmrSaveLoader_Tick(object sender, EventArgs e)
+        {
+
         }
     }
 }
