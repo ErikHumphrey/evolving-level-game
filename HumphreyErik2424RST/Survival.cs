@@ -23,7 +23,7 @@ namespace HumphreyErik2424RST
         }
 
         private void frmSurvival_Load(object sender, EventArgs e)
-        {
+        {/*
             switch (LevelGen.difficulty)
             {
                 case 1:
@@ -46,7 +46,8 @@ namespace HumphreyErik2424RST
                     logsNeeded = 50;
                     treeType = "yew";
                     break;
-            }
+          * 
+            }*/
         }
     }
 }

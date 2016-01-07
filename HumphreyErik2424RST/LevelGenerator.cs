@@ -17,8 +17,6 @@ namespace LevelGenerator
     public static class LevelGen
     {
         static public bool saveGameExists =false;
-        static public TextWriter saveGame = new StreamWriter("SaveGame.txt");
-        static public TextReader loadGame = new StreamReader("SaveGame.txt");
         static Random rnd = new Random();
         static public string name = "Player";
         static public int difficulty = 0;

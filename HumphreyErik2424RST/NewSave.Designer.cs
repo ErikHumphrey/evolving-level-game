@@ -61,7 +61,7 @@
             this.txtNameEntry.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtNameEntry.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNameEntry.ForeColor = System.Drawing.Color.White;
-            this.txtNameEntry.Location = new System.Drawing.Point(95, 51);
+            this.txtNameEntry.Location = new System.Drawing.Point(100, 51);
             this.txtNameEntry.Name = "txtNameEntry";
             this.txtNameEntry.Size = new System.Drawing.Size(137, 17);
             this.txtNameEntry.TabIndex = 15;

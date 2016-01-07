@@ -10,6 +10,7 @@ using System.Drawing.Text;
 using System.Linq;
 using System.Media;
 using System.Text;
+using System.IO;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using LevelGenerator;
@@ -27,6 +28,8 @@ namespace HumphreyErik2424RST
         private static extern IntPtr AddFontMemResourceEx(IntPtr pbFont, uint cbFont,
             IntPtr pdv, [System.Runtime.InteropServices.In] ref uint pcFonts);
         private PrivateFontCollection fonts = new PrivateFontCollection();
+
+
 
         // New font
         Font labelText;
@@ -50,7 +53,7 @@ namespace HumphreyErik2424RST
 
         private void frmSplashScreen_Load(object sender, EventArgs e)
         {
-            //             LevelGen.saveGameExists = Convert.ToBoolean(LevelGen.loadGame.ReadLine());
+            // LevelGen.saveGameExists = Convert.ToBoolean(LevelGen.loadGame.ReadLine());
             btnExit.Font = btnStart.Font = btnCheats.Font = btnResetGame.Font = lblSaveStatus.Font = lblButtonDescription.Font = labelText;
             // this.ActiveControl = txtNameEntry;
         }
@@ -91,7 +94,7 @@ namespace HumphreyErik2424RST
 
         private void btnStart_Click(object sender, EventArgs e)
         {
-           
+            LevelGen.NewLevel();
         }
 
         private void btnBattle_Click(object sender, EventArgs e)
@@ -111,7 +114,20 @@ namespace HumphreyErik2424RST
 
         private void tmrSaveLoader_Tick(object sender, EventArgs e)
         {
+           // TextReader loadGame = new StreamReader("SaveGame.txt");
+           // SaveSystem.name = loadGame.ReadLine();
+            if (SaveSystem.name != "Player")
+                lblSaveStatus.Text = "Loaded save: " + SaveSystem.name;
+        }
 
+        private void button2_Click(object sender, EventArgs e)
+        {
+            SaveSystem.SaveLoader();
+            tmrSaveLoader.Start();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
         }
     }
 }

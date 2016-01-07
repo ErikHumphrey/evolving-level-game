@@ -84,8 +84,9 @@ namespace HumphreyErik2424RST
             ModifyProgressBarColor.SetState(prgHealthEnemy, 1);
             tmrGameTicker.Start();
             prgHealthPlayer.Maximum = prgHealthPlayer.Value = 100;
-
-            switch (LevelGen.difficulty)
+        }
+        
+        /*    switch (LevelGen.difficulty)
             {
                 case 1:
                     prgHealthEnemy.Maximum = enemyMaxHP;
@@ -110,6 +111,7 @@ namespace HumphreyErik2424RST
                     break;
             }
         }
+           */
 
         // Top-left, top-right, bottom-left, and bottom-right buttons in purple action panel
 
@@ -370,7 +372,7 @@ namespace HumphreyErik2424RST
         void enemyTurn()
         {
             isEnemyTurn = true;
-
+            /*
             switch (LevelGen.difficulty)
             {
                 case 1:
@@ -379,6 +381,7 @@ namespace HumphreyErik2424RST
                     // lblStatusBar.Text = playerHitsEnemyFor + "30 damage!"; // Update the status bar. This is done seperately because Fist Flurry hits multiple times.
                     break;
             }
+             * */
         }
 
         void playerTurn()

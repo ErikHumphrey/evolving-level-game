@@ -55,6 +55,7 @@ namespace HumphreyErik2424RST
                 SaveSystem.saveGame.WriteLine(LevelGen.name);
                 SaveSystem.saveGameExists = true;
                 SaveSystem.saveGame.WriteLine(LevelGen.saveGameExists);
+                SaveSystem.saveGame.Close();
                 
                 this.Close();
             }
