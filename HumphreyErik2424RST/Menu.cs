@@ -53,7 +53,7 @@ namespace HumphreyErik2424RST
 
         private void frmSplashScreen_Load(object sender, EventArgs e)
         {
-
+            SaveSystem.saveGame.Dispose();
 
             // LevelGen.saveGameExists = Convert.ToBoolean(LevelGen.loadGame.ReadLine());
             btnExit.Font = btnStart.Font = btnCheats.Font = btnResetGame.Font = lblSaveStatus.Font = lblButtonDescription.Font = labelText;
@@ -145,6 +145,22 @@ namespace HumphreyErik2424RST
 
         private void button3_Click(object sender, EventArgs e)
         {
+        }
+
+        private void btnResetGame_Click(object sender, EventArgs e)
+        {
+            DialogResult wantsToReset = MessageBox.Show("Are you sure you want to reset ALL data? This is irreversible.", "Confirm reset", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
+            if (wantsToReset == DialogResult.Yes)
+            {
+                File.Delete("SaveGame.txt");
+                TextWriter saveGame = new StreamWriter("SaveGame.txt");
+                SaveSystem.saveGameExists = false;
+                saveGame.WriteLine(SaveSystem.saveGameExists);
+                btnResetGame.Enabled = false;
+                MessageBox.Show("All local save data was cleared.", "Delete success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+                MessageBox.Show("No save data was cleared.", "Delete aborted", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }

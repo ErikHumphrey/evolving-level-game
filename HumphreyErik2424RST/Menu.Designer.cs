@@ -64,7 +64,6 @@
             // 
             // btnResetGame
             // 
-            this.btnResetGame.Enabled = false;
             this.btnResetGame.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(58)))), ((int)(((byte)(101)))));
             this.btnResetGame.FlatAppearance.BorderSize = 2;
             this.btnResetGame.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -76,7 +75,7 @@
             this.btnResetGame.TabIndex = 5;
             this.btnResetGame.Text = "Reset game";
             this.btnResetGame.UseVisualStyleBackColor = true;
-            this.btnResetGame.Click += new System.EventHandler(this.btnExit_Click);
+            this.btnResetGame.Click += new System.EventHandler(this.btnResetGame_Click);
             this.btnResetGame.MouseEnter += new System.EventHandler(this.btnResetGame_MouseEnter);
             this.btnResetGame.MouseLeave += new System.EventHandler(this.MenuButtons_MouseLeave);
             // 

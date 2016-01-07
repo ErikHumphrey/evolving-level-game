@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Drawing.Text;
 using System.Linq;
 using System.Text;
+using System.IO;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using LevelGenerator;
@@ -51,10 +52,11 @@ namespace HumphreyErik2424RST
         {
             if ((int)e.KeyChar == 13) // Enter
             {
+                TextWriter saveGame = new StreamWriter("SaveGame.txt");
                 SaveSystem.name = txtNameEntry.Text;
-                SaveSystem.saveGame.WriteLine(LevelGen.name);
+                saveGame.WriteLine(SaveSystem.name);
                 SaveSystem.saveGameExists = true;
-                SaveSystem.saveGame.WriteLine(LevelGen.saveGameExists);
+                saveGame.WriteLine(SaveSystem.saveGameExists);
                 SaveSystem.saveGame.Close();
                 
                 this.Close();
