@@ -24,7 +24,7 @@ namespace SaveGames
             {
             TextReader loadGame = new StreamReader("SaveGame.txt");
             name = loadGame.ReadLine();
-            loadGame.Dispose();
+            loadGame.Close();
             }
             else
             {

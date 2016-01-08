@@ -53,10 +53,25 @@ namespace HumphreyErik2424RST
 
         private void frmSplashScreen_Load(object sender, EventArgs e)
         {
+
+            if (SaveSystem.saveGameExists)
+            {
+                TextReader loadGame = new StreamReader("SaveGame.txt");
+                SaveSystem.name = loadGame.ReadLine();
+                loadGame.Close();
+            }
+            else
+            {
+                TextReader loadGame = new StreamReader("SaveGame.txt");
+                SaveSystem.saveGameExists = Convert.ToBoolean(loadGame.ReadLine());
+                loadGame.Close();
+                SaveSystem.SaveLoader();
+                tmrSaveLoader.Start();
+            }
+
             // Set the font of chosen controls to be the custom font
             btnExit.Font = btnStart.Font = btnCheats.Font = btnResetGame.Font = lblSaveStatus.Font = lblButtonDescription.Font = labelText;
             SaveSystem.saveGame.Close();
-
 
             // LevelGen.saveGameExists = Convert.ToBoolean(LevelGen.loadGame.ReadLine());
             
@@ -99,7 +114,12 @@ namespace HumphreyErik2424RST
 
         private void btnStart_Click(object sender, EventArgs e)
         {
-            LevelGen.NewLevel();
+            TextReader loadGame = new StreamReader("SaveGame.txt");
+            SaveSystem.saveGameExists = Convert.ToBoolean(loadGame.ReadLine());
+            loadGame.Close();
+            SaveSystem.SaveLoader();
+            tmrSaveLoader.Start();
+            // LevelGen.NewLevel();
         }
 
         private void btnBattle_Click(object sender, EventArgs e)
@@ -128,22 +148,7 @@ namespace HumphreyErik2424RST
 
         private void button2_Click(object sender, EventArgs e)
         {
-            if (SaveSystem.saveGameExists)
-            {
-                TextReader loadGame = new StreamReader("SaveGame.txt");
-                SaveSystem.name = loadGame.ReadLine();
-                loadGame.Close();
-            }
-            else
-            {
-                TextReader loadGame = new StreamReader("SaveGame.txt");
-                SaveSystem.saveGameExists = Convert.ToBoolean(loadGame.ReadLine());
-                loadGame.Close();
-                SaveSystem.SaveLoader();
-                tmrSaveLoader.Start();
-            }
-
-            lblSaveStatus.Text = "Loaded save: " + SaveSystem.name;
+            // lblSaveStatus.Text = "Loaded save: " + SaveSystem.name;
         }
 
         private void button3_Click(object sender, EventArgs e)
