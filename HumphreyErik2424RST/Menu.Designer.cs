@@ -180,7 +180,7 @@
             // button2
             // 
             this.button2.ForeColor = System.Drawing.Color.DarkRed;
-            this.button2.Location = new System.Drawing.Point(140, 304);
+            this.button2.Location = new System.Drawing.Point(112, 304);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(173, 23);
             this.button2.TabIndex = 20;

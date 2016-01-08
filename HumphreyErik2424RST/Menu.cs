@@ -53,10 +53,13 @@ namespace HumphreyErik2424RST
 
         private void frmSplashScreen_Load(object sender, EventArgs e)
         {
-            SaveSystem.saveGame.Dispose();
+            // Set the font of chosen controls to be the custom font
+            btnExit.Font = btnStart.Font = btnCheats.Font = btnResetGame.Font = lblSaveStatus.Font = lblButtonDescription.Font = labelText;
+            SaveSystem.saveGame.Close();
+
 
             // LevelGen.saveGameExists = Convert.ToBoolean(LevelGen.loadGame.ReadLine());
-            btnExit.Font = btnStart.Font = btnCheats.Font = btnResetGame.Font = lblSaveStatus.Font = lblButtonDescription.Font = labelText;
+            
             // this.ActiveControl = txtNameEntry;
         }
 
@@ -152,11 +155,12 @@ namespace HumphreyErik2424RST
             DialogResult wantsToReset = MessageBox.Show("Are you sure you want to reset ALL data? This is irreversible.", "Confirm reset", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
             if (wantsToReset == DialogResult.Yes)
             {
-                File.Delete("SaveGame.txt");
-                TextWriter saveGame = new StreamWriter("SaveGame.txt");
-                SaveSystem.saveGameExists = false;
-                saveGame.WriteLine(SaveSystem.saveGameExists);
-                btnResetGame.Enabled = false;
+                File.Delete("SaveGame.txt"); //  Delete the existing save
+                SaveSystem.saveGameExists = false; // And change the relevant boolean  
+                TextWriter saveGame = new StreamWriter("SaveGame.txt"); // Declare a new StreamWriter.
+                saveGame.WriteLine(SaveSystem.saveGameExists); // Write a line of the boolean.
+                saveGame.Close(); // Close the StreamWriter, saving the written lines to the text file.
+                btnResetGame.Enabled = false; // Disable the reset button
                 MessageBox.Show("All local save data was cleared.", "Delete success", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
