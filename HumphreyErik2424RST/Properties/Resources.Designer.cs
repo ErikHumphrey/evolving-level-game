@@ -73,16 +73,6 @@ namespace HumphreyErik2424RST.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap cultistimproved {
-            get {
-                object obj = ResourceManager.GetObject("cultistimproved", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap heroSmile {
             get {
                 object obj = ResourceManager.GetObject("heroSmile", resourceCulture);
@@ -363,9 +353,9 @@ namespace HumphreyErik2424RST.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap imgCultistAlt {
+        internal static System.Drawing.Bitmap imgCultistAlive {
             get {
-                object obj = ResourceManager.GetObject("imgCultistAlt", resourceCulture);
+                object obj = ResourceManager.GetObject("imgCultistAlive", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -376,6 +366,26 @@ namespace HumphreyErik2424RST.Properties {
         internal static System.Drawing.Bitmap imgCultistDead {
             get {
                 object obj = ResourceManager.GetObject("imgCultistDead", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap imgDoppelAlive {
+            get {
+                object obj = ResourceManager.GetObject("imgDoppelAlive", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap imgDoppelDead {
+            get {
+                object obj = ResourceManager.GetObject("imgDoppelDead", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -403,9 +413,49 @@ namespace HumphreyErik2424RST.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap imgHammerAlive {
+            get {
+                object obj = ResourceManager.GetObject("imgHammerAlive", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap imgHammerDead {
+            get {
+                object obj = ResourceManager.GetObject("imgHammerDead", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap imgHero {
             get {
                 object obj = ResourceManager.GetObject("imgHero", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap imgRabbitAlive {
+            get {
+                object obj = ResourceManager.GetObject("imgRabbitAlive", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap imgRabbitDead {
+            get {
+                object obj = ResourceManager.GetObject("imgRabbitDead", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -466,6 +516,26 @@ namespace HumphreyErik2424RST.Properties {
         internal static System.Drawing.Bitmap imgSwipe6 {
             get {
                 object obj = ResourceManager.GetObject("imgSwipe6", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap imgZeusAlive {
+            get {
+                object obj = ResourceManager.GetObject("imgZeusAlive", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap imgZeusDead {
+            get {
+                object obj = ResourceManager.GetObject("imgZeusDead", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

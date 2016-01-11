@@ -133,7 +133,7 @@
   <data name="iconFrontKick" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\frontkickicon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="imgCultistAlt" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="imgCultistAlive" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\imgCultistAlt.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="iconBlindingPowderLocked" type="System.Resources.ResXFileRef, System.Windows.Forms">
@@ -150,9 +150,6 @@
   </data>
   <data name="imgEnemyHider" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\imgEnemyHider.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="cultistimproved" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\cultistimproved.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="iconPunch" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\punchicon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -285,5 +282,29 @@
   </data>
   <data name="texGraniteMed" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\texGraniteMed.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="imgDoppelAlive" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\imgDoppelAlive.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="imgDoppelDead" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\imgDoppelDead.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="imgHammerAlive" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\imgHammerAlive.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="imgHammerDead" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\imgHammerDead.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="imgRabbitAlive" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\imgRabbitAlive.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="imgRabbitDead" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\imgRabbitDead.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="imgZeusAlive" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\imgZeusAlive.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="imgZeusDead" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\imgZeusDead.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

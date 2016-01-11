@@ -23,7 +23,6 @@ namespace HumphreyErik2424RST
         int swipeFrame, flurryHits = 0;
         int enemyHealthToDecay, playerHealthToDecay;
         int playerMaxHP = 100;
-        int enemyMaxHP = 100;
         bool animationInProgress = false;
         string enemyName;
         bool isEnemyTurn, enemyDead = false;
@@ -83,35 +82,42 @@ namespace HumphreyErik2424RST
             picHealingBeam.Size = new Size(255, 218);
             ModifyProgressBarColor.SetState(prgHealthEnemy, 1);
             tmrGameTicker.Start();
-            prgHealthPlayer.Maximum = prgHealthPlayer.Value = 100;
-        }
-        
-        /*    switch (LevelGen.difficulty)
+            prgHealthPlayer.Maximum = prgHealthPlayer.Value = 80;
+
+            switch (LevelGen.difficulty)
             {
                 case 1:
-                    prgHealthEnemy.Maximum = enemyMaxHP;
-                    prgHealthEnemy.Value = 80;
+                    prgHealthEnemy.Value = prgHealthEnemy.Maximum = 80;
+                    picPortraitEnemy.Image = Properties.Resources.imgCultistAlive;
+                    enemyDamaged();
                     lblNameEnemy.Text = "HOODED FIGURE";
                     break;
                 case 2:
                     prgHealthEnemy.Value = prgHealthEnemy.Maximum = 100;
+                    picPortraitEnemy.Image = Properties.Resources.imgRabbitAlive;
                     enemyDamaged();
+                    lblNameEnemy.Text = "RABID RABBIT";
                     break;
                 case 3:
                     prgHealthEnemy.Value = prgHealthEnemy.Maximum = 120;
+                    picPortraitEnemy.Image = Properties.Resources.imgHammerAlive;
                     enemyDamaged();
+                    lblNameEnemy.Text = "GHOSTLY HAMMER";
                     break;
                 case 4:
                     prgHealthEnemy.Value = prgHealthEnemy.Maximum = 150;
+                    picPortraitEnemy.Image = Properties.Resources.imgDoppelAlive;
                     enemyDamaged();
+                    lblNameEnemy.Text = "DOPPELGANGER";
                     break;
                 case 5:
                     prgHealthEnemy.Value = prgHealthEnemy.Maximum = 200;
+                    picPortraitEnemy.Image = Properties.Resources.imgZeusAlive;
                     enemyDamaged();
+                    lblNameEnemy.Text = "DOPPELGANGER";
                     break;
             }
         }
-           */
 
         // Top-left, top-right, bottom-left, and bottom-right buttons in purple action panel
 
@@ -333,7 +339,7 @@ namespace HumphreyErik2424RST
 
         void enemyDamaged()
         {
-            lblHealthEnemy.Text = prgHealthEnemy.Value + " / " + enemyMaxHP; // Change the health counter to reflect the new value
+            lblHealthEnemy.Text = prgHealthEnemy.Value + " / " + prgHealthEnemy.Maximum; // Change the health counter to reflect the new value
             if (prgHealthEnemy.Value < prgHealthEnemy.Maximum / 2 && prgHealthEnemy.Value > prgHealthEnemy.Maximum / 5)
                 ModifyProgressBarColor.SetState(prgHealthEnemy, 3);
             else if (prgHealthEnemy.Value < prgHealthEnemy.Maximum / 5)
@@ -372,7 +378,6 @@ namespace HumphreyErik2424RST
         void enemyTurn()
         {
             isEnemyTurn = true;
-            /*
             switch (LevelGen.difficulty)
             {
                 case 1:
@@ -381,7 +386,6 @@ namespace HumphreyErik2424RST
                     // lblStatusBar.Text = playerHitsEnemyFor + "30 damage!"; // Update the status bar. This is done seperately because Fist Flurry hits multiple times.
                     break;
             }
-             * */
         }
 
         void playerTurn()
@@ -544,7 +548,7 @@ namespace HumphreyErik2424RST
         private void btnBuddha_Click(object sender, EventArgs e)
         {
             prgHealthEnemy.Value = 10;
-            lblHealthEnemy.Text = "10 / " + enemyMaxHP;
+            lblHealthEnemy.Text = "10 / " + prgHealthEnemy.Maximum;
             ModifyProgressBarColor.SetState(prgHealthEnemy, 2);
         }
     }

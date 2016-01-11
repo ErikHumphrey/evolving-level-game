@@ -452,7 +452,7 @@
             // picPortraitEnemy
             // 
             this.picPortraitEnemy.BackColor = System.Drawing.Color.Transparent;
-            this.picPortraitEnemy.Image = global::HumphreyErik2424RST.Properties.Resources.imgCultistAlt;
+            this.picPortraitEnemy.Image = global::HumphreyErik2424RST.Properties.Resources.imgCultistAlive;
             this.picPortraitEnemy.Location = new System.Drawing.Point(437, 30);
             this.picPortraitEnemy.Name = "picPortraitEnemy";
             this.picPortraitEnemy.Size = new System.Drawing.Size(163, 181);
