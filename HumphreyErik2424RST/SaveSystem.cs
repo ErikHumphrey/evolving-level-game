@@ -16,21 +16,12 @@ namespace SaveGames
     {
         static public bool saveGameExists = false;
         static public string name = "Player";
-        static public TextWriter saveGame = new StreamWriter("SaveGame.txt");
 
         public static void SaveLoader()
         {
-           if (saveGameExists)
-            {
-            TextReader loadGame = new StreamReader("SaveGame.txt");
-            name = loadGame.ReadLine();
-            loadGame.Close();
-            }
-            else
-            {
-                frmNewSave NewSave = new frmNewSave();
-                NewSave.Show();
-            }
+            // Open the NewSave form 
+            frmNewSave NewSave = new frmNewSave();
+            NewSave.Show();
         }
     }
 }

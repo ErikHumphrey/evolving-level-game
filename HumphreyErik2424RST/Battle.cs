@@ -70,15 +70,12 @@ namespace HumphreyErik2424RST
         {
             picPortraitEnemy.Location = new Point(437, 30);
 
-            // restAsString = DV_REST.ToString().Substring;
-
             // Using a ResourceManager simplifies having to declare each image for each array value manually 
             for (int i = 0; i < picHealingBeams.Length; i++)
             {
                 picHealingBeams[i] = (Image)Properties.Resources.ResourceManager.GetObject("imgBeam" + i.ToString("D2"));
             }
 
-            // picHealingBeam.Size = new Size(113, 171);
             picHealingBeam.Size = new Size(255, 218);
             ModifyProgressBarColor.SetState(prgHealthEnemy, 1);
             tmrGameTicker.Start();
@@ -378,14 +375,15 @@ namespace HumphreyErik2424RST
         void enemyTurn()
         {
             isEnemyTurn = true;
-            switch (LevelGen.difficulty)
-            {
-                case 1:
-                    playerHealthToDecay = 30; // The damage the punch deals.
-                    tmrPlayerHealthDecay.Start(); // Start the health loss chain of events
-                    // lblStatusBar.Text = playerHitsEnemyFor + "30 damage!"; // Update the status bar. This is done seperately because Fist Flurry hits multiple times.
-                    break;
-            }
+            if (!enemyDead)
+                switch (LevelGen.difficulty)
+                {
+                    case 1:
+                     playerHealthToDecay = 30; // The damage the punch deals.
+                     tmrPlayerHealthDecay.Start(); // Start the health loss chain of events
+                      // lblStatusBar.Text = playerHitsEnemyFor + "30 damage!"; // Update the status bar. This is done seperately because Fist Flurry hits multiple times.
+                     break;
+                }
         }
 
         void playerTurn()

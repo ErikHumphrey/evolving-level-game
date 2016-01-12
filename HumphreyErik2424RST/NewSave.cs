@@ -57,8 +57,7 @@ namespace HumphreyErik2424RST
                 saveGame.WriteLine(SaveSystem.name);
                 SaveSystem.saveGameExists = true;
                 saveGame.WriteLine(SaveSystem.saveGameExists);
-                SaveSystem.saveGame.Close();
-                
+                saveGame.Close();
                 this.Close();
             }
         }
