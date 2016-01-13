@@ -28,6 +28,10 @@ namespace LevelGenerator
             difficulty++;
             // Open a random level
             levelIndex = rnd.Next(1, 6);
+            frmBattle Battle = new frmBattle();
+            Battle.Show();
+            myMenu.Hide();
+            /* 
             switch (levelIndex)
             {
                 // Survival
@@ -59,7 +63,8 @@ namespace LevelGenerator
                     Form3.Show();
                     myMenu.Hide();
                     break;
-            }
+             
+            }*/
         }
     }
 }

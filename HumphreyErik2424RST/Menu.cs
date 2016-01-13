@@ -45,6 +45,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using LevelGenerator;
 using SaveGames;
+using Upgrader;
 
 namespace HumphreyErik2424RST
 {
@@ -83,18 +84,29 @@ namespace HumphreyErik2424RST
 
         private void frmSplashScreen_Load(object sender, EventArgs e)
         {
-            TextReader loadGameMaster = new StreamReader("SaveGame.txt");
-            loadGameMaster.ReadLine();
-            SaveSystem.saveGameExists = Convert.ToBoolean(loadGameMaster.ReadLine());
-            loadGameMaster.Close();
+            TextReader lsGameMaster = new StreamReader("SaveGame.txt");
+            lsGameMaster.ReadLine();
+            SaveSystem.saveGameExists = Convert.ToBoolean(lsGameMaster.ReadLine());
+            lsGameMaster.Close();
 
             if (SaveSystem.saveGameExists)
             {
-                TextReader loadGame = new StreamReader("SaveGame.txt");
-                SaveSystem.name = loadGame.ReadLine();
+                // Load the existing save game. This could be done with one file, but it's a new concept to me so I used multiple.
+                
+                // Player name + saveGameExists boolean
+                TextReader lsGame = new StreamReader("SaveGame.txt");
+                SaveSystem.name = lsGame.ReadLine();
                 btnStart.Text = "Continue game";
                 lblSaveStatus.Text = "Loaded game: " + SaveSystem.name;
-                loadGame.Close();
+                lsGame.Close();
+
+                // Shop upgrades
+                TextReader upgLoad = new StreamReader("upgrades.txt");
+                Upgrades.punchAbilityLevel = Int32.Parse(upgLoad.ReadLine());
+                Upgrades.kickAbilityLevel = Int32.Parse(upgLoad.ReadLine());
+                Upgrades.blindAbilityLevel = Int32.Parse(upgLoad.ReadLine());
+                Upgrades.healAbilityLevel = Int32.Parse(upgLoad.ReadLine());
+                upgLoad.Close();
             }
             else
             {
@@ -162,6 +174,8 @@ namespace HumphreyErik2424RST
         {
             if (btnStart.Text == "Continue game")
             {
+
+                
                 LevelGen.NewLevel();
             }
             else if (btnStart.Text == "New game")
@@ -187,7 +201,9 @@ namespace HumphreyErik2424RST
                 MessageBoxIcon.Exclamation);
             if (wantsToReset == DialogResult.Yes)
             {
-                File.Delete("SaveGame.txt"); //  Delete the existing save
+                //  Delete the existing save
+                File.Delete("SaveGame.txt");
+                File.Delete("upgrades.txt");
                 SaveSystem.saveGameExists = false; // And change the relevant boolean  
                 TextWriter saveGame = new StreamWriter("SaveGame.txt"); // Declare a new StreamWriter.
                 

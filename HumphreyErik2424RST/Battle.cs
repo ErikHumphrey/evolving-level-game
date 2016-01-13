@@ -111,7 +111,7 @@ namespace HumphreyErik2424RST
                     prgHealthEnemy.Value = prgHealthEnemy.Maximum = 200;
                     picPortraitEnemy.Image = Properties.Resources.imgZeusAlive;
                     enemyDamaged();
-                    lblNameEnemy.Text = "DOPPELGANGER";
+                    lblNameEnemy.Text = "ZEUS";
                     break;
             }
         }
@@ -537,6 +537,7 @@ namespace HumphreyErik2424RST
                 tmrDeathAnimation.Stop();
                 levelComplete.Play();
                 HumphreyErik2424RST.frmLevelComplete LevelComplete = new HumphreyErik2424RST.frmLevelComplete();
+
                 LevelComplete.Show();
                 this.Hide();
                 tmrGameTicker.Stop();

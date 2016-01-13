@@ -453,6 +453,24 @@
   <ItemGroup>
     <None Include="Resources\imgZeusDead.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imgSurvivalBronzeHatchet.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imgSurvivalFishingNet.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imgSurvivalFishingRod.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imgSurvivalHarpoon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imgSurvivalIronHatchet.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imgSurvivalSteelHatchet.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

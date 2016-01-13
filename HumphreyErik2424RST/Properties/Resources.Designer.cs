@@ -463,6 +463,66 @@ namespace HumphreyErik2424RST.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap imgSurvivalBronzeHatchet {
+            get {
+                object obj = ResourceManager.GetObject("imgSurvivalBronzeHatchet", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap imgSurvivalFishingNet {
+            get {
+                object obj = ResourceManager.GetObject("imgSurvivalFishingNet", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap imgSurvivalFishingRod {
+            get {
+                object obj = ResourceManager.GetObject("imgSurvivalFishingRod", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap imgSurvivalHarpoon {
+            get {
+                object obj = ResourceManager.GetObject("imgSurvivalHarpoon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap imgSurvivalIronHatchet {
+            get {
+                object obj = ResourceManager.GetObject("imgSurvivalIronHatchet", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap imgSurvivalSteelHatchet {
+            get {
+                object obj = ResourceManager.GetObject("imgSurvivalSteelHatchet", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap imgSwipe1 {
             get {
                 object obj = ResourceManager.GetObject("imgSwipe1", resourceCulture);

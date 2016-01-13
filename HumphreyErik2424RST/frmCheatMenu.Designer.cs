@@ -33,21 +33,21 @@
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.nudPunchLevel = new System.Windows.Forms.NumericUpDown();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
-            this.label4 = new System.Windows.Forms.Label();
-            this.numericUpDown3 = new System.Windows.Forms.NumericUpDown();
             this.label5 = new System.Windows.Forms.Label();
-            this.numericUpDown4 = new System.Windows.Forms.NumericUpDown();
+            this.nudKickLevel = new System.Windows.Forms.NumericUpDown();
+            this.label4 = new System.Windows.Forms.Label();
+            this.nudBlindLevel = new System.Windows.Forms.NumericUpDown();
+            this.label3 = new System.Windows.Forms.Label();
+            this.nudHealLevel = new System.Windows.Forms.NumericUpDown();
+            this.label2 = new System.Windows.Forms.Label();
+            this.nudPunchLevel = new System.Windows.Forms.NumericUpDown();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudKickLevel)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudBlindLevel)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudHealLevel)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudPunchLevel)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown4)).BeginInit();
             this.SuspendLayout();
             // 
             // checkBox1
@@ -96,11 +96,11 @@
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.label5);
-            this.groupBox2.Controls.Add(this.numericUpDown4);
+            this.groupBox2.Controls.Add(this.nudKickLevel);
             this.groupBox2.Controls.Add(this.label4);
-            this.groupBox2.Controls.Add(this.numericUpDown3);
+            this.groupBox2.Controls.Add(this.nudBlindLevel);
             this.groupBox2.Controls.Add(this.label3);
-            this.groupBox2.Controls.Add(this.numericUpDown2);
+            this.groupBox2.Controls.Add(this.nudHealLevel);
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Controls.Add(this.nudPunchLevel);
             this.groupBox2.Location = new System.Drawing.Point(248, 172);
@@ -110,69 +110,84 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Shop";
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(143, 32);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(28, 13);
+            this.label5.TabIndex = 7;
+            this.label5.Text = "Kick";
+            // 
+            // nudKickLevel
+            // 
+            this.nudKickLevel.Location = new System.Drawing.Point(173, 29);
+            this.nudKickLevel.Name = "nudKickLevel";
+            this.nudKickLevel.Size = new System.Drawing.Size(44, 20);
+            this.nudKickLevel.TabIndex = 6;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(32, 59);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(30, 13);
+            this.label4.TabIndex = 5;
+            this.label4.Text = "Blind";
+            // 
+            // nudBlindLevel
+            // 
+            this.nudBlindLevel.Location = new System.Drawing.Point(67, 57);
+            this.nudBlindLevel.Name = "nudBlindLevel";
+            this.nudBlindLevel.Size = new System.Drawing.Size(44, 20);
+            this.nudBlindLevel.TabIndex = 4;
+            this.nudBlindLevel.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(143, 59);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(29, 13);
+            this.label3.TabIndex = 3;
+            this.label3.Text = "Heal";
+            // 
+            // nudHealLevel
+            // 
+            this.nudHealLevel.Location = new System.Drawing.Point(173, 57);
+            this.nudHealLevel.Name = "nudHealLevel";
+            this.nudHealLevel.Size = new System.Drawing.Size(44, 20);
+            this.nudHealLevel.TabIndex = 2;
+            this.nudHealLevel.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(24, 35);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(38, 13);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Punch";
+            // 
             // nudPunchLevel
             // 
             this.nudPunchLevel.Location = new System.Drawing.Point(66, 32);
             this.nudPunchLevel.Name = "nudPunchLevel";
             this.nudPunchLevel.Size = new System.Drawing.Size(44, 20);
             this.nudPunchLevel.TabIndex = 0;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(27, 35);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(38, 13);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Punch";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(131, 60);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(29, 13);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "Heal";
-            // 
-            // numericUpDown2
-            // 
-            this.numericUpDown2.Location = new System.Drawing.Point(174, 57);
-            this.numericUpDown2.Name = "numericUpDown2";
-            this.numericUpDown2.Size = new System.Drawing.Size(44, 20);
-            this.numericUpDown2.TabIndex = 2;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(130, 35);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(30, 13);
-            this.label4.TabIndex = 5;
-            this.label4.Text = "Blind";
-            // 
-            // numericUpDown3
-            // 
-            this.numericUpDown3.Location = new System.Drawing.Point(174, 33);
-            this.numericUpDown3.Name = "numericUpDown3";
-            this.numericUpDown3.Size = new System.Drawing.Size(44, 20);
-            this.numericUpDown3.TabIndex = 4;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(37, 60);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(28, 13);
-            this.label5.TabIndex = 7;
-            this.label5.Text = "Kick";
-            // 
-            // numericUpDown4
-            // 
-            this.numericUpDown4.Location = new System.Drawing.Point(67, 57);
-            this.numericUpDown4.Name = "numericUpDown4";
-            this.numericUpDown4.Size = new System.Drawing.Size(44, 20);
-            this.numericUpDown4.TabIndex = 6;
+            this.nudPunchLevel.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // frmCheatMenu
             // 
@@ -185,15 +200,16 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "frmCheatMenu";
             this.Text = "Cheats";
+            this.Load += new System.EventHandler(this.frmCheatMenu_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudKickLevel)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudBlindLevel)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudHealLevel)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudPunchLevel)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown4)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -207,11 +223,11 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.NumericUpDown numericUpDown4;
+        private System.Windows.Forms.NumericUpDown nudKickLevel;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.NumericUpDown numericUpDown3;
+        private System.Windows.Forms.NumericUpDown nudBlindLevel;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.NumericUpDown numericUpDown2;
+        private System.Windows.Forms.NumericUpDown nudHealLevel;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.NumericUpDown nudPunchLevel;
     }

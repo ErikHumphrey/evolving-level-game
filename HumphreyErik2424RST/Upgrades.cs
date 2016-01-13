@@ -15,6 +15,13 @@ namespace Upgrader
 {
     public static class Upgrades
     {
+        // Bonuses
+        static public int speedBonus;
+        static public int healthBonus;
+
+        // Shop elements
+        static public int credits;
+
         // Battle (Punches are always top left ability, kicks are top right)
         static public int punchAbilityLevel = 1;
         static public int kickAbilityLevel = 1;

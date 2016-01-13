@@ -48,16 +48,38 @@
             this.btnNextLevel = new System.Windows.Forms.Button();
             this.btnReturnToMenu = new System.Windows.Forms.Button();
             this.lblCreditCount = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.grpLevelBattle = new System.Windows.Forms.GroupBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.label10 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.picBlindIcon = new System.Windows.Forms.PictureBox();
+            this.picPunchIcon = new System.Windows.Forms.PictureBox();
             this.picHealIcon = new System.Windows.Forms.PictureBox();
             this.picKickIcon = new System.Windows.Forms.PictureBox();
-            this.picPunchIcon = new System.Windows.Forms.PictureBox();
             this.grpRewards.SuspendLayout();
             this.grpShop.SuspendLayout();
+            this.grpLevelBattle.SuspendLayout();
+            this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBlindIcon)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picPunchIcon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picHealIcon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picKickIcon)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picPunchIcon)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -72,6 +94,7 @@
             // 
             // grpRewards
             // 
+            this.grpRewards.Controls.Add(this.label3);
             this.grpRewards.Controls.Add(this.label8);
             this.grpRewards.Controls.Add(this.label7);
             this.grpRewards.Controls.Add(this.label6);
@@ -123,29 +146,20 @@
             // 
             // grpShop
             // 
-            this.grpShop.Controls.Add(this.picBlindIcon);
-            this.grpShop.Controls.Add(this.btnUpgBlind);
-            this.grpShop.Controls.Add(this.lblBlindName);
-            this.grpShop.Controls.Add(this.picHealIcon);
-            this.grpShop.Controls.Add(this.btnUpgHeal);
-            this.grpShop.Controls.Add(this.lblHealName);
-            this.grpShop.Controls.Add(this.picKickIcon);
-            this.grpShop.Controls.Add(this.btnUpgKick);
-            this.grpShop.Controls.Add(this.lblKickName);
-            this.grpShop.Controls.Add(this.picPunchIcon);
-            this.grpShop.Controls.Add(this.btnUpgPunch);
-            this.grpShop.Controls.Add(this.lblPunchName);
+            this.grpShop.Controls.Add(this.groupBox1);
+            this.grpShop.Controls.Add(this.grpLevelBattle);
             this.grpShop.Controls.Add(this.lblShopDescription);
             this.grpShop.Location = new System.Drawing.Point(30, 256);
             this.grpShop.Name = "grpShop";
-            this.grpShop.Size = new System.Drawing.Size(553, 241);
+            this.grpShop.Size = new System.Drawing.Size(631, 241);
             this.grpShop.TabIndex = 0;
             this.grpShop.TabStop = false;
             this.grpShop.Text = "Shop";
             // 
             // btnUpgBlind
             // 
-            this.btnUpgBlind.Location = new System.Drawing.Point(197, 104);
+            this.btnUpgBlind.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.btnUpgBlind.Location = new System.Drawing.Point(60, 89);
             this.btnUpgBlind.Name = "btnUpgBlind";
             this.btnUpgBlind.Size = new System.Drawing.Size(75, 23);
             this.btnUpgBlind.TabIndex = 24;
@@ -156,8 +170,9 @@
             // lblBlindName
             // 
             this.lblBlindName.AutoSize = true;
+            this.lblBlindName.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.lblBlindName.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblBlindName.Location = new System.Drawing.Point(197, 88);
+            this.lblBlindName.Location = new System.Drawing.Point(60, 73);
             this.lblBlindName.Name = "lblBlindName";
             this.lblBlindName.Size = new System.Drawing.Size(83, 13);
             this.lblBlindName.TabIndex = 23;
@@ -165,7 +180,8 @@
             // 
             // btnUpgHeal
             // 
-            this.btnUpgHeal.Location = new System.Drawing.Point(340, 104);
+            this.btnUpgHeal.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.btnUpgHeal.Location = new System.Drawing.Point(203, 89);
             this.btnUpgHeal.Name = "btnUpgHeal";
             this.btnUpgHeal.Size = new System.Drawing.Size(75, 23);
             this.btnUpgHeal.TabIndex = 21;
@@ -176,7 +192,8 @@
             // lblHealName
             // 
             this.lblHealName.AutoSize = true;
-            this.lblHealName.Location = new System.Drawing.Point(340, 88);
+            this.lblHealName.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.lblHealName.Location = new System.Drawing.Point(203, 73);
             this.lblHealName.Name = "lblHealName";
             this.lblHealName.Size = new System.Drawing.Size(29, 13);
             this.lblHealName.TabIndex = 20;
@@ -184,7 +201,8 @@
             // 
             // btnUpgKick
             // 
-            this.btnUpgKick.Location = new System.Drawing.Point(340, 50);
+            this.btnUpgKick.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.btnUpgKick.Location = new System.Drawing.Point(203, 35);
             this.btnUpgKick.Name = "btnUpgKick";
             this.btnUpgKick.Size = new System.Drawing.Size(75, 23);
             this.btnUpgKick.TabIndex = 18;
@@ -195,7 +213,8 @@
             // lblKickName
             // 
             this.lblKickName.AutoSize = true;
-            this.lblKickName.Location = new System.Drawing.Point(340, 34);
+            this.lblKickName.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.lblKickName.Location = new System.Drawing.Point(203, 19);
             this.lblKickName.Name = "lblKickName";
             this.lblKickName.Size = new System.Drawing.Size(55, 13);
             this.lblKickName.TabIndex = 17;
@@ -203,7 +222,8 @@
             // 
             // btnUpgPunch
             // 
-            this.btnUpgPunch.Location = new System.Drawing.Point(197, 50);
+            this.btnUpgPunch.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.btnUpgPunch.Location = new System.Drawing.Point(60, 35);
             this.btnUpgPunch.Name = "btnUpgPunch";
             this.btnUpgPunch.Size = new System.Drawing.Size(75, 23);
             this.btnUpgPunch.TabIndex = 15;
@@ -214,7 +234,8 @@
             // lblPunchName
             // 
             this.lblPunchName.AutoSize = true;
-            this.lblPunchName.Location = new System.Drawing.Point(197, 34);
+            this.lblPunchName.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.lblPunchName.Location = new System.Drawing.Point(60, 19);
             this.lblPunchName.Name = "lblPunchName";
             this.lblPunchName.Size = new System.Drawing.Size(38, 13);
             this.lblPunchName.TabIndex = 14;
@@ -224,11 +245,11 @@
             // 
             this.lblShopDescription.AutoSize = true;
             this.lblShopDescription.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblShopDescription.Location = new System.Drawing.Point(174, 0);
+            this.lblShopDescription.Location = new System.Drawing.Point(334, 1);
             this.lblShopDescription.Name = "lblShopDescription";
-            this.lblShopDescription.Size = new System.Drawing.Size(210, 13);
+            this.lblShopDescription.Size = new System.Drawing.Size(212, 13);
             this.lblShopDescription.TabIndex = 13;
-            this.lblShopDescription.Text = "Mouse over \"Buy\" to view item description.";
+            this.lblShopDescription.Text = "Mouse over button to view item description.";
             // 
             // lblYourCredits
             // 
@@ -241,17 +262,17 @@
             // 
             // btnNextLevel
             // 
-            this.btnNextLevel.Location = new System.Drawing.Point(207, 513);
+            this.btnNextLevel.Location = new System.Drawing.Point(207, 507);
             this.btnNextLevel.Name = "btnNextLevel";
             this.btnNextLevel.Size = new System.Drawing.Size(75, 23);
             this.btnNextLevel.TabIndex = 3;
-            this.btnNextLevel.Text = "Next";
+            this.btnNextLevel.Text = "Continue";
             this.btnNextLevel.UseVisualStyleBackColor = true;
             this.btnNextLevel.Click += new System.EventHandler(this.btnNextLevel_Click);
             // 
             // btnReturnToMenu
             // 
-            this.btnReturnToMenu.Location = new System.Drawing.Point(288, 513);
+            this.btnReturnToMenu.Location = new System.Drawing.Point(288, 507);
             this.btnReturnToMenu.Name = "btnReturnToMenu";
             this.btnReturnToMenu.Size = new System.Drawing.Size(132, 23);
             this.btnReturnToMenu.TabIndex = 4;
@@ -269,21 +290,215 @@
             this.lblCreditCount.Text = "        000";
             this.lblCreditCount.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(195, 533);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(225, 13);
+            this.label2.TabIndex = 6;
+            this.label2.Text = "Clicking one of these buttons saves the game.";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(205, 89);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(106, 13);
+            this.label3.TabIndex = 4;
+            this.label3.Text = "1 / 5 levels complete";
+            // 
+            // grpLevelBattle
+            // 
+            this.grpLevelBattle.Controls.Add(this.picBlindIcon);
+            this.grpLevelBattle.Controls.Add(this.lblPunchName);
+            this.grpLevelBattle.Controls.Add(this.btnUpgBlind);
+            this.grpLevelBattle.Controls.Add(this.btnUpgPunch);
+            this.grpLevelBattle.Controls.Add(this.lblBlindName);
+            this.grpLevelBattle.Controls.Add(this.picPunchIcon);
+            this.grpLevelBattle.Controls.Add(this.picHealIcon);
+            this.grpLevelBattle.Controls.Add(this.lblKickName);
+            this.grpLevelBattle.Controls.Add(this.btnUpgHeal);
+            this.grpLevelBattle.Controls.Add(this.btnUpgKick);
+            this.grpLevelBattle.Controls.Add(this.lblHealName);
+            this.grpLevelBattle.Controls.Add(this.picKickIcon);
+            this.grpLevelBattle.Font = new System.Drawing.Font("Myriad Web Pro Condensed", 8.249999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grpLevelBattle.Location = new System.Drawing.Point(25, 30);
+            this.grpLevelBattle.Name = "grpLevelBattle";
+            this.grpLevelBattle.Size = new System.Drawing.Size(286, 123);
+            this.grpLevelBattle.TabIndex = 26;
+            this.grpLevelBattle.TabStop = false;
+            this.grpLevelBattle.Text = "BATTLE";
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.pictureBox1);
+            this.groupBox1.Controls.Add(this.label4);
+            this.groupBox1.Controls.Add(this.button1);
+            this.groupBox1.Controls.Add(this.button2);
+            this.groupBox1.Controls.Add(this.label5);
+            this.groupBox1.Controls.Add(this.pictureBox2);
+            this.groupBox1.Controls.Add(this.pictureBox3);
+            this.groupBox1.Controls.Add(this.label9);
+            this.groupBox1.Controls.Add(this.button3);
+            this.groupBox1.Controls.Add(this.button4);
+            this.groupBox1.Controls.Add(this.label10);
+            this.groupBox1.Controls.Add(this.pictureBox4);
+            this.groupBox1.Font = new System.Drawing.Font("Myriad Web Pro Condensed", 8.249999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.Location = new System.Drawing.Point(317, 30);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(308, 123);
+            this.groupBox1.TabIndex = 27;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "SURVIVAL";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.label4.Location = new System.Drawing.Point(60, 19);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(79, 13);
+            this.label4.TabIndex = 14;
+            this.label4.Text = "Bronze hatchet";
+            // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.button1.Location = new System.Drawing.Point(60, 89);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 24;
+            this.button1.Text = "Buy (500)";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.button2.Location = new System.Drawing.Point(60, 35);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 15;
+            this.button2.Text = "Upgrade";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.label5.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label5.Location = new System.Drawing.Point(60, 73);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(57, 13);
+            this.label5.TabIndex = 23;
+            this.label5.Text = "Net fishing";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.label9.Location = new System.Drawing.Point(203, 19);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(72, 13);
+            this.label9.TabIndex = 17;
+            this.label9.Text = "Flint and steel";
+            // 
+            // button3
+            // 
+            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.button3.Location = new System.Drawing.Point(203, 89);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.TabIndex = 21;
+            this.button3.Text = "Upgrade";
+            this.button3.UseVisualStyleBackColor = true;
+            // 
+            // button4
+            // 
+            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.button4.Location = new System.Drawing.Point(203, 35);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(75, 23);
+            this.button4.TabIndex = 18;
+            this.button4.Text = "Upgrade";
+            this.button4.UseVisualStyleBackColor = true;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.label10.Location = new System.Drawing.Point(203, 73);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(46, 13);
+            this.label10.TabIndex = 20;
+            this.label10.Text = "Instincts";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Enabled = false;
+            this.pictureBox1.Image = global::HumphreyErik2424RST.Properties.Resources.imgSurvivalFishingNet;
+            this.pictureBox1.Location = new System.Drawing.Point(8, 70);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(46, 46);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 25;
+            this.pictureBox1.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::HumphreyErik2424RST.Properties.Resources.imgSurvivalBronzeHatchet;
+            this.pictureBox2.Location = new System.Drawing.Point(8, 16);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(46, 46);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 16;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = global::HumphreyErik2424RST.Properties.Resources.iconRest;
+            this.pictureBox3.Location = new System.Drawing.Point(151, 70);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(46, 46);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox3.TabIndex = 22;
+            this.pictureBox3.TabStop = false;
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Image = global::HumphreyErik2424RST.Properties.Resources.iconFrontKick;
+            this.pictureBox4.Location = new System.Drawing.Point(151, 16);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(46, 46);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox4.TabIndex = 19;
+            this.pictureBox4.TabStop = false;
+            // 
             // picBlindIcon
             // 
             this.picBlindIcon.Enabled = false;
             this.picBlindIcon.Image = global::HumphreyErik2424RST.Properties.Resources.iconBlindingPowderLocked;
-            this.picBlindIcon.Location = new System.Drawing.Point(145, 85);
+            this.picBlindIcon.Location = new System.Drawing.Point(8, 70);
             this.picBlindIcon.Name = "picBlindIcon";
             this.picBlindIcon.Size = new System.Drawing.Size(46, 46);
             this.picBlindIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picBlindIcon.TabIndex = 25;
             this.picBlindIcon.TabStop = false;
             // 
+            // picPunchIcon
+            // 
+            this.picPunchIcon.Image = global::HumphreyErik2424RST.Properties.Resources.iconPunch;
+            this.picPunchIcon.Location = new System.Drawing.Point(8, 16);
+            this.picPunchIcon.Name = "picPunchIcon";
+            this.picPunchIcon.Size = new System.Drawing.Size(46, 46);
+            this.picPunchIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picPunchIcon.TabIndex = 16;
+            this.picPunchIcon.TabStop = false;
+            // 
             // picHealIcon
             // 
             this.picHealIcon.Image = global::HumphreyErik2424RST.Properties.Resources.iconRest;
-            this.picHealIcon.Location = new System.Drawing.Point(288, 85);
+            this.picHealIcon.Location = new System.Drawing.Point(151, 70);
             this.picHealIcon.Name = "picHealIcon";
             this.picHealIcon.Size = new System.Drawing.Size(46, 46);
             this.picHealIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -293,28 +508,19 @@
             // picKickIcon
             // 
             this.picKickIcon.Image = global::HumphreyErik2424RST.Properties.Resources.iconFrontKick;
-            this.picKickIcon.Location = new System.Drawing.Point(288, 31);
+            this.picKickIcon.Location = new System.Drawing.Point(151, 16);
             this.picKickIcon.Name = "picKickIcon";
             this.picKickIcon.Size = new System.Drawing.Size(46, 46);
             this.picKickIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picKickIcon.TabIndex = 19;
             this.picKickIcon.TabStop = false;
             // 
-            // picPunchIcon
-            // 
-            this.picPunchIcon.Image = global::HumphreyErik2424RST.Properties.Resources.iconPunch;
-            this.picPunchIcon.Location = new System.Drawing.Point(145, 31);
-            this.picPunchIcon.Name = "picPunchIcon";
-            this.picPunchIcon.Size = new System.Drawing.Size(46, 46);
-            this.picPunchIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picPunchIcon.TabIndex = 16;
-            this.picPunchIcon.TabStop = false;
-            // 
             // frmLevelComplete
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(637, 552);
+            this.ClientSize = new System.Drawing.Size(831, 560);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.lblCreditCount);
             this.Controls.Add(this.btnReturnToMenu);
             this.Controls.Add(this.btnNextLevel);
@@ -322,17 +528,28 @@
             this.Controls.Add(this.grpShop);
             this.Controls.Add(this.grpRewards);
             this.Controls.Add(this.label1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frmLevelComplete";
+            this.ShowIcon = false;
             this.Text = "Level complete!";
             this.grpRewards.ResumeLayout(false);
             this.grpRewards.PerformLayout();
             this.grpShop.ResumeLayout(false);
             this.grpShop.PerformLayout();
+            this.grpLevelBattle.ResumeLayout(false);
+            this.grpLevelBattle.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBlindIcon)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picPunchIcon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picHealIcon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picKickIcon)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picPunchIcon)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -364,5 +581,21 @@
         private System.Windows.Forms.PictureBox picBlindIcon;
         private System.Windows.Forms.Button btnUpgBlind;
         private System.Windows.Forms.Label lblBlindName;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.GroupBox grpLevelBattle;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.PictureBox pictureBox4;
     }
 }

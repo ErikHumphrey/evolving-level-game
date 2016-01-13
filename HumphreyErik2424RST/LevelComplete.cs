@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.IO;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -24,17 +25,20 @@ namespace HumphreyErik2424RST
         private void btnNextLevel_Click(object sender, EventArgs e)
         {
             LevelGenerator.LevelGen.NewLevel();
+            saveGame();
         }
 
         private void btnReturnToMenu_Click(object sender, EventArgs e)
         {
-            DialogResult wantsToStop = MessageBox.Show("Are you sure you want to return to the main menu?\r\n\r\nProgress up to this point has been saved.", "Confirm return", MessageBoxButtons.YesNo);
+            DialogResult wantsToStop = MessageBox.Show("Are you sure you want to return to the main menu?\r\n\r\nProgress up to this point will be saved.", "Confirm return", MessageBoxButtons.YesNo);
             if (wantsToStop == DialogResult.Yes)
             {
                 this.Hide();
                 frmSplashScreen menu = new frmSplashScreen();
                 menu.Show();
             }
+
+            saveGame();
         }
 
         private void btnBuyHatchet_MouseEnter(object sender, EventArgs e)
@@ -119,7 +123,7 @@ namespace HumphreyErik2424RST
             creditsChanged();
             Upgrades.blindAbilityLevel++;
         }
-
+        //                     TextReader loadUpgrade = new StreamReader("Upgrades.txt");
         // Upgrade heal
 
         private void btnUpgHeal_Click(object sender, EventArgs e)
@@ -129,23 +133,42 @@ namespace HumphreyErik2424RST
                 case 0:
                     lblHealName.Text = "Rest";
                     picHealIcon.Image = Properties.Resources.iconRest;
-                    Upgrades.healAbilityLevel++;
                     break;
                 case 1:
                     lblHealName.Text = "Meditate";
                     picHealIcon.Image = Properties.Resources.iconMeditate;
-                    Upgrades.healAbilityLevel++;
                     break;
                 case 2:
                     lblHealName.Text = "Self-Repair";
                     picHealIcon.Image = Properties.Resources.iconSelfRepair;
-                    Upgrades.healAbilityLevel++;
                     btnUpgHeal.Text = "MAX";
                     btnUpgHeal.Enabled = false;
                     break;
             }
 
+            Upgrades.healAbilityLevel++;
+
+
             creditsChanged();
+        }
+
+        // Save upgrade level values - order is important
+        void saveGame()
+        {
+            File.Delete("upgrades.txt");
+            File.Delete("credits.txt");
+
+            TextWriter ssUpgrades = new StreamWriter("upgrades.txt");
+            TextWriter ssCredits = new StreamWriter("credits.txt");
+
+            ssUpgrades.WriteLine(Upgrades.punchAbilityLevel);
+            ssUpgrades.WriteLine(Upgrades.kickAbilityLevel);
+            ssUpgrades.WriteLine(Upgrades.blindAbilityLevel);
+            ssUpgrades.WriteLine(Upgrades.healAbilityLevel);
+            ssCredits.WriteLine(Upgrades.credits);
+
+            ssUpgrades.Close();
+            ssCredits.Close();
         }
     }
 }
