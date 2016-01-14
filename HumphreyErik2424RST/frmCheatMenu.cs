@@ -28,5 +28,29 @@ namespace HumphreyErik2424RST
             nudBlindLevel.Value = Upgrades.blindAbilityLevel;
             nudHealLevel.Value = Upgrades.blindAbilityLevel;
         }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            File.Delete("upgrades.txt");
+            File.Delete("credits.txt");
+
+            TextWriter ssUpgrades = new StreamWriter("upgrades.txt");
+            TextWriter ssCredits = new StreamWriter("credits.txt");
+
+            ssUpgrades.WriteLine(Upgrades.punchAbilityLevel);
+            ssUpgrades.WriteLine(Upgrades.kickAbilityLevel);
+            ssUpgrades.WriteLine(Upgrades.blindAbilityLevel);
+            ssUpgrades.WriteLine(Upgrades.healAbilityLevel);
+
+            ssUpgrades.WriteLine(Upgrades.axeAbilityLevel);
+            ssUpgrades.WriteLine(Upgrades.fireAbilityLevel);
+            ssUpgrades.WriteLine(Upgrades.fishAbilityLevel);
+            ssUpgrades.WriteLine(Upgrades.cookAbilityLevel);
+
+            ssCredits.WriteLine(Upgrades.credits);
+
+            ssUpgrades.Close();
+            ssCredits.Close();
+        }
     }
 }

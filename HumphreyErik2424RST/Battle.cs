@@ -68,6 +68,7 @@ namespace HumphreyErik2424RST
 
         private void frmBattle_Load(object sender, EventArgs e)
         {
+            lblNamePlayer.Text = SaveGames.SaveSystem.name.ToUpper();
             picPortraitEnemy.Location = new Point(437, 30);
 
             // Using a ResourceManager simplifies having to declare each image for each array value manually 

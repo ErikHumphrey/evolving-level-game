@@ -50,6 +50,7 @@
     <Compile Include="Battle.Designer.cs">
       <DependentUpon>Battle.cs</DependentUpon>
     </Compile>
+    <Compile Include="cheats.cs" />
     <Compile Include="ColourProgressBar.cs" />
     <Compile Include="Debugger.cs">
       <SubType>Form</SubType>
@@ -470,6 +471,33 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\imgSurvivalSteelHatchet.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imgSurvivalConjureLightning.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imgSurvivalMatchbox.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imgSurvivalTinderbox.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imgSurvivalInstincts.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imgSurvivalRamsay.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imgSurvivalSousChef.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imgSurvivalGoldsteelHatchet.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imgSurvivalConjureLightningImproved.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imgSurvivalGoldenHarpoon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

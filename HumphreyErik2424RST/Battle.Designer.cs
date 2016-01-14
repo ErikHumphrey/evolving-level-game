@@ -263,13 +263,13 @@
             // 
             // pnlTop
             // 
+            this.pnlTop.Controls.Add(this.lblDescription);
             this.pnlTop.Controls.Add(this.btnBuddha);
             this.pnlTop.Controls.Add(this.pnlGreenPlayer);
             this.pnlTop.Controls.Add(this.picEnemyHider);
             this.pnlTop.Controls.Add(this.picHealingBeam);
             this.pnlTop.Controls.Add(this.picSwipe);
             this.pnlTop.Controls.Add(this.picPunch);
-            this.pnlTop.Controls.Add(this.lblDescription);
             this.pnlTop.Controls.Add(this.button1);
             this.pnlTop.Controls.Add(this.picPortraitEnemy);
             this.pnlTop.Controls.Add(this.pnlGreenEnemy);
@@ -389,9 +389,9 @@
             // 
             // lblDescription
             // 
-            this.lblDescription.Location = new System.Drawing.Point(363, 325);
+            this.lblDescription.Location = new System.Drawing.Point(359, 318);
             this.lblDescription.Name = "lblDescription";
-            this.lblDescription.Size = new System.Drawing.Size(367, 15);
+            this.lblDescription.Size = new System.Drawing.Size(371, 27);
             this.lblDescription.TabIndex = 10;
             this.lblDescription.Text = "Button descriptions appear here when moused over.";
             this.lblDescription.TextAlign = System.Drawing.ContentAlignment.MiddleRight;

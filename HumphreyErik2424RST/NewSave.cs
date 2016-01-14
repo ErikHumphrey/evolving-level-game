@@ -45,7 +45,7 @@ namespace HumphreyErik2424RST
         private void frmNewSave_Load(object sender, EventArgs e)
         {
             lblLoginHeader.Font = lblNameTitle.Font = txtNameEntry.Font = labelText;
-            this.ActiveControl = txtNameEntry;
+            this.ActiveControl = txtNameEntry; // Set focus to the TextBox so the user can type immediately
         }
 
         private void txtNameEntry_KeyPress(object sender, KeyPressEventArgs e)
@@ -58,6 +58,7 @@ namespace HumphreyErik2424RST
                 SaveSystem.saveGameExists = true;
                 saveGame.WriteLine(SaveSystem.saveGameExists);
                 saveGame.Close();
+                LevelGen.NewLevel();
                 this.Close();
             }
         }

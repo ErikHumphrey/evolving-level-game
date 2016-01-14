@@ -101,7 +101,7 @@ namespace HumphreyErik2424RST
 
         private void btnUpgBlind_Click(object sender, EventArgs e)
         {
-          switch (Upgrades.blindAbilityLevel)
+            switch (Upgrades.blindAbilityLevel)
             {
                 case 0:
                     lblBlindName.Text = "Blinding Powder";
@@ -130,15 +130,15 @@ namespace HumphreyErik2424RST
         {
             switch (Upgrades.healAbilityLevel)
             {
-                case 0:
+                case 1:
                     lblHealName.Text = "Rest";
                     picHealIcon.Image = Properties.Resources.iconRest;
                     break;
-                case 1:
+                case 2:
                     lblHealName.Text = "Meditate";
                     picHealIcon.Image = Properties.Resources.iconMeditate;
                     break;
-                case 2:
+                case 3:
                     lblHealName.Text = "Self-Repair";
                     picHealIcon.Image = Properties.Resources.iconSelfRepair;
                     btnUpgHeal.Text = "MAX";
@@ -165,10 +165,110 @@ namespace HumphreyErik2424RST
             ssUpgrades.WriteLine(Upgrades.kickAbilityLevel);
             ssUpgrades.WriteLine(Upgrades.blindAbilityLevel);
             ssUpgrades.WriteLine(Upgrades.healAbilityLevel);
+
+            ssUpgrades.WriteLine(Upgrades.axeAbilityLevel);
+            ssUpgrades.WriteLine(Upgrades.fireAbilityLevel);
+            ssUpgrades.WriteLine(Upgrades.fishAbilityLevel);
+            ssUpgrades.WriteLine(Upgrades.cookAbilityLevel);
+
             ssCredits.WriteLine(Upgrades.credits);
 
             ssUpgrades.Close();
             ssCredits.Close();
+        }
+
+        private void btnUpgAxe_Click(object sender, EventArgs e)
+        {
+            switch (Upgrades.axeAbilityLevel)
+            {
+                case 0:
+                    lblHealName.Text = "Bronze hatchet";
+                    picHealIcon.Image = Properties.Resources.iconRest;
+                    break;
+                case 1:
+                    lblHealName.Text = "Iron hatchet";
+                    picHealIcon.Image = Properties.Resources.imgSurvivalIronHatchet;
+                    break;
+                case 2:
+                    lblHealName.Text = "Goldsteel hatchet";
+                    picHealIcon.Image = Properties.Resources.imgSurvivalGoldsteelHatchet;
+                    btnUpgHeal.Text = "MAX";
+                    btnUpgHeal.Enabled = false;
+                    break;
+            }
+        }
+
+        private void btnUpgFire_Click(object sender, EventArgs e)
+        {
+            switch (Upgrades.fireAbilityLevel)
+            {
+                case 1:
+                    lblHealName.Text = "";
+                    picHealIcon.Image = Properties.Resources.iconRest;
+                    break;
+                case 2:
+                    lblHealName.Text = "Tinderbox";
+                    picHealIcon.Image = Properties.Resources.imgSurvivalTinderbox;
+                    break;
+                case 3:
+                    lblHealName.Text = "Conjure Lightning";
+                    picHealIcon.Image = Properties.Resources.imgSurvivalConjureLightningImproved;
+                    btnUpgHeal.Text = "MAX";
+                    btnUpgHeal.Enabled = false;
+                    break;
+            }
+        }
+
+        private void btnUpgFish_Click(object sender, EventArgs e)
+        {
+            switch (Upgrades.fishAbilityLevel)
+            {
+                case 1:
+                    lblHealName.Text = "Fishing net";
+                    picHealIcon.Image = Properties.Resources.iconRest;
+                    break;
+                case 2:
+                    lblHealName.Text = "Fishing rod";
+                    picHealIcon.Image = Properties.Resources.iconMeditate;
+                    break;
+                case 3:
+                    lblHealName.Text = "Golden harpoon";
+                    picHealIcon.Image = Properties.Resources.iconSelfRepair;
+                    btnUpgHeal.Text = "MAX";
+                    btnUpgHeal.Enabled = false;
+                    break;
+            }
+        }
+
+        private void btnUpgCook_Click(object sender, EventArgs e)
+        {
+            switch (Upgrades.cookAbilityLevel)
+            {
+                case 1:
+                    lblHealName.Text = "Cookbook: Instincts";
+                    picHealIcon.Image = Properties.Resources.iconRest;
+                    break;
+                case 2:
+                    lblHealName.Text = "Cookbook: Sous-chef";
+                    picHealIcon.Image = Properties.Resources.iconMeditate;
+                    break;
+                case 3:
+                    lblHealName.Text = "Cookbook: Ramsay";
+                    picHealIcon.Image = Properties.Resources.iconSelfRepair;
+                    btnUpgHeal.Text = "MAX";
+                    btnUpgHeal.Enabled = false;
+                    break;
+            }
+        }
+
+        private void frmLevelComplete_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnUpgPunch_MouseEnter(object sender, EventArgs e)
+        {
+            lblShopDescription.Text = "Upgrade Punch ability. (500 credits)";
         }
     }
 }

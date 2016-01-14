@@ -2,6 +2,7 @@
 // This is the form that loads when you start the program!
 
 /*** CONCEPTS COVERED ***
+ ** These are only some examples of where I applied each concept. **
  * Note 01: I made a GUI.
  * Note 02: I saved my project.
  * Note 03: I used all kinds of controls and used the proper naming conventions.
@@ -18,7 +19,7 @@
  * Note 14: IF STATEMENTS?
  * Note 15: The level generator uses switch statements to open a level based on what number is rolled
  * Note 16: When the enemy dies in Battle, movement makes it slide down and disappear and coordinates used for ability effects.
- * Note 17: Battle uses strings to make the buttons multipurpose. Escape characters are used for quotes and in Flee MessageBox.
+ * Note 17: Player names are converted to uppercase in Battle. Escape characters are used for quotes and in Flee MessageBox.
  * Note 18: Graphics?
  * Note 19: Mouse events?
  * Note 20: A ComboBox is used to select the equipped item in Survival. A ListBox is used to keep track of the inventory.
@@ -28,7 +29,6 @@
  * Note 24: Try Catch?
  * Note 25: Arrays?
  * Note 26: 2D Arrays?
- * Note NaN: I used multiple forms. 
 */
 
 using System;
@@ -101,11 +101,19 @@ namespace HumphreyErik2424RST
                 lsGame.Close();
 
                 // Shop upgrades
+
                 TextReader upgLoad = new StreamReader("upgrades.txt");
+
                 Upgrades.punchAbilityLevel = Int32.Parse(upgLoad.ReadLine());
                 Upgrades.kickAbilityLevel = Int32.Parse(upgLoad.ReadLine());
                 Upgrades.blindAbilityLevel = Int32.Parse(upgLoad.ReadLine());
                 Upgrades.healAbilityLevel = Int32.Parse(upgLoad.ReadLine());
+
+                Upgrades.axeAbilityLevel = Int32.Parse(upgLoad.ReadLine());
+                Upgrades.fireAbilityLevel = Int32.Parse(upgLoad.ReadLine());
+                Upgrades.fishAbilityLevel = Int32.Parse(upgLoad.ReadLine());
+                Upgrades.cookAbilityLevel = Int32.Parse(upgLoad.ReadLine());
+
                 upgLoad.Close();
             }
             else
@@ -113,7 +121,7 @@ namespace HumphreyErik2424RST
                 lblSaveStatus.Text = "No game loaded";
                 btnStart.Text = "New game";
             }
-
+          
             // Set the font of chosen controls to be the custom font
             btnExit.Font
             = btnStart.Font

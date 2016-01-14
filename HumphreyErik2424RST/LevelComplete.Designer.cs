@@ -30,52 +30,56 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.grpRewards = new System.Windows.Forms.GroupBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.grpShop = new System.Windows.Forms.GroupBox();
-            this.btnUpgBlind = new System.Windows.Forms.Button();
-            this.lblBlindName = new System.Windows.Forms.Label();
-            this.btnUpgHeal = new System.Windows.Forms.Button();
-            this.lblHealName = new System.Windows.Forms.Label();
-            this.btnUpgKick = new System.Windows.Forms.Button();
-            this.lblKickName = new System.Windows.Forms.Label();
-            this.btnUpgPunch = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.lblAxeName = new System.Windows.Forms.Label();
+            this.btnUpgFish = new System.Windows.Forms.Button();
+            this.btnUpgAxe = new System.Windows.Forms.Button();
+            this.lblFishName = new System.Windows.Forms.Label();
+            this.lblFireName = new System.Windows.Forms.Label();
+            this.btnUpgCook = new System.Windows.Forms.Button();
+            this.btnUpgFire = new System.Windows.Forms.Button();
+            this.lblCookName = new System.Windows.Forms.Label();
+            this.grpLevelBattle = new System.Windows.Forms.GroupBox();
             this.lblPunchName = new System.Windows.Forms.Label();
+            this.btnUpgBlind = new System.Windows.Forms.Button();
+            this.btnUpgPunch = new System.Windows.Forms.Button();
+            this.lblBlindName = new System.Windows.Forms.Label();
+            this.lblKickName = new System.Windows.Forms.Label();
+            this.btnUpgHeal = new System.Windows.Forms.Button();
+            this.btnUpgKick = new System.Windows.Forms.Button();
+            this.lblHealName = new System.Windows.Forms.Label();
             this.lblShopDescription = new System.Windows.Forms.Label();
             this.lblYourCredits = new System.Windows.Forms.Label();
             this.btnNextLevel = new System.Windows.Forms.Button();
             this.btnReturnToMenu = new System.Windows.Forms.Button();
             this.lblCreditCount = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.grpLevelBattle = new System.Windows.Forms.GroupBox();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.label10 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.picFishIcon = new System.Windows.Forms.PictureBox();
+            this.picAxeIcon = new System.Windows.Forms.PictureBox();
+            this.picCookIcon = new System.Windows.Forms.PictureBox();
+            this.picFireIcon = new System.Windows.Forms.PictureBox();
             this.picBlindIcon = new System.Windows.Forms.PictureBox();
             this.picPunchIcon = new System.Windows.Forms.PictureBox();
             this.picHealIcon = new System.Windows.Forms.PictureBox();
             this.picKickIcon = new System.Windows.Forms.PictureBox();
+            this.lblUpgradeCost = new System.Windows.Forms.Label();
+            this.lblMinusSign = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.grpRewards.SuspendLayout();
             this.grpShop.SuspendLayout();
-            this.grpLevelBattle.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            this.grpLevelBattle.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picFishIcon)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picAxeIcon)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picCookIcon)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picFireIcon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBlindIcon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picPunchIcon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picHealIcon)).BeginInit();
@@ -105,6 +109,15 @@
             this.grpRewards.TabIndex = 1;
             this.grpRewards.TabStop = false;
             this.grpRewards.Text = "Rewards";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(205, 89);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(106, 13);
+            this.label3.TabIndex = 4;
+            this.label3.Text = "1 / 5 levels complete";
             // 
             // label8
             // 
@@ -156,157 +169,112 @@
             this.grpShop.TabStop = false;
             this.grpShop.Text = "Shop";
             // 
-            // btnUpgBlind
+            // groupBox1
             // 
-            this.btnUpgBlind.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.btnUpgBlind.Location = new System.Drawing.Point(60, 89);
-            this.btnUpgBlind.Name = "btnUpgBlind";
-            this.btnUpgBlind.Size = new System.Drawing.Size(75, 23);
-            this.btnUpgBlind.TabIndex = 24;
-            this.btnUpgBlind.Text = "Buy (500)";
-            this.btnUpgBlind.UseVisualStyleBackColor = true;
-            this.btnUpgBlind.Click += new System.EventHandler(this.btnUpgBlind_Click);
+            this.groupBox1.Controls.Add(this.picFishIcon);
+            this.groupBox1.Controls.Add(this.lblAxeName);
+            this.groupBox1.Controls.Add(this.btnUpgFish);
+            this.groupBox1.Controls.Add(this.btnUpgAxe);
+            this.groupBox1.Controls.Add(this.lblFishName);
+            this.groupBox1.Controls.Add(this.picAxeIcon);
+            this.groupBox1.Controls.Add(this.picCookIcon);
+            this.groupBox1.Controls.Add(this.lblFireName);
+            this.groupBox1.Controls.Add(this.btnUpgCook);
+            this.groupBox1.Controls.Add(this.btnUpgFire);
+            this.groupBox1.Controls.Add(this.lblCookName);
+            this.groupBox1.Controls.Add(this.picFireIcon);
+            this.groupBox1.Font = new System.Drawing.Font("Myriad Web Pro Condensed", 8.249999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.Location = new System.Drawing.Point(317, 30);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(308, 123);
+            this.groupBox1.TabIndex = 27;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "SURVIVAL";
             // 
-            // lblBlindName
+            // lblAxeName
             // 
-            this.lblBlindName.AutoSize = true;
-            this.lblBlindName.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.lblBlindName.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblBlindName.Location = new System.Drawing.Point(60, 73);
-            this.lblBlindName.Name = "lblBlindName";
-            this.lblBlindName.Size = new System.Drawing.Size(83, 13);
-            this.lblBlindName.TabIndex = 23;
-            this.lblBlindName.Text = "Blinding Powder";
+            this.lblAxeName.AutoSize = true;
+            this.lblAxeName.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.lblAxeName.Location = new System.Drawing.Point(60, 19);
+            this.lblAxeName.Name = "lblAxeName";
+            this.lblAxeName.Size = new System.Drawing.Size(79, 13);
+            this.lblAxeName.TabIndex = 14;
+            this.lblAxeName.Text = "Bronze hatchet";
             // 
-            // btnUpgHeal
+            // btnUpgFish
             // 
-            this.btnUpgHeal.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.btnUpgHeal.Location = new System.Drawing.Point(203, 89);
-            this.btnUpgHeal.Name = "btnUpgHeal";
-            this.btnUpgHeal.Size = new System.Drawing.Size(75, 23);
-            this.btnUpgHeal.TabIndex = 21;
-            this.btnUpgHeal.Text = "Upgrade";
-            this.btnUpgHeal.UseVisualStyleBackColor = true;
-            this.btnUpgHeal.Click += new System.EventHandler(this.btnUpgHeal_Click);
+            this.btnUpgFish.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.btnUpgFish.Location = new System.Drawing.Point(60, 89);
+            this.btnUpgFish.Name = "btnUpgFish";
+            this.btnUpgFish.Size = new System.Drawing.Size(75, 23);
+            this.btnUpgFish.TabIndex = 24;
+            this.btnUpgFish.Text = "Upgrade";
+            this.btnUpgFish.UseVisualStyleBackColor = true;
+            this.btnUpgFish.Click += new System.EventHandler(this.btnUpgFish_Click);
             // 
-            // lblHealName
+            // btnUpgAxe
             // 
-            this.lblHealName.AutoSize = true;
-            this.lblHealName.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.lblHealName.Location = new System.Drawing.Point(203, 73);
-            this.lblHealName.Name = "lblHealName";
-            this.lblHealName.Size = new System.Drawing.Size(29, 13);
-            this.lblHealName.TabIndex = 20;
-            this.lblHealName.Text = "Rest";
+            this.btnUpgAxe.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.btnUpgAxe.Location = new System.Drawing.Point(60, 35);
+            this.btnUpgAxe.Name = "btnUpgAxe";
+            this.btnUpgAxe.Size = new System.Drawing.Size(75, 23);
+            this.btnUpgAxe.TabIndex = 15;
+            this.btnUpgAxe.Text = "Upgrade";
+            this.btnUpgAxe.UseVisualStyleBackColor = true;
+            this.btnUpgAxe.Click += new System.EventHandler(this.btnUpgAxe_Click);
             // 
-            // btnUpgKick
+            // lblFishName
             // 
-            this.btnUpgKick.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.btnUpgKick.Location = new System.Drawing.Point(203, 35);
-            this.btnUpgKick.Name = "btnUpgKick";
-            this.btnUpgKick.Size = new System.Drawing.Size(75, 23);
-            this.btnUpgKick.TabIndex = 18;
-            this.btnUpgKick.Text = "Upgrade";
-            this.btnUpgKick.UseVisualStyleBackColor = true;
-            this.btnUpgKick.Click += new System.EventHandler(this.btnUpgKick_Click);
+            this.lblFishName.AutoSize = true;
+            this.lblFishName.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.lblFishName.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.lblFishName.Location = new System.Drawing.Point(60, 73);
+            this.lblFishName.Name = "lblFishName";
+            this.lblFishName.Size = new System.Drawing.Size(57, 13);
+            this.lblFishName.TabIndex = 23;
+            this.lblFishName.Text = "Net fishing";
             // 
-            // lblKickName
+            // lblFireName
             // 
-            this.lblKickName.AutoSize = true;
-            this.lblKickName.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.lblKickName.Location = new System.Drawing.Point(203, 19);
-            this.lblKickName.Name = "lblKickName";
-            this.lblKickName.Size = new System.Drawing.Size(55, 13);
-            this.lblKickName.TabIndex = 17;
-            this.lblKickName.Text = "Front Kick";
+            this.lblFireName.AutoSize = true;
+            this.lblFireName.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.lblFireName.Location = new System.Drawing.Point(203, 19);
+            this.lblFireName.Name = "lblFireName";
+            this.lblFireName.Size = new System.Drawing.Size(54, 13);
+            this.lblFireName.TabIndex = 17;
+            this.lblFireName.Text = "Matchbox";
             // 
-            // btnUpgPunch
+            // btnUpgCook
             // 
-            this.btnUpgPunch.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.btnUpgPunch.Location = new System.Drawing.Point(60, 35);
-            this.btnUpgPunch.Name = "btnUpgPunch";
-            this.btnUpgPunch.Size = new System.Drawing.Size(75, 23);
-            this.btnUpgPunch.TabIndex = 15;
-            this.btnUpgPunch.Text = "Upgrade";
-            this.btnUpgPunch.UseVisualStyleBackColor = true;
-            this.btnUpgPunch.Click += new System.EventHandler(this.btnUpgPunch_Click);
+            this.btnUpgCook.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.btnUpgCook.Location = new System.Drawing.Point(203, 89);
+            this.btnUpgCook.Name = "btnUpgCook";
+            this.btnUpgCook.Size = new System.Drawing.Size(75, 23);
+            this.btnUpgCook.TabIndex = 21;
+            this.btnUpgCook.Text = "Upgrade";
+            this.btnUpgCook.UseVisualStyleBackColor = true;
+            this.btnUpgCook.Click += new System.EventHandler(this.btnUpgCook_Click);
             // 
-            // lblPunchName
+            // btnUpgFire
             // 
-            this.lblPunchName.AutoSize = true;
-            this.lblPunchName.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.lblPunchName.Location = new System.Drawing.Point(60, 19);
-            this.lblPunchName.Name = "lblPunchName";
-            this.lblPunchName.Size = new System.Drawing.Size(38, 13);
-            this.lblPunchName.TabIndex = 14;
-            this.lblPunchName.Text = "Punch";
+            this.btnUpgFire.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.btnUpgFire.Location = new System.Drawing.Point(205, 35);
+            this.btnUpgFire.Name = "btnUpgFire";
+            this.btnUpgFire.Size = new System.Drawing.Size(75, 23);
+            this.btnUpgFire.TabIndex = 18;
+            this.btnUpgFire.Text = "Upgrade";
+            this.btnUpgFire.UseVisualStyleBackColor = true;
+            this.btnUpgFire.Click += new System.EventHandler(this.btnUpgFire_Click);
             // 
-            // lblShopDescription
+            // lblCookName
             // 
-            this.lblShopDescription.AutoSize = true;
-            this.lblShopDescription.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblShopDescription.Location = new System.Drawing.Point(334, 1);
-            this.lblShopDescription.Name = "lblShopDescription";
-            this.lblShopDescription.Size = new System.Drawing.Size(212, 13);
-            this.lblShopDescription.TabIndex = 13;
-            this.lblShopDescription.Text = "Mouse over button to view item description.";
-            // 
-            // lblYourCredits
-            // 
-            this.lblYourCredits.AutoSize = true;
-            this.lblYourCredits.Location = new System.Drawing.Point(458, 489);
-            this.lblYourCredits.Name = "lblYourCredits";
-            this.lblYourCredits.Size = new System.Drawing.Size(66, 13);
-            this.lblYourCredits.TabIndex = 3;
-            this.lblYourCredits.Text = "Your credits:";
-            // 
-            // btnNextLevel
-            // 
-            this.btnNextLevel.Location = new System.Drawing.Point(207, 507);
-            this.btnNextLevel.Name = "btnNextLevel";
-            this.btnNextLevel.Size = new System.Drawing.Size(75, 23);
-            this.btnNextLevel.TabIndex = 3;
-            this.btnNextLevel.Text = "Continue";
-            this.btnNextLevel.UseVisualStyleBackColor = true;
-            this.btnNextLevel.Click += new System.EventHandler(this.btnNextLevel_Click);
-            // 
-            // btnReturnToMenu
-            // 
-            this.btnReturnToMenu.Location = new System.Drawing.Point(288, 507);
-            this.btnReturnToMenu.Name = "btnReturnToMenu";
-            this.btnReturnToMenu.Size = new System.Drawing.Size(132, 23);
-            this.btnReturnToMenu.TabIndex = 4;
-            this.btnReturnToMenu.Text = "Return to main menu";
-            this.btnReturnToMenu.UseVisualStyleBackColor = true;
-            this.btnReturnToMenu.Click += new System.EventHandler(this.btnReturnToMenu_Click);
-            // 
-            // lblCreditCount
-            // 
-            this.lblCreditCount.AutoSize = true;
-            this.lblCreditCount.Location = new System.Drawing.Point(525, 489);
-            this.lblCreditCount.Name = "lblCreditCount";
-            this.lblCreditCount.Size = new System.Drawing.Size(49, 13);
-            this.lblCreditCount.TabIndex = 5;
-            this.lblCreditCount.Text = "        000";
-            this.lblCreditCount.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(195, 533);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(225, 13);
-            this.label2.TabIndex = 6;
-            this.label2.Text = "Clicking one of these buttons saves the game.";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(205, 89);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(106, 13);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "1 / 5 levels complete";
+            this.lblCookName.AutoSize = true;
+            this.lblCookName.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.lblCookName.Location = new System.Drawing.Point(203, 73);
+            this.lblCookName.Name = "lblCookName";
+            this.lblCookName.Size = new System.Drawing.Size(101, 13);
+            this.lblCookName.TabIndex = 20;
+            this.lblCookName.Text = "Cookbook: Instincts";
             // 
             // grpLevelBattle
             // 
@@ -330,149 +298,190 @@
             this.grpLevelBattle.TabStop = false;
             this.grpLevelBattle.Text = "BATTLE";
             // 
-            // groupBox1
+            // lblPunchName
             // 
-            this.groupBox1.Controls.Add(this.pictureBox1);
-            this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.button1);
-            this.groupBox1.Controls.Add(this.button2);
-            this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.pictureBox2);
-            this.groupBox1.Controls.Add(this.pictureBox3);
-            this.groupBox1.Controls.Add(this.label9);
-            this.groupBox1.Controls.Add(this.button3);
-            this.groupBox1.Controls.Add(this.button4);
-            this.groupBox1.Controls.Add(this.label10);
-            this.groupBox1.Controls.Add(this.pictureBox4);
-            this.groupBox1.Font = new System.Drawing.Font("Myriad Web Pro Condensed", 8.249999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(317, 30);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(308, 123);
-            this.groupBox1.TabIndex = 27;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "SURVIVAL";
+            this.lblPunchName.AutoSize = true;
+            this.lblPunchName.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.lblPunchName.Location = new System.Drawing.Point(60, 19);
+            this.lblPunchName.Name = "lblPunchName";
+            this.lblPunchName.Size = new System.Drawing.Size(38, 13);
+            this.lblPunchName.TabIndex = 14;
+            this.lblPunchName.Text = "Punch";
             // 
-            // label4
+            // btnUpgBlind
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label4.Location = new System.Drawing.Point(60, 19);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(79, 13);
-            this.label4.TabIndex = 14;
-            this.label4.Text = "Bronze hatchet";
+            this.btnUpgBlind.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.btnUpgBlind.Location = new System.Drawing.Point(60, 89);
+            this.btnUpgBlind.Name = "btnUpgBlind";
+            this.btnUpgBlind.Size = new System.Drawing.Size(75, 23);
+            this.btnUpgBlind.TabIndex = 24;
+            this.btnUpgBlind.Text = "Buy";
+            this.btnUpgBlind.UseVisualStyleBackColor = true;
+            this.btnUpgBlind.Click += new System.EventHandler(this.btnUpgBlind_Click);
             // 
-            // button1
+            // btnUpgPunch
             // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.button1.Location = new System.Drawing.Point(60, 89);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 24;
-            this.button1.Text = "Buy (500)";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnUpgPunch.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.btnUpgPunch.Location = new System.Drawing.Point(60, 35);
+            this.btnUpgPunch.Name = "btnUpgPunch";
+            this.btnUpgPunch.Size = new System.Drawing.Size(75, 23);
+            this.btnUpgPunch.TabIndex = 15;
+            this.btnUpgPunch.Text = "Upgrade";
+            this.btnUpgPunch.UseVisualStyleBackColor = true;
+            this.btnUpgPunch.Click += new System.EventHandler(this.btnUpgPunch_Click);
+            this.btnUpgPunch.MouseEnter += new System.EventHandler(this.btnUpgPunch_MouseEnter);
             // 
-            // button2
+            // lblBlindName
             // 
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.button2.Location = new System.Drawing.Point(60, 35);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 15;
-            this.button2.Text = "Upgrade";
-            this.button2.UseVisualStyleBackColor = true;
+            this.lblBlindName.AutoSize = true;
+            this.lblBlindName.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.lblBlindName.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.lblBlindName.Location = new System.Drawing.Point(60, 73);
+            this.lblBlindName.Name = "lblBlindName";
+            this.lblBlindName.Size = new System.Drawing.Size(83, 13);
+            this.lblBlindName.TabIndex = 23;
+            this.lblBlindName.Text = "Blinding Powder";
             // 
-            // label5
+            // lblKickName
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label5.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label5.Location = new System.Drawing.Point(60, 73);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(57, 13);
-            this.label5.TabIndex = 23;
-            this.label5.Text = "Net fishing";
+            this.lblKickName.AutoSize = true;
+            this.lblKickName.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.lblKickName.Location = new System.Drawing.Point(203, 19);
+            this.lblKickName.Name = "lblKickName";
+            this.lblKickName.Size = new System.Drawing.Size(55, 13);
+            this.lblKickName.TabIndex = 17;
+            this.lblKickName.Text = "Front Kick";
             // 
-            // label9
+            // btnUpgHeal
             // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label9.Location = new System.Drawing.Point(203, 19);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(72, 13);
-            this.label9.TabIndex = 17;
-            this.label9.Text = "Flint and steel";
+            this.btnUpgHeal.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.btnUpgHeal.Location = new System.Drawing.Point(203, 89);
+            this.btnUpgHeal.Name = "btnUpgHeal";
+            this.btnUpgHeal.Size = new System.Drawing.Size(75, 23);
+            this.btnUpgHeal.TabIndex = 21;
+            this.btnUpgHeal.Text = "Upgrade";
+            this.btnUpgHeal.UseVisualStyleBackColor = true;
+            this.btnUpgHeal.Click += new System.EventHandler(this.btnUpgHeal_Click);
             // 
-            // button3
+            // btnUpgKick
             // 
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.button3.Location = new System.Drawing.Point(203, 89);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 21;
-            this.button3.Text = "Upgrade";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnUpgKick.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.btnUpgKick.Location = new System.Drawing.Point(203, 35);
+            this.btnUpgKick.Name = "btnUpgKick";
+            this.btnUpgKick.Size = new System.Drawing.Size(75, 23);
+            this.btnUpgKick.TabIndex = 18;
+            this.btnUpgKick.Text = "Upgrade";
+            this.btnUpgKick.UseVisualStyleBackColor = true;
+            this.btnUpgKick.Click += new System.EventHandler(this.btnUpgKick_Click);
             // 
-            // button4
+            // lblHealName
             // 
-            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.button4.Location = new System.Drawing.Point(203, 35);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
-            this.button4.TabIndex = 18;
-            this.button4.Text = "Upgrade";
-            this.button4.UseVisualStyleBackColor = true;
+            this.lblHealName.AutoSize = true;
+            this.lblHealName.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.lblHealName.Location = new System.Drawing.Point(203, 73);
+            this.lblHealName.Name = "lblHealName";
+            this.lblHealName.Size = new System.Drawing.Size(29, 13);
+            this.lblHealName.TabIndex = 20;
+            this.lblHealName.Text = "Rest";
             // 
-            // label10
+            // lblShopDescription
             // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label10.Location = new System.Drawing.Point(203, 73);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(46, 13);
-            this.label10.TabIndex = 20;
-            this.label10.Text = "Instincts";
+            this.lblShopDescription.AutoSize = true;
+            this.lblShopDescription.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.lblShopDescription.Location = new System.Drawing.Point(409, 0);
+            this.lblShopDescription.Name = "lblShopDescription";
+            this.lblShopDescription.Size = new System.Drawing.Size(212, 13);
+            this.lblShopDescription.TabIndex = 13;
+            this.lblShopDescription.Text = "Mouse over button to view item description.";
+            this.lblShopDescription.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // pictureBox1
+            // lblYourCredits
             // 
-            this.pictureBox1.Enabled = false;
-            this.pictureBox1.Image = global::HumphreyErik2424RST.Properties.Resources.imgSurvivalFishingNet;
-            this.pictureBox1.Location = new System.Drawing.Point(8, 70);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(46, 46);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 25;
-            this.pictureBox1.TabStop = false;
+            this.lblYourCredits.AutoSize = true;
+            this.lblYourCredits.Location = new System.Drawing.Point(432, 489);
+            this.lblYourCredits.Name = "lblYourCredits";
+            this.lblYourCredits.Size = new System.Drawing.Size(66, 13);
+            this.lblYourCredits.TabIndex = 3;
+            this.lblYourCredits.Text = "Your credits:";
             // 
-            // pictureBox2
+            // btnNextLevel
             // 
-            this.pictureBox2.Image = global::HumphreyErik2424RST.Properties.Resources.imgSurvivalBronzeHatchet;
-            this.pictureBox2.Location = new System.Drawing.Point(8, 16);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(46, 46);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 16;
-            this.pictureBox2.TabStop = false;
+            this.btnNextLevel.Location = new System.Drawing.Point(260, 572);
+            this.btnNextLevel.Name = "btnNextLevel";
+            this.btnNextLevel.Size = new System.Drawing.Size(75, 23);
+            this.btnNextLevel.TabIndex = 3;
+            this.btnNextLevel.Text = "Continue";
+            this.btnNextLevel.UseVisualStyleBackColor = true;
+            this.btnNextLevel.Click += new System.EventHandler(this.btnNextLevel_Click);
             // 
-            // pictureBox3
+            // btnReturnToMenu
             // 
-            this.pictureBox3.Image = global::HumphreyErik2424RST.Properties.Resources.iconRest;
-            this.pictureBox3.Location = new System.Drawing.Point(151, 70);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(46, 46);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox3.TabIndex = 22;
-            this.pictureBox3.TabStop = false;
+            this.btnReturnToMenu.Location = new System.Drawing.Point(341, 572);
+            this.btnReturnToMenu.Name = "btnReturnToMenu";
+            this.btnReturnToMenu.Size = new System.Drawing.Size(132, 23);
+            this.btnReturnToMenu.TabIndex = 4;
+            this.btnReturnToMenu.Text = "Return to main menu";
+            this.btnReturnToMenu.UseVisualStyleBackColor = true;
+            this.btnReturnToMenu.Click += new System.EventHandler(this.btnReturnToMenu_Click);
             // 
-            // pictureBox4
+            // lblCreditCount
             // 
-            this.pictureBox4.Image = global::HumphreyErik2424RST.Properties.Resources.iconFrontKick;
-            this.pictureBox4.Location = new System.Drawing.Point(151, 16);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(46, 46);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox4.TabIndex = 19;
-            this.pictureBox4.TabStop = false;
+            this.lblCreditCount.Location = new System.Drawing.Point(501, 489);
+            this.lblCreditCount.Name = "lblCreditCount";
+            this.lblCreditCount.Size = new System.Drawing.Size(73, 13);
+            this.lblCreditCount.TabIndex = 5;
+            this.lblCreditCount.Text = "        000";
+            this.lblCreditCount.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(248, 598);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(225, 13);
+            this.label2.TabIndex = 6;
+            this.label2.Text = "Clicking one of these buttons saves the game.";
+            // 
+            // picFishIcon
+            // 
+            this.picFishIcon.Enabled = false;
+            this.picFishIcon.Image = global::HumphreyErik2424RST.Properties.Resources.imgSurvivalFishingNet;
+            this.picFishIcon.Location = new System.Drawing.Point(8, 70);
+            this.picFishIcon.Name = "picFishIcon";
+            this.picFishIcon.Size = new System.Drawing.Size(46, 46);
+            this.picFishIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picFishIcon.TabIndex = 25;
+            this.picFishIcon.TabStop = false;
+            // 
+            // picAxeIcon
+            // 
+            this.picAxeIcon.Image = global::HumphreyErik2424RST.Properties.Resources.imgSurvivalBronzeHatchet;
+            this.picAxeIcon.Location = new System.Drawing.Point(8, 16);
+            this.picAxeIcon.Name = "picAxeIcon";
+            this.picAxeIcon.Size = new System.Drawing.Size(46, 46);
+            this.picAxeIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picAxeIcon.TabIndex = 16;
+            this.picAxeIcon.TabStop = false;
+            // 
+            // picCookIcon
+            // 
+            this.picCookIcon.Image = global::HumphreyErik2424RST.Properties.Resources.imgSurvivalInstincts;
+            this.picCookIcon.Location = new System.Drawing.Point(151, 70);
+            this.picCookIcon.Name = "picCookIcon";
+            this.picCookIcon.Size = new System.Drawing.Size(46, 46);
+            this.picCookIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picCookIcon.TabIndex = 22;
+            this.picCookIcon.TabStop = false;
+            // 
+            // picFireIcon
+            // 
+            this.picFireIcon.Image = global::HumphreyErik2424RST.Properties.Resources.imgSurvivalMatchbox;
+            this.picFireIcon.Location = new System.Drawing.Point(151, 16);
+            this.picFireIcon.Name = "picFireIcon";
+            this.picFireIcon.Size = new System.Drawing.Size(46, 46);
+            this.picFireIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picFireIcon.TabIndex = 19;
+            this.picFireIcon.TabStop = false;
             // 
             // picBlindIcon
             // 
@@ -515,11 +524,55 @@
             this.picKickIcon.TabIndex = 19;
             this.picKickIcon.TabStop = false;
             // 
+            // lblUpgradeCost
+            // 
+            this.lblUpgradeCost.ForeColor = System.Drawing.Color.Red;
+            this.lblUpgradeCost.Location = new System.Drawing.Point(517, 507);
+            this.lblUpgradeCost.Name = "lblUpgradeCost";
+            this.lblUpgradeCost.Size = new System.Drawing.Size(57, 13);
+            this.lblUpgradeCost.TabIndex = 7;
+            this.lblUpgradeCost.Text = "        000";
+            this.lblUpgradeCost.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // lblMinusSign
+            // 
+            this.lblMinusSign.AutoSize = true;
+            this.lblMinusSign.ForeColor = System.Drawing.Color.Red;
+            this.lblMinusSign.Location = new System.Drawing.Point(498, 507);
+            this.lblMinusSign.Name = "lblMinusSign";
+            this.lblMinusSign.Size = new System.Drawing.Size(13, 13);
+            this.lblMinusSign.TabIndex = 8;
+            this.lblMinusSign.Text = "−";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.ForeColor = System.Drawing.Color.Red;
+            this.label4.Location = new System.Drawing.Point(495, 518);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(85, 13);
+            this.label4.TabIndex = 10;
+            this.label4.Text = "—————————————";
+            // 
+            // label5
+            // 
+            this.label5.ForeColor = System.Drawing.Color.Red;
+            this.label5.Location = new System.Drawing.Point(498, 529);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(77, 13);
+            this.label5.TabIndex = 9;
+            this.label5.Text = "        000";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
             // frmLevelComplete
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(831, 560);
+            this.ClientSize = new System.Drawing.Size(826, 644);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.lblMinusSign);
+            this.Controls.Add(this.lblUpgradeCost);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.lblCreditCount);
             this.Controls.Add(this.btnReturnToMenu);
@@ -534,18 +587,19 @@
             this.Name = "frmLevelComplete";
             this.ShowIcon = false;
             this.Text = "Level complete!";
+            this.Load += new System.EventHandler(this.frmLevelComplete_Load);
             this.grpRewards.ResumeLayout(false);
             this.grpRewards.PerformLayout();
             this.grpShop.ResumeLayout(false);
             this.grpShop.PerformLayout();
-            this.grpLevelBattle.ResumeLayout(false);
-            this.grpLevelBattle.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            this.grpLevelBattle.ResumeLayout(false);
+            this.grpLevelBattle.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picFishIcon)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picAxeIcon)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picCookIcon)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picFireIcon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBlindIcon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picPunchIcon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picHealIcon)).EndInit();
@@ -585,17 +639,21 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.GroupBox grpLevelBattle;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox picFishIcon;
+        private System.Windows.Forms.Label lblAxeName;
+        private System.Windows.Forms.Button btnUpgFish;
+        private System.Windows.Forms.Button btnUpgAxe;
+        private System.Windows.Forms.Label lblFishName;
+        private System.Windows.Forms.PictureBox picAxeIcon;
+        private System.Windows.Forms.PictureBox picCookIcon;
+        private System.Windows.Forms.Label lblFireName;
+        private System.Windows.Forms.Button btnUpgCook;
+        private System.Windows.Forms.Button btnUpgFire;
+        private System.Windows.Forms.Label lblCookName;
+        private System.Windows.Forms.PictureBox picFireIcon;
+        private System.Windows.Forms.Label lblUpgradeCost;
+        private System.Windows.Forms.Label lblMinusSign;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.PictureBox pictureBox4;
     }
 }

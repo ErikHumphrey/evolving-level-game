@@ -27,5 +27,11 @@ namespace Upgrader
         static public int kickAbilityLevel = 1;
         static public int blindAbilityLevel = 0;
         static public int healAbilityLevel = 1;
+
+        // Survival
+        static public int axeAbilityLevel = 1;
+        static public int fireAbilityLevel = 1;
+        static public int fishAbilityLevel = 1;
+        static public int cookAbilityLevel = 1;
     }
 }
