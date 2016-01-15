@@ -230,9 +230,6 @@
     <None Include="Resources\imgSwipe6.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\imgCultist.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\cultistimproved.png" />
   </ItemGroup>
   <ItemGroup>
@@ -498,6 +495,36 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\imgSurvivalGoldenHarpoon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imgSurvivalWater.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imgWaterAnimation1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imgWaterAnimation2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imgWaterAnimation3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imgSurvivalHorizon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imgFirePitEmpty.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imgFirePitLit1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imgFirePitLit2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imgFirePitLit3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imgFirePitLogs.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

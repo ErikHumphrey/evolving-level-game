@@ -269,6 +269,7 @@ namespace HumphreyErik2424RST
         private void btnUpgPunch_MouseEnter(object sender, EventArgs e)
         {
             lblShopDescription.Text = "Upgrade Punch ability. (500 credits)";
+            lblUpgradeCost.Text = "500";
         }
     }
 }

@@ -15,6 +15,9 @@ namespace HumphreyErik2424RST
     public partial class frmSurvival : Form
     {
         int logsNeeded;
+        int fireBurnTimer = 0;
+        int fishingSpotFrame = 3;
+        int fireFrame = 3;
         string treeType;
 
         public frmSurvival()
@@ -23,7 +26,15 @@ namespace HumphreyErik2424RST
         }
 
         private void frmSurvival_Load(object sender, EventArgs e)
-        {/*
+        {
+            tmrFishingSpotAnimation.Start();
+            tmrFireAnimation.Start();
+
+            cboEquippedItem.Items.Add("Bronze hatchet");
+            cboEquippedItem.Items.Add("Matchbox");
+            cboEquippedItem.Items.Add("Fishing rod");
+                
+            /*
             switch (LevelGen.difficulty)
             {
                 case 1:
@@ -48,6 +59,48 @@ namespace HumphreyErik2424RST
                     break;
           * 
             }*/
+        }
+
+        private void tmrFishingSpotAnimation_Tick(object sender, EventArgs e)
+        {
+            if (fishingSpotFrame == 4)
+                fishingSpotFrame = 1;
+            else
+                fishingSpotFrame++;
+
+            switch (fishingSpotFrame)
+            {
+                case 1:
+                    picFishingSpot.Image = Properties.Resources.imgWaterAnimation1;
+                    break;
+                case 2:
+                    picFishingSpot.Image = Properties.Resources.imgWaterAnimation2;
+                    break;
+                case 3:
+                    picFishingSpot.Image = Properties.Resources.imgWaterAnimation3;
+                    break;
+            }
+        }
+
+        private void tmrFireAnimation_Tick(object sender, EventArgs e)
+        {
+            if (fireFrame == 4)
+                fireFrame = 1;
+            else
+                fireFrame++;
+
+            switch (fireFrame)
+            {
+                case 1:
+                    picFirePit.Image = Properties.Resources.imgFirePitLit1;
+                    break;
+                case 2:
+                    picFirePit.Image = Properties.Resources.imgFirePitLit2;
+                    break;
+                case 3:
+                    picFirePit.Image = Properties.Resources.imgFirePitLit3;
+                    break;
+            }
         }
     }
 }

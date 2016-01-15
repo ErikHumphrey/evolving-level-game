@@ -130,6 +130,9 @@
   <data name="imgSurvivalMatchbox" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\imgSurvivalMatchbox.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="imgSurvivalInstincts" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\imgSurvivalInstincts.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="imgSurvivalHarpoon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\imgSurvivalHarpoon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -139,17 +142,14 @@
   <data name="iconWhirlwindKick" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icoWhirlwindKick.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="imgRabbitAlive" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\imgRabbitAlive.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="iconMeditate" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\meditateicon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="imgSurvivalSousChef" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\imgSurvivalSousChef.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="imgSurvivalBronzeHatchet" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\imgSurvivalBronzeHatchet.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="imgHammerDead" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\imgHammerDead.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="imgDoppelDead" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\imgDoppelDead.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -160,14 +160,11 @@
   <data name="iconSmokeScreenAlt" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\picsmokescreen.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="imgHammerDead" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\imgHammerDead.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="texGraniteLarge" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\texGraniteLarge.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="imgSwipe5" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\imgSwipe5.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="imgSurvivalGoldsteelHatchet" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\imgSurvivalGoldsteelHatchet.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="imgSwipe3" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\imgSwipe3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -175,11 +172,17 @@
   <data name="sfxHitImproved" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\sfxHitImproved.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="imgSurvivalGoldenHarpoon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\imgSurvivalGoldenHarpoon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="imgSurvivalConjureLightningImproved" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\imgSurvivalConjureLightningImproved.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="sfxSwoosh" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\sfxSwoosh.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="imgSurvivalInstincts" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\imgSurvivalInstincts.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="imgSwipe5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\imgSwipe5.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="imgSwipe4" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\imgSwipe4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -189,6 +192,9 @@
   </data>
   <data name="imgSwipe2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\imgSwipe2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="imgSurvivalBronzeHatchet" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\imgSurvivalBronzeHatchet.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="imgSurvivalIronHatchet" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\imgSurvivalIronHatchet.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -202,8 +208,8 @@
   <data name="iconPocketSand" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\picpocketsand.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="texGranite" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\texGranite.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="imgWaterAnimation3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\imgWaterAnimation3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="iconFrontKick" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\frontkickicon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -223,6 +229,9 @@
   <data name="imgRabbitDead" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\imgRabbitDead.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="imgWaterAnimation2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\imgWaterAnimation2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="imgBannerELG" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\imgBannerELG.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -232,8 +241,8 @@
   <data name="imgSwipe1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\imgSwipe1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="imgZeusDead" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\imgZeusDead.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="texGranite" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\texGranite.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="menuFont" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\menuFont.ttf;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -243,6 +252,9 @@
   </data>
   <data name="iconRest" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\resticon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="imgSurvivalWater" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\imgSurvivalWater.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="testhorizon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\testhorizon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -261,6 +273,12 @@
   </data>
   <data name="iconBlindingPowder" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\picsmokebomb.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="imgSwipe6" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\imgSwipe6.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="imgBeam08" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\imgHeal33.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="imgBannerImproved" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\imgBannerImproved.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -289,14 +307,14 @@
   <data name="iconSelfRepair" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\repairicon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="imgSwipe6" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\imgSwipe6.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="imgRabbitAlive" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\imgRabbitAlive.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="iconBlindingPowderLocked" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\iconBlindingPowderLocked.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="imgSurvivalGoldsteelHatchet" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\imgSurvivalGoldsteelHatchet.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="imgSurvivalHorizon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\imgSurvivalHorizon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="stumpfix1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\stumpfix1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -307,8 +325,8 @@
   <data name="imgBeam02" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\imgHeal14.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="imgBeam08" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\imgHeal33.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="imgWaterAnimation1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\imgWaterAnimation1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="imgEnemyHider" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\imgEnemyHider.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -343,13 +361,25 @@
   <data name="imgDoppelAlive" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\imgDoppelAlive.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="imgZeusDead" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\imgZeusDead.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="IconSmokeScreen" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\picsmokescreenenhanced.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="imgSurvivalConjureLightningImproved" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\imgSurvivalConjureLightningImproved.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="imgFirePitEmpty" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\imgFirePitEmpty.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="imgSurvivalGoldenHarpoon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\imgSurvivalGoldenHarpoon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="imgFirePitLit1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\imgFirePitLit1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="imgFirePitLit2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\imgFirePitLit2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="imgFirePitLit3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\imgFirePitLit3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="imgFirePitLogs" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\imgFirePitLogs.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
