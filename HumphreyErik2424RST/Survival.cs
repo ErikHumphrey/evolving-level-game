@@ -14,11 +14,21 @@ namespace HumphreyErik2424RST
 {
     public partial class frmSurvival : Form
     {
+        // Global declarations
+        Random rnd = new Random();
+
         int logsNeeded;
+        int logCount;
         int fireBurnTimer = 0;
         int fishingSpotFrame = 3;
         int fireFrame = 3;
+        int unlitFireImageIndex = 0;
+
         string treeType;
+
+        Cursor woodCursor = new Cursor(Properties.Resources.curWoodcut.Handle);
+        Cursor fireCursor = new Cursor(Properties.Resources.curFire.Handle);
+        Cursor fishCursor = new Cursor(Properties.Resources.curFish.Handle);
 
         public frmSurvival()
         {
@@ -28,7 +38,7 @@ namespace HumphreyErik2424RST
         private void frmSurvival_Load(object sender, EventArgs e)
         {
             tmrFishingSpotAnimation.Start();
-            tmrFireAnimation.Start();
+            // tmrFireAnimation.Start();
 
             cboEquippedItem.Items.Add("Bronze hatchet");
             cboEquippedItem.Items.Add("Matchbox");
@@ -101,6 +111,64 @@ namespace HumphreyErik2424RST
                     picFirePit.Image = Properties.Resources.imgFirePitLit3;
                     break;
             }
+        }
+
+        private void picTree_Click(object sender, EventArgs e)
+        {
+            if (cboEquippedItem.SelectedText.Contains("ha"))
+            {
+                int cut;
+                lstGameLog.Items.Add("You swing your " + cboEquippedItem.SelectedText.ToLower() + " at the tree.");
+                cut = rnd.Next(1, 5);
+                if (cut == 4)
+                {
+                    logCount++;
+                    cboEquippedItem.Items.Add("Logs");
+                    lstGameLog.Items.Add("You get some logs.");
+                    lstInventory.Items.Add("Logs");
+                }
+            }
+            else
+                lstGameLog.Items.Add("Nothing interesting happens.");
+        }
+
+        /* unlitFireImageIndex
+         * 0: no logs
+         * 1: logs in pit
+         * 2: fire lit */
+
+        private void picFirePit_Click(object sender, EventArgs e)
+        {
+            lstGameLog.Items.Add(picFirePit.Image.ToString());
+            if (cboEquippedItem.SelectedText == "Logs" && unlitFireImageIndex == 0)
+            {
+                // lstInventory.Items.Remove("Logs");
+                picFirePit.Image = Properties.Resources.imgFirePitLogs;
+                unlitFireImageIndex = 1;
+            }
+            else if (cboEquippedItem.SelectedText == "Matchbox" && unlitFireImageIndex == 1)
+            {
+                picFirePit.Image = Properties.Resources.imgFirePitLit2;
+                tmrFireAnimation.Start();
+                unlitFireImageIndex = 2;
+            }
+            else
+                lstGameLog.Items.Add("Nothing interesting happens.");
+        }
+
+        private void picTree_MouseEnter(object sender, EventArgs e)
+        {
+            picTree.Cursor = woodCursor;
+        }
+
+        private void picFirePit_MouseEnter(object sender, EventArgs e)
+        {
+            picFirePit.Cursor = fireCursor;
+        }
+
+        private void picFishingSpot_MouseEnter(object sender, EventArgs e)
+        {
+            picFishingSpot.Cursor = fishCursor;
         }
     }
 }
