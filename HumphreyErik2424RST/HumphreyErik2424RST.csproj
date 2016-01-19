@@ -527,13 +527,46 @@
     <None Include="Resources\imgFirePitLogs.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\curWoodcut.ico" />
+    <EmbeddedResource Include="Resources\curWoodcut.ico" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\curFire.ico" />
+    <EmbeddedResource Include="Resources\curFire.ico" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\curFish.ico" />
+    <EmbeddedResource Include="Resources\curFish.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\treestump.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\stumpfix11.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\fireCursorNew.cur" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\fishCursorNew.cur" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\woodCursorNew.cur" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cursorCooking.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cursorFire.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cursorFishing.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cursorInTheBag.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cursorPointer.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cursorWoodcutting.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

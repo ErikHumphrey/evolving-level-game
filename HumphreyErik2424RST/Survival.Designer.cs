@@ -45,6 +45,7 @@
             this.tmrActionWait = new System.Windows.Forms.Timer(this.components);
             this.label1 = new System.Windows.Forms.Label();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
+            this.tmrRegrow = new System.Windows.Forms.Timer(this.components);
             this.pnlGameView.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picFirePit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picFishingSpot)).BeginInit();
@@ -142,7 +143,7 @@
             this.picFirePit.TabIndex = 4;
             this.picFirePit.TabStop = false;
             this.picFirePit.Click += new System.EventHandler(this.picFirePit_Click);
-            this.picFirePit.MouseEnter += new System.EventHandler(this.picFirePit_MouseEnter);
+            this.picFirePit.MouseEnter += new System.EventHandler(this.clickableEnter);
             // 
             // picFishingSpot
             // 
@@ -154,7 +155,7 @@
             this.picFishingSpot.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picFishingSpot.TabIndex = 3;
             this.picFishingSpot.TabStop = false;
-            this.picFishingSpot.MouseEnter += new System.EventHandler(this.picFishingSpot_MouseEnter);
+            this.picFishingSpot.MouseEnter += new System.EventHandler(this.clickableEnter);
             // 
             // picWater
             // 
@@ -177,7 +178,7 @@
             this.picTree.TabIndex = 1;
             this.picTree.TabStop = false;
             this.picTree.Click += new System.EventHandler(this.picTree_Click);
-            this.picTree.MouseEnter += new System.EventHandler(this.picTree_MouseEnter);
+            this.picTree.MouseEnter += new System.EventHandler(this.clickableEnter);
             // 
             // tmrFireAnimation
             // 
@@ -201,6 +202,10 @@
             this.progressBar1.TabIndex = 12;
             this.progressBar1.Value = 60;
             // 
+            // tmrRegrow
+            // 
+            this.tmrRegrow.Tick += new System.EventHandler(this.tmrRegrow_Tick);
+            // 
             // frmSurvival
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -217,6 +222,7 @@
             this.Controls.Add(this.prgLevelProgress);
             this.Name = "frmSurvival";
             this.Text = "Survival";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmSurvival_FormClosed);
             this.Load += new System.EventHandler(this.frmSurvival_Load);
             this.pnlGameView.ResumeLayout(false);
             this.pnlGameView.PerformLayout();
@@ -247,5 +253,6 @@
         private System.Windows.Forms.Timer tmrActionWait;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ProgressBar progressBar1;
+        private System.Windows.Forms.Timer tmrRegrow;
     }
 }

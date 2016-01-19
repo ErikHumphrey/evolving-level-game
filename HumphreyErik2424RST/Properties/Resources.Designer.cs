@@ -73,9 +73,9 @@ namespace HumphreyErik2424RST.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
         /// </summary>
-        internal static System.Drawing.Icon curFire {
+        internal static System.Drawing.Icon cursorCooking {
             get {
-                object obj = ResourceManager.GetObject("curFire", resourceCulture);
+                object obj = ResourceManager.GetObject("cursorCooking", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
             }
         }
@@ -83,9 +83,9 @@ namespace HumphreyErik2424RST.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
         /// </summary>
-        internal static System.Drawing.Icon curFish {
+        internal static System.Drawing.Icon cursorFiremaking {
             get {
-                object obj = ResourceManager.GetObject("curFish", resourceCulture);
+                object obj = ResourceManager.GetObject("cursorFiremaking", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
             }
         }
@@ -93,10 +93,60 @@ namespace HumphreyErik2424RST.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
         /// </summary>
-        internal static System.Drawing.Icon curWoodcut {
+        internal static System.Drawing.Icon cursorFishing {
             get {
-                object obj = ResourceManager.GetObject("curWoodcut", resourceCulture);
+                object obj = ResourceManager.GetObject("cursorFishing", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+        /// </summary>
+        internal static System.Drawing.Icon cursorInTheBag {
+            get {
+                object obj = ResourceManager.GetObject("cursorInTheBag", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+        /// </summary>
+        internal static System.Drawing.Icon cursorPointer {
+            get {
+                object obj = ResourceManager.GetObject("cursorPointer", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+        /// </summary>
+        internal static System.Drawing.Icon cursorWoodcutting {
+            get {
+                object obj = ResourceManager.GetObject("cursorWoodcutting", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] fireCursorNew {
+            get {
+                object obj = ResourceManager.GetObject("fireCursorNew", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] fishCursorNew {
+            get {
+                object obj = ResourceManager.GetObject("fishCursorNew", resourceCulture);
+                return ((byte[])(obj));
             }
         }
         
@@ -907,6 +957,16 @@ namespace HumphreyErik2424RST.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap stumpfix11 {
+            get {
+                object obj = ResourceManager.GetObject("stumpfix11", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap stumpforproject {
             get {
                 object obj = ResourceManager.GetObject("stumpforproject", resourceCulture);
@@ -961,6 +1021,26 @@ namespace HumphreyErik2424RST.Properties {
             get {
                 object obj = ResourceManager.GetObject("tree", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap treestump {
+            get {
+                object obj = ResourceManager.GetObject("treestump", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] woodCursorNew {
+            get {
+                object obj = ResourceManager.GetObject("woodCursorNew", resourceCulture);
+                return ((byte[])(obj));
             }
         }
     }
