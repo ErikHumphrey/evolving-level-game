@@ -1,5 +1,7 @@
-﻿// Form for the Survival level
-// Master skills like firemaking, woodcutting, fishing, and cooking in this point-and-click game!
+﻿/*** Form for the Survival level ***
+ * Master skills like firemaking, woodcutting, fishing, and cooking in this point-and-click game!
+ * What makes this level unique from RuneScape, from which it is based, is the side view for fishing, making it
+   require more skill. It also looks cool. */
 
 using System;
 using System.Collections.Generic;
@@ -21,15 +23,22 @@ namespace HumphreyErik2424RST
         // Global declarations
         Random rnd = new Random();
 
-        int logsNeeded;
+        int fishNeeded;
         int logCount;
+
         int fireBurnTimer = 0;
+
         int fishingSpotFrame = 3;
         int fireFrame = 3;
         int unlitFireImageIndex = 0;
 
-        string treeType;
-        
+        int pointsToDecay = 0;
+        int bonusPoints = 0;
+
+        string treeType = "normal";
+
+        string fishDirection = "right";
+
         private Icon firemakingIcon = Properties.Resources.cursorFiremaking;
         private Icon woodcuttingIcon = Properties.Resources.cursorWoodcutting;
         private Icon fishingIcon = Properties.Resources.cursorFishing;
@@ -41,24 +50,31 @@ namespace HumphreyErik2424RST
         {
             InitializeComponent();
 
-         /* Set cursors for the clickable objects. I referenced Microsoft documentation to figure out
-            how to do this with .ico files, as in previous projects I used .cur files. This disposes
-            the cursors at the end and also prevents them from vanishing quickly at form load. */
-           picFirePit.Cursor = new Cursor(firemakingIcon.Handle);
-           picTree.Cursor = new Cursor(woodcuttingIcon.Handle);
-           picFishingSpot.Cursor = new Cursor(fishingIcon.Handle);
-           this.Cursor = new Cursor(cursorIcon.Handle);
+            /* Set cursors for the clickable objects. I referenced Microsoft documentation to figure out
+               how to do this with .ico files, as in previous projects I used .cur files. This disposes
+               the cursors at the end and also prevents them from vanishing quickly at form load. */
+
+            picFirePit.Cursor = new Cursor(firemakingIcon.Handle);
+            picTree.Cursor = new Cursor(woodcuttingIcon.Handle);
+            picFishingSpot.Cursor = new Cursor(fishingIcon.Handle);
+            this.Cursor = new Cursor(cursorIcon.Handle);
         }
 
         private void frmSurvival_Load(object sender, EventArgs e)
         {
+            tmrBonusPointsDecay.Start();
+
+            picFish.Parent = pnlSideView;
+            picFish.Location = new Point(20, 115);
+
+            tmrFishMovement.Start();
             tmrFishingSpotAnimation.Start();
             // tmrFireAnimation.Start();
 
             cboEquippedItem.Items.Add("Bronze hatchet");
             cboEquippedItem.Items.Add("Matchbox");
             cboEquippedItem.Items.Add("Fishing rod");
-                
+
             /*
             switch (LevelGen.difficulty)
             {
@@ -83,12 +99,12 @@ namespace HumphreyErik2424RST
                     treeType = "yew";
                     break;
           * 
-            }*/ 
+            }*/
         }
 
         private void tmrFishingSpotAnimation_Tick(object sender, EventArgs e)
         {
-            if (fishingSpotFrame == 4)
+            if (fishingSpotFrame == 3)
                 fishingSpotFrame = 1;
             else
                 fishingSpotFrame++;
@@ -96,20 +112,20 @@ namespace HumphreyErik2424RST
             switch (fishingSpotFrame)
             {
                 case 1:
-                    picFishingSpot.Image = Properties.Resources.imgWaterAnimation1;
+                    picFishingSpot.Image = picFishingSpotSide.Image = Properties.Resources.imgWaterAnimation1;
                     break;
                 case 2:
-                    picFishingSpot.Image = Properties.Resources.imgWaterAnimation2;
+                    picFishingSpot.Image = picFishingSpotSide.Image = Properties.Resources.imgWaterAnimation2;
                     break;
                 case 3:
-                    picFishingSpot.Image = Properties.Resources.imgWaterAnimation3;
+                    picFishingSpot.Image = picFishingSpotSide.Image = Properties.Resources.imgWaterAnimation3;
                     break;
             }
         }
 
         private void tmrFireAnimation_Tick(object sender, EventArgs e)
         {
-            if (fireFrame == 4)
+            if (fireFrame == 3)
                 fireFrame = 1;
             else
                 fireFrame++;
@@ -117,38 +133,63 @@ namespace HumphreyErik2424RST
             switch (fireFrame)
             {
                 case 1:
-                    picFirePit.Image = Properties.Resources.imgFirePitLit1;
+                    picFirePit.Image = picFireSide.Image = Properties.Resources.imgFirePitLit1;
                     break;
                 case 2:
-                    picFirePit.Image = Properties.Resources.imgFirePitLit2;
+                    picFirePit.Image = picFireSide.Image = Properties.Resources.imgFirePitLit2;
                     break;
                 case 3:
-                    picFirePit.Image = Properties.Resources.imgFirePitLit3;
+                    picFirePit.Image = picFireSide.Image = Properties.Resources.imgFirePitLit3;
                     break;
             }
         }
 
         private void picTree_Click(object sender, EventArgs e)
         {
-            if (cboEquippedItem.SelectedText.Contains("ha"))
+
+            // If the selected item is a hatchet and the tree isn't regrowing...
+            if (cboEquippedItem.SelectedText.Contains("ha") && !tmrRegrow.Enabled)
             {
+                lstGameLog.Items.Add("You swing your " + cboEquippedItem.SelectedText.ToLower() + " at the tree."); // Message
+
+                // 33% to successfully gather some logs from the tree
+                // There is a credits bonus for getting logs or felling the tree in a minimal amount of tries.
+                // 5 tries effectively gives no bonus.
                 int cut;
-                lstGameLog.Items.Add("You swing your " + cboEquippedItem.SelectedText.ToLower() + " at the tree.");
-                lstGameLog.TopIndex = lstGameLog.Items.Count - 1;
+                int cutLuckyBonus = 400;
                 cut = rnd.Next(1, 4);
-                if (cut == 3)
+                if (cut == 1)
                 {
                     logCount++;
                     cboEquippedItem.Items.Add("Logs");
                     lstGameLog.Items.Add("You get some logs.");
-                    lstInventory.Items.Add("Logs");
-                    picTree.Image = Properties.Resources.stumpfix11;
-                    lstGameLog.TopIndex = lstGameLog.Items.Count - 1;
+                    pointsToDecay += cutLuckyBonus; // Award bonus points
+
+                    // 50% chance to also chop the tree down too
+                    int stump;
+                    int fellLuckyBonus = 800;
+                    stump = rnd.Next(1, 3);
+                    if (stump == 1)
+                    {
+                        picTree.Image = picTreeSide.Image = Properties.Resources.stumpfix11; // Tree image changes to a stump
+                        tmrRegrow.Start(); // Start the tree's regrowth
+                        prgTreeGrowth.Visible = true;
+                        pointsToDecay += fellLuckyBonus;
+                        lstGameLog.Items.Add("You fell the tree.");
+                        //treeDown.Play(); // Play a satisfying tree felling sound
+                    }
+                    else
+                        fellLuckyBonus -= 200;
                 }
+                else
+                    cutLuckyBonus -= 100; // Lose bonus points
+
+
             }
             else
-                lstGameLog.Items.Add("Nothing interesting happens.");
-                lstGameLog.TopIndex = lstGameLog.Items.Count - 1;
+                lstGameLog.Items.Add("Nothing interesting happens."); // Using any other item on the tree
+
+            lstGameLog.TopIndex = lstGameLog.Items.Count - 1; // Scroll Listbox to bottom
         }
 
         /* unlitFireImageIndex
@@ -162,12 +203,12 @@ namespace HumphreyErik2424RST
             if (cboEquippedItem.SelectedText == "Logs" && unlitFireImageIndex == 0)
             {
                 // lstInventory.Items.Remove("Logs");
-                picFirePit.Image = Properties.Resources.imgFirePitLogs;
+                picFirePit.Image = picFireSide.Image = Properties.Resources.imgFirePitLogs;
                 unlitFireImageIndex = 1;
             }
             else if (cboEquippedItem.SelectedText == "Matchbox" && unlitFireImageIndex == 1)
             {
-                picFirePit.Image = Properties.Resources.imgFirePitLit2;
+                picFirePit.Image = picFireSide.Image = Properties.Resources.imgFirePitLit2;
                 tmrFireAnimation.Start();
                 unlitFireImageIndex = 2;
             }
@@ -177,7 +218,14 @@ namespace HumphreyErik2424RST
 
         private void tmrRegrow_Tick(object sender, EventArgs e)
         {
-
+            prgTreeGrowth.Value += 10;
+            if (prgTreeGrowth.Value >= 2000)
+            {
+                tmrRegrow.Stop();
+                prgTreeGrowth.Visible = false;
+                picTree.Image = picTreeSide.Image = Properties.Resources.tree;
+                prgTreeGrowth.Value = 0;
+            }
         }
 
         private void frmSurvival_FormClosed(object sender, FormClosedEventArgs e)
@@ -202,5 +250,60 @@ namespace HumphreyErik2424RST
             else if (cboEquippedItem.SelectedText.Contains("Fish") || cboEquippedItem.SelectedText == "Golden harpoon")
                 this.Cursor = new Cursor(fishingIcon.Handle);
         }
+
+        private void tmrFishMovement_Tick(object sender, EventArgs e)
+        {
+            int x;
+            int y;
+
+            x = picFish.Location.X; // Get the current X and Y
+            y = picFish.Location.Y; // Just makes the code below easier to read, I guess
+
+            // Fish starts moving left if it moves beyond right threshold
+            if (x > 197)
+            {
+                picFish.Image = Properties.Resources.imgFishSmallBackFlip;
+                fishDirection = "left";
+            }
+            // Fish starts moving right if it moves beyond left threshold
+            else if (x < 8)
+            {
+                picFish.Image = Properties.Resources.imgFishSmallBack;
+                fishDirection = "right";
+            }
+
+            switch (fishDirection) // Control fishDirection using x coordinate
+            {
+                case "left":
+                    x--;
+                    break;
+                case "right":
+                    x++;
+                    break;
+            }
+
+            picFish.Location = new Point(x, y); // Move dancing man to the new coordinates
+        }
+
+        /* The bonus point timer is constantly running to decay any bonus points added.
+           Obviously, it would be more efficient to add these instantly, but video games
+           tend to have point counters rapidly change because it looks cool to have the
+           number values spinning up. This is similar to the tmrHealthDecay in the Battle
+           level whenever a character's health changes. It's also featured on the Level
+           Complete screen when credits are actually awarded. In those, the timer isn't
+           constantly running, but I found it worked better here. */
+
+        private void tmrBonusPointsDecay_Tick(object sender, EventArgs e)
+        {
+            if (pointsToDecay > 0)
+            {
+                pointsToDecay -= 4;
+                bonusPoints += 4;
+                lblBonusPointsCounter.Text = bonusPoints.ToString();
+            }
+            else
+                pointsToDecay = 0;
+        }
+
     }
 }

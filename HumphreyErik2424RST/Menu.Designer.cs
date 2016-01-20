@@ -55,7 +55,7 @@
             this.btnOptions.TabIndex = 2;
             this.btnOptions.Text = "Options";
             this.btnOptions.UseVisualStyleBackColor = true;
-            this.btnOptions.Click += new System.EventHandler(this.btnExit_Click);
+            this.btnOptions.Click += new System.EventHandler(this.btnOptions_Click);
             this.btnOptions.MouseEnter += new System.EventHandler(this.btnOptions_MouseEnter);
             this.btnOptions.MouseLeave += new System.EventHandler(this.MenuButtons_MouseLeave);
             // 

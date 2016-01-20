@@ -568,6 +568,30 @@
   <ItemGroup>
     <None Include="Resources\cursorWoodcutting.ico" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imgUnderwater.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imgUnderwater2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imgGrassLine.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imgSideView.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imgFish.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imgFishSmall.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imgFishSmallBack.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imgFishSmallBackFlip.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

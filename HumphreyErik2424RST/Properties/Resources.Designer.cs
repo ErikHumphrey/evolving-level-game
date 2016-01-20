@@ -533,9 +533,59 @@ namespace HumphreyErik2424RST.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap imgFish {
+            get {
+                object obj = ResourceManager.GetObject("imgFish", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap imgFishSmall {
+            get {
+                object obj = ResourceManager.GetObject("imgFishSmall", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap imgFishSmallBack {
+            get {
+                object obj = ResourceManager.GetObject("imgFishSmallBack", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap imgFishSmallBackFlip {
+            get {
+                object obj = ResourceManager.GetObject("imgFishSmallBackFlip", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap imgFlurryGraphic {
             get {
                 object obj = ResourceManager.GetObject("imgFlurryGraphic", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap imgGrassLine {
+            get {
+                object obj = ResourceManager.GetObject("imgGrassLine", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -586,6 +636,16 @@ namespace HumphreyErik2424RST.Properties {
         internal static System.Drawing.Bitmap imgRabbitDead {
             get {
                 object obj = ResourceManager.GetObject("imgRabbitDead", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap imgSideView {
+            get {
+                object obj = ResourceManager.GetObject("imgSideView", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -816,6 +876,26 @@ namespace HumphreyErik2424RST.Properties {
         internal static System.Drawing.Bitmap imgSwipe6 {
             get {
                 object obj = ResourceManager.GetObject("imgSwipe6", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap imgUnderwater {
+            get {
+                object obj = ResourceManager.GetObject("imgUnderwater", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap imgUnderwater2 {
+            get {
+                object obj = ResourceManager.GetObject("imgUnderwater2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

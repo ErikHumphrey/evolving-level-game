@@ -230,6 +230,10 @@ namespace HumphreyErik2424RST
                     MessageBoxIcon.Information);
         }
 
-
+        private void btnOptions_Click(object sender, EventArgs e)
+        {
+            frmCheatMenu Cheats = new frmCheatMenu();
+            Cheats.ShowDialog();
+        }
     }
 }
