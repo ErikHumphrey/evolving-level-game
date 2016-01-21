@@ -29,10 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmSurvival));
             this.lstGameLog = new System.Windows.Forms.ListBox();
             this.prgTreeGrowth = new System.Windows.Forms.ProgressBar();
-            this.cboEquippedItem = new System.Windows.Forms.ComboBox();
-            this.lblItemTitle = new System.Windows.Forms.Label();
             this.tmrFishingSpotAnimation = new System.Windows.Forms.Timer(this.components);
             this.pnlGameView = new System.Windows.Forms.Panel();
             this.prgFireFuel = new System.Windows.Forms.ProgressBar();
@@ -44,26 +43,35 @@
             this.tmrActionWait = new System.Windows.Forms.Timer(this.components);
             this.tmrRegrow = new System.Windows.Forms.Timer(this.components);
             this.pnlSideView = new System.Windows.Forms.Panel();
-            this.picFish = new System.Windows.Forms.PictureBox();
+            this.prgFishRespawn = new System.Windows.Forms.ProgressBar();
             this.picFishingSpotSide = new System.Windows.Forms.PictureBox();
+            this.picFishingLine = new System.Windows.Forms.PictureBox();
+            this.picFish = new System.Windows.Forms.PictureBox();
             this.picFireSide = new System.Windows.Forms.PictureBox();
             this.picTreeSide = new System.Windows.Forms.PictureBox();
             this.tmrFishMovement = new System.Windows.Forms.Timer(this.components);
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.tmrBonusPointsDecay = new System.Windows.Forms.Timer(this.components);
+            this.tmrFishingDelay = new System.Windows.Forms.Timer(this.components);
+            this.tmrFishRespawn = new System.Windows.Forms.Timer(this.components);
+            this.panel1 = new System.Windows.Forms.Panel();
             this.lblBonusPointsCounter = new System.Windows.Forms.Label();
             this.lblBonusPoints = new System.Windows.Forms.Label();
-            this.tmrBonusPointsDecay = new System.Windows.Forms.Timer(this.components);
+            this.lblFishCookedCounter = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.lblItemTitle = new System.Windows.Forms.Label();
+            this.cboEquippedItem = new System.Windows.Forms.ComboBox();
             this.pnlGameView.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picFirePit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picFishingSpot)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picWater)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picTree)).BeginInit();
             this.pnlSideView.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picFish)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picFishingSpotSide)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picFishingLine)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picFish)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picFireSide)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picTreeSide)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // lstGameLog
@@ -87,26 +95,6 @@
             this.prgTreeGrowth.Size = new System.Drawing.Size(112, 10);
             this.prgTreeGrowth.TabIndex = 7;
             this.prgTreeGrowth.Visible = false;
-            // 
-            // cboEquippedItem
-            // 
-            this.cboEquippedItem.Font = new System.Drawing.Font("Myriad Web Pro", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboEquippedItem.FormattingEnabled = true;
-            this.cboEquippedItem.Location = new System.Drawing.Point(579, 27);
-            this.cboEquippedItem.Name = "cboEquippedItem";
-            this.cboEquippedItem.Size = new System.Drawing.Size(121, 21);
-            this.cboEquippedItem.TabIndex = 10;
-            this.cboEquippedItem.Text = "Empty hands";
-            // 
-            // lblItemTitle
-            // 
-            this.lblItemTitle.AutoSize = true;
-            this.lblItemTitle.Font = new System.Drawing.Font("Myriad Web Pro", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblItemTitle.Location = new System.Drawing.Point(576, 9);
-            this.lblItemTitle.Name = "lblItemTitle";
-            this.lblItemTitle.Size = new System.Drawing.Size(101, 15);
-            this.lblItemTitle.TabIndex = 11;
-            this.lblItemTitle.Text = "EQUIPPED ITEM";
             // 
             // tmrFishingSpotAnimation
             // 
@@ -147,19 +135,20 @@
             this.picFirePit.TabIndex = 4;
             this.picFirePit.TabStop = false;
             this.picFirePit.Click += new System.EventHandler(this.picFirePit_Click);
-            this.picFirePit.MouseEnter += new System.EventHandler(this.clickableEnter);
+            this.picFirePit.MouseLeave += new System.EventHandler(this.clickableLeave);
             // 
             // picFishingSpot
             // 
             this.picFishingSpot.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
             this.picFishingSpot.Image = global::HumphreyErik2424RST.Properties.Resources.imgWaterAnimation3;
-            this.picFishingSpot.Location = new System.Drawing.Point(103, 204);
+            this.picFishingSpot.Location = new System.Drawing.Point(103, 201);
             this.picFishingSpot.Name = "picFishingSpot";
             this.picFishingSpot.Size = new System.Drawing.Size(50, 48);
             this.picFishingSpot.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picFishingSpot.TabIndex = 3;
             this.picFishingSpot.TabStop = false;
-            this.picFishingSpot.MouseEnter += new System.EventHandler(this.clickableEnter);
+            this.picFishingSpot.Click += new System.EventHandler(this.picFishingSpot_Click);
+            this.picFishingSpot.MouseLeave += new System.EventHandler(this.clickableLeave);
             // 
             // picWater
             // 
@@ -182,7 +171,7 @@
             this.picTree.TabIndex = 1;
             this.picTree.TabStop = false;
             this.picTree.Click += new System.EventHandler(this.picTree_Click);
-            this.picTree.MouseEnter += new System.EventHandler(this.clickableEnter);
+            this.picTree.MouseLeave += new System.EventHandler(this.clickableLeave);
             // 
             // tmrFireAnimation
             // 
@@ -195,14 +184,48 @@
             // pnlSideView
             // 
             this.pnlSideView.BackgroundImage = global::HumphreyErik2424RST.Properties.Resources.imgSideView;
-            this.pnlSideView.Controls.Add(this.picFish);
+            this.pnlSideView.Controls.Add(this.prgFishRespawn);
             this.pnlSideView.Controls.Add(this.picFishingSpotSide);
+            this.pnlSideView.Controls.Add(this.picFishingLine);
+            this.pnlSideView.Controls.Add(this.picFish);
             this.pnlSideView.Controls.Add(this.picFireSide);
             this.pnlSideView.Controls.Add(this.picTreeSide);
             this.pnlSideView.Location = new System.Drawing.Point(571, 255);
             this.pnlSideView.Name = "pnlSideView";
             this.pnlSideView.Size = new System.Drawing.Size(248, 181);
             this.pnlSideView.TabIndex = 14;
+            // 
+            // prgFishRespawn
+            // 
+            this.prgFishRespawn.Location = new System.Drawing.Point(85, 158);
+            this.prgFishRespawn.Maximum = 2000;
+            this.prgFishRespawn.Name = "prgFishRespawn";
+            this.prgFishRespawn.Size = new System.Drawing.Size(79, 10);
+            this.prgFishRespawn.TabIndex = 9;
+            this.prgFishRespawn.Visible = false;
+            // 
+            // picFishingSpotSide
+            // 
+            this.picFishingSpotSide.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
+            this.picFishingSpotSide.Image = global::HumphreyErik2424RST.Properties.Resources.imgWaterAnimation3;
+            this.picFishingSpotSide.Location = new System.Drawing.Point(160, 62);
+            this.picFishingSpotSide.Name = "picFishingSpotSide";
+            this.picFishingSpotSide.Size = new System.Drawing.Size(72, 14);
+            this.picFishingSpotSide.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picFishingSpotSide.TabIndex = 9;
+            this.picFishingSpotSide.TabStop = false;
+            // 
+            // picFishingLine
+            // 
+            this.picFishingLine.BackColor = System.Drawing.Color.Transparent;
+            this.picFishingLine.Image = global::HumphreyErik2424RST.Properties.Resources.imgSurvivalFishingLine;
+            this.picFishingLine.Location = new System.Drawing.Point(194, 62);
+            this.picFishingLine.Name = "picFishingLine";
+            this.picFishingLine.Size = new System.Drawing.Size(4, 131);
+            this.picFishingLine.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.picFishingLine.TabIndex = 11;
+            this.picFishingLine.TabStop = false;
+            this.picFishingLine.Visible = false;
             // 
             // picFish
             // 
@@ -214,17 +237,6 @@
             this.picFish.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.picFish.TabIndex = 10;
             this.picFish.TabStop = false;
-            // 
-            // picFishingSpotSide
-            // 
-            this.picFishingSpotSide.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
-            this.picFishingSpotSide.Image = global::HumphreyErik2424RST.Properties.Resources.imgWaterAnimation3;
-            this.picFishingSpotSide.Location = new System.Drawing.Point(170, 62);
-            this.picFishingSpotSide.Name = "picFishingSpotSide";
-            this.picFishingSpotSide.Size = new System.Drawing.Size(72, 14);
-            this.picFishingSpotSide.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picFishingSpotSide.TabIndex = 9;
-            this.picFishingSpotSide.TabStop = false;
             // 
             // picFireSide
             // 
@@ -253,37 +265,42 @@
             this.tmrFishMovement.Interval = 27;
             this.tmrFishMovement.Tick += new System.EventHandler(this.tmrFishMovement_Tick);
             // 
-            // label1
+            // tmrBonusPointsDecay
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Myriad Web Pro", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(576, 159);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(89, 15);
-            this.label1.TabIndex = 15;
-            this.label1.Text = "FISH COOKED";
+            this.tmrBonusPointsDecay.Interval = 2;
+            this.tmrBonusPointsDecay.Tick += new System.EventHandler(this.tmrBonusPointsDecay_Tick);
             // 
-            // label2
+            // tmrFishingDelay
             // 
-            this.label2.BackColor = System.Drawing.Color.White;
-            this.label2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label2.Location = new System.Drawing.Point(579, 176);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(59, 20);
-            this.label2.TabIndex = 16;
-            this.label2.Text = "0";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.tmrFishingDelay.Interval = 3000;
+            this.tmrFishingDelay.Tick += new System.EventHandler(this.tmrFishingDelay_Tick);
+            // 
+            // tmrFishRespawn
+            // 
+            this.tmrFishRespawn.Tick += new System.EventHandler(this.tmrFishRespawn_Tick);
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.lblBonusPointsCounter);
+            this.panel1.Controls.Add(this.lblBonusPoints);
+            this.panel1.Controls.Add(this.lblFishCookedCounter);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.lblItemTitle);
+            this.panel1.Controls.Add(this.cboEquippedItem);
+            this.panel1.Location = new System.Drawing.Point(571, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(248, 254);
+            this.panel1.TabIndex = 15;
             // 
             // lblBonusPointsCounter
             // 
             this.lblBonusPointsCounter.BackColor = System.Drawing.Color.White;
             this.lblBonusPointsCounter.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.lblBonusPointsCounter.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lblBonusPointsCounter.Location = new System.Drawing.Point(579, 221);
+            this.lblBonusPointsCounter.Location = new System.Drawing.Point(96, 174);
             this.lblBonusPointsCounter.Name = "lblBonusPointsCounter";
             this.lblBonusPointsCounter.Size = new System.Drawing.Size(59, 20);
-            this.lblBonusPointsCounter.TabIndex = 18;
+            this.lblBonusPointsCounter.TabIndex = 25;
             this.lblBonusPointsCounter.Text = "0";
             this.lblBonusPointsCounter.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -291,36 +308,68 @@
             // 
             this.lblBonusPoints.AutoSize = true;
             this.lblBonusPoints.Font = new System.Drawing.Font("Myriad Web Pro", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBonusPoints.Location = new System.Drawing.Point(576, 204);
+            this.lblBonusPoints.Location = new System.Drawing.Point(74, 157);
             this.lblBonusPoints.Name = "lblBonusPoints";
-            this.lblBonusPoints.Size = new System.Drawing.Size(98, 15);
-            this.lblBonusPoints.TabIndex = 17;
-            this.lblBonusPoints.Text = "BONUS POINTS";
+            this.lblBonusPoints.Size = new System.Drawing.Size(103, 15);
+            this.lblBonusPoints.TabIndex = 24;
+            this.lblBonusPoints.Text = "BONUS CREDITS";
             // 
-            // tmrBonusPointsDecay
+            // lblFishCookedCounter
             // 
-            this.tmrBonusPointsDecay.Interval = 2;
-            this.tmrBonusPointsDecay.Tick += new System.EventHandler(this.tmrBonusPointsDecay_Tick);
+            this.lblFishCookedCounter.BackColor = System.Drawing.Color.White;
+            this.lblFishCookedCounter.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblFishCookedCounter.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lblFishCookedCounter.Location = new System.Drawing.Point(96, 124);
+            this.lblFishCookedCounter.Name = "lblFishCookedCounter";
+            this.lblFishCookedCounter.Size = new System.Drawing.Size(59, 20);
+            this.lblFishCookedCounter.TabIndex = 23;
+            this.lblFishCookedCounter.Text = "0 / 5";
+            this.lblFishCookedCounter.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Myriad Web Pro", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(81, 109);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(89, 15);
+            this.label1.TabIndex = 22;
+            this.label1.Text = "FISH COOKED";
+            // 
+            // lblItemTitle
+            // 
+            this.lblItemTitle.AutoSize = true;
+            this.lblItemTitle.Font = new System.Drawing.Font("Myriad Web Pro", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblItemTitle.Location = new System.Drawing.Point(74, 59);
+            this.lblItemTitle.Name = "lblItemTitle";
+            this.lblItemTitle.Size = new System.Drawing.Size(101, 15);
+            this.lblItemTitle.TabIndex = 21;
+            this.lblItemTitle.Text = "EQUIPPED ITEM";
+            // 
+            // cboEquippedItem
+            // 
+            this.cboEquippedItem.Font = new System.Drawing.Font("Myriad Web Pro", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboEquippedItem.FormattingEnabled = true;
+            this.cboEquippedItem.Location = new System.Drawing.Point(64, 77);
+            this.cboEquippedItem.Name = "cboEquippedItem";
+            this.cboEquippedItem.Size = new System.Drawing.Size(121, 21);
+            this.cboEquippedItem.TabIndex = 20;
             // 
             // frmSurvival
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(817, 435);
-            this.Controls.Add(this.lblBonusPointsCounter);
-            this.Controls.Add(this.lblBonusPoints);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.pnlGameView);
             this.Controls.Add(this.pnlSideView);
-            this.Controls.Add(this.lblItemTitle);
-            this.Controls.Add(this.cboEquippedItem);
             this.Controls.Add(this.lstGameLog);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmSurvival";
-            this.Text = "Survival";
+            this.Text = "Evolving Level Game - Survival - Difficulty: 1";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmSurvival_FormClosed);
             this.Load += new System.EventHandler(this.frmSurvival_Load);
             this.pnlGameView.ResumeLayout(false);
@@ -331,12 +380,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.picTree)).EndInit();
             this.pnlSideView.ResumeLayout(false);
             this.pnlSideView.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picFish)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picFishingSpotSide)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picFishingLine)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picFish)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picFireSide)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picTreeSide)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -346,8 +397,6 @@
         private System.Windows.Forms.PictureBox picTree;
         private System.Windows.Forms.Panel pnlGameView;
         private System.Windows.Forms.ProgressBar prgTreeGrowth;
-        private System.Windows.Forms.ComboBox cboEquippedItem;
-        private System.Windows.Forms.Label lblItemTitle;
         private System.Windows.Forms.PictureBox picWater;
         private System.Windows.Forms.PictureBox picFishingSpot;
         private System.Windows.Forms.Timer tmrFishingSpotAnimation;
@@ -362,10 +411,17 @@
         private System.Windows.Forms.PictureBox picFishingSpotSide;
         private System.Windows.Forms.PictureBox picFish;
         private System.Windows.Forms.Timer tmrFishMovement;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Timer tmrBonusPointsDecay;
+        private System.Windows.Forms.PictureBox picFishingLine;
+        private System.Windows.Forms.Timer tmrFishingDelay;
+        private System.Windows.Forms.ProgressBar prgFishRespawn;
+        private System.Windows.Forms.Timer tmrFishRespawn;
+        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label lblBonusPointsCounter;
         private System.Windows.Forms.Label lblBonusPoints;
-        private System.Windows.Forms.Timer tmrBonusPointsDecay;
+        private System.Windows.Forms.Label lblFishCookedCounter;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblItemTitle;
+        private System.Windows.Forms.ComboBox cboEquippedItem;
     }
 }

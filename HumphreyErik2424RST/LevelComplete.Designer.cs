@@ -37,37 +37,37 @@
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.grpShop = new System.Windows.Forms.GroupBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.picFishIcon = new System.Windows.Forms.PictureBox();
             this.lblAxeName = new System.Windows.Forms.Label();
             this.btnUpgFish = new System.Windows.Forms.Button();
             this.btnUpgAxe = new System.Windows.Forms.Button();
             this.lblFishName = new System.Windows.Forms.Label();
+            this.picAxeIcon = new System.Windows.Forms.PictureBox();
+            this.picCookIcon = new System.Windows.Forms.PictureBox();
             this.lblFireName = new System.Windows.Forms.Label();
             this.btnUpgCook = new System.Windows.Forms.Button();
             this.btnUpgFire = new System.Windows.Forms.Button();
             this.lblCookName = new System.Windows.Forms.Label();
+            this.picFireIcon = new System.Windows.Forms.PictureBox();
             this.grpLevelBattle = new System.Windows.Forms.GroupBox();
+            this.picBlindIcon = new System.Windows.Forms.PictureBox();
             this.lblPunchName = new System.Windows.Forms.Label();
             this.btnUpgBlind = new System.Windows.Forms.Button();
             this.btnUpgPunch = new System.Windows.Forms.Button();
             this.lblBlindName = new System.Windows.Forms.Label();
+            this.picPunchIcon = new System.Windows.Forms.PictureBox();
+            this.picHealIcon = new System.Windows.Forms.PictureBox();
             this.lblKickName = new System.Windows.Forms.Label();
             this.btnUpgHeal = new System.Windows.Forms.Button();
             this.btnUpgKick = new System.Windows.Forms.Button();
             this.lblHealName = new System.Windows.Forms.Label();
+            this.picKickIcon = new System.Windows.Forms.PictureBox();
             this.lblShopDescription = new System.Windows.Forms.Label();
             this.lblYourCredits = new System.Windows.Forms.Label();
             this.btnNextLevel = new System.Windows.Forms.Button();
             this.btnReturnToMenu = new System.Windows.Forms.Button();
             this.lblCreditCount = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.picFishIcon = new System.Windows.Forms.PictureBox();
-            this.picAxeIcon = new System.Windows.Forms.PictureBox();
-            this.picCookIcon = new System.Windows.Forms.PictureBox();
-            this.picFireIcon = new System.Windows.Forms.PictureBox();
-            this.picBlindIcon = new System.Windows.Forms.PictureBox();
-            this.picPunchIcon = new System.Windows.Forms.PictureBox();
-            this.picHealIcon = new System.Windows.Forms.PictureBox();
-            this.picKickIcon = new System.Windows.Forms.PictureBox();
             this.lblUpgradeCost = new System.Windows.Forms.Label();
             this.lblMinusSign = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -75,11 +75,11 @@
             this.grpRewards.SuspendLayout();
             this.grpShop.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            this.grpLevelBattle.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picFishIcon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picAxeIcon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picCookIcon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picFireIcon)).BeginInit();
+            this.grpLevelBattle.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBlindIcon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picPunchIcon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picHealIcon)).BeginInit();
@@ -191,6 +191,17 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "SURVIVAL";
             // 
+            // picFishIcon
+            // 
+            this.picFishIcon.Enabled = false;
+            this.picFishIcon.Image = global::HumphreyErik2424RST.Properties.Resources.imgSurvivalFishingNet;
+            this.picFishIcon.Location = new System.Drawing.Point(8, 70);
+            this.picFishIcon.Name = "picFishIcon";
+            this.picFishIcon.Size = new System.Drawing.Size(46, 46);
+            this.picFishIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picFishIcon.TabIndex = 25;
+            this.picFishIcon.TabStop = false;
+            // 
             // lblAxeName
             // 
             this.lblAxeName.AutoSize = true;
@@ -234,6 +245,26 @@
             this.lblFishName.TabIndex = 23;
             this.lblFishName.Text = "Net fishing";
             // 
+            // picAxeIcon
+            // 
+            this.picAxeIcon.Image = global::HumphreyErik2424RST.Properties.Resources.imgSurvivalBronzeHatchet;
+            this.picAxeIcon.Location = new System.Drawing.Point(8, 16);
+            this.picAxeIcon.Name = "picAxeIcon";
+            this.picAxeIcon.Size = new System.Drawing.Size(46, 46);
+            this.picAxeIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picAxeIcon.TabIndex = 16;
+            this.picAxeIcon.TabStop = false;
+            // 
+            // picCookIcon
+            // 
+            this.picCookIcon.Image = global::HumphreyErik2424RST.Properties.Resources.imgSurvivalInstincts;
+            this.picCookIcon.Location = new System.Drawing.Point(151, 70);
+            this.picCookIcon.Name = "picCookIcon";
+            this.picCookIcon.Size = new System.Drawing.Size(46, 46);
+            this.picCookIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picCookIcon.TabIndex = 22;
+            this.picCookIcon.TabStop = false;
+            // 
             // lblFireName
             // 
             this.lblFireName.AutoSize = true;
@@ -276,6 +307,16 @@
             this.lblCookName.TabIndex = 20;
             this.lblCookName.Text = "Cookbook: Instincts";
             // 
+            // picFireIcon
+            // 
+            this.picFireIcon.Image = global::HumphreyErik2424RST.Properties.Resources.imgSurvivalMatchbox;
+            this.picFireIcon.Location = new System.Drawing.Point(151, 16);
+            this.picFireIcon.Name = "picFireIcon";
+            this.picFireIcon.Size = new System.Drawing.Size(46, 46);
+            this.picFireIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picFireIcon.TabIndex = 19;
+            this.picFireIcon.TabStop = false;
+            // 
             // grpLevelBattle
             // 
             this.grpLevelBattle.Controls.Add(this.picBlindIcon);
@@ -297,6 +338,17 @@
             this.grpLevelBattle.TabIndex = 26;
             this.grpLevelBattle.TabStop = false;
             this.grpLevelBattle.Text = "BATTLE";
+            // 
+            // picBlindIcon
+            // 
+            this.picBlindIcon.Enabled = false;
+            this.picBlindIcon.Image = global::HumphreyErik2424RST.Properties.Resources.iconBlindingPowderLocked;
+            this.picBlindIcon.Location = new System.Drawing.Point(8, 70);
+            this.picBlindIcon.Name = "picBlindIcon";
+            this.picBlindIcon.Size = new System.Drawing.Size(46, 46);
+            this.picBlindIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picBlindIcon.TabIndex = 25;
+            this.picBlindIcon.TabStop = false;
             // 
             // lblPunchName
             // 
@@ -342,6 +394,26 @@
             this.lblBlindName.TabIndex = 23;
             this.lblBlindName.Text = "Blinding Powder";
             // 
+            // picPunchIcon
+            // 
+            this.picPunchIcon.Image = global::HumphreyErik2424RST.Properties.Resources.iconPunch;
+            this.picPunchIcon.Location = new System.Drawing.Point(8, 16);
+            this.picPunchIcon.Name = "picPunchIcon";
+            this.picPunchIcon.Size = new System.Drawing.Size(46, 46);
+            this.picPunchIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picPunchIcon.TabIndex = 16;
+            this.picPunchIcon.TabStop = false;
+            // 
+            // picHealIcon
+            // 
+            this.picHealIcon.Image = global::HumphreyErik2424RST.Properties.Resources.iconRest;
+            this.picHealIcon.Location = new System.Drawing.Point(151, 70);
+            this.picHealIcon.Name = "picHealIcon";
+            this.picHealIcon.Size = new System.Drawing.Size(46, 46);
+            this.picHealIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picHealIcon.TabIndex = 22;
+            this.picHealIcon.TabStop = false;
+            // 
             // lblKickName
             // 
             this.lblKickName.AutoSize = true;
@@ -383,6 +455,16 @@
             this.lblHealName.Size = new System.Drawing.Size(29, 13);
             this.lblHealName.TabIndex = 20;
             this.lblHealName.Text = "Rest";
+            // 
+            // picKickIcon
+            // 
+            this.picKickIcon.Image = global::HumphreyErik2424RST.Properties.Resources.iconFrontKick;
+            this.picKickIcon.Location = new System.Drawing.Point(151, 16);
+            this.picKickIcon.Name = "picKickIcon";
+            this.picKickIcon.Size = new System.Drawing.Size(46, 46);
+            this.picKickIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picKickIcon.TabIndex = 19;
+            this.picKickIcon.TabStop = false;
             // 
             // lblShopDescription
             // 
@@ -441,88 +523,6 @@
             this.label2.Size = new System.Drawing.Size(225, 13);
             this.label2.TabIndex = 6;
             this.label2.Text = "Clicking one of these buttons saves the game.";
-            // 
-            // picFishIcon
-            // 
-            this.picFishIcon.Enabled = false;
-            this.picFishIcon.Image = global::HumphreyErik2424RST.Properties.Resources.imgSurvivalFishingNet;
-            this.picFishIcon.Location = new System.Drawing.Point(8, 70);
-            this.picFishIcon.Name = "picFishIcon";
-            this.picFishIcon.Size = new System.Drawing.Size(46, 46);
-            this.picFishIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picFishIcon.TabIndex = 25;
-            this.picFishIcon.TabStop = false;
-            // 
-            // picAxeIcon
-            // 
-            this.picAxeIcon.Image = global::HumphreyErik2424RST.Properties.Resources.imgSurvivalBronzeHatchet;
-            this.picAxeIcon.Location = new System.Drawing.Point(8, 16);
-            this.picAxeIcon.Name = "picAxeIcon";
-            this.picAxeIcon.Size = new System.Drawing.Size(46, 46);
-            this.picAxeIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picAxeIcon.TabIndex = 16;
-            this.picAxeIcon.TabStop = false;
-            // 
-            // picCookIcon
-            // 
-            this.picCookIcon.Image = global::HumphreyErik2424RST.Properties.Resources.imgSurvivalInstincts;
-            this.picCookIcon.Location = new System.Drawing.Point(151, 70);
-            this.picCookIcon.Name = "picCookIcon";
-            this.picCookIcon.Size = new System.Drawing.Size(46, 46);
-            this.picCookIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picCookIcon.TabIndex = 22;
-            this.picCookIcon.TabStop = false;
-            // 
-            // picFireIcon
-            // 
-            this.picFireIcon.Image = global::HumphreyErik2424RST.Properties.Resources.imgSurvivalMatchbox;
-            this.picFireIcon.Location = new System.Drawing.Point(151, 16);
-            this.picFireIcon.Name = "picFireIcon";
-            this.picFireIcon.Size = new System.Drawing.Size(46, 46);
-            this.picFireIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picFireIcon.TabIndex = 19;
-            this.picFireIcon.TabStop = false;
-            // 
-            // picBlindIcon
-            // 
-            this.picBlindIcon.Enabled = false;
-            this.picBlindIcon.Image = global::HumphreyErik2424RST.Properties.Resources.iconBlindingPowderLocked;
-            this.picBlindIcon.Location = new System.Drawing.Point(8, 70);
-            this.picBlindIcon.Name = "picBlindIcon";
-            this.picBlindIcon.Size = new System.Drawing.Size(46, 46);
-            this.picBlindIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picBlindIcon.TabIndex = 25;
-            this.picBlindIcon.TabStop = false;
-            // 
-            // picPunchIcon
-            // 
-            this.picPunchIcon.Image = global::HumphreyErik2424RST.Properties.Resources.iconPunch;
-            this.picPunchIcon.Location = new System.Drawing.Point(8, 16);
-            this.picPunchIcon.Name = "picPunchIcon";
-            this.picPunchIcon.Size = new System.Drawing.Size(46, 46);
-            this.picPunchIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picPunchIcon.TabIndex = 16;
-            this.picPunchIcon.TabStop = false;
-            // 
-            // picHealIcon
-            // 
-            this.picHealIcon.Image = global::HumphreyErik2424RST.Properties.Resources.iconRest;
-            this.picHealIcon.Location = new System.Drawing.Point(151, 70);
-            this.picHealIcon.Name = "picHealIcon";
-            this.picHealIcon.Size = new System.Drawing.Size(46, 46);
-            this.picHealIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picHealIcon.TabIndex = 22;
-            this.picHealIcon.TabStop = false;
-            // 
-            // picKickIcon
-            // 
-            this.picKickIcon.Image = global::HumphreyErik2424RST.Properties.Resources.iconFrontKick;
-            this.picKickIcon.Location = new System.Drawing.Point(151, 16);
-            this.picKickIcon.Name = "picKickIcon";
-            this.picKickIcon.Size = new System.Drawing.Size(46, 46);
-            this.picKickIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picKickIcon.TabIndex = 19;
-            this.picKickIcon.TabStop = false;
             // 
             // lblUpgradeCost
             // 
@@ -594,12 +594,12 @@
             this.grpShop.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            this.grpLevelBattle.ResumeLayout(false);
-            this.grpLevelBattle.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picFishIcon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picAxeIcon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picCookIcon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picFireIcon)).EndInit();
+            this.grpLevelBattle.ResumeLayout(false);
+            this.grpLevelBattle.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBlindIcon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picPunchIcon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picHealIcon)).EndInit();

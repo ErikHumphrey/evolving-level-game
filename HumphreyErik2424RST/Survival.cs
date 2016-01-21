@@ -23,10 +23,8 @@ namespace HumphreyErik2424RST
         // Global declarations
         Random rnd = new Random();
 
+        int fishCooked = 0;
         int fishNeeded;
-        int logCount;
-
-        int fireBurnTimer = 0;
 
         int fishingSpotFrame = 3;
         int fireFrame = 3;
@@ -62,6 +60,33 @@ namespace HumphreyErik2424RST
 
         private void frmSurvival_Load(object sender, EventArgs e)
         {
+            // Determine the fish needed to be cooked
+            switch (LevelGen.difficulty)
+            {
+                case 1:
+                    fishNeeded = 2;
+                    treeType = "normal";
+                    break;
+                case 2:
+                    fishNeeded = 5;
+                    treeType = "oak";
+                    break;
+                case 3:
+                    fishNeeded = 10;
+                    treeType = "willow";
+                    break;
+                case 4:
+                    fishNeeded = 15;
+                    treeType = "maple";
+                    break;
+                case 5:
+                    fishNeeded = 20;
+                    treeType = "yew";
+                    break;
+            }
+
+            updateObjective(); // Update the label with the objective
+
             tmrBonusPointsDecay.Start();
 
             picFish.Parent = pnlSideView;
@@ -71,35 +96,11 @@ namespace HumphreyErik2424RST
             tmrFishingSpotAnimation.Start();
             // tmrFireAnimation.Start();
 
+            cboEquippedItem.Items.Add("Empty hands");
+            cboEquippedItem.SelectedText = "Empty hands";
             cboEquippedItem.Items.Add("Bronze hatchet");
             cboEquippedItem.Items.Add("Matchbox");
             cboEquippedItem.Items.Add("Fishing rod");
-
-            /*
-            switch (LevelGen.difficulty)
-            {
-                case 1:
-                    logsNeeded = 10;
-                    treeType = "normal";
-                    break;
-                case 2:
-                    logsNeeded = 20;
-                    treeType = "oak";
-                    break;
-                case 3:
-                    logsNeeded = 30;
-                    treeType = "willow";
-                    break;
-                case 4:
-                    logsNeeded = 40;
-                    treeType = "maple";
-                    break;
-                case 5:
-                    logsNeeded = 50;
-                    treeType = "yew";
-                    break;
-          * 
-            }*/
         }
 
         private void tmrFishingSpotAnimation_Tick(object sender, EventArgs e)
@@ -125,6 +126,8 @@ namespace HumphreyErik2424RST
 
         private void tmrFireAnimation_Tick(object sender, EventArgs e)
         {
+            // Change the fire's image
+
             if (fireFrame == 3)
                 fireFrame = 1;
             else
@@ -141,6 +144,16 @@ namespace HumphreyErik2424RST
                 case 3:
                     picFirePit.Image = picFireSide.Image = Properties.Resources.imgFirePitLit3;
                     break;
+            }
+
+            // The fire goes out after 25s, punishing the player for not fishing fast enough (or prior to starting)
+
+            prgFireFuel.Value -= 8;
+            if (prgFireFuel.Value <= 0)
+            {
+                tmrFireAnimation.Stop();
+                prgFireFuel.Visible = false;
+                picFirePit.Image = Properties.Resources.imgFirePitEmpty;
             }
         }
 
@@ -160,7 +173,6 @@ namespace HumphreyErik2424RST
                 cut = rnd.Next(1, 4);
                 if (cut == 1)
                 {
-                    logCount++;
                     cboEquippedItem.Items.Add("Logs");
                     lstGameLog.Items.Add("You get some logs.");
                     pointsToDecay += cutLuckyBonus; // Award bonus points
@@ -189,31 +201,85 @@ namespace HumphreyErik2424RST
             else
                 lstGameLog.Items.Add("Nothing interesting happens."); // Using any other item on the tree
 
-            lstGameLog.TopIndex = lstGameLog.Items.Count - 1; // Scroll Listbox to bottom
+            update();
+        }
+
+        // Scroll Listbox to bottom
+        void update()
+        {
+            lstGameLog.TopIndex = lstGameLog.Items.Count - 1;
         }
 
         /* unlitFireImageIndex
          * 0: no logs
          * 1: logs in pit
-         * 2: fire lit */
+         * 2: fire lit
+         * 3: cooked fish on fire (must be picked up)
+         * 4: burnt fish on fire (must be picked up)*/
 
         private void picFirePit_Click(object sender, EventArgs e)
         {
-            lstGameLog.Items.Add(picFirePit.Image.ToString());
             if (cboEquippedItem.SelectedText == "Logs" && unlitFireImageIndex == 0)
             {
-                // lstInventory.Items.Remove("Logs");
+                lstGameLog.Items.Remove("Logs");
+                // Add logs to fire pit
                 picFirePit.Image = picFireSide.Image = Properties.Resources.imgFirePitLogs;
                 unlitFireImageIndex = 1;
             }
             else if (cboEquippedItem.SelectedText == "Matchbox" && unlitFireImageIndex == 1)
             {
+                lstGameLog.Items.Add("You attempt to light the logs.");
+                // Fire starts
+                lstGameLog.Items.Add("The fire catches and the logs begin to burn.");
                 picFirePit.Image = picFireSide.Image = Properties.Resources.imgFirePitLit2;
-                tmrFireAnimation.Start();
+                prgFireFuel.Value = 2000;
+                prgFireFuel.Visible = true;
+                tmrFireAnimation.Start(); 
                 unlitFireImageIndex = 2;
+            }
+            else if (cboEquippedItem.SelectedText == "Uncooked fish" && unlitFireImageIndex == 2)
+            {
+                tmrFireAnimation.Stop();
+                prgFireFuel.Visible = false;
+                lstGameLog.Items.Add("You place the fish on the fire.");
+
+                // 33.3% chance to burn fish
+                int rollToCookFish;
+                rollToCookFish = rnd.Next(1, 4);
+                if (rollToCookFish == 3)
+                {
+                    lstGameLog.Items.Add("You burn the fish. Yuck!");
+                    picFirePit.Image = picFireSide.Image = Properties.Resources.imgPitBurntFish;
+                    unlitFireImageIndex = 4;
+                }
+                else
+                {
+                    lstGameLog.Items.Add("You cook the fish. Yum!");
+                    picFirePit.Image = picFireSide.Image = Properties.Resources.imgFishCooked2;
+                    unlitFireImageIndex = 3;
+                }
+            }
+            // If there's a fish on the fire pit, empty hands must be used to remove it.
+            else if (unlitFireImageIndex == 3 || unlitFireImageIndex == 4)
+            {
+                if (cboEquippedItem.SelectedText == "Empty hands")
+                {
+                    // If it's the cooked fish, award progress.
+                    if (unlitFireImageIndex == 3)
+                    {
+                        fishCooked++;
+                        updateObjective();
+                    }
+                    unlitFireImageIndex = 0;
+                    // Set it back to an empty fire pit
+                    picFirePit.Image = picFireSide.Image = Properties.Resources.imgFirePitEmpty;
+                }
+                else
+                    lstGameLog.Items.Add("Your fish is blocking the fire pit.");
             }
             else
                 lstGameLog.Items.Add("Nothing interesting happens.");
+            update();
         }
 
         private void tmrRegrow_Tick(object sender, EventArgs e)
@@ -305,5 +371,76 @@ namespace HumphreyErik2424RST
                 pointsToDecay = 0;
         }
 
+        private void clickableLeave(object sender, EventArgs e)
+        {
+            this.Cursor = new Cursor(cursorIcon.Handle);
+        }
+
+        private void picFishingSpot_Click(object sender, EventArgs e)
+        {
+            if (cboEquippedItem.SelectedText.Contains("Fi"))
+            {
+                lstGameLog.Items.Add("You cast your " + cboEquippedItem.SelectedText.ToLower() + " into the water...");
+                tmrFishingDelay.Start();
+                picFishingLine.Visible = true;
+
+            }
+            else
+                lstGameLog.Items.Add("Nothing interesting happens.");
+
+            update();
+        }
+
+        private void tmrFishingDelay_Tick(object sender, EventArgs e)
+        {
+            tmrFishingDelay.Stop();
+
+            if (picFish.Bounds.IntersectsWith(picFishingLine.Bounds))
+            {
+                lstGameLog.Items.Add("...and catch a fish!");
+                cboEquippedItem.Items.Add("Uncooked fish");
+                picFish.Visible = false;
+            }
+            else
+            {
+                lstGameLog.Items.Add("You didn't find anything this time.");
+            }
+
+            update();
+            picFishingSpot.Visible = picFishingLine.Visible = picFishingSpotSide.Visible = false;
+            tmrFishRespawn.Start();
+            prgFishRespawn.Visible = true;
+        }
+
+        private void tmrFishRespawn_Tick(object sender, EventArgs e)
+        {
+            // Progress bar increments faster if fish was not caught
+            // Visually seems to disappear early because of Windows's progress bar animations
+            if (picFish.Visible == true)
+                prgFishRespawn.Value += 125;
+            else
+                prgFishRespawn.Value += 10;
+            if (prgFishRespawn.Value >= 2000)
+            {
+                tmrFishRespawn.Stop();
+                prgFishRespawn.Visible = false;
+                picFishingSpot.Visible = picFishingLine.Visible = picFish.Visible = true;
+                prgFishRespawn.Value = 0;
+            }
+        }
+
+        void updateObjective()
+        {
+            lblFishCookedCounter.Text = fishCooked + " / " + fishNeeded; // Update the label
+
+            // If the objective is met, close the level and open the level complete screen!
+            if (fishCooked == fishNeeded)
+            {
+                frmBattle.levelComplete.Play();
+                frmLevelComplete LevelComplete = new frmLevelComplete();
+                LevelComplete.Show();
+                this.Hide();
+            }
+        }
     }
 }

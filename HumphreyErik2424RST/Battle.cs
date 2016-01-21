@@ -45,7 +45,7 @@ namespace HumphreyErik2424RST
 
         // All sound effects used on this level
         SoundPlayer hitSuccess = new SoundPlayer(HumphreyErik2424RST.Properties.Resources.sfxHitImproved);
-        SoundPlayer levelComplete = new SoundPlayer(HumphreyErik2424RST.Properties.Resources.sfxWeedVictory);
+        public static SoundPlayer levelComplete = new SoundPlayer(HumphreyErik2424RST.Properties.Resources.sfxWeedVictory);
         SoundPlayer hitSwoosh = new SoundPlayer(HumphreyErik2424RST.Properties.Resources.sfxSwoosh);
         SoundPlayer healSuccess = new SoundPlayer(HumphreyErik2424RST.Properties.Resources.sfxHealingShorter);
 
@@ -536,7 +536,7 @@ namespace HumphreyErik2424RST
             else
             {
                 tmrDeathAnimation.Stop();
-                levelComplete.Play();
+                levelComplete.Play(); // The jingle is played independent of the form so that it starts before it finishes loading
                 HumphreyErik2424RST.frmLevelComplete LevelComplete = new HumphreyErik2424RST.frmLevelComplete();
 
                 LevelComplete.Show();
