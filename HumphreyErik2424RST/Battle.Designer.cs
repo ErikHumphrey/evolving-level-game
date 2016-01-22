@@ -49,6 +49,7 @@
             this.tmrHealAnimation = new System.Windows.Forms.Timer(this.components);
             this.tmrActionDelay = new System.Windows.Forms.Timer(this.components);
             this.pnlTop = new System.Windows.Forms.Panel();
+            this.lblDescription = new System.Windows.Forms.Label();
             this.btnBuddha = new System.Windows.Forms.Button();
             this.pnlGreenPlayer = new System.Windows.Forms.Panel();
             this.pnlPlayer = new System.Windows.Forms.Panel();
@@ -59,7 +60,6 @@
             this.picHealingBeam = new System.Windows.Forms.PictureBox();
             this.picSwipe = new System.Windows.Forms.PictureBox();
             this.picPunch = new System.Windows.Forms.PictureBox();
-            this.lblDescription = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.picPortraitEnemy = new System.Windows.Forms.PictureBox();
             this.pnlGreenEnemy = new System.Windows.Forms.Panel();
@@ -279,6 +279,16 @@
             this.pnlTop.Size = new System.Drawing.Size(732, 344);
             this.pnlTop.TabIndex = 9;
             // 
+            // lblDescription
+            // 
+            this.lblDescription.Location = new System.Drawing.Point(359, 318);
+            this.lblDescription.Name = "lblDescription";
+            this.lblDescription.Size = new System.Drawing.Size(371, 27);
+            this.lblDescription.TabIndex = 10;
+            this.lblDescription.Text = "Button descriptions appear here when moused over.";
+            this.lblDescription.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblDescription.Visible = false;
+            // 
             // btnBuddha
             // 
             this.btnBuddha.Location = new System.Drawing.Point(65, 88);
@@ -386,16 +396,6 @@
             this.picPunch.TabIndex = 11;
             this.picPunch.TabStop = false;
             this.picPunch.Visible = false;
-            // 
-            // lblDescription
-            // 
-            this.lblDescription.Location = new System.Drawing.Point(359, 318);
-            this.lblDescription.Name = "lblDescription";
-            this.lblDescription.Size = new System.Drawing.Size(371, 27);
-            this.lblDescription.TabIndex = 10;
-            this.lblDescription.Text = "Button descriptions appear here when moused over.";
-            this.lblDescription.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.lblDescription.Visible = false;
             // 
             // button1
             // 

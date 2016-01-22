@@ -54,13 +54,11 @@ namespace HumphreyErik2424RST
         Random rnd = new Random();
         int levelIndex;
 
-        // Same custom font code featured in past projects
+        // Same custom font code featured in past projects, referencing msdn
         [System.Runtime.InteropServices.DllImport("gdi32.dll")]
         private static extern IntPtr AddFontMemResourceEx(IntPtr pbFont, uint cbFont,
             IntPtr pdv, [System.Runtime.InteropServices.In] ref uint pcFonts);
         private PrivateFontCollection fonts = new PrivateFontCollection();
-
-
 
         // New font
         Font labelText;
@@ -84,6 +82,11 @@ namespace HumphreyErik2424RST
 
         private void frmSplashScreen_Load(object sender, EventArgs e)
         {
+            // Attempt to create empty save game file (prevents crash if no such file exists)
+            TextWriter esgf = new StreamWriter("SaveGame.txt");
+            esgf.Close();
+
+            // Read the first line on the SaveGame, convert it to a boolean to determine if a save game exists
             TextReader lsGameMaster = new StreamReader("SaveGame.txt");
             lsGameMaster.ReadLine();
             SaveSystem.saveGameExists = Convert.ToBoolean(lsGameMaster.ReadLine());
@@ -182,8 +185,6 @@ namespace HumphreyErik2424RST
         {
             if (btnStart.Text == "Continue game")
             {
-
-                
                 LevelGen.NewLevel();
             }
             else if (btnStart.Text == "New game")
@@ -209,7 +210,7 @@ namespace HumphreyErik2424RST
                 MessageBoxIcon.Exclamation);
             if (wantsToReset == DialogResult.Yes)
             {
-                //  Delete the existing save
+                // Delete the existing save
                 File.Delete("SaveGame.txt");
                 File.Delete("upgrades.txt");
                 SaveSystem.saveGameExists = false; // And change the relevant boolean  

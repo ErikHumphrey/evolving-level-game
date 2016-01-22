@@ -154,6 +154,7 @@ namespace HumphreyErik2424RST
                 tmrFireAnimation.Stop();
                 prgFireFuel.Visible = false;
                 picFirePit.Image = Properties.Resources.imgFirePitEmpty;
+                unlitFireImageIndex = 0;
             }
         }
 
@@ -221,10 +222,13 @@ namespace HumphreyErik2424RST
         {
             if (cboEquippedItem.SelectedText == "Logs" && unlitFireImageIndex == 0)
             {
-                lstGameLog.Items.Remove("Logs");
                 // Add logs to fire pit
                 picFirePit.Image = picFireSide.Image = Properties.Resources.imgFirePitLogs;
                 unlitFireImageIndex = 1;
+                cboEquippedItem.Items.Remove(cboEquippedItem.SelectedItem); // Remove the logs from the player's inventory
+                cboEquippedItem.SelectedItem = "Empty hands";
+                this.ActiveControl = lblBonusPoints;
+
             }
             else if (cboEquippedItem.SelectedText == "Matchbox" && unlitFireImageIndex == 1)
             {

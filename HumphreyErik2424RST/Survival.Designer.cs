@@ -348,6 +348,8 @@
             // 
             // cboEquippedItem
             // 
+            this.cboEquippedItem.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboEquippedItem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cboEquippedItem.Font = new System.Drawing.Font("Myriad Web Pro", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboEquippedItem.FormattingEnabled = true;
             this.cboEquippedItem.Location = new System.Drawing.Point(64, 77);
