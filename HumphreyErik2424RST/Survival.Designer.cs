@@ -60,6 +60,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.lblItemTitle = new System.Windows.Forms.Label();
             this.cboEquippedItem = new System.Windows.Forms.ComboBox();
+            this.btnHelp = new System.Windows.Forms.Button();
             this.pnlGameView.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picFirePit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picFishingSpot)).BeginInit();
@@ -281,6 +282,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.btnHelp);
             this.panel1.Controls.Add(this.lblBonusPointsCounter);
             this.panel1.Controls.Add(this.lblBonusPoints);
             this.panel1.Controls.Add(this.lblFishCookedCounter);
@@ -310,7 +312,7 @@
             this.lblBonusPoints.Font = new System.Drawing.Font("Myriad Web Pro", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblBonusPoints.Location = new System.Drawing.Point(74, 157);
             this.lblBonusPoints.Name = "lblBonusPoints";
-            this.lblBonusPoints.Size = new System.Drawing.Size(103, 15);
+            this.lblBonusPoints.Size = new System.Drawing.Size(112, 14);
             this.lblBonusPoints.TabIndex = 24;
             this.lblBonusPoints.Text = "BONUS CREDITS";
             // 
@@ -332,7 +334,7 @@
             this.label1.Font = new System.Drawing.Font("Myriad Web Pro", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(81, 109);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(89, 15);
+            this.label1.Size = new System.Drawing.Size(96, 14);
             this.label1.TabIndex = 22;
             this.label1.Text = "FISH COOKED";
             // 
@@ -342,7 +344,7 @@
             this.lblItemTitle.Font = new System.Drawing.Font("Myriad Web Pro", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblItemTitle.Location = new System.Drawing.Point(74, 59);
             this.lblItemTitle.Name = "lblItemTitle";
-            this.lblItemTitle.Size = new System.Drawing.Size(101, 15);
+            this.lblItemTitle.Size = new System.Drawing.Size(109, 14);
             this.lblItemTitle.TabIndex = 21;
             this.lblItemTitle.Text = "EQUIPPED ITEM";
             // 
@@ -354,8 +356,19 @@
             this.cboEquippedItem.FormattingEnabled = true;
             this.cboEquippedItem.Location = new System.Drawing.Point(64, 77);
             this.cboEquippedItem.Name = "cboEquippedItem";
-            this.cboEquippedItem.Size = new System.Drawing.Size(121, 21);
+            this.cboEquippedItem.Size = new System.Drawing.Size(121, 20);
             this.cboEquippedItem.TabIndex = 20;
+            // 
+            // btnHelp
+            // 
+            this.btnHelp.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHelp.Location = new System.Drawing.Point(217, 224);
+            this.btnHelp.Name = "btnHelp";
+            this.btnHelp.Size = new System.Drawing.Size(25, 25);
+            this.btnHelp.TabIndex = 26;
+            this.btnHelp.Text = "?";
+            this.btnHelp.UseVisualStyleBackColor = true;
+            this.btnHelp.Click += new System.EventHandler(this.btnHelp_Click);
             // 
             // frmSurvival
             // 
@@ -425,5 +438,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblItemTitle;
         private System.Windows.Forms.ComboBox cboEquippedItem;
+        private System.Windows.Forms.Button btnHelp;
     }
 }

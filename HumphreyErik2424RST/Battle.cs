@@ -114,6 +114,9 @@ namespace HumphreyErik2424RST
                     enemyDamaged();
                     lblNameEnemy.Text = "ZEUS";
                     break;
+                default:
+                    //
+                    break;
             }
         }
 

@@ -37,12 +37,12 @@ namespace HumphreyErik2424RST
 
         string fishDirection = "right";
 
-        private Icon firemakingIcon = Properties.Resources.cursorFiremaking;
-        private Icon woodcuttingIcon = Properties.Resources.cursorWoodcutting;
-        private Icon fishingIcon = Properties.Resources.cursorFishing;
-        private Icon cookingIcon = Properties.Resources.cursorCooking;
-        private Icon cursorIcon = Properties.Resources.cursorPointer;
-        private Icon bagIcon = Properties.Resources.cursorInTheBag;
+        private Icon firemakingIcon = Properties.Resources.cursorFiremaking; // Fire
+        private Icon woodcuttingIcon = Properties.Resources.cursorWoodcutting; // Tree
+        private Icon fishingIcon = Properties.Resources.cursorFishing; // Rod + fish
+        private Icon cookingIcon = Properties.Resources.cursorCooking; // Cooking pot (currently unused)
+        private Icon cursorIcon = Properties.Resources.cursorPointer; // Generic pointer (disabled)
+        private Icon bagIcon = Properties.Resources.cursorInTheBag; // Arrow into bag (currently unused)
 
         public frmSurvival()
         {
@@ -55,11 +55,14 @@ namespace HumphreyErik2424RST
             picFirePit.Cursor = new Cursor(firemakingIcon.Handle);
             picTree.Cursor = new Cursor(woodcuttingIcon.Handle);
             picFishingSpot.Cursor = new Cursor(fishingIcon.Handle);
-            this.Cursor = new Cursor(cursorIcon.Handle);
+            // this.Cursor = new Cursor(cursorIcon.Handle); - Broken "generic" cursor removed for initial release
         }
 
         private void frmSurvival_Load(object sender, EventArgs e)
         {
+            // Play level music
+
+
             // Determine the fish needed to be cooked
             switch (LevelGen.difficulty)
             {
@@ -96,7 +99,7 @@ namespace HumphreyErik2424RST
             tmrFishingSpotAnimation.Start();
 
             cboEquippedItem.Items.Add("Empty hands");
-            cboEquippedItem.SelectedItem = "Empty hands";
+            cboEquippedItem.Text = "Empty hands";
             cboEquippedItem.Items.Add("Bronze hatchet");
             cboEquippedItem.Items.Add("Matchbox");
             cboEquippedItem.Items.Add("Fishing rod");
@@ -219,17 +222,17 @@ namespace HumphreyErik2424RST
 
         private void picFirePit_Click(object sender, EventArgs e)
         {
-            if (cboEquippedItem.SelectedItem == "Logs" && unlitFireImageIndex == 0)
+            if (cboEquippedItem.Text == "Logs" && unlitFireImageIndex == 0)
             {
                 // Add logs to fire pit
                 picFirePit.Image = picFireSide.Image = Properties.Resources.imgFirePitLogs;
                 unlitFireImageIndex = 1;
-                cboEquippedItem.Items.Remove(cboEquippedItem.SelectedItem); // Remove the logs from the player's inventory
-                cboEquippedItem.SelectedItem = "Empty hands";
+                cboEquippedItem.Items.Remove(cboEquippedItem.Text); // Remove the logs from the player's inventory
+                cboEquippedItem.Text = "Empty hands";
                 this.ActiveControl = lblBonusPoints;
 
             }
-            else if (cboEquippedItem.SelectedItem == "Matchbox" && unlitFireImageIndex == 1)
+            else if (cboEquippedItem.Text == "Matchbox" && unlitFireImageIndex == 1)
             {
                 lstGameLog.Items.Add("You attempt to light the logs.");
                 // Fire starts
@@ -240,7 +243,7 @@ namespace HumphreyErik2424RST
                 tmrFireAnimation.Start(); 
                 unlitFireImageIndex = 2;
             }
-            else if (cboEquippedItem.SelectedItem == "Uncooked fish" && unlitFireImageIndex == 2)
+            else if (cboEquippedItem.Text == "Uncooked fish" && unlitFireImageIndex == 2)
             {
                 tmrFireAnimation.Stop();
                 prgFireFuel.Visible = false;
@@ -265,7 +268,7 @@ namespace HumphreyErik2424RST
             // If there's a fish on the fire pit, empty hands must be used to remove it.
             else if (unlitFireImageIndex == 3 || unlitFireImageIndex == 4)
             {
-                if (cboEquippedItem.SelectedItem == "Empty hands")
+                if (cboEquippedItem.Text == "Empty hands")
                 {
                     // If it's the cooked fish, award progress.
                     if (unlitFireImageIndex == 3)
@@ -311,13 +314,15 @@ namespace HumphreyErik2424RST
         // If the mouse enters a clickable object in the Game View panel (Tree, fire pit, fishing spot)
         private void clickableEnter(object sender, EventArgs e)
         {
-            // Check what item is equipped in the ComboBox
-            if (cboEquippedItem.SelectedItem == "Tinderbox")
-                this.Cursor = new Cursor(firemakingIcon.Handle);
-            else if (cboEquippedItem.Text.Contains("ha"))
-                this.Cursor = new Cursor(woodcuttingIcon.Handle);
-            else if (cboEquippedItem.Text.Contains("Fish") || cboEquippedItem.SelectedItem == "Golden harpoon")
-                this.Cursor = new Cursor(fishingIcon.Handle);
+            // New cursor code (for code refactoring later)
+
+            //// Check what item is equipped in the ComboBox
+            //if (cboEquippedItem.Text == "Tinderbox")
+            //    this.Cursor = new Cursor(firemakingIcon.Handle);
+            //else if (cboEquippedItem.Text.Contains("ha"))
+            //    this.Cursor = new Cursor(woodcuttingIcon.Handle);
+            //else if (cboEquippedItem.Text.Contains("Fish") || cboEquippedItem.Text == "Golden harpoon")
+            //    this.Cursor = new Cursor(fishingIcon.Handle);
         }
 
         private void tmrFishMovement_Tick(object sender, EventArgs e)
@@ -376,7 +381,7 @@ namespace HumphreyErik2424RST
 
         private void clickableLeave(object sender, EventArgs e)
         {
-            this.Cursor = new Cursor(cursorIcon.Handle);
+            // this.Cursor = new Cursor(cursorIcon.Handle); - buggy cursor left out
         }
 
         private void picFishingSpot_Click(object sender, EventArgs e)
@@ -444,6 +449,27 @@ namespace HumphreyErik2424RST
                 LevelComplete.Show();
                 this.Hide();
             }
+        }
+
+        // Show instructions for the level
+
+        private void btnHelp_Click(object sender, EventArgs e)
+        {
+            string objective = "Your objective is to survive by getting fish to satisfy your hunger.\r\n\r\n";
+            string objective2 = "Follow these steps to progress the level's goal under \"FISH CAUGHT\".\r\n";
+
+            string step1 = "\r\n1. Select your hatchet and click the tree until you get logs.";
+            string step2 = "\r\n2. Equip your fishing tool and click the fishing spot on the water.";
+            string step3 = "\r\n3. Equip your logs and click the stone circle to add them to the fire pit.";
+            string step4 = "\r\n4. Equip your firestarter and click the logs to light a fire.";
+            string step5 = "\r\n5. Equip the fish you caught and click the fire. Be quick before it goes out!";
+            string step6 = "\r\n6. Equip your empty hands to take the fish off of the fire.\r\nIf you didn't burn it, you progress in the level and the counter goes up!";
+            string tip1 = "Don't forget to check the game log in the bottom left screen to see if you're doing everything right.";
+            string tip2 = "\r\n\r\nUse the view in the bottom right to time in your catch. If there's a fish under the dashed line after 3 seconds, you catch the fish!";
+            string tip3 = "\r\n\r\nDon't forget to check the game log in the bottom left screen to see if you're doing everything right.";
+            string tip4 = "\r\n\r\nYou get bonus credits for getting logs, felling a tree, or catching fish in a minimal amount of tries. You can earn a maximum of 10,000 per level.";
+            MessageBox.Show(objective + objective2 + step1 + step2 + step3 + step4 + step5 + step6, "Instructions", MessageBoxButtons.OK);
+            MessageBox.Show(tip1 + tip2 + tip3 + tip4, "Useful Tips", MessageBoxButtons.OK);
         }
     }
 }
