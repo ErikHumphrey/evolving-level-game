@@ -94,10 +94,9 @@ namespace HumphreyErik2424RST
 
             tmrFishMovement.Start();
             tmrFishingSpotAnimation.Start();
-            // tmrFireAnimation.Start();
 
             cboEquippedItem.Items.Add("Empty hands");
-            cboEquippedItem.SelectedText = "Empty hands";
+            cboEquippedItem.SelectedItem = "Empty hands";
             cboEquippedItem.Items.Add("Bronze hatchet");
             cboEquippedItem.Items.Add("Matchbox");
             cboEquippedItem.Items.Add("Fishing rod");
@@ -162,9 +161,9 @@ namespace HumphreyErik2424RST
         {
 
             // If the selected item is a hatchet and the tree isn't regrowing...
-            if (cboEquippedItem.SelectedText.Contains("ha") && !tmrRegrow.Enabled)
+            if (cboEquippedItem.Text.Contains("ha") && !tmrRegrow.Enabled)
             {
-                lstGameLog.Items.Add("You swing your " + cboEquippedItem.SelectedText.ToLower() + " at the tree."); // Message
+                lstGameLog.Items.Add("You swing your " + cboEquippedItem.Text.ToLower() + " at the tree."); // Message
 
                 // 33% to successfully gather some logs from the tree
                 // There is a credits bonus for getting logs or felling the tree in a minimal amount of tries.
@@ -220,7 +219,7 @@ namespace HumphreyErik2424RST
 
         private void picFirePit_Click(object sender, EventArgs e)
         {
-            if (cboEquippedItem.SelectedText == "Logs" && unlitFireImageIndex == 0)
+            if (cboEquippedItem.SelectedItem == "Logs" && unlitFireImageIndex == 0)
             {
                 // Add logs to fire pit
                 picFirePit.Image = picFireSide.Image = Properties.Resources.imgFirePitLogs;
@@ -230,7 +229,7 @@ namespace HumphreyErik2424RST
                 this.ActiveControl = lblBonusPoints;
 
             }
-            else if (cboEquippedItem.SelectedText == "Matchbox" && unlitFireImageIndex == 1)
+            else if (cboEquippedItem.SelectedItem == "Matchbox" && unlitFireImageIndex == 1)
             {
                 lstGameLog.Items.Add("You attempt to light the logs.");
                 // Fire starts
@@ -241,7 +240,7 @@ namespace HumphreyErik2424RST
                 tmrFireAnimation.Start(); 
                 unlitFireImageIndex = 2;
             }
-            else if (cboEquippedItem.SelectedText == "Uncooked fish" && unlitFireImageIndex == 2)
+            else if (cboEquippedItem.SelectedItem == "Uncooked fish" && unlitFireImageIndex == 2)
             {
                 tmrFireAnimation.Stop();
                 prgFireFuel.Visible = false;
@@ -266,7 +265,7 @@ namespace HumphreyErik2424RST
             // If there's a fish on the fire pit, empty hands must be used to remove it.
             else if (unlitFireImageIndex == 3 || unlitFireImageIndex == 4)
             {
-                if (cboEquippedItem.SelectedText == "Empty hands")
+                if (cboEquippedItem.SelectedItem == "Empty hands")
                 {
                     // If it's the cooked fish, award progress.
                     if (unlitFireImageIndex == 3)
@@ -313,11 +312,11 @@ namespace HumphreyErik2424RST
         private void clickableEnter(object sender, EventArgs e)
         {
             // Check what item is equipped in the ComboBox
-            if (cboEquippedItem.SelectedText == "Tinderbox")
+            if (cboEquippedItem.SelectedItem == "Tinderbox")
                 this.Cursor = new Cursor(firemakingIcon.Handle);
-            else if (cboEquippedItem.SelectedText.Contains("ha"))
+            else if (cboEquippedItem.Text.Contains("ha"))
                 this.Cursor = new Cursor(woodcuttingIcon.Handle);
-            else if (cboEquippedItem.SelectedText.Contains("Fish") || cboEquippedItem.SelectedText == "Golden harpoon")
+            else if (cboEquippedItem.Text.Contains("Fish") || cboEquippedItem.SelectedItem == "Golden harpoon")
                 this.Cursor = new Cursor(fishingIcon.Handle);
         }
 
@@ -382,9 +381,9 @@ namespace HumphreyErik2424RST
 
         private void picFishingSpot_Click(object sender, EventArgs e)
         {
-            if (cboEquippedItem.SelectedText.Contains("Fi"))
+            if (cboEquippedItem.Text.Contains("Fi"))
             {
-                lstGameLog.Items.Add("You cast your " + cboEquippedItem.SelectedText.ToLower() + " into the water...");
+                lstGameLog.Items.Add("You cast your " + cboEquippedItem.Text.ToLower() + " into the water...");
                 tmrFishingDelay.Start();
                 picFishingLine.Visible = true;
 
