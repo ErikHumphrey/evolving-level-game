@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmBattle));
             this.btnTL = new System.Windows.Forms.Button();
             this.btnBR = new System.Windows.Forms.Button();
             this.btnTR = new System.Windows.Forms.Button();
@@ -49,6 +50,9 @@
             this.tmrHealAnimation = new System.Windows.Forms.Timer(this.components);
             this.tmrActionDelay = new System.Windows.Forms.Timer(this.components);
             this.pnlTop = new System.Windows.Forms.Panel();
+            this.btnHelp = new System.Windows.Forms.Button();
+            this.lblHavingTrouble = new System.Windows.Forms.Label();
+            this.lblBuddhaDescription = new System.Windows.Forms.Label();
             this.lblDescription = new System.Windows.Forms.Label();
             this.btnBuddha = new System.Windows.Forms.Button();
             this.pnlGreenPlayer = new System.Windows.Forms.Panel();
@@ -60,7 +64,6 @@
             this.picHealingBeam = new System.Windows.Forms.PictureBox();
             this.picSwipe = new System.Windows.Forms.PictureBox();
             this.picPunch = new System.Windows.Forms.PictureBox();
-            this.button1 = new System.Windows.Forms.Button();
             this.picPortraitEnemy = new System.Windows.Forms.PictureBox();
             this.pnlGreenEnemy = new System.Windows.Forms.Panel();
             this.pnlEnemy = new System.Windows.Forms.Panel();
@@ -129,6 +132,7 @@
             // 
             // btnBL
             // 
+            this.btnBL.Enabled = false;
             this.btnBL.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBL.Location = new System.Drawing.Point(2, 42);
             this.btnBL.Name = "btnBL";
@@ -197,14 +201,14 @@
             // 
             // lblHelper
             // 
-            this.lblHelper.AutoSize = true;
             this.lblHelper.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Bold);
             this.lblHelper.ForeColor = System.Drawing.Color.White;
-            this.lblHelper.Location = new System.Drawing.Point(80, 28);
+            this.lblHelper.Location = new System.Drawing.Point(51, 28);
             this.lblHelper.Name = "lblHelper";
-            this.lblHelper.Size = new System.Drawing.Size(197, 22);
+            this.lblHelper.Size = new System.Drawing.Size(725, 22);
             this.lblHelper.TabIndex = 0;
             this.lblHelper.Text = "Choose an ACTION.";
+            this.lblHelper.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // lblStatus
             // 
@@ -263,6 +267,9 @@
             // 
             // pnlTop
             // 
+            this.pnlTop.Controls.Add(this.btnHelp);
+            this.pnlTop.Controls.Add(this.lblHavingTrouble);
+            this.pnlTop.Controls.Add(this.lblBuddhaDescription);
             this.pnlTop.Controls.Add(this.lblDescription);
             this.pnlTop.Controls.Add(this.btnBuddha);
             this.pnlTop.Controls.Add(this.pnlGreenPlayer);
@@ -270,7 +277,6 @@
             this.pnlTop.Controls.Add(this.picHealingBeam);
             this.pnlTop.Controls.Add(this.picSwipe);
             this.pnlTop.Controls.Add(this.picPunch);
-            this.pnlTop.Controls.Add(this.button1);
             this.pnlTop.Controls.Add(this.picPortraitEnemy);
             this.pnlTop.Controls.Add(this.pnlGreenEnemy);
             this.pnlTop.Controls.Add(this.picPortraitPlayer);
@@ -278,6 +284,35 @@
             this.pnlTop.Name = "pnlTop";
             this.pnlTop.Size = new System.Drawing.Size(732, 344);
             this.pnlTop.TabIndex = 9;
+            // 
+            // btnHelp
+            // 
+            this.btnHelp.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHelp.Location = new System.Drawing.Point(4, 4);
+            this.btnHelp.Name = "btnHelp";
+            this.btnHelp.Size = new System.Drawing.Size(24, 23);
+            this.btnHelp.TabIndex = 19;
+            this.btnHelp.Text = "?";
+            this.btnHelp.UseVisualStyleBackColor = true;
+            this.btnHelp.Click += new System.EventHandler(this.btnHelp_Click);
+            // 
+            // lblHavingTrouble
+            // 
+            this.lblHavingTrouble.AutoSize = true;
+            this.lblHavingTrouble.Location = new System.Drawing.Point(54, 65);
+            this.lblHavingTrouble.Name = "lblHavingTrouble";
+            this.lblHavingTrouble.Size = new System.Drawing.Size(82, 13);
+            this.lblHavingTrouble.TabIndex = 18;
+            this.lblHavingTrouble.Text = "Having trouble?";
+            // 
+            // lblBuddhaDescription
+            // 
+            this.lblBuddhaDescription.AutoSize = true;
+            this.lblBuddhaDescription.Location = new System.Drawing.Point(84, 88);
+            this.lblBuddhaDescription.Name = "lblBuddhaDescription";
+            this.lblBuddhaDescription.Size = new System.Drawing.Size(119, 13);
+            this.lblBuddhaDescription.TabIndex = 17;
+            this.lblBuddhaDescription.Text = "sets enemy health to 10";
             // 
             // lblDescription
             // 
@@ -291,9 +326,10 @@
             // 
             // btnBuddha
             // 
-            this.btnBuddha.Location = new System.Drawing.Point(65, 88);
+            this.btnBuddha.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBuddha.Location = new System.Drawing.Point(36, 83);
             this.btnBuddha.Name = "btnBuddha";
-            this.btnBuddha.Size = new System.Drawing.Size(75, 23);
+            this.btnBuddha.Size = new System.Drawing.Size(47, 23);
             this.btnBuddha.TabIndex = 16;
             this.btnBuddha.Text = "Buddha";
             this.btnBuddha.UseVisualStyleBackColor = true;
@@ -397,17 +433,6 @@
             this.picPunch.TabStop = false;
             this.picPunch.Visible = false;
             // 
-            // button1
-            // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(50, 30);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(109, 52);
-            this.button1.TabIndex = 13;
-            this.button1.Text = "CLOSE";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // picPortraitEnemy
             // 
             this.picPortraitEnemy.BackColor = System.Drawing.Color.Transparent;
@@ -493,11 +518,13 @@
             this.Controls.Add(this.pnlBlack);
             this.Controls.Add(this.pnlTop);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmBattle";
             this.ShowIcon = false;
             this.Text = "Battle";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmBattle_FormClosing);
             this.Load += new System.EventHandler(this.frmBattle_Load);
             this.pnlActions.ResumeLayout(false);
             this.pnlStuff.ResumeLayout(false);
@@ -505,7 +532,6 @@
             this.pnlWhite.ResumeLayout(false);
             this.pnlWhite.PerformLayout();
             this.pnlTurquoise.ResumeLayout(false);
-            this.pnlTurquoise.PerformLayout();
             this.pnlBlack.ResumeLayout(false);
             this.pnlTop.ResumeLayout(false);
             this.pnlTop.PerformLayout();
@@ -557,7 +583,6 @@
         private System.Windows.Forms.Timer tmrGameTicker;
         private System.Windows.Forms.PictureBox picSwipe;
         private System.Windows.Forms.Timer tmrAnimationTicker;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Timer tmrEnemyHealthDecay;
         private System.Windows.Forms.Label lblHealthEnemy;
         private System.Windows.Forms.Timer tmrPlayerHealthDecay;
@@ -567,5 +592,8 @@
         private System.Windows.Forms.PictureBox picEnemyHider;
         private System.Windows.Forms.Timer tmrDeathAnimation;
         private System.Windows.Forms.Button btnBuddha;
+        private System.Windows.Forms.Label lblHavingTrouble;
+        private System.Windows.Forms.Label lblBuddhaDescription;
+        private System.Windows.Forms.Button btnHelp;
     }
 }

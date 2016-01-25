@@ -33,17 +33,17 @@
             this.btnResetGame = new System.Windows.Forms.Button();
             this.btnStart = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btnBattle = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.picHeaderImage = new System.Windows.Forms.PictureBox();
+            this.pnlMenuButtons = new System.Windows.Forms.Panel();
             this.lblButtonDescription = new System.Windows.Forms.Label();
             this.lblSaveStatus = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picHeaderImage)).BeginInit();
+            this.pnlMenuButtons.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnOptions
             // 
+            this.btnOptions.Enabled = false;
             this.btnOptions.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(58)))), ((int)(((byte)(101)))));
             this.btnOptions.FlatAppearance.BorderSize = 2;
             this.btnOptions.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -61,6 +61,7 @@
             // 
             // btnResetGame
             // 
+            this.btnResetGame.Enabled = false;
             this.btnResetGame.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(58)))), ((int)(((byte)(101)))));
             this.btnResetGame.FlatAppearance.BorderSize = 2;
             this.btnResetGame.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -110,42 +111,29 @@
             this.btnExit.MouseEnter += new System.EventHandler(this.btnExit_MouseEnter);
             this.btnExit.MouseLeave += new System.EventHandler(this.MenuButtons_MouseLeave);
             // 
-            // pictureBox1
+            // picHeaderImage
             // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.Image = global::HumphreyErik2424RST.Properties.Resources.imgBannerImproved;
-            this.pictureBox1.Location = new System.Drawing.Point(21, 20);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(308, 64);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox1.TabIndex = 15;
-            this.pictureBox1.TabStop = false;
+            this.picHeaderImage.BackColor = System.Drawing.Color.Transparent;
+            this.picHeaderImage.Image = global::HumphreyErik2424RST.Properties.Resources.imgBannerImproved;
+            this.picHeaderImage.Location = new System.Drawing.Point(21, 20);
+            this.picHeaderImage.Name = "picHeaderImage";
+            this.picHeaderImage.Size = new System.Drawing.Size(308, 64);
+            this.picHeaderImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.picHeaderImage.TabIndex = 15;
+            this.picHeaderImage.TabStop = false;
             // 
-            // btnBattle
+            // pnlMenuButtons
             // 
-            this.btnBattle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBattle.ForeColor = System.Drawing.Color.White;
-            this.btnBattle.Image = ((System.Drawing.Image)(resources.GetObject("btnBattle.Image")));
-            this.btnBattle.Location = new System.Drawing.Point(271, 144);
-            this.btnBattle.Name = "btnBattle";
-            this.btnBattle.Size = new System.Drawing.Size(62, 48);
-            this.btnBattle.TabIndex = 6;
-            this.btnBattle.Text = "Battle";
-            this.btnBattle.UseVisualStyleBackColor = true;
-            this.btnBattle.Click += new System.EventHandler(this.btnBattle_Click);
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(74)))), ((int)(((byte)(88)))));
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.btnOptions);
-            this.panel1.Controls.Add(this.btnStart);
-            this.panel1.Controls.Add(this.btnResetGame);
-            this.panel1.Controls.Add(this.btnExit);
-            this.panel1.Location = new System.Drawing.Point(83, 127);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(178, 171);
-            this.panel1.TabIndex = 14;
+            this.pnlMenuButtons.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(74)))), ((int)(((byte)(88)))));
+            this.pnlMenuButtons.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlMenuButtons.Controls.Add(this.btnOptions);
+            this.pnlMenuButtons.Controls.Add(this.btnStart);
+            this.pnlMenuButtons.Controls.Add(this.btnResetGame);
+            this.pnlMenuButtons.Controls.Add(this.btnExit);
+            this.pnlMenuButtons.Location = new System.Drawing.Point(83, 127);
+            this.pnlMenuButtons.Name = "pnlMenuButtons";
+            this.pnlMenuButtons.Size = new System.Drawing.Size(178, 171);
+            this.pnlMenuButtons.TabIndex = 14;
             // 
             // lblButtonDescription
             // 
@@ -179,15 +167,15 @@
             this.ClientSize = new System.Drawing.Size(345, 365);
             this.Controls.Add(this.lblSaveStatus);
             this.Controls.Add(this.lblButtonDescription);
-            this.Controls.Add(this.btnBattle);
-            this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.picHeaderImage);
+            this.Controls.Add(this.pnlMenuButtons);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmSplashScreen";
             this.Text = "Evolving Level Game - Main Menu";
             this.Load += new System.EventHandler(this.frmSplashScreen_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.picHeaderImage)).EndInit();
+            this.pnlMenuButtons.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -199,9 +187,8 @@
         private System.Windows.Forms.Button btnResetGame;
         private System.Windows.Forms.Button btnStart;
         private System.Windows.Forms.Button btnExit;
-        private System.Windows.Forms.Button btnBattle;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.PictureBox picHeaderImage;
+        private System.Windows.Forms.Panel pnlMenuButtons;
         private System.Windows.Forms.Label lblButtonDescription;
         private System.Windows.Forms.Label lblSaveStatus;
 

@@ -24,12 +24,10 @@ namespace HumphreyErik2424RST
         int enemyHealthToDecay, playerHealthToDecay;
         int playerMaxHP = 100;
         bool animationInProgress = false;
-        string enemyName;
         bool isEnemyTurn, enemyDead = false;
-        string playerHitsEnemyFor = "PLAYER" + " hits " + "ENEMY" + " for ";
+        // string playerHitsEnemyFor = "PLAYER" + " hits " + "ENEMY" + " for "; - unused
         Image[] picHealingBeams = new Image[12];
         int beamFrame;
-        string restAsString;
 
         // Ability damage values (per hit; negative = heal)
   
@@ -45,7 +43,7 @@ namespace HumphreyErik2424RST
 
         // All sound effects used on this level
         SoundPlayer hitSuccess = new SoundPlayer(HumphreyErik2424RST.Properties.Resources.sfxHitImproved);
-        public static SoundPlayer levelComplete = new SoundPlayer(HumphreyErik2424RST.Properties.Resources.sfxWeedVictory);
+        // public static SoundPlayer levelComplete = new SoundPlayer(HumphreyErik2424RST.Properties.Resources.sfxWeedVictory);   to be replaced with E-rated sound
         SoundPlayer hitSwoosh = new SoundPlayer(HumphreyErik2424RST.Properties.Resources.sfxSwoosh);
         SoundPlayer healSuccess = new SoundPlayer(HumphreyErik2424RST.Properties.Resources.sfxHealingShorter);
 
@@ -68,7 +66,10 @@ namespace HumphreyErik2424RST
 
         private void frmBattle_Load(object sender, EventArgs e)
         {
-            lblNamePlayer.Text = SaveGames.SaveSystem.name.ToUpper();
+            resetButtons();
+            playerTurn(); // Make sure it's the player's turn, just in case. You always get to go first.
+
+            lblNamePlayer.Text = SaveGames.SaveSystem.name.ToUpper(); // Convert the user's saved name to uppercase and display it
             picPortraitEnemy.Location = new Point(437, 30);
 
             // Using a ResourceManager simplifies having to declare each image for each array value manually 
@@ -130,13 +131,13 @@ namespace HumphreyErik2424RST
             {
                 btnTL.Text = "FIST FLURRY";
                 btnTR.Text = "FRONT KICK";
+                btnBL.Text = ""; // Blank unless Blind ability (e.g. Smoke Screen) is unlocked, but upgrades don't do anything yet
                 btnBR.Text = "< BACK";
             }
             else if (btnTL.Text == "PUNCH")
             {
                 enemyHealthToDecay = DV_PUNCH; // The damage the punch deals.
                 tmrEnemyHealthDecay.Start(); // Start the health loss chain of events
-                // lblStatusBar.Text = playerHitsEnemyFor + "30 damage!"; // Update the status bar. This is done seperately because Fist Flurry hits multiple times.
             }
             else if (btnTL.Text == "FIST FLURRY")
             {
@@ -147,8 +148,18 @@ namespace HumphreyErik2424RST
             {
                 enemyHealthToDecay = 9999;
                 tmrEnemyHealthDecay.Start();
-                // lblStatusBar.Text = playerHitsEnemyFor + "9999 damage!";
             }
+            else if (btnBR.Text == "< BACK")
+                resetButtons();
+        }
+
+        // return buttons to their defaults
+        void resetButtons()
+        {
+            btnTL.Text = "FIGHT";
+            btnTR.Text = "REST";
+            btnBL.Text = "ITEMS";
+            btnBR.Text = "FLEE";
         }
 
         private void btnTR_Click(object sender, EventArgs e)
@@ -256,12 +267,7 @@ namespace HumphreyErik2424RST
         // Every second, check to see if victory conditions are met, or continue to the next phase of battle (feels too inhuman if the enemy makes their move too fast)
         private void tmrGameTicker_Tick(object sender, EventArgs e)
         {
-            if (prgHealthEnemy.Value == 0)
-            {
-                // lblStatusBar.Text = "ENEMY" + " has been defeated!";
-                enemyDead = true;
-            }
-            // Separate so that it plays later
+            // Plays shortly after enemy dies instead of immediately
             if (enemyDead == true)
             {
                 picPortraitEnemy.Image = Properties.Resources.imgCultistDead;
@@ -269,6 +275,8 @@ namespace HumphreyErik2424RST
                 tmrGameTicker.Stop();
             }
         }
+
+        // Front Kick animation
 
         private void tmrAnimationTicker_Tick(object sender, EventArgs e)
         {
@@ -331,6 +339,13 @@ namespace HumphreyErik2424RST
             // Note: Leave this as an else if statement, as the math is imperfect and it will appear as green when healing while health is low.
             else if (prgHealthPlayer.Value >= prgHealthPlayer.Maximum / 2)
             ModifyProgressBarColor.SetState(prgHealthPlayer, 1);
+
+            // This is all that happens when your health depletes to 0 for now
+            if (prgHealthPlayer.Value == 0)
+            {
+                tmrPlayerHealthDecay.Stop();
+                MessageBox.Show("YOU DIED. Click OK to cheat death and continue to battle against " + lblNameEnemy + ".\r\n\r\nPROTIP: Heal yourself by clicking REST and you literally cannot die in this demo. That way you can avoid this annoying death message!", "0 health");
+            }
         }
 
         // Same thing but for the enemy. Enemy currently cannot gain health / heal, so that part is left out
@@ -342,6 +357,10 @@ namespace HumphreyErik2424RST
                 ModifyProgressBarColor.SetState(prgHealthEnemy, 3);
             else if (prgHealthEnemy.Value < prgHealthEnemy.Maximum / 5)
                 ModifyProgressBarColor.SetState(prgHealthEnemy, 2);
+
+            // It is best to set the enemy to be dead here
+            if (prgHealthEnemy.Value == 0)
+                enemyDead = true;
         }
 
         private void tmrEnemyHealthDecay_Tick(object sender, EventArgs e)
@@ -373,22 +392,58 @@ namespace HumphreyErik2424RST
             }
         }
 
+        // On the enemy's turn...
         void enemyTurn()
         {
             isEnemyTurn = true;
+            // If they're not dead...
             if (!enemyDead)
+            {
+                // Inflict damage based on the level difficulty (currently the same across all difficulties, enemy has no attack animation)
                 switch (LevelGen.difficulty)
                 {
                     case 1:
-                     playerHealthToDecay = 30; // The damage the punch deals.
-                     tmrPlayerHealthDecay.Start(); // Start the health loss chain of events
-                      // lblStatusBar.Text = playerHitsEnemyFor + "30 damage!"; // Update the status bar. This is done seperately because Fist Flurry hits multiple times.
-                     break;
+                        playerHealthToDecay = 30; // The damage the enemy's attack deals.
+                        break;
+                    case 2:
+                        playerHealthToDecay = 30;
+                        break;
+                    case 3:
+                        playerHealthToDecay = 30;
+                        break;
+                    case 4:
+                        playerHealthToDecay = 30;
+                        break;
+                    case 5:
+                        playerHealthToDecay = 30;
+                        break;
+                    // If the difficulty is anything but 5 (e.g. 6, because there is no way to beat the game)
+                    default:
+                        playerHealthToDecay = 15;
+                        break;
                 }
+
+                // and have that damage tick down slowly, because it looks cool.
+                tmrPlayerHealthDecay.Start();
+
+                // display message on bottom panel
+                statusCenter();
+            }
+        }
+
+        // Change the "Choose an ACTION" to be a status bar while action happens (currently only for when enemy attacks player)
+        void statusCenter()
+        {
+            lblHelper.Text = lblNameEnemy.Text + playerHealthToDecay + " damage!"; // Update the status bar.
+            lblHelper.Location = new Point(-3, 28);
+            lblHelper.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
         }
 
         void playerTurn()
         {
+            lblHelper.Text = "Choose an ACTION.";
+            lblHelper.TextAlign = System.Drawing.ContentAlignment.TopLeft;
+            lblHelper.Location = new Point(69, 28);
             isEnemyTurn = false;
             pnlActions.Visible = true;
             btnTL.Text = "FIGHT";
@@ -529,6 +584,8 @@ namespace HumphreyErik2424RST
             }
         }
 
+        // Make enemy fall through ground when they die
+
         private void tmrDeathAnimation_Tick(object sender, EventArgs e)
         {
             if (picPortraitEnemy.Location.Y < 144)
@@ -536,7 +593,7 @@ namespace HumphreyErik2424RST
             else
             {
                 tmrDeathAnimation.Stop();
-                levelComplete.Play(); // The jingle is played independent of the form so that it starts before it finishes loading
+                // levelComplete.Play(); // The jingle is played independent of the form so that it starts before it finishes loading
                 HumphreyErik2424RST.frmLevelComplete LevelComplete = new HumphreyErik2424RST.frmLevelComplete();
 
                 LevelComplete.Show();
@@ -545,11 +602,25 @@ namespace HumphreyErik2424RST
             }
         }
 
+        // Cheat, reducing enemy health to 10.
         private void btnBuddha_Click(object sender, EventArgs e)
         {
             prgHealthEnemy.Value = 10;
             lblHealthEnemy.Text = "10 / " + prgHealthEnemy.Maximum;
             ModifyProgressBarColor.SetState(prgHealthEnemy, 2);
+        }
+
+        private void btnHelp_Click(object sender, EventArgs e)
+        {
+            // Convert enemy name to title case (e.g., ERIK HUMPHREY --> Erik Humphrey)
+            string titleCasedEnemyName = System.Threading.Thread.CurrentThread.CurrentCulture.TextInfo.ToTitleCase(lblNameEnemy.Text);
+            // and then show it in a MessageBox explaining how the Battle level works
+            MessageBox.Show("Click FIGHT to access your martial arts abilities. To complete the level, defeat " + titleCasedEnemyName + " before they defeat you!");
+        }
+
+        private void frmBattle_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }
