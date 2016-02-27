@@ -72,6 +72,7 @@
             this.lblMinusSign = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.lblTemporary = new System.Windows.Forms.Label();
             this.grpRewards.SuspendLayout();
             this.grpShop.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -105,7 +106,7 @@
             this.grpRewards.Controls.Add(this.progressBar1);
             this.grpRewards.Location = new System.Drawing.Point(30, 100);
             this.grpRewards.Name = "grpRewards";
-            this.grpRewards.Size = new System.Drawing.Size(523, 150);
+            this.grpRewards.Size = new System.Drawing.Size(405, 137);
             this.grpRewards.TabIndex = 1;
             this.grpRewards.TabStop = false;
             this.grpRewards.Text = "Rewards";
@@ -113,7 +114,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(205, 89);
+            this.label3.Location = new System.Drawing.Point(143, 82);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(106, 13);
             this.label3.TabIndex = 4;
@@ -123,7 +124,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Courier New", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(61, 26);
+            this.label8.Location = new System.Drawing.Point(22, 26);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(329, 14);
             this.label8.TabIndex = 3;
@@ -133,7 +134,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Courier New", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(61, 39);
+            this.label7.Location = new System.Drawing.Point(22, 39);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(329, 14);
             this.label7.TabIndex = 2;
@@ -143,7 +144,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Courier New", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(61, 52);
+            this.label6.Location = new System.Drawing.Point(22, 52);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(329, 14);
             this.label6.TabIndex = 1;
@@ -151,7 +152,7 @@
             // 
             // progressBar1
             // 
-            this.progressBar1.Location = new System.Drawing.Point(87, 106);
+            this.progressBar1.Location = new System.Drawing.Point(25, 99);
             this.progressBar1.Name = "progressBar1";
             this.progressBar1.Size = new System.Drawing.Size(354, 17);
             this.progressBar1.TabIndex = 0;
@@ -564,11 +565,21 @@
             this.label5.Text = "        000";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
+            // lblTemporary
+            // 
+            this.lblTemporary.AutoSize = true;
+            this.lblTemporary.Location = new System.Drawing.Point(470, 153);
+            this.lblTemporary.Name = "lblTemporary";
+            this.lblTemporary.Size = new System.Drawing.Size(168, 13);
+            this.lblTemporary.TabIndex = 11;
+            this.lblTemporary.Text = "<--- None of this does anything yet";
+            // 
             // frmLevelComplete
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(826, 644);
+            this.ClientSize = new System.Drawing.Size(674, 644);
+            this.Controls.Add(this.lblTemporary);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.lblMinusSign);
@@ -587,7 +598,7 @@
             this.Name = "frmLevelComplete";
             this.ShowIcon = false;
             this.Text = "Level complete!";
-            this.Load += new System.EventHandler(this.frmLevelComplete_Load);
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmLevelComplete_FormClosing);
             this.grpRewards.ResumeLayout(false);
             this.grpRewards.PerformLayout();
             this.grpShop.ResumeLayout(false);
@@ -655,5 +666,6 @@
         private System.Windows.Forms.Label lblMinusSign;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label lblTemporary;
     }
 }

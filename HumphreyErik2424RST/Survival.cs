@@ -33,16 +33,27 @@ namespace HumphreyErik2424RST
         int pointsToDecay = 0;
         int bonusPoints = 0;
 
-        string treeType = "normal";
+        // string treeType = "normal";
 
         string fishDirection = "right";
 
+<<<<<<< HEAD
         private Icon firemakingIcon = Properties.Resources.cursorFiremaking; // Fire
         private Icon woodcuttingIcon = Properties.Resources.cursorWoodcutting; // Tree
         private Icon fishingIcon = Properties.Resources.cursorFishing; // Rod + fish
         private Icon cookingIcon = Properties.Resources.cursorCooking; // Cooking pot (currently unused)
         private Icon cursorIcon = Properties.Resources.cursorPointer; // Generic pointer (disabled)
         private Icon bagIcon = Properties.Resources.cursorInTheBag; // Arrow into bag (currently unused)
+=======
+        private Icon firemakingIcon = Properties.Resources.cursorFiremaking;
+        private Icon woodcuttingIcon = Properties.Resources.cursorWoodcutting;
+        private Icon fishingIcon = Properties.Resources.cursorFishing;
+
+        // Unused cooking pot, generic cursor, and arrow into bag cursors
+        // private Icon cookingIcon = Properties.Resources.cursorCooking;
+        // private Icon cursorIcon = Properties.Resources.cursorPointer;
+        // private Icon bagIcon = Properties.Resources.cursorInTheBag;
+>>>>>>> origin/master
 
         public frmSurvival()
         {
@@ -55,7 +66,11 @@ namespace HumphreyErik2424RST
             picFirePit.Cursor = new Cursor(firemakingIcon.Handle);
             picTree.Cursor = new Cursor(woodcuttingIcon.Handle);
             picFishingSpot.Cursor = new Cursor(fishingIcon.Handle);
+<<<<<<< HEAD
             // this.Cursor = new Cursor(cursorIcon.Handle); - Broken "generic" cursor removed for initial release
+=======
+            // this.Cursor = new Cursor(cursorIcon.Handle);
+>>>>>>> origin/master
         }
 
         private void frmSurvival_Load(object sender, EventArgs e)
@@ -64,27 +79,33 @@ namespace HumphreyErik2424RST
 
 
             // Determine the fish needed to be cooked
+            // treeType is unused
             switch (LevelGen.difficulty)
             {
                 case 1:
                     fishNeeded = 2;
-                    treeType = "normal";
+                    // treeType = "normal";
                     break;
                 case 2:
                     fishNeeded = 5;
-                    treeType = "oak";
+                    // treeType = "oak";
                     break;
                 case 3:
                     fishNeeded = 10;
-                    treeType = "willow";
+                    // treeType = "willow";
                     break;
                 case 4:
                     fishNeeded = 15;
-                    treeType = "maple";
+                    // treeType = "maple";
                     break;
                 case 5:
                     fishNeeded = 20;
-                    treeType = "yew";
+                    // treeType = "yew";
+                    break;
+                // If the difficulty is anything but 5 (e.g. 6, because there is no way to beat the game)
+                default:
+                    fishNeeded = 1;
+                    // treeType = "normal";
                     break;
             }
 
@@ -247,6 +268,7 @@ namespace HumphreyErik2424RST
             {
                 tmrFireAnimation.Stop();
                 prgFireFuel.Visible = false;
+                cboEquippedItem.Items.Remove(cboEquippedItem.SelectedItem); // Remove the uncooked fish from the player's inventory
                 lstGameLog.Items.Add("You place the fish on the fire.");
 
                 // 33.3% chance to burn fish
@@ -306,14 +328,16 @@ namespace HumphreyErik2424RST
             firemakingIcon.Dispose();
             fishingIcon.Dispose();
             woodcuttingIcon.Dispose();
-            bagIcon.Dispose();
-            cursorIcon.Dispose();
-            cookingIcon.Dispose();
+            // bagIcon.Dispose();
+            // cursorIcon.Dispose();
+            // cookingIcon.Dispose();
         }
 
+        /*** SIMPLIFIED IN FORM LOAD EVENT (for now) ***
         // If the mouse enters a clickable object in the Game View panel (Tree, fire pit, fishing spot)
         private void clickableEnter(object sender, EventArgs e)
         {
+<<<<<<< HEAD
             // New cursor code (for code refactoring later)
 
             //// Check what item is equipped in the ComboBox
@@ -323,7 +347,17 @@ namespace HumphreyErik2424RST
             //    this.Cursor = new Cursor(woodcuttingIcon.Handle);
             //else if (cboEquippedItem.Text.Contains("Fish") || cboEquippedItem.Text == "Golden harpoon")
             //    this.Cursor = new Cursor(fishingIcon.Handle);
+=======
+            // Check what item is equipped in the ComboBox
+            if (cboEquippedItem.Text == "Tinderbox")
+                this.Cursor = new Cursor(firemakingIcon.Handle);
+            else if (cboEquippedItem.Text.Contains("ha"))
+                this.Cursor = new Cursor(woodcuttingIcon.Handle);
+            else if (cboEquippedItem.Text.Contains("Fish") || cboEquippedItem.Text == "Golden harpoon")
+                this.Cursor = new Cursor(fishingIcon.Handle);
+>>>>>>> origin/master
         }
+         */
 
         private void tmrFishMovement_Tick(object sender, EventArgs e)
         {
@@ -381,7 +415,11 @@ namespace HumphreyErik2424RST
 
         private void clickableLeave(object sender, EventArgs e)
         {
+<<<<<<< HEAD
             // this.Cursor = new Cursor(cursorIcon.Handle); - buggy cursor left out
+=======
+            // this.Cursor = new Cursor(cursorIcon.Handle);
+>>>>>>> origin/master
         }
 
         private void picFishingSpot_Click(object sender, EventArgs e)
@@ -444,13 +482,14 @@ namespace HumphreyErik2424RST
             // If the objective is met, close the level and open the level complete screen!
             if (fishCooked == fishNeeded)
             {
-                frmBattle.levelComplete.Play();
+                // frmBattle.levelComplete.Play();
                 frmLevelComplete LevelComplete = new frmLevelComplete();
                 LevelComplete.Show();
                 this.Hide();
             }
         }
 
+<<<<<<< HEAD
         // Show instructions for the level
 
         private void btnHelp_Click(object sender, EventArgs e)
@@ -470,6 +509,39 @@ namespace HumphreyErik2424RST
             string tip4 = "\r\n\r\nYou get bonus credits for getting logs, felling a tree, or catching fish in a minimal amount of tries. You can earn a maximum of 10,000 per level.";
             MessageBox.Show(objective + objective2 + step1 + step2 + step3 + step4 + step5 + step6, "Instructions", MessageBoxButtons.OK);
             MessageBox.Show(tip1 + tip2 + tip3 + tip4, "Useful Tips", MessageBoxButtons.OK);
+=======
+        // Show a MessageBox that displays an array of the steps required to progress the level's objective (? button)
+
+        private void btnInstructions_Click(object sender, EventArgs e)
+        {
+            String[] step = new String[8];
+            step[0] = "Follow these steps to progress the objective under the \"FISH CAUGHT\" counter. Be sure to check the game log in the bottom left to see if you're doing everything right!\r\n";
+            step[1] = "\r\n1. Under \"EQUIPPED ITEM\", select your hatchet and click the tree until you get logs.";
+            step[2] = "\r\n2. Equip the logs and add them to the fire pit by clicking in the stone circle.";
+            step[3] = "\r\n3. Equip your fishing tool and click the fishing spot indicated by sparkles on the water.";
+            step[4] = "\r\n4. Equip your firestarter and click the logs on the fire pit to start a fire. It only lasts 25 seconds, so be quick!";
+            step[5] = "\r\n5. Equip the fish you caught and click the fire to attempt to cook it.";
+            step[6] = "\r\n6. Equip \"empty hands\" and click the fish to take it off the fire.";
+            step[7] = "\r\n7. Repeat until the objective has been met!";
+
+            // Join all steps in the array as one string with an extra line break in between each
+            string allSteps = string.Join(Environment.NewLine, step);
+
+            // Show said string with all steps
+            MessageBox.Show(allSteps, "Instructions");
+
+            // When that MessageBox is closed, show some useful tips
+
+            String[] tip = new String[4];
+            tip[0] = "Use the panel in the bottom right to time your catch. If the fish is under the dashed red line after three seconds, you make the catch!";
+            tip[1] = "\r\nYou get bonus credits for getting logs or felling the tree in a minimal amount of tries.";
+            tip[2] = "\r\nBurnt fish is black; cooked fish is blue. Burnt fish don't count towards the objective.";
+            tip[3] = "\r\nThe tree and fish regenerate after a short period of time.";
+
+            string allTips = string.Join(Environment.NewLine, tip);
+
+            MessageBox.Show(allTips, "Tips");
+>>>>>>> origin/master
         }
     }
 }

@@ -26,6 +26,7 @@ namespace HumphreyErik2424RST
         {
             LevelGenerator.LevelGen.NewLevel();
             saveGame();
+            this.Hide();
         }
 
         private void btnReturnToMenu_Click(object sender, EventArgs e)
@@ -261,15 +262,15 @@ namespace HumphreyErik2424RST
             }
         }
 
-        private void frmLevelComplete_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnUpgPunch_MouseEnter(object sender, EventArgs e)
         {
             lblShopDescription.Text = "Upgrade Punch ability. (500 credits)";
             lblUpgradeCost.Text = "500";
+        }
+
+        private void frmLevelComplete_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

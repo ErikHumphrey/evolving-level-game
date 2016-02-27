@@ -53,11 +53,12 @@
             this.tmrBonusPointsDecay = new System.Windows.Forms.Timer(this.components);
             this.tmrFishingDelay = new System.Windows.Forms.Timer(this.components);
             this.tmrFishRespawn = new System.Windows.Forms.Timer(this.components);
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.pnlTR = new System.Windows.Forms.Panel();
+            this.btnInstructions = new System.Windows.Forms.Button();
             this.lblBonusPointsCounter = new System.Windows.Forms.Label();
             this.lblBonusPoints = new System.Windows.Forms.Label();
             this.lblFishCookedCounter = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblFishCooked = new System.Windows.Forms.Label();
             this.lblItemTitle = new System.Windows.Forms.Label();
             this.cboEquippedItem = new System.Windows.Forms.ComboBox();
             this.btnHelp = new System.Windows.Forms.Button();
@@ -72,7 +73,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.picFish)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picFireSide)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picTreeSide)).BeginInit();
-            this.panel1.SuspendLayout();
+            this.pnlTR.SuspendLayout();
             this.SuspendLayout();
             // 
             // lstGameLog
@@ -280,6 +281,7 @@
             // 
             this.tmrFishRespawn.Tick += new System.EventHandler(this.tmrFishRespawn_Tick);
             // 
+<<<<<<< HEAD
             // panel1
             // 
             this.panel1.Controls.Add(this.btnHelp);
@@ -293,6 +295,33 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(248, 254);
             this.panel1.TabIndex = 15;
+=======
+            // pnlTR
+            // 
+            this.pnlTR.Controls.Add(this.btnInstructions);
+            this.pnlTR.Controls.Add(this.lblBonusPointsCounter);
+            this.pnlTR.Controls.Add(this.lblBonusPoints);
+            this.pnlTR.Controls.Add(this.lblFishCookedCounter);
+            this.pnlTR.Controls.Add(this.lblFishCooked);
+            this.pnlTR.Controls.Add(this.lblItemTitle);
+            this.pnlTR.Controls.Add(this.cboEquippedItem);
+            this.pnlTR.Location = new System.Drawing.Point(571, 0);
+            this.pnlTR.Name = "pnlTR";
+            this.pnlTR.Size = new System.Drawing.Size(248, 254);
+            this.pnlTR.TabIndex = 15;
+            // 
+            // btnInstructions
+            // 
+            this.btnInstructions.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnInstructions.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnInstructions.Location = new System.Drawing.Point(211, 225);
+            this.btnInstructions.Name = "btnInstructions";
+            this.btnInstructions.Size = new System.Drawing.Size(28, 24);
+            this.btnInstructions.TabIndex = 26;
+            this.btnInstructions.Text = "?";
+            this.btnInstructions.UseVisualStyleBackColor = true;
+            this.btnInstructions.Click += new System.EventHandler(this.btnInstructions_Click);
+>>>>>>> origin/master
             // 
             // lblBonusPointsCounter
             // 
@@ -328,8 +357,9 @@
             this.lblFishCookedCounter.Text = "0 / 5";
             this.lblFishCookedCounter.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label1
+            // lblFishCooked
             // 
+<<<<<<< HEAD
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Myriad Web Pro", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(81, 109);
@@ -337,6 +367,15 @@
             this.label1.Size = new System.Drawing.Size(96, 14);
             this.label1.TabIndex = 22;
             this.label1.Text = "FISH COOKED";
+=======
+            this.lblFishCooked.AutoSize = true;
+            this.lblFishCooked.Font = new System.Drawing.Font("Myriad Web Pro", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFishCooked.Location = new System.Drawing.Point(81, 109);
+            this.lblFishCooked.Name = "lblFishCooked";
+            this.lblFishCooked.Size = new System.Drawing.Size(89, 15);
+            this.lblFishCooked.TabIndex = 22;
+            this.lblFishCooked.Text = "FISH COOKED";
+>>>>>>> origin/master
             // 
             // lblItemTitle
             // 
@@ -375,7 +414,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(817, 435);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.pnlTR);
             this.Controls.Add(this.pnlGameView);
             this.Controls.Add(this.pnlSideView);
             this.Controls.Add(this.lstGameLog);
@@ -400,8 +439,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.picFish)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picFireSide)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picTreeSide)).EndInit();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.pnlTR.ResumeLayout(false);
+            this.pnlTR.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -431,13 +470,17 @@
         private System.Windows.Forms.Timer tmrFishingDelay;
         private System.Windows.Forms.ProgressBar prgFishRespawn;
         private System.Windows.Forms.Timer tmrFishRespawn;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel pnlTR;
         private System.Windows.Forms.Label lblBonusPointsCounter;
         private System.Windows.Forms.Label lblBonusPoints;
         private System.Windows.Forms.Label lblFishCookedCounter;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblFishCooked;
         private System.Windows.Forms.Label lblItemTitle;
         private System.Windows.Forms.ComboBox cboEquippedItem;
+<<<<<<< HEAD
         private System.Windows.Forms.Button btnHelp;
+=======
+        private System.Windows.Forms.Button btnInstructions;
+>>>>>>> origin/master
     }
 }

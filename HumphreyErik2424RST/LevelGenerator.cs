@@ -16,6 +16,8 @@ namespace LevelGenerator
 {
     public static class LevelGen
     {
+        // Truly global variables that can be used from any class
+        // this is completely inefficient and I would refactor it if I had time
         static public bool saveGameExists = false;
         static Random rnd = new Random();
         static public string name = "Player";
@@ -25,16 +27,12 @@ namespace LevelGenerator
 
         public static void NewLevel()
         {
+            // Increase the difficulty. Effects of the difficulty change are determined in each level's form Load event.
             difficulty++;
             // Open a random level
-            levelIndex = rnd.Next(1, 6);
-            // frmBattle Battle = new frmBattle();
-            // Battle.Show();
-            frmSurvival Survival = new frmSurvival();
-            Survival.Show();
+            levelIndex = rnd.Next(1, 3);
 
             myMenu.Hide();
-            /* 
             switch (levelIndex)
             {
                 // Survival
@@ -49,7 +47,8 @@ namespace LevelGenerator
                     Battle.Show();
                     myMenu.Hide();
                     break;
-                // RPG
+               /*** Unimplemented levels ***
+               // RPG
                 case 3:
                     frmRoleplayingGame RPG = new frmRoleplayingGame();
                     RPG.Show();
@@ -61,13 +60,8 @@ namespace LevelGenerator
                     Debugger.Show();
                     myMenu.Hide();
                     break;
-                case 5:
-                    frmSurvival Form3 = new frmSurvival();
-                    Form3.Show();
-                    myMenu.Hide();
-                    break;
-             
-            }*/
+             */
+            }
         }
     }
 }
